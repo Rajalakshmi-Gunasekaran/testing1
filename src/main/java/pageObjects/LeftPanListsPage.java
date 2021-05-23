@@ -59,79 +59,102 @@ public class LeftPanListsPage {
     @FindBy(xpath = "")
     public WebElement deleteList;
 
-    public void clickListsBtn(){
+    public void clickListsBtn()
+    {
         listsBtn.click();
     }
-    public void clickCreateFolder(){
+    public void clickCreateFolder()
+    {
         CreateFolder.click();
     }
-    public void EnterFolderName(String setFolderName){
+    public void EnterFolderName(String setFolderName)
+    {
         folderName.sendKeys(setFolderName);
     }
-    public void validateFolderCreated(){
+    public void validateFolderCreated()
+    {
         Assert.assertTrue(clickFolderName.isDisplayed());
     }
-    public void clickCreate(){
+    public void clickCreate()
+    {
         clickCreateFolderBtn.click();
     }
-    public void createList(){
+    public void createList()
+    {
         CreateList.click();
     }
-    //validating list creation
-    public String validateListCreated(){
-       return validateNewListCreated.getText();
+    /*validating list creation*/
+    public String validateListCreated()
+    {
+        return validateNewListCreated.getText();
     }
-    public void addingToList(){
+    public void addingToList()
+    {
         getJournalistName.click();
     }
-    public void enterListName(String ListName){
-         listName.sendKeys(ListName);
+    public void enterListName(String ListName)
+    {
+        listName.sendKeys(ListName);
     }
-    public void clickCreateList(){
-clickCreateBtn.click();
+    public void clickCreateList()
+    {
+        clickCreateBtn.click();
     }
-       public void addingJournalistToTheList(){
+    public void addingJournalistToTheList()
+    {
         getJournalistName.click();
     }
-    public void searchIcon(){
-searchIconBtn.click();
+    public void searchIcon()
+    {
+        searchIconBtn.click();
     }
-    public void searchListTxt(String searchText){
+    public void searchListTxt(String searchText)
+    {
         searchList.sendKeys(searchText);
-            }
-    public void setGetListName(){
+    }
+    public void setGetListName()
+    {
         getListName.click();
     }
-    public void chooseJournalist(){
-clickJournalistFromList.click();
+    public void chooseJournalist()
+    {
+        clickJournalistFromList.click();
     }
-    public void removeJournalist(){
-removeFromList.click();
+    public void removeJournalist()
+    {
+        removeFromList.click();
     }
-    public void confirmDeletion(){
-confirmDelete.click();
+    public void confirmDeletion()
+    {
+        confirmDelete.click();
     }
-    public String validateJournalistRemoval(){
-      return  validateJournalistRemovedFromList.getText();
+    public String validateJournalistRemoval()
+    {
+        return  validateJournalistRemovedFromList.getText();
     }
-    public void enterFolderName(String folderName){
-searchFolder.sendKeys(folderName);
+    public void enterFolderName(String folderName)
+    {
+        searchFolder.sendKeys(folderName);
 
     }
-    //click folder name to open that folder
-    public void setClickFolderName(){
+   /* click folder name to open that folder*/
+    public void setClickFolderName()
+    {
         clickFolderName.click();
     }
 
-    public void menuList(){
-clickMenuList.click();
+    public void menuList()
+    {
+        clickMenuList.click();
     }
-    public void confirmDeleteFolder(){
-clickDelete.click();
-confirmDeleteFolder.click();
+    public void confirmDeleteFolder()
+    {
+        clickDelete.click();
+        confirmDeleteFolder.click();
     }
-    public void validateDeletionFolder() {
+    public void validateDeletionFolder()
+    {
         String text="Nothing in this folder";
-       Assert.assertEquals(text,validationDeleteFolder.getText());
+        Assert.assertEquals(text,validationDeleteFolder.getText());
     }
 }

@@ -10,9 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-public class SearchPage {
+public class SearchPage
+{
     public WebDriver driver;
-    public SearchPage(WebDriver driver){
+    public SearchPage(WebDriver driver)
+    {
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
@@ -37,60 +39,69 @@ public class SearchPage {
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[1]/div/div[2]/div[1]/div")
     public WebElement validateCompanyProfile;
 
-    //click quick search on home page
-    public  void setClkQuickSearch(){
+    /*click quick search on home page*/
+    public  void setClkQuickSearch()
+    {
     clkQuickSearch.click();
-}
-    //enter journo name on text area
-    public void enterSearchJourno(String Journo){
+    }
+    /*enter journo name on text area*/
+    public void enterSearchJourno(String Journo)
+    {
         quickSearch.sendKeys(Journo);
     }
-    //select the journalist from the list and click on it
-    public void chooseJournalist(){
+    /*select the journalist from the list and click on it*/
+    public void chooseJournalist()
+    {
         JournalistName.click();
     }
-    //go to journo profile page and validate to see whether land on the right page or not
-    public void goToJournoProfile(){
-
+    /*go to journo profile page and validate to see whether land on the right page or not*/
+    public void goToJournoProfile()
+    {
         Assert.assertTrue(validateJournoProfile.isDisplayed());
     }
-    //enter desk name on text area
-    public void enterSearchDesk(String Desk){
+    /*enter desk name on text area*/
+    public void enterSearchDesk(String Desk)
+    {
     quickSearch.sendKeys(Desk);
     }
-    //select the journalist from the list and click on it
-    public void chooseDesk(){
+    /*select the journalist from the list and click on it*/
+    public void chooseDesk()
+    {
         DeskName.click();
     }
-    //go to desk profile page and validate to see whether land on the right page or not
-    public void goToDeskProfile(){
-
+    /*go to desk profile page and validate to see whether land on the right page or not*/
+    public void goToDeskProfile()
+    {
         Assert.assertTrue(validateDeskProfile.isDisplayed());
     }
-    //enter outlet name on text area
-    public void enterSearchOutlet(String Outlet){
-quickSearch.sendKeys(Outlet);
+    /*enter outlet name on text area*/
+    public void enterSearchOutlet(String Outlet)
+    {
+        quickSearch.sendKeys(Outlet);
     }
-    //select the outlet from the list and click on it
-    public void chooseOutlet(){
-OutletName.click();
+    /*select the outlet from the list and click on it*/
+    public void chooseOutlet()
+    {
+        OutletName.click();
     }
-    //go to outlet profile page and validate to see whether land on the right page or not
-    public void goToOutletProfile(){
-
+   /* go to outlet profile page and validate to see whether land on the right page or not*/
+    public void goToOutletProfile()
+    {
         Assert.assertTrue(validateOutletProfile.isDisplayed());
     }
-    //enter company name on text area
-    public void enterSearchCompany(String Company){
-    quickSearch.sendKeys(Company);
+   /* enter company name on text area*/
+    public void enterSearchCompany(String Company)
+    {
+        quickSearch.sendKeys(Company);
     }
-    //select the company from the list and click on it
-    public void chooseCompany(){
+    /*select the company from the list and click on it*/
+    public void chooseCompany()
+    {
         CompanyName.click();
     }
-    //go to company profile page and validate to see whether land on the right page or not
-    public void goToCompanyProfile(){
-
+    /*go to company profile page and validate to see whether land on the right page or not*/
+    public void goToCompanyProfile()
+    {
         Assert.assertTrue(validateCompanyProfile.isDisplayed());
     }
 

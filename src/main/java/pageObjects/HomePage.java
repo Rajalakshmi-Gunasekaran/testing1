@@ -26,57 +26,73 @@ public class HomePage {
     public WebElement clkSelectAll;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
     public WebElement validateWebinarAlert;
-    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[2]/p/p[3]/a")
-    public WebElement clkSignUp;
-    @FindBy(xpath="//*[@id=\"header-menu-section\"]/div/div[1]/div/div/div/div/a/img")
-    public WebElement validateSignUp;
+    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[3]/ul")
+    public WebElement clkJournoLink;
+    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[3]/div/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/ul/li[2]/a")
+    public WebElement validateJournoLink;
 
-    //Initialising Web driver
-    public HomePage(WebDriver webDriver){
+   /* Initialising Web driver*/
+    public HomePage(WebDriver webDriver)
+    {
         PageFactory.initElements(webDriver,this);
     }
-    //validating login with user profile logo
-    public String getLoginToastMsg(){
+
+  /*  validating login with user profile logo*/
+    public String getLoginToastMsg()
+    {
         return userprofile.getText();
     }
-    //clicking on user profile to log out
-    public void userProfile(){
+
+    /*clicking on user profile to log out*/
+    public void userProfile()
+    {
         userprofile.click();
     }
-    //logout from the application
-    public void logOut(){
-logout.click();
+    /*logout from the application*/
+    public void logOut()
+    {
+        logout.click();
     }
-    //go to news online tab in order to check go back button
-    public void setNewsOnlineBtn() {
-    newsOnlineBtn.click();
-        }
-    //clicking go back button
-     public void setGoBackBtn(){
+
+    /*go to news online tab in order to check go back button*/
+    public void setNewsOnlineBtn()
+    {
+        newsOnlineBtn.click();
+    }
+
+    /*clicking go back button*/
+    public void setGoBackBtn()
+    {
         goBackBtn.click();
-      }
-    //validating go back button with highlight displayed on home page which is unique for home page
-      public void setValidateGoBackBtn(){
+    }
+    /*validating go back button with highlight displayed on home page which is unique for home page*/
+    public void setValidateGoBackBtn()
+    {
 
         Assert.assertTrue(validateGoBackBtn.isDisplayed());
-      }
-      //click on webinar alerts tab
-    public void clickWebinar(){
+    }
+   /* click on webinar alerts tab*/
+    public void clickWebinar()
+    {
         clkWebinarTab.click();
     }
-    public void clickSelectAll(){
+    public void clickSelectAll()
+    {
         clkSelectAll.click();
     }
-    public void setValidateWebinarAlert(){
+    public void setValidateWebinarAlert()
+    {
 
         validateWebinarAlert.isDisplayed();
     }
-    //clicking sign up link
-    public void clickSignUpLink(){
-        clkSignUp.click();
+    /*clicking sign up link*/
+    public void clickSignUpLink()
+    {
+        clkJournoLink.click();
     }
-    //validating whether the sign up link navigating to the Roxhill site
-    public void validateQuickLinks(){
-        validateSignUp.isDisplayed();
+    /*validating whether the sign up link navigating to the Roxhill site*/
+    public void validateQuickLinks()
+    {
+        validateJournoLink.isDisplayed();
     }
-     }
+}

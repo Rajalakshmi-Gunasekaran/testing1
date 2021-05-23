@@ -15,20 +15,24 @@ public class LoginPage {
 
     @FindBy(id="login_submit")
     public WebElement loginBtn;
-    //initialising web driver
-    public LoginPage(WebDriver driver){
+   /* initialising web driver*/
+    public LoginPage(WebDriver driver)
+    {
         PageFactory.initElements(driver,this);
     }
-    //enter valid username
-    public void setUserName(String UserName){
-UsrTxt.sendKeys(UserName);
+   /* enter valid username*/
+    public void setUserName(String UserName)
+    {
+        UsrTxt.sendKeys(UserName);
     }
-    //enter valid password
-    public void setPassword(String Password){
-passTxt.sendKeys(Password);
+    /*enter valid password*/
+    public void setPassword(String Password)
+    {
+        passTxt.sendKeys(Password);
     }
-    //logging to the application
-    public void clickLgnBtn(){
-loginBtn.click();
+    /*logging to the application*/
+    public void clickLgnBtn()
+    {
+        loginBtn.click();
     }
 }

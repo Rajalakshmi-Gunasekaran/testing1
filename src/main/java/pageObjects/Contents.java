@@ -4,7 +4,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.security.PublicKey;
 
-public class Constents {
+public class Contents {
     public static final String EMPTY_MSG="";
     public static final String LGN_SUCCESSFUL_MSG="RA";
     public static final String CREATED_LIST_NAME="Ryan";
