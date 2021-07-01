@@ -24,7 +24,6 @@ Feature: Streams feature
     And I click on save button
     Then I should able to see the  streams results
 
-
   @EditStreamSetUp
   Scenario: Validate Edit functionality in streams
     When I should be in the home page and click on Streams
