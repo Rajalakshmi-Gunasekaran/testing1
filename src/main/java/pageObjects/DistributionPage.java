@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ import java.time.Duration;
 public class DistributionPage {
 
     public WebDriver driver;
-    private Actions action;
+    public Actions action=new Actions(driver);
 
     /*initialising web driver*/
     public DistributionPage(WebDriver driver)
@@ -167,7 +168,7 @@ public class DistributionPage {
     public void setEnterFromEmail()
     {
         enterFromEmail.click();
-        action.moveToElement(getEnterFromEmail);
+        action.moveToElement(getEnterFromEmail).build().perform();
        // action.click;
        // getEnterFromEmail.click();
        //getEnterFromEmail.sendKeys(email);
@@ -182,7 +183,8 @@ public class DistributionPage {
     }
     public void setValidateCampaignSending()
     {
-        validateCampaignSending.isDisplayed();
+
+        Assert.assertTrue(validateCampaignSending.isDisplayed());
     }
     public void setClickMenuCheckList()
     {
@@ -198,7 +200,8 @@ public class DistributionPage {
     }
     public void setValidateDeletePressRelease()
     {
-        validateDeletePressRelease.isDisplayed();
+
+        Assert.assertTrue(validateDeletePressRelease.isDisplayed());
     }
     public void setClickCampaignTab()
     {
@@ -222,6 +225,7 @@ public class DistributionPage {
     }
     public void setValidateCampaignDeleted()
     {
-        validateCampaignDeleted.isDisplayed();
+
+        Assert.assertTrue(validateCampaignDeleted.isDisplayed());
     }
 }

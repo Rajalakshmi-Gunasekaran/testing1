@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -122,7 +123,7 @@ public void setClickSaveButton()
 public void setValidateStreamSetUp()
 {
         clickFeed.click();
-        validateStreamSetUp.isDisplayed();
+        Assert.assertTrue(validateStreamSetUp.isDisplayed());
 }
 /*Validating edit stream functionality*/
     public void chooseTestStream(){
@@ -137,9 +138,10 @@ public void setValidateStreamSetUp()
     public void setChooseJournalist(){
         chooseJournalist.click();
     }
-    public void validateEditStream(){
+    public void validateEditStream()
+    {
         clickFeed.click();
-        validateEditFunctionality.isDisplayed();
+       Assert.assertTrue(validateEditFunctionality.isDisplayed());
     }
 
 /* Validating delete streams functionality*/
@@ -150,7 +152,8 @@ public void setClickSearchStream()
 public void setEnterStreamToDelete(String deleteStream){
     enterStream.sendKeys(deleteStream);
 }
-public void setClickStreamFromList(){
+public void setClickStreamFromList()
+{
     clickStreamFromList.click();
 }
 public void setClickDeleteStream(){
@@ -159,9 +162,9 @@ public void setClickDeleteStream(){
 public void setClickConfirmDeletion(){
     clickConfirmDeletion.click();
 }
-public void setValidateStreamDeletion(){
-    validateDeletionStream.isDisplayed();
-
+public void setValidateStreamDeletion()
+{
+    Assert.assertTrue(validateDeletionStream.isDisplayed());
 }
 }
 
