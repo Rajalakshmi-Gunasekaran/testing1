@@ -30,7 +30,14 @@ public class HomePage {
     public WebElement clkJournoLink;
     @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[3]/div/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[2]/ul/li[2]/a")
     public WebElement validateJournoLink;
-
+    @FindBy(id="btn-help-and-feedback")
+    public WebElement clickHelpAndFeedbackButton;
+    @FindBy(xpath = "//*[@id=\"TICKET.content-48dcc618-c24c-4632-95b3-32d98b36f850\"]")
+    public WebElement enterDesc;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[4]/div/div/div[3]/div/div/div/div[1]/nav/button")
+    public WebElement clickSendButton;
+    @FindBy(xpath = "//*[@id=\"hubspot-feedback-form\"]/div")
+    public WebElement validateHelpAndFeedback;
    /* Initialising Web driver*/
     public HomePage(WebDriver webDriver)
     {
@@ -94,5 +101,20 @@ public class HomePage {
     public void validateQuickLinks()
     {
         validateJournoLink.isDisplayed();
+    }
+
+    /*Validating help and feedback functionality*/
+    public void clickHelpAndFeedback(){
+        clickHelpAndFeedbackButton.click();
+    }
+    public void setEnterDesc(String desc){
+        enterDesc.sendKeys(desc);
+    }
+    public void setClickSendButton(){
+        clickSendButton.click();
+    }
+    public void setValidateHelpAndFeedback()
+    {
+        validateHelpAndFeedback.isDisplayed();
     }
 }

@@ -4,10 +4,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.security.PublicKey;
 
-public class Contents {
+public class Contents
+{
     public static final String EMPTY_MSG="";
     public static final String LGN_SUCCESSFUL_MSG="RA";
-    public static final String CREATED_LIST_NAME="Ryan";
+    public static final String CREATED_LIST_NAME="SmokeSuiteList";
     public static final String DELETED_FOLDER_MSG="Nothing in this folder";
     public static final String STREAM_VALIDATION_NUMBERS="50";
     public static final String DELETED_JOURNO_MSG="No results";

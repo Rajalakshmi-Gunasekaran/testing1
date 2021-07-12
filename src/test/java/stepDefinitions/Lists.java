@@ -8,15 +8,16 @@ import pageObjects.*;
 public class Lists extends BaseStep {
     public LeftPanListsPage leftPanListsPage;
     public RightPanListPage rightPanListPage;
-    public HomePage homePage;
     public LoginPage loginPage;
-    public SearchPage searchPage;
+    public AdvancedSearchPage advancedSearchPage;
     @When("^I should login into the home page and click on lists$")
     public void i_should_login_into_the_home_page_and_click_on_lists()
     {
         loginPage = new LoginPage(webDriver);
-        homePage = new HomePage(webDriver);
         leftPanListsPage =new LeftPanListsPage(webDriver);
+        rightPanListPage=new RightPanListPage(webDriver);
+        advancedSearchPage=new AdvancedSearchPage(webDriver);
+
         webDriver.get("https://app-alt.roxhillmedia.com/");
         wait(20);
         leftPanListsPage.clickListsBtn();
@@ -62,62 +63,64 @@ public class Lists extends BaseStep {
     @Then("^I should see the created list$")
     public void i_should_see_the_created_list()
     {
-        wait(30);
-        String validateList= leftPanListsPage.validateListCreated();
-        Assert.assertEquals(Contents.CREATED_LIST_NAME,validateList);
+        pauseFor(5);
+        leftPanListsPage.validateListCreated();
     }
 
-    @When("^I choose Journalist from the list and Click on add to list$")
-    public void i_choose_Journalist_from_the_list_and_Click_on_add_to_list()
+    @When("^I click on search icon in the list page$")
+    public void i_click_on_search_icon_in_the_list_page()
     {
-        wait(30);
-        leftPanListsPage.addingToList();
+      wait(20);
+        leftPanListsPage.searchIcon();
+        pauseFor(5);
+    }
+    @When("^I enter list name as \"(.*?)\"$")
+    public void i_enter_list_name_as(String listname)
+    {
+        pauseFor(5);
+        leftPanListsPage.enterListNameToValidate(listname);
     }
 
-    @When("^I enter list name as \"(.*?)\" and click Ok$")
-    public void i_enter_list_name_as_and_click_Ok(String listName)
+    @When("^I click on search icon in the list page and I enter folder name as \"(.*?)\"$")
+    public void i_click_on_search_icon_in_the_list_page_and_I_enter_folder_name_as(String folderName)
     {
-        leftPanListsPage.enterListName(listName);
+       pauseFor(5);
+       leftPanListsPage.enterFolderName(folderName);
     }
 
-    @When("^I close the quick search window$")
-    public void i_close_the_quick_search_window()
+    @When("^I click on the folder name from the list$")
+    public void i_click_on_the_folder_name_from_the_list()
     {
+pauseFor(5);
+leftPanListsPage.tickCheckBoxToSelectListName();
+    }
 
+    @When("^I click on the list name from the list$")
+    public void i_click_on_the_list_name_from_the_list()
+    {
+       pauseFor(5);
+       leftPanListsPage.setGetListName();
     }
 
     @When("^I click on Lists$")
     public void i_click_on_Lists()
     {
-
+        pauseFor(5);
+        leftPanListsPage.clickListsBtn();
     }
 
-    @When("^I click on search icon$")
-    public void i_click_on_search_icon()
+    @When("^I click select all to remove all journalist from the list$")
+    public void i_click_select_all_to_remove_all_journalist_from_the_list()
     {
-        wait(20);
-        leftPanListsPage.searchIcon();
-        wait(30);
-    }
-
-    @Then("^I should able to see the journalist added to the list$")
-    public void i_should_able_to_see_the_journalist_added_to_the_list()
-    {
-
-    }
-
-    @When("^I choose and click journalist from the list$")
-    public void i_choose_and_click_journalist_from_the_list()
-    {
-        wait(30);
-        leftPanListsPage.chooseJournalist();
+         pauseFor(5);
+         rightPanListPage.chooseJournalist();
     }
 
     @When("^I click on remove from list button$")
     public void i_click_on_remove_from_list_button()
     {
-        wait(30);
-        leftPanListsPage.removeJournalist();
+        pauseFor(5);
+        rightPanListPage.removeJournalist();
     }
 
     @When("^I click tick mark to make sure deletion$")
@@ -133,16 +136,21 @@ public class Lists extends BaseStep {
     {
         wait(30);
         leftPanListsPage.searchListTxt(listName);
-        wait(30);
+        pauseFor(5);
         leftPanListsPage.setGetListName();
-        wait(30);
+        wait(5);
     }
-
+    @When("^I click on check box of the list name to select$")
+    public void i_click_on_check_box_of_the_list_name_to_select()
+    {
+        pauseFor(5);
+        leftPanListsPage.tickCheckBoxToSelectListName();
+    }
     @Then("^I should able to see the journalist deleted successfully on the list page$")
     public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page()
     {
         wait(30);
-        String removedJourno=leftPanListsPage.validateJournalistRemoval();
+        String removedJourno=rightPanListPage.validateJournalistRemoval();
         Assert.assertEquals(Contents.DELETED_JOURNO_MSG,removedJourno);
     }
 
@@ -158,35 +166,68 @@ public class Lists extends BaseStep {
     @When("^I click on menu list and click on delete button$")
     public void i_click_on_menu_list_and_click_on_delete_button()
     {
-        wait(20);
+        pauseFor(5);
         leftPanListsPage.menuList();
+        pauseFor(5);
+        leftPanListsPage.deleteListButton();
+
+    }
+    //click on delete button in list page to delete list
+    @When("^I click on delete button$")
+    public void i_click_on_delete_button()
+    {
+          pauseFor(5);
+          rightPanListPage.setClickDelete();
     }
 
     @When("^I confirm deletion$")
     public void i_confirm_deletion()
     {
-        wait(20);
-        leftPanListsPage.confirmDeleteFolder();
-        wait(30);
+           wait(20);
+           leftPanListsPage.confirmDeleteFolder();
     }
+    @When("^I click on search icon in the list page and I enter list name as \"(.*?)\"$")
+    public void i_click_on_search_icon_in_the_list_page_and_I_enter_list_name_as(String list)
+    {
+        pauseFor(5);
+        leftPanListsPage.enterListNameToDelete(list);
+
+    }
+
+    @When("^click on the list name from the list$")
+    public void click_on_the_list_name_from_the_list()
+    {
+pauseFor(5);
+leftPanListsPage.tickCheckBoxToSelectListName();
+    }
+
 
     @Then("^I should see the list deleted$")
     public void i_should_see_the_list_deleted()
     {
+           pauseFor(5);
+           leftPanListsPage.validateListDeleted();
 
     }
 
     @Then("^I should see the folder deleted$")
     public void i_should_see_the_folder_deleted()
     {
-
+            wait(5);
+            leftPanListsPage.validateDeletionFolder();
     }
 
     @Then("^I should see the GDPR rejected status is unchecked by default$")
-    public void i_should_see_the_GDPR_rejected_status_is_unchecked_by_default() {
-        wait(30);
-        boolean bool=rightPanListPage.validateGDPRCheckbox();
-        Assert.assertFalse(bool);
+    public void i_should_see_the_GDPR_rejected_status_is_unchecked_by_default()
+    {
+            wait(30);
+            Assert.assertFalse(rightPanListPage.validateGDPRCheckbox());
     }
-}
+    @Then("^I should able to see the journalist added to the list$")
+    public void i_should_able_to_see_the_journalist_added_to_the_list()
+    {
+            pauseFor(5);
+            rightPanListPage.setValidateJournoAddedToList();
+    }
+    }
 

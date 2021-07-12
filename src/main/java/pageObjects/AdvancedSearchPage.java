@@ -42,13 +42,20 @@ public class AdvancedSearchPage {
     public WebElement chooseInfoView;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/p/em")
     public WebElement validateInfoView;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/span/button/span/i")
+    public WebElement clickCopyToList;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
+    public WebElement enterListName;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[3]/button")
+    public WebElement clickOk;
 
-
-    public void clickAdvancedSearch() {
+    public void clickAdvancedSearch()
+    {
         AdvancedSearchTab.click();
     }
 
-    public void enterOutletType(String outletTypeName) {
+    public void enterOutletType(String outletTypeName)
+    {
         outletType.sendKeys(outletTypeName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -56,7 +63,8 @@ public class AdvancedSearchPage {
         outletType.sendKeys(Keys.ENTER);
     }
 
-    public void enterOutletName(String outletName) {
+    public void enterOutletName(String outletName)
+    {
         enterOutletName.sendKeys(outletName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -64,17 +72,42 @@ public class AdvancedSearchPage {
         enterOutletName.sendKeys(Keys.ENTER);
     }
 
-    public void setValidateOutletSearch() {
+    public void setValidateOutletSearch()
+    {
 
         validateOutletSearch.isDisplayed();
     }
 
+/* add journalist to the list*/
+    public void setClickCopyToList()
+    {
+        clickCopyToList.click();
+    }
+
+    /*enter list name to add journalist*/
+    public void setEnterListName(String listName)
+    {
+        enterListName.sendKeys(listName);
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(5));
+        action.build().perform();
+        enterListName.sendKeys(Keys.ENTER);
+    }
+
+    /*click ok to add journalist to the list*/
+    public void setClickOk()
+    {
+        clickOk.click();
+    }
+
     /* To group by list by country*/
-    public void clickGroupByIcon() {
+    public void clickGroupByIcon()
+    {
         clickGroupByButton.click();
     }
 
-    public void clickCountryGroupBy() {
+    public void clickCountryGroupBy()
+    {
         clickCountry.click();
     }
 
@@ -83,15 +116,18 @@ public class AdvancedSearchPage {
     }
 
     /* validate change info functionality in journalist advanced search by outlet filters*/
-    public void clickChangeInfo() {
+    public void clickChangeInfo()
+    {
         clickChangeInfoView.click();
     }
 
-    public void chooseInfo() {
+    public void chooseInfo()
+    {
         chooseInfoView.click();
     }
 
-    public void validateJournalistInfo() {
+    public void validateJournalistInfo()
+    {
         validateInfoView.isDisplayed();
     }
 }

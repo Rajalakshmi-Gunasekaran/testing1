@@ -54,7 +54,7 @@ public class StreamPage
     public WebElement chooseJournalist;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div/i")
     public WebElement validateEditFunctionality;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[2]/span[2]/span/span/span/a/div")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[2]/span[2]/span/span/span/span/span/a/div")
     public WebElement chooseTestStream;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/div/div/h5/i")
     public WebElement clickSearchStream;

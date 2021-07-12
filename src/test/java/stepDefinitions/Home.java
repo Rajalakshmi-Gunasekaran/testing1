@@ -79,4 +79,34 @@ public class Home extends BaseStep
         wait(30);
         homePage.validateQuickLinks();
     }
+    @When("^I am on login page and I click help and feedback functionality$")
+    public void i_am_on_login_page_and_I_click_help_and_feedback_functionality() {
+        loginPage=new LoginPage(webDriver);
+        homePage=new HomePage(webDriver);
+        webDriver.get("https://app-alt.roxhillmedia.com/");
+        wait(30);
+        homePage.clickHelpAndFeedback();
+    }
+
+    @When("^I enter description in the text field as \"(.*?)\"$")
+    public void i_enter_description_in_the_text_field_as(String desc)
+    {
+        wait(30);
+        homePage.setEnterDesc(desc);
+    }
+
+    @When("^I click on send button$")
+    public void i_click_on_send_button()
+    {
+        wait(30);
+        homePage.setClickSendButton();
+    }
+
+    @Then("^I should able to send help and feedback email to the roxhill site$")
+    public void i_should_able_to_send_help_and_feedback_email_to_the_roxhill_site()
+    {
+        wait(30);
+        homePage.setValidateHelpAndFeedback();
+    }
+
 }

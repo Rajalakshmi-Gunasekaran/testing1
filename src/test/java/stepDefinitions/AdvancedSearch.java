@@ -4,13 +4,18 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pageObjects.AdvancedSearchPage;
+import pageObjects.LeftPanListsPage;
 
 public class AdvancedSearch extends BaseStep {
 
-    public AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(webDriver);
+    public AdvancedSearchPage advancedSearchPage;
+    public LeftPanListsPage leftPanListsPage;
 
+    /* Journalist search using advanced search filtering by outlet type and outlet */
     @When("^I should login into the home page and click on search tab$")
     public void i_should_login_into_the_home_page_and_click_on_search_tab() {
+        advancedSearchPage = new AdvancedSearchPage(webDriver);
+        leftPanListsPage=new LeftPanListsPage(webDriver);
         webDriver.get("https://app-alt.roxhillmedia.com/");
         wait(10);
         advancedSearchPage.clickAdvancedSearch();
@@ -35,6 +40,7 @@ public class AdvancedSearch extends BaseStep {
         advancedSearchPage.setValidateOutletSearch();
     }
 
+    /* Group By icon functionality in advanced search */
     @When("^I click on Group-By icon$")
     public void i_click_on_Group_By_icon() {
         pauseFor(5);
@@ -53,6 +59,7 @@ public class AdvancedSearch extends BaseStep {
         advancedSearchPage.validateListGroupedByCountry();
     }
 
+    /* Change Info view functionality in advanced search */
     @When("^I click on change info icon$")
     public void i_click_on_change_info_icon() {
         pauseFor(5);
@@ -69,6 +76,23 @@ public class AdvancedSearch extends BaseStep {
     public void i_should_able_to_see_the_journalist_list_view_by_Roxhill_says_inside_the_tile() {
         pauseFor(5);
         advancedSearchPage.validateJournalistInfo();
+    }
+
+    /* Adding Journalist to the list*/
+    @When("^I click on Add Journalist to list button$")
+    public void i_click_on_Add_Journalist_to_list_button()
+    {
+     pauseFor(5);
+     advancedSearchPage.setClickCopyToList();
+    }
+
+    @When("^I enter list name as \"(.*?)\" and click Ok$")
+    public void i_enter_list_name_as_and_click_Ok(String list)
+    {
+      pauseFor(5);
+      advancedSearchPage.setEnterListName(list);
+      pauseFor(5);
+      advancedSearchPage.setClickOk();
     }
 
 }

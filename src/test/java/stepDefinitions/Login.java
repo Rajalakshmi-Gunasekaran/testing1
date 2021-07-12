@@ -66,5 +66,38 @@ public class Login extends BaseStep
     {
 
     }
+    @When("^I am on login page$")
+    public void i_am_on_login_page()
+    {
+        webDriver.get("https://app-alt.roxhillmedia.com/");
+        wait(10);
+    }
 
+    @When("^I click on forgotten password link$")
+    public void i_click_on_forgotten_password_link()
+    {
+        wait(30);
+        loginPage.clickForgottenPassword();
+    }
+
+    @When("^I enter email id in the email text field as \"(.*?)\"$")
+    public void i_enter_email_id_in_the_email_text_field_as(String email)
+    {
+        wait(30);
+        loginPage.setEnterEmail(email);
+    }
+
+    @When("^I click send email button$")
+    public void i_click_send_email_button()
+    {
+        wait(30);
+        loginPage.setClickSendEmailButton();
+    }
+
+    @Then("^I validate with the forgotten password link sent message$")
+    public void i_validate_with_the_forgotten_password_link_sent_message()
+    {
+        pauseFor(5);
+        loginPage.setValidateForgotPassword();
+    }
 }

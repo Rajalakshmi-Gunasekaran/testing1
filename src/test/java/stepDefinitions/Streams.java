@@ -90,14 +90,15 @@ public class Streams extends BaseStep {
     @When("^I click on search icon and enter stream name as \"(.*?)\"$")
     public void i_click_on_search_icon_and_enter_stream_name_as(String streamName) {
         streamPage.setClickSearchStream();
+        pauseFor(5);
         streamPage.setEnterStreamToDelete(streamName);
         wait(20);
     }
-
-   @When("^I click on menu button from the left hand side and click on delete button$")
-    public void i_click_on_menu_button_from_the_left_hand_side_and_click_on_delete_button() {
+    @When("^I click on Test streams from the list and I click on delete button$")
+    public void i_click_on_Test_streams_from_the_list_and_I_click_on_delete_button()
+    {
+        pauseFor(5);
         streamPage.setClickDeleteStream();
-        wait(20);
     }
 
     @When("^I click on confirm delete button$")
@@ -113,8 +114,6 @@ public class Streams extends BaseStep {
 
     @When("^I click on Test streams from the list and I click on edit streams$")
     public void i_click_on_Test_streams_from_the_list_and_I_click_on_edit_streams() {
-        wait(20);
-        streamPage.chooseTestStream();
         pauseFor(5);
         streamPage.setClickEditStreamButton();
     }

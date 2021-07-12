@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
   features = ".",
-  tags ={"@DeletePressRelease"}
-  ,dryRun =true)
+  tags = "@CreateNewCampaign"
+  ,dryRun =false)
 public class Runner {
 }
 

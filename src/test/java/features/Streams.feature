@@ -35,8 +35,7 @@ Feature: Streams feature
   @DeleteStream
   Scenario: Validate Delete stream functionality
     When I should be in the home page and click on Streams
-    And I click on search icon and enter stream name as "Test"
-    And I click on Test streams from the list
-    And I click on menu button from the left hand side and click on delete button
+    And I click on Test streams from the list and I click on delete button
     And I click on confirm delete button
+    And I click on search icon and enter stream name as "Test"
     Then I should see the stream deleted on left hand side

@@ -122,4 +122,10 @@ public class Search extends BaseStep {
         wait(30);
         outletProfilePage.validateDeskDisplay();
     }
+    @Then("^I should see all the available tabs for that particular outlet$")
+    public void i_should_see_all_the_available_tabs_for_that_particular_outlet()
+    {
+       wait(30);
+       outletProfilePage.validateAllTabsINOutlet();
+    }
 }
