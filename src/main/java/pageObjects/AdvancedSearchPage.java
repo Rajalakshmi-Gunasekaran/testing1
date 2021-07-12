@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -74,8 +75,7 @@ public class AdvancedSearchPage {
 
     public void setValidateOutletSearch()
     {
-
-        validateOutletSearch.isDisplayed();
+       Assert.assertTrue(validateOutletSearch.isDisplayed());
     }
 
 /* add journalist to the list*/
@@ -111,8 +111,9 @@ public class AdvancedSearchPage {
         clickCountry.click();
     }
 
-    public void validateListGroupedByCountry() {
-        validateGroupBy.isDisplayed();
+    public void validateListGroupedByCountry()
+    {
+       Assert.assertTrue(validateGroupBy.isDisplayed());
     }
 
     /* validate change info functionality in journalist advanced search by outlet filters*/
@@ -128,6 +129,6 @@ public class AdvancedSearchPage {
 
     public void validateJournalistInfo()
     {
-        validateInfoView.isDisplayed();
+        Assert.assertTrue(validateInfoView.isDisplayed());
     }
 }
