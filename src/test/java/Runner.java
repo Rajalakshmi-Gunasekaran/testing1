@@ -3,10 +3,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-  features = ".",
-  tags = "@CreateNewCampaign"
-  ,dryRun =false)
+@CucumberOptions(features = "." , tags="@Pinpoint",dryRun = true)
 public class Runner {
 }
 
