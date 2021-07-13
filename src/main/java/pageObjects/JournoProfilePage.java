@@ -31,22 +31,18 @@ public class JournoProfilePage {
     @FindBy(xpath="//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/nav/div[3]/div[1]/button[2]/span/span")
     public WebElement validateTwitter;
 
-    public void validateAllHeaderTabs()
-    {
+    public void validateAllHeaderTabs() {
         Assert.assertTrue(validateLiveContent.isDisplayed());
     }
-    public void validateCoverageTab()
-    {
+    public void validateCoverageTab(){
         clkcoverage.click();
         Assert.assertTrue(validateCoverage.isDisplayed());
     }
-    public void validateHeadlinesTab()
-    {
+    public void validateHeadlinesTab(){
         clkHeadline.click();
         Assert.assertTrue(validateHeadlines.isDisplayed());
     }
-    public void validateTwitterTab()
-    {
+    public void validateTwitterTab(){
         clkTwitter.click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         selectTwitter.click();
