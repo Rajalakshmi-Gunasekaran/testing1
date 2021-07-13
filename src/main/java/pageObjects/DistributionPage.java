@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class DistributionPage {
+public class DistributionPage{
 
     public WebDriver driver;
-    public Actions action=new Actions(driver);
+    private Actions action;
 
     /*initialising web driver*/
     public DistributionPage(WebDriver driver)
@@ -30,9 +30,9 @@ public class DistributionPage {
     public WebElement enterPressRelease;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement clickCreatePressRelease;
-    @FindBy(id = "mce_0_ifr")
+    @FindBy(id = "tinymce")
     public WebElement clickHeaderBlock;
-    @FindBy(xpath = "//*[@id=\"tinymce\"]/p[3]")
+    @FindBy(id = "mceu_30-body")
     public WebElement enterHeaderContext;
     @FindBy(xpath = "//*[@id=\"tinymce\"]")
     public WebElement clickBodyBlock;

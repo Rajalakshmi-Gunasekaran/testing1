@@ -30,8 +30,6 @@ Feature: As a User
     And I click on Add Journalist to list button
     And I enter list name as "SmokeSuiteList" and click Ok
     When I should login into the home page and click on lists
-    And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
-    And click on the list name from the list
     Then I should able to see the journalist added to the list
 
   @RemovingJournalistFromTheList
@@ -47,8 +45,7 @@ Feature: As a User
   @GDPRDefaultStatus
     Scenario: Validate GDPR status rejected is unchecked by default
     When I should login into the home page and click on lists
-    And I click on search icon in the list page
-    And I enter list name as "SmokeSuiteList"
+    And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
     And I click on the list name from the list
     Then I should see the GDPR rejected status is unchecked by default
 

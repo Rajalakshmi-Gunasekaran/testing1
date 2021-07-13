@@ -67,13 +67,6 @@ public class Lists extends BaseStep {
         leftPanListsPage.validateListCreated();
     }
 
-    @When("^I click on search icon in the list page$")
-    public void i_click_on_search_icon_in_the_list_page()
-    {
-      wait(20);
-        leftPanListsPage.searchIcon();
-        pauseFor(5);
-    }
     @When("^I enter list name as \"(.*?)\"$")
     public void i_enter_list_name_as(String listname)
     {
@@ -226,7 +219,7 @@ leftPanListsPage.tickCheckBoxToSelectListName();
     @Then("^I should able to see the journalist added to the list$")
     public void i_should_able_to_see_the_journalist_added_to_the_list()
     {
-            pauseFor(5);
+            pauseFor(10);
             rightPanListPage.setValidateJournoAddedToList();
     }
     }

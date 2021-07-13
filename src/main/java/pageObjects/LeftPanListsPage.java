@@ -140,7 +140,6 @@ public class LeftPanListsPage {
         action.pause(Duration.ofSeconds(10));
         action.build().perform();
         searchListName.sendKeys(listName);
-
     }
    /* click folder name to open that folder*/
     public void setClickFolderName()

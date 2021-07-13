@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
   features = ".",
-  tags = "@CreateNewCampaign"
+  tags = "@CreateNewPressRelease"
   ,dryRun =false)
 public class Runner {
 }
