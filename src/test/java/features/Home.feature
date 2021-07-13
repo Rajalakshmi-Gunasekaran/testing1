@@ -26,6 +26,13 @@ Feature: As a User
     And I click on sign up links in Headline alerts page
     Then I should able to navigate to the Roxhill main site
 
+  @HelpAndFeedback
+  Scenario: Validate help and feedback functionality
+     When I am on login page and I click help and feedback functionality
+     And I enter description in the text field as "Test-Raji"
+     And I click on send button
+     Then I should able to send help and feedback email to the roxhill site
+
   @Logout
   Scenario: Validate logout feature
     When I click on userprofile

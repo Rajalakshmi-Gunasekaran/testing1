@@ -3,7 +3,10 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = ".", tags = {"@SearchByJournalist,@SearchByOutlet,@SearchByDesk,@SearchByCompany,@Pinpoint,@CreateFolder,@DeletingFolder,@CreateList,@AllJournoMoves,@HomeButton,@Logout,@WebinarAlerts"},dryRun =false)
+@CucumberOptions(
+  features = ".",
+  tags = "@CreateNewCampaign"
+  ,dryRun =false)
 public class Runner {
 }
 
