@@ -1,6 +1,5 @@
 package pageObjects;
 
-import cucumber.api.java.cs.A;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

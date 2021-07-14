@@ -52,7 +52,7 @@ public class DistributionPage{
     public WebElement enterListNameToCopy;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]/div[2]/form/div[3]/button/i")
     public WebElement clickOkButton;
-    @FindBy(id = "campaignEditorFromEmail")
+    @FindBy(xpath= "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[1]")
     public WebElement enterFromEmail;
     @FindBy(xpath = "//*[@id=\"campaignEditorFromEmail\"]/div/div/span/text()")
     public WebElement getEnterFromEmail;
