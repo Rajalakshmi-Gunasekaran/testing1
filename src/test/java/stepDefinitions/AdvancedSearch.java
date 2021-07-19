@@ -37,6 +37,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the Journalist list for the selected outlet$")
     public void i_should_see_the_Journalist_list_for_the_selected_outlet() {
+        pauseFor(5);
         advancedSearchPage.setValidateOutletSearch();
     }
 

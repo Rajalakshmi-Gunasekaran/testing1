@@ -21,3 +21,12 @@ Feature: As a User
     And I enter Journalist name as "simon english"
     And I choose Journalist from the list and Click on it
     Then I should see all the header tabs in journalist profile page
+
+  @ACLVisibleJournalist
+  Scenario: validate ACL Journalist only visible to ACL customers
+    When I should login into the home page and click on Log in as button
+    And I enter user name as "srichmond@akingump.com" and click ok
+    And I click on Quick search tab
+    And I enter Journalist name as "John Krukowski"
+    And I choose Journalist from the list and Click on it
+    Then I should see all the available information about the journalist and I log out as user

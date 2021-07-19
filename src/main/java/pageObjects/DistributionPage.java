@@ -1,5 +1,6 @@
 package pageObjects;
 
+import cucumber.api.java.cs.A;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -11,12 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class DistributionPage {
+import static java.awt.SystemColor.menu;
 
+public class DistributionPage
+{
     public WebDriver driver;
-    public Actions action=new Actions(driver);
-
-    /*initialising web driver*/
+    private Actions action;
+   /*initialising web driver*/
     public DistributionPage(WebDriver driver)
     {
         this.driver=driver;
@@ -30,16 +32,26 @@ public class DistributionPage {
     public WebElement enterPressRelease;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement clickCreatePressRelease;
-    @FindBy(id = "mce_0_ifr")
+    @FindBy(xpath= "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[2]")
     public WebElement clickHeaderBlock;
-    @FindBy(xpath = "//*[@id=\"tinymce\"]/p[3]")
-    public WebElement enterHeaderContext;
-    @FindBy(xpath = "//*[@id=\"tinymce\"]")
+    @FindBy(xpath = "//*[@id=\"mceu_29\"]/button/i")
+    public WebElement clickSourceCode;
+    @FindBy(xpath = "//div[@class=\"mce-container-body mce-window-body mce-abs-layout\"]/div/div/textarea")
+    public WebElement enterText;
+    @FindBy(xpath = "//div[@class=\"mce-widget mce-btn mce-primary mce-abs-layout-item mce-first mce-btn-has-text\"]/button/span[contains(text(),\"Ok\")]")
+    public WebElement clickOkToEnter;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[3]/div[2]")
     public WebElement clickBodyBlock;
-    @FindBy(xpath = "//*[@id=\"tinymce\"]/p[2]/br")
-    public WebElement bodyBlock;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[4]/div[1]/div/div[2]/div/div/div/i")
+    @FindBy(xpath = "//*[@id=\"mceu_77-button\"]/i")
+    public WebElement clickSourceCodeBodyBlock;
+    @FindBy(xpath = "//div[@class=\"mce-container-body mce-abs-layout\"]/textarea")
+    public WebElement enterBodyContext;
+    @FindBy(xpath = "//div[@class=\"mce-widget mce-btn mce-primary mce-abs-layout-item mce-first mce-btn-has-text\"]/button/span[contains(text(),\"Ok\")]")
+    public WebElement clickOkToEnterBody;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[1]/div/nav/div[4]/button[3]")
     public WebElement clickSaveButton;
+    @FindBy(xpath = "//div[@class=\"preview-container h-100 preview-container\"]/iframe")
+    public WebElement validatePressRelease;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav/div[3]/button[2]")
     public WebElement clickCreateNewCampaign;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[2]/div[1]/input")
@@ -52,15 +64,19 @@ public class DistributionPage {
     public WebElement enterListNameToCopy;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]/div[2]/form/div[3]/button/i")
     public WebElement clickOkButton;
-    @FindBy(id = "campaignEditorFromEmail")
+    @FindBy(xpath= "//i[@class=\"open-indicator\"][1]")
     public WebElement enterFromEmail;
-    @FindBy(xpath = "//*[@id=\"campaignEditorFromEmail\"]/div/div/span/text()")
+    @FindBy(xpath = "//ul[@class=\"dropdown-menu\"]//a[contains(text(), 'no-send@roxhillmedia.com')]")
     public WebElement getEnterFromEmail;
-    @FindBy(xpath = "//*[@id=\"campaignEditorPressRelease\"]/div/div/span/div")
+    @FindBy(xpath = "//*[@id=\"campaignEditorPressRelease\"]/div/div/i")
+    public WebElement clickPressReleaseToSelect;
+    @FindBy(xpath = "//ul[@class=\"dropdown-menu\"]//span[text() = 'SmokeTest']")
     public WebElement enterPressReleaseNameToSend;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/nav/div[4]/button[2]/i")
+    @FindBy(xpath = "//button[@class=\"waiting-button btn btn-sm btn-outline-primary mr-2\" and contains(text(),\"Save\")]")
+    public WebElement clickSave;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/nav/div[4]/button[2]")
     public WebElement sendButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/div/div/div/div[3]/div[2]/form/div[2]/ul/p/span")
     public WebElement validateCampaignSending;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/div/div/h5/i")
     public WebElement clickSearchIcon;
@@ -106,24 +122,47 @@ public class DistributionPage {
     {
         clickCreatePressRelease.click();
     }
-
-    public void setHeaderBlock(String headerText)
+    public void setClickHeaderBlock()
     {
         clickHeaderBlock.click();
+    }
+public void clickSourceCode(){
+        clickSourceCode.click();
+}
+    public void setHeaderBlock(String headerText)
+    {
+        enterText.sendKeys(headerText);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
         action.build().perform();
-        enterHeaderContext.sendKeys(headerText);
+        clickOkToEnter.click();
+    }
+    public void setClickBodyBlock()
+    {
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", clickBodyBlock);
+        clickBodyBlock.click();
+    }
+    public void setClickSourceCodeBodyBlock()
+    {
+        clickSourceCodeBodyBlock.click();
     }
     public void setBodyBlock(String bodyText)
     {
-        clickBodyBlock.click();
-        bodyBlock.sendKeys(bodyText);
+        enterBodyContext.sendKeys(bodyText);
+        action =new Actions(driver);
+        action.pause(Duration.ofSeconds(5));
+        action.build().perform();
+        clickOkToEnterBody.click();
     }
 
-    public void setClickSaveButton()
+    public void clickSaveButtonInPressRelease()
     {
         clickSaveButton.click();
+    }
+    public void validatePressReleaseCreated()
+    {
+       Assert.assertTrue(validatePressRelease.isDisplayed());
     }
     public void setClickSearchIcon()
     {
@@ -168,16 +207,24 @@ public class DistributionPage {
     public void setEnterFromEmail()
     {
         enterFromEmail.click();
-        action.moveToElement(getEnterFromEmail).build().perform();
-       // action.click;
-       // getEnterFromEmail.click();
-       //getEnterFromEmail.sendKeys(email);
+        action =new Actions(driver);
+        action.pause(Duration.ofSeconds(2));
+        action.build().perform();
+        getEnterFromEmail.click();
     }
-    public void setEnterPressReleaseNameToSend(String pressReleaseNameToSend)
+    public void selectPressReleaseNameToSend()
     {
-      enterPressReleaseNameToSend.sendKeys(pressReleaseNameToSend);
+        clickPressReleaseToSelect.click();
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(2));
+        action.build().perform();
+        enterPressReleaseNameToSend.click();
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(2));
+        action.build().perform();
+        clickSave.click();
     }
-    public void clickSendButton()
+    public void clickSendButtonInCampaignPage()
     {
         sendButton.click();
     }
@@ -225,7 +272,6 @@ public class DistributionPage {
     }
     public void setValidateCampaignDeleted()
     {
-
         Assert.assertTrue(validateCampaignDeleted.isDisplayed());
     }
 }
