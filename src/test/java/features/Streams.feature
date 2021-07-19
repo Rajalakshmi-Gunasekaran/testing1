@@ -16,7 +16,7 @@ Feature: Streams feature
   Scenario: Validate stream set up functionality
     When I should be in the home page and click on Streams
     And I click on create new stream button
-    And I enter stream name as "Test"
+    And I enter stream name as "SmokeTest"
     And I click on create button
     And I click on articles from the options
     And I click on outletTypes
@@ -27,7 +27,7 @@ Feature: Streams feature
   @EditStreamSetUp
   Scenario: Validate Edit functionality in streams
     When I should be in the home page and click on Streams
-    And I click on Test streams from the list and I click on edit streams
+    And I click on SmokeTest streams from the list and I click on edit streams
     And I click type of publisher and I click type of publisher as Journalist
     And I click on save button
     Then I should able to see the edited streams
@@ -35,7 +35,7 @@ Feature: Streams feature
   @DeleteStream
   Scenario: Validate Delete stream functionality
     When I should be in the home page and click on Streams
-    And I click on Test streams from the list and I click on delete button
+    And I click on SmokeTest streams from the list and I click on delete button
     And I click on confirm delete button
-    And I click on search icon and enter stream name as "Test"
+    And I click on search icon and enter stream name as "SmokeTest"
     Then I should see the stream deleted on left hand side

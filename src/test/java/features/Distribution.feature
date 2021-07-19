@@ -12,10 +12,11 @@ Feature: As a User
     Scenario: Validate new press release functionality
     When I should be in the home page and click on Distribution tab
     And I click on create new press release button
-    And I enter press release name as "SmokeSuite" and I click on create button
-    And I enter header as "Raji"
+    And I enter press release name as "SmokeTest" and I click on create button
+    And I click header block to enter text
+    And I enter header as "Raji is a QA" and I click ok
+    And I click body block to enter text
     And I enter body as "The press release can be added in the body template"
-    And I click on save button
     Then I should able to see the created press release
 
     @CreateNewCampaign
@@ -28,21 +29,9 @@ Feature: As a User
         And I enter list name to copy as "raji test"
         And I click on Ok button
         And I enter From email as
-        And I enter press release name as "SmokeSuite"
-        And I click on save button
-        And I click on send button
+        And I select press release name to send campaign
+        And I click on send button in Campaign page
         Then I should able to see the campaign created
-
-      @DeletePressRelease
-      Scenario: Validate delete press release functionality
-        When I should be in the home page and click on Distribution tab
-        And I click on search icon on press release tab
-        And I enter press release name as "Auto" and I click on the name
-        And I click on the menu to select delete option
-        And I click on delete button and I click on confirm delete button
-        And I click on search icon on press release tab
-        And I enter press release name as "Auto"
-        Then I should able to see the press release deleted
 
      @DeleteCampaign
      Scenario: Validate delete campaign functionality
@@ -55,3 +44,14 @@ Feature: As a User
        And I click on search icon on campaign tab
        And I enter campaign name as "SmokeSuite"
        Then I should able to see the campaign deleted
+
+  @DeletePressRelease
+  Scenario: Validate delete press release functionality
+    When I should be in the home page and click on Distribution tab
+    And I click on search icon on press release tab
+    And I enter press release name as "smokeTest" and I click on the name
+    And I click on the menu to select delete option
+    And I click on delete button and I click on confirm delete button
+    And I click on search icon on press release tab
+    And I enter press release name as "smokeTest"
+    Then I should able to see the press release deleted

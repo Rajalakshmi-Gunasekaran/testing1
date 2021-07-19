@@ -21,7 +21,6 @@ public class Distribution extends BaseStep{
         wait(20);
     }
 
-
     @When("^I enter press release name as \"(.*?)\" and I click on create button$")
     public void i_enter_press_release_name_as_and_I_click_on_create_button(String pressReleaseName) {
         wait(20);
@@ -30,31 +29,47 @@ public class Distribution extends BaseStep{
         distributionPage.setClickCreatePressRelease();
     }
 
-    @When("^I enter header as \"(.*?)\"$")
-    public void i_enter_header_as(String header) {
+    @When("^I click header block to enter text$")
+    public void i_click_header_block_to_enter_text()
+    {
+        pauseFor(2);
+        distributionPage.setClickHeaderBlock();
+        pauseFor(2);
+        distributionPage.clickSourceCode();
+    }
+
+    @When("^I enter header as \"([^\"]*)\" and I click ok$")
+    public void i_enter_header_as_and_I_click_ok(String header)
+    {
         pauseFor(5);
         distributionPage.setHeaderBlock(header);
     }
 
+    @When("^I click body block to enter text$")
+    public void i_click_body_block_to_enter_text()
+    {
+        pauseFor(2);
+        distributionPage.setClickBodyBlock();
+        pauseFor(2);
+        distributionPage.setClickSourceCodeBodyBlock();
+    }
+
     @When("^I enter body as \"(.*?)\"$")
-    public void i_enter_body_as(String body) {
-        pauseFor(5);
+    public void i_enter_body_as(String body)
+    {
+        pauseFor(2);
         distributionPage.setBodyBlock(body);
     }
-
-
-    @When("^I enter block as \"(.*?)\" for the footer$")
-    public void i_enter_block_as_for_the_footer(String footer) {
-        pauseFor(5);
-        distributionPage.setBodyBlock(footer);
-    }
-
 
     @Then("^I should able to see the created press release$")
     public void i_should_able_to_see_the_created_press_release()
     {
-
+pauseFor(5);
+distributionPage.clickSaveButtonInPressRelease();
+pauseFor(5);
+distributionPage.validatePressReleaseCreated();
     }
+
     @When("^I click on create new campaign button$")
     public void i_click_on_create_new_campaign_button()
     {
@@ -63,7 +78,8 @@ public class Distribution extends BaseStep{
     }
 
     @When("^I enter campaign name as \"(.*?)\" and I click on create button$")
-    public void i_enter_campaign_name_as_and_I_click_on_create_button(String campaignNameToCreate) {
+    public void i_enter_campaign_name_as_and_I_click_on_create_button(String campaignNameToCreate)
+    {
         pauseFor(10);
         distributionPage.setEnterCampaignNameToCreate(campaignNameToCreate);
         pauseFor(10);
@@ -91,20 +107,33 @@ public class Distribution extends BaseStep{
        distributionPage.setClickOkButton();
     }
     @When("^I enter From email as$")
-    public void i_enter_From_email_as() {
-       pauseFor(10);
+    public void i_enter_From_email_as()
+    {
+       pauseFor(5);
        distributionPage.setEnterFromEmail();
     }
-
+    @When("^I select press release name to send campaign$")
+    public void i_select_press_release_name_to_send_campaign()
+    {
+        pauseFor(2);
+        distributionPage.selectPressReleaseNameToSend();
+    }
+    @When("^I click on send button in Campaign page$")
+    public void i_click_on_send_button_in_Campaign_page()
+    {
+        pauseFor(2);
+        distributionPage.clickSendButtonInCampaignPage();
+    }
     @Then("^I should able to see the campaign created$")
     public void i_should_able_to_see_the_campaign_created()
     {
-        pauseFor(10);
+        pauseFor(2);
         distributionPage.setValidateCampaignSending();
     }
 
     @When("^I click on search icon on press release tab$")
-    public void i_click_on_search_icon_on_press_release_tab(){
+    public void i_click_on_search_icon_on_press_release_tab()
+    {
         pauseFor(5);
         distributionPage.setClickSearchIcon();
     }

@@ -128,4 +128,36 @@ public class Search extends BaseStep {
        wait(30);
        outletProfilePage.validateAllTabsINOutlet();
     }
+    @When("^I should login into the home page and click on Log in as button$")
+    public void i_should_login_into_the_home_page_and_click_on_Log_in_as_button()
+    {
+        webDriver.get("https://app-alt.roxhillmedia.com/");
+        wait(10);
+        journoProfilePage.clickLogInUserButton();
+    }
+
+    @When("^I enter user name as \"([^\"]*)\" and click ok$")
+    public void i_enter_user_name_as_and_click_ok(String customerName)
+    {
+        pauseFor(5);
+        journoProfilePage.setEnterUserNameToLogInAs(customerName);
+        pauseFor(10);
+       journoProfilePage.setClickOkBtnLogIn();
+    }
+
+    @When("^I click on Quick search tab$")
+    public void i_click_on_Quick_search_tab()
+    {
+        pauseFor(5);
+        search.setClkQuickSearch();
+    }
+
+    @Then("^I should see all the available information about the journalist and I log out as user$")
+    public void i_should_see_all_the_available_information_about_the_journalist_and_I_log_out_as_user()
+    {
+        pauseFor(2);
+        search.goToJournoProfile();
+        pauseFor(2);
+        journoProfilePage.setLogOutAsUser();
+    }
 }

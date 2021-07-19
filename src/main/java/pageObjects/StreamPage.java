@@ -5,9 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.By.cssSelector;
@@ -15,6 +17,7 @@ import static org.openqa.selenium.By.cssSelector;
 public class StreamPage
 {
     public WebDriver driver;
+    private Actions action;
     /*initialising web driver*/
     public StreamPage(WebDriver driver)
     {
@@ -122,8 +125,11 @@ public void setClickSaveButton()
     }
 public void setValidateStreamSetUp()
 {
-        clickFeed.click();
-        Assert.assertTrue(validateStreamSetUp.isDisplayed());
+    clickFeed.click();
+    action = new Actions(driver);
+    action.pause(Duration.ofSeconds(5));
+    action.build().perform();
+    Assert.assertTrue(validateStreamSetUp.isDisplayed());
 }
 /*Validating edit stream functionality*/
     public void chooseTestStream(){
@@ -141,6 +147,9 @@ public void setValidateStreamSetUp()
     public void validateEditStream()
     {
         clickFeed.click();
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(5));
+        action.build().perform();
        Assert.assertTrue(validateEditFunctionality.isDisplayed());
     }
 

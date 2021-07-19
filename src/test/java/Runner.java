@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-  features = ".",
-  tags = "@SearchByOutlet",dryRun =false)
+  features = ".",tags = "@DeleteStream",
+  dryRun =false)
   //plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr1.html"})
 public class Runner {
    /*@AfterClass
