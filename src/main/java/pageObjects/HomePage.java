@@ -10,9 +10,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-    @FindBy(xpath ="//*[@id=\"app\"]/div[1]/div[1]/nav/div[2]/div")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[2]/div")
     public WebElement userprofile;
-    @FindBy(xpath ="//*[@id=\"app\"]/div[1]/div[1]/nav/div[3]/div/div/div/div[3]/span" )
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[3]/div/div/div/div[3]/span")
     public WebElement logout;
     @FindBy(id = "opoint-link-icon")
     public WebElement newsOnlineBtn;
@@ -26,57 +26,93 @@ public class HomePage {
     public WebElement clkSelectAll;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
     public WebElement validateWebinarAlert;
-    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[2]/p/p[3]/a")
-    public WebElement clkSignUp;
-    @FindBy(xpath="//*[@id=\"header-menu-section\"]/div/div[1]/div/div/div/div/a/img")
-    public WebElement validateSignUp;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[3]/ul")
+    public WebElement clkJournoLink;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[3]/div/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]")
+    public WebElement validateJournoLink;
+    @FindBy(id = "btn-help-and-feedback")
+    public WebElement clickHelpAndFeedbackButton;
+    @FindBy(xpath = "//*[@id=\"TICKET.content-48dcc618-c24c-4632-95b3-32d98b36f850\"]")
+    public WebElement enterDesc;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[4]/div/div/div[3]/div/div/div/div[1]/nav/button")
+    public WebElement clickSendButton;
+    @FindBy(xpath = "//*[@id=\"hubspot-feedback-form\"]/div")
+    public WebElement validateHelpAndFeedback;
 
-    //Initialising Web driver
-    public HomePage(WebDriver webDriver){
-        PageFactory.initElements(webDriver,this);
+    /* Initialising Web driver*/
+    public HomePage(WebDriver webDriver) {
+        PageFactory.initElements(webDriver, this);
     }
-    //validating login with user profile logo
-    public String getLoginToastMsg(){
+
+    /*  validating login with user profile logo*/
+    public String getLoginToastMsg() {
         return userprofile.getText();
     }
-    //clicking on user profile to log out
-    public void userProfile(){
+
+    /*clicking on user profile to log out*/
+    public void userProfile() {
         userprofile.click();
     }
-    //logout from the application
-    public void logOut(){
-logout.click();
+
+    /*logout from the application*/
+    public void logOut() {
+        logout.click();
     }
-    //go to news online tab in order to check go back button
+
+    /*go to news online tab in order to check go back button*/
     public void setNewsOnlineBtn() {
-    newsOnlineBtn.click();
-        }
-    //clicking go back button
-     public void setGoBackBtn(){
+        newsOnlineBtn.click();
+    }
+
+    /*clicking go back button*/
+    public void setGoBackBtn() {
         goBackBtn.click();
-      }
-    //validating go back button with highlight displayed on home page which is unique for home page
-      public void setValidateGoBackBtn(){
+    }
+
+    /*validating go back button with highlight displayed on home page which is unique for home page*/
+    public void setValidateGoBackBtn() {
 
         Assert.assertTrue(validateGoBackBtn.isDisplayed());
-      }
-      //click on webinar alerts tab
-    public void clickWebinar(){
+    }
+
+    /* click on webinar alerts tab*/
+    public void clickWebinar() {
         clkWebinarTab.click();
     }
-    public void clickSelectAll(){
+
+    public void clickSelectAll() {
         clkSelectAll.click();
     }
-    public void setValidateWebinarAlert(){
+
+    public void setValidateWebinarAlert() {
 
         validateWebinarAlert.isDisplayed();
     }
-    //clicking sign up link
-    public void clickSignUpLink(){
-        clkSignUp.click();
+
+    /*clicking sign up link*/
+    public void clickSignUpLink() {
+        clkJournoLink.click();
     }
-    //validating whether the sign up link navigating to the Roxhill site
-    public void validateQuickLinks(){
-        validateSignUp.isDisplayed();
+
+    /*validating whether the sign up link navigating to the Roxhill site*/
+    public void validateQuickLinks() {
+        validateJournoLink.isDisplayed();
     }
-     }
+
+    /*Validating help and feedback functionality*/
+    public void clickHelpAndFeedback() {
+        clickHelpAndFeedbackButton.click();
+    }
+
+    public void setEnterDesc(String desc) {
+        enterDesc.sendKeys(desc);
+    }
+
+    public void setClickSendButton() {
+        clickSendButton.click();
+    }
+
+    public void setValidateHelpAndFeedback() {
+        validateHelpAndFeedback.isDisplayed();
+    }
+}

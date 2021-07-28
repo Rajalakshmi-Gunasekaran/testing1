@@ -9,16 +9,17 @@ import java.util.concurrent.TimeUnit;
 
 public class Hook {
     @Before
-    public void setUp(){
+    public void setUp() {
         System.out.println("Calling @Before Hook");
         WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         BaseStep.setWebDriver(driver);
     }
-    /*@After
-    public void afterTests(){
+
+    @After
+    public void afterTests() {
         BaseStep.getWebDriver().quit();
-    }*/
+    }
 }

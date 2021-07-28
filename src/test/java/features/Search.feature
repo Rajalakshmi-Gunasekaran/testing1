@@ -1,19 +1,20 @@
-Feature: As a User
-         I should be able to login and search for Journalists using Quick search
+Feature: Search
+  As a User
+  I should be able to login and search for Journalists using Quick search
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "raji.anand@roxhillmedia.com"
-    And I enter password as "Rajianand123"
+    When I enter Username as "qa@roxhillmedia.com"
+    And I enter password as "qaautomation123"
     And I click on login button
     Then I should be able to login successfully
 
   @SearchByJournalist
   Scenario: Validate search by Journalist name
-      When I should login into the home page and click on Quick search tab
-      And I enter Journalist name as "simon english"
-      And I choose Journalist from the list and Click on it
-      Then I should navigate to the Journalist profile page
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    Then I should navigate to the Journalist profile page
 
   @SearchByOutlet
   Scenario: Validate search by Outlet name

@@ -1,10 +1,11 @@
-Feature: As a User
+Feature:Home
+  As a User
   I should be able to login and logout from the application
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "raji.anand@roxhillmedia.com"
-    And I enter password as "Rajianand123"
+    When I enter Username as "qa@roxhillmedia.com"
+    And I enter password as "qaautomation123"
     And I click on login button
     Then I should be able to login successfully
 
@@ -25,6 +26,13 @@ Feature: As a User
     When I should login into the home page and see HeadlineAlerts in sub menu
     And I click on sign up links in Headline alerts page
     Then I should able to navigate to the Roxhill main site
+
+  @HelpAndFeedback
+  Scenario: Validate help and feedback functionality
+    When I am on login page and I click help and feedback functionality
+    And I enter description in the text field as "Test-Raji"
+    And I click on send button
+    Then I should able to send help and feedback email to the roxhill site
 
   @Logout
   Scenario: Validate logout feature

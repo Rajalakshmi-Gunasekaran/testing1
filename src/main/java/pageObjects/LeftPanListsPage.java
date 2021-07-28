@@ -1,17 +1,24 @@
 package pageObjects;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class LeftPanListsPage {
     public WebDriver driver;
-    public LeftPanListsPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+    Actions action;
+
+    public LeftPanListsPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "lists-link-icon")
     public WebElement listsBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav[1]/div[3]/button[1]")
@@ -26,112 +33,156 @@ public class LeftPanListsPage {
     public WebElement listName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[3]/button/i")
     public WebElement clickCreateBtn;
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/li[1]/div[2]/div[1]/div[1]/a")
-    public  WebElement  getJournalistName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[2]/h5")
     public WebElement validateNewListCreated;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/div/h5/i")
+    @FindBy(xpath = "//div[@class=\"folder-header p-3 text-nowrap\"]/div/h5/i")
     public WebElement searchIconBtn;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/form/div/div/input")
-    public WebElement searchList;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/a/div[1]")
+    @FindBy(xpath = "//div[@class=\"layout-v h-100 d-flex flex-column justify-content-between align-items-stretch\"]/div/form/div/div/input")
+    public WebElement searchListName;
+    @FindBy(xpath = "//li[@class=\"d-flex justify-content-start align-items-center px-3 py-2 list-browser-list-item text-nowrap\"]/a/div[contains(text(),\" SmokeSuiteList \")]")
     public WebElement getListName;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]")
-    public WebElement clickJournalistFromList;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/span")
-    public WebElement removeFromList;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/span/div/div[2]/div[1]/i")
-    public WebElement confirmDelete;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[2]/div[1]/div/span")
-    public WebElement validateJournalistRemovedFromList;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
+    public WebElement validationDeleteList;
     @FindBy(css = ".form-control.form-control-big.m-0")
     public WebElement searchFolder;
-    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[1]/span/span/span/i")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[1]/span/span/span/i")
     public WebElement clickFolderName;
-    @FindBy(css= ".action-button.d-flex.align-items-center")
+    @FindBy(css = ".action-button.d-flex.align-items-center")
     public WebElement clickMenuList;
-    @FindBy(css= ".mr-1.icon-trash")
+    @FindBy(css = ".mr-1.icon-trash")
     public WebElement clickDelete;
-    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[5]/div/div/div[3]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[5]/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement confirmDeleteFolder;
-    @FindBy(css = ".name.flex-grow-1.text-truncate.mr-1")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
     public WebElement validationDeleteFolder;
-    @FindBy(xpath = "")
-    public WebElement deleteList;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/span/span/span/i")
+    public WebElement tickCheckBox;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/span/div/div[2]/div[1]/i")
+    public WebElement confirmDelete;
 
-    public void clickListsBtn(){
+    //click on List button on home page
+    public void clickListsBtn() {
         listsBtn.click();
     }
-    public void clickCreateFolder(){
+
+    //click create folder in lists page
+    public void clickCreateFolder() {
         CreateFolder.click();
     }
-    public void EnterFolderName(String setFolderName){
+
+    //enter folder name to create new folder
+    public void EnterFolderName(String setFolderName) {
         folderName.sendKeys(setFolderName);
     }
-    public void validateFolderCreated(){
-        Assert.assertTrue(clickFolderName.isDisplayed());
-    }
-    public void clickCreate(){
+
+    //click create button to create a new folder
+    public void clickCreate() {
         clickCreateFolderBtn.click();
     }
-    public void createList(){
+
+    //validate the new folder is created
+    public void validateFolderCreated() {
+        Assert.assertTrue(clickFolderName.isDisplayed());
+    }
+
+    //click create new list button
+    public void createList() {
         CreateList.click();
     }
-    //validating list creation
-    public String validateListCreated(){
-       return validateNewListCreated.getText();
+
+    //enter list name to create new list
+    public void enterListName(String ListName) {
+        listName.sendKeys(ListName);
     }
-    public void addingToList(){
-        getJournalistName.click();
+
+    //click create list to create new list
+    public void clickCreateList() {
+        clickCreateBtn.click();
     }
-    public void enterListName(String ListName){
-         listName.sendKeys(ListName);
-    }
-    public void clickCreateList(){
-clickCreateBtn.click();
-    }
-       public void addingJournalistToTheList(){
-        getJournalistName.click();
-    }
-    public void searchIcon(){
-searchIconBtn.click();
-    }
-    public void searchListTxt(String searchText){
-        searchList.sendKeys(searchText);
-            }
-    public void setGetListName(){
-        getListName.click();
-    }
-    public void chooseJournalist(){
-clickJournalistFromList.click();
-    }
-    public void removeJournalist(){
-removeFromList.click();
-    }
-    public void confirmDeletion(){
-confirmDelete.click();
-    }
-    public String validateJournalistRemoval(){
-      return  validateJournalistRemovedFromList.getText();
-    }
-    public void enterFolderName(String folderName){
-searchFolder.sendKeys(folderName);
+
+    //click magnifying glass to search list
+    public void searchIcon() {
+        searchIconBtn.click();
 
     }
-    //click folder name to open that folder
-    public void setClickFolderName(){
+
+    //enter search list name in search list text area
+    public void enterListNameToValidate(String listNameToValidate) {
+        searchListName.sendKeys(listNameToValidate);
+    }
+
+    /*validating list creation*/
+    public void validateListCreated() {
+        validateNewListCreated.isDisplayed();
+    }
+
+    //select list from the option
+    public void setGetListName() {
+        getListName.click();
+    }
+    //choose journalist from the list
+
+    //enter folder name to create new folder
+    public void enterFolderName(String folderName) {
+        searchIconBtn.click();
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(10));
+        action.build().perform();
+        searchFolder.sendKeys(folderName);
+
+    }
+
+    public void enterListNameToDelete(String listName) {
+        searchIconBtn.click();
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(10));
+        action.build().perform();
+        searchListName.sendKeys(listName);
+    }
+
+    /* click folder name to open that folder*/
+    public void setClickFolderName() {
         clickFolderName.click();
     }
 
-    public void menuList(){
-clickMenuList.click();
+    // click menu list to choose delete button
+    public void menuList() {
+        clickMenuList.click();
+
     }
-    public void confirmDeleteFolder(){
-clickDelete.click();
-confirmDeleteFolder.click();
+
+    public void tickCheckBoxToSelectListName() {
+        tickCheckBox.click();
     }
+
+    public void deleteListButton() {
+        clickDelete.click();
+    }
+
+    // confirm folder to delete
+    public void confirmDeleteFolder() {
+
+        confirmDeleteFolder.click();
+    }
+
+    // validate folder deletion
     public void validateDeletionFolder() {
-        String text="Nothing in this folder";
-       Assert.assertEquals(text,validationDeleteFolder.getText());
+        validationDeleteFolder.isDisplayed();
+    }
+
+    //enter search list text to select and click on it
+    public void searchListTxt(String searchText) {
+        searchListName.sendKeys(searchText);
+    }
+
+    //confirm deletion
+    public void confirmDeletion() {
+        confirmDelete.click();
+    }
+
+    // Validate list deletion
+    public void validateListDeleted() {
+        String text = "Nothing in this folder";
+        Assert.assertEquals(text, validationDeleteList.getText());
     }
 }
