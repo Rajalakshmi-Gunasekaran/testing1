@@ -9,9 +9,10 @@ import org.junit.runner.RunWith;
         features = ".", dryRun = false,
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr2.html"})
 public class TestRunner {
-    @AfterClass
-    public static void generateReport() {
-        Reporter.loadXMLConfig("C:\\Users\\RajiAnand\\IdeaProjects\\roxhill\\testing\\src\\main\\resources\\reportConfig\\extent-config.xml");
+      @AfterClass
+    public static void generateReport()
+    {
+     Reporter.loadXMLConfig("C:\\Users\\RajiAnand\\IdeaProjects\\roxhill\\testing\\src\\main\\resources\\reportConfig\\extent-config.xml");
     }
 }
 
