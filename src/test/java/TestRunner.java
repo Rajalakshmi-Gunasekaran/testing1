@@ -6,14 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-  features = ".",tags = "@DeleteStream",
-  dryRun =false)
-  //plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr1.html"})
-public class Runner {
-   /*@AfterClass
-    public static void generateReport()
-    {
+        features = ".", dryRun = false,
+        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr2.html"})
+public class TestRunner {
+    @AfterClass
+    public static void generateReport() {
         Reporter.loadXMLConfig("C:\\Users\\RajiAnand\\IdeaProjects\\roxhill\\testing\\src\\main\\resources\\reportConfig\\extent-config.xml");
-    }*/
+    }
 }
 

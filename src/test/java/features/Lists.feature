@@ -1,10 +1,11 @@
-Feature: As a User
-         I should be able to create and delete list
+Feature: List
+  As a User
+  I should be able to create and delete list
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "raji.anand@roxhillmedia.com"
-    And I enter password as "Rajianand123"
+    When I enter Username as "qa@roxhillmedia.com"
+    And I enter password as "qaautomation123"
     And I click on login button
     Then I should be able to login successfully
 
@@ -33,24 +34,24 @@ Feature: As a User
     Then I should able to see the journalist added to the list
 
   @RemovingJournalistFromTheList
-    Scenario: Validate removing journalist from the list
-      When I should login into the home page and click on lists
-      And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
-      And click on the list name from the list
-      And I click select all to remove all journalist from the list
-      And I click on remove from list button
-      And I click tick mark to make sure deletion
-      Then I should able to see the journalist deleted successfully on the list page
+  Scenario: Validate removing journalist from the list
+    When I should login into the home page and click on lists
+    And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
+    And click on the list name from the list
+    And I click select all to remove all journalist from the list
+    And I click on remove from list button
+    And I click tick mark to make sure deletion
+    Then I should able to see the journalist deleted successfully on the list page
 
   @GDPRDefaultStatus
-    Scenario: Validate GDPR status rejected is unchecked by default
+  Scenario: Validate GDPR status rejected is unchecked by default
     When I should login into the home page and click on lists
     And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
     And I click on the list name from the list
     Then I should see the GDPR rejected status is unchecked by default
 
   @DeletingList
-    Scenario: Validate delete List functionality
+  Scenario: Validate delete List functionality
     When I should login into the home page and click on lists
     And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
     And click on the list name from the list

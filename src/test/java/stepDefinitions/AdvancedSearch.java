@@ -15,7 +15,7 @@ public class AdvancedSearch extends BaseStep {
     @When("^I should login into the home page and click on search tab$")
     public void i_should_login_into_the_home_page_and_click_on_search_tab() {
         advancedSearchPage = new AdvancedSearchPage(webDriver);
-        leftPanListsPage=new LeftPanListsPage(webDriver);
+        leftPanListsPage = new LeftPanListsPage(webDriver);
         webDriver.get("https://app-alt.roxhillmedia.com/");
         wait(10);
         advancedSearchPage.clickAdvancedSearch();
@@ -81,19 +81,17 @@ public class AdvancedSearch extends BaseStep {
 
     /* Adding Journalist to the list*/
     @When("^I click on Add Journalist to list button$")
-    public void i_click_on_Add_Journalist_to_list_button()
-    {
-     pauseFor(5);
-     advancedSearchPage.setClickCopyToList();
+    public void i_click_on_Add_Journalist_to_list_button() {
+        pauseFor(5);
+        advancedSearchPage.setClickCopyToList();
     }
 
     @When("^I enter list name as \"(.*?)\" and click Ok$")
-    public void i_enter_list_name_as_and_click_Ok(String list)
-    {
-      pauseFor(5);
-      advancedSearchPage.setEnterListName(list);
-      pauseFor(5);
-      advancedSearchPage.setClickOk();
+    public void i_enter_list_name_as_and_click_Ok(String list) {
+        pauseFor(5);
+        advancedSearchPage.setEnterListName(list);
+        pauseFor(5);
+        advancedSearchPage.setClickOk();
     }
 
 }

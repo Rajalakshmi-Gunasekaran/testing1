@@ -1,16 +1,19 @@
-Feature: Streams feature
+Feature: Streams
+  As a User
+  I should be able to login and create, edit and delete streams
+
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "raji.anand@roxhillmedia.com"
-    And I enter password as "Rajianand123"
+    When I enter Username as "qa@roxhillmedia.com"
+    And I enter password as "qaautomation123"
     And I click on login button
     Then I should be able to login successfully
 
   @AllJournoMoves
-    Scenario: Validate AllJournoMoves stream is displayed
-      When I should be in the home page and click on Streams
-      And I click on AllJournoMoves streams from the list
-      Then I should able to see the AllJournoMoves streams page
+  Scenario: Validate AllJournoMoves stream is displayed
+    When I should be in the home page and click on Streams
+    And I click on AllJournoMoves streams from the list
+    Then I should able to see the AllJournoMoves streams page
 
   @StreamSetUpForArticles
   Scenario: Validate stream set up functionality

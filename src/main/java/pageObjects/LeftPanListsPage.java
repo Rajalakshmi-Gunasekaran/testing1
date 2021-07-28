@@ -13,10 +13,12 @@ import java.time.Duration;
 public class LeftPanListsPage {
     public WebDriver driver;
     Actions action;
-    public LeftPanListsPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+
+    public LeftPanListsPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "lists-link-icon")
     public WebElement listsBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav[1]/div[3]/button[1]")
@@ -43,13 +45,13 @@ public class LeftPanListsPage {
     public WebElement validationDeleteList;
     @FindBy(css = ".form-control.form-control-big.m-0")
     public WebElement searchFolder;
-    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[1]/span/span/span/i")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[1]/span/span/span/i")
     public WebElement clickFolderName;
-    @FindBy(css= ".action-button.d-flex.align-items-center")
+    @FindBy(css = ".action-button.d-flex.align-items-center")
     public WebElement clickMenuList;
-    @FindBy(css= ".mr-1.icon-trash")
+    @FindBy(css = ".mr-1.icon-trash")
     public WebElement clickDelete;
-    @FindBy(xpath="//*[@id=\"main-view\"]/div[1]/div/div[5]/div/div/div[3]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[5]/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement confirmDeleteFolder;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
     public WebElement validationDeleteFolder;
@@ -58,74 +60,70 @@ public class LeftPanListsPage {
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/span/div/div[2]/div[1]/i")
     public WebElement confirmDelete;
 
-   //click on List button on home page
-    public void clickListsBtn()
-    {
+    //click on List button on home page
+    public void clickListsBtn() {
         listsBtn.click();
     }
+
     //click create folder in lists page
-    public void clickCreateFolder()
-    {
+    public void clickCreateFolder() {
         CreateFolder.click();
     }
+
     //enter folder name to create new folder
-    public void EnterFolderName(String setFolderName)
-    {
+    public void EnterFolderName(String setFolderName) {
         folderName.sendKeys(setFolderName);
     }
+
     //click create button to create a new folder
-    public void clickCreate()
-    {
+    public void clickCreate() {
         clickCreateFolderBtn.click();
     }
+
     //validate the new folder is created
-    public void validateFolderCreated()
-    {
+    public void validateFolderCreated() {
         Assert.assertTrue(clickFolderName.isDisplayed());
     }
+
     //click create new list button
-    public void createList()
-    {
+    public void createList() {
         CreateList.click();
     }
+
     //enter list name to create new list
-    public void enterListName(String ListName)
-    {
+    public void enterListName(String ListName) {
         listName.sendKeys(ListName);
     }
+
     //click create list to create new list
-    public void clickCreateList()
-    {
+    public void clickCreateList() {
         clickCreateBtn.click();
     }
+
     //click magnifying glass to search list
-    public void searchIcon()
-    {
+    public void searchIcon() {
         searchIconBtn.click();
 
     }
+
     //enter search list name in search list text area
-    public void enterListNameToValidate(String listNameToValidate)
-    {
-      searchListName.sendKeys(listNameToValidate);
+    public void enterListNameToValidate(String listNameToValidate) {
+        searchListName.sendKeys(listNameToValidate);
     }
 
     /*validating list creation*/
-    public void validateListCreated()
-    {
+    public void validateListCreated() {
         validateNewListCreated.isDisplayed();
     }
 
     //select list from the option
-    public void setGetListName()
-    {
+    public void setGetListName() {
         getListName.click();
     }
     //choose journalist from the list
 
     //enter folder name to create new folder
-    public void enterFolderName(String folderName)
-    {
+    public void enterFolderName(String folderName) {
         searchIconBtn.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(10));
@@ -133,59 +131,58 @@ public class LeftPanListsPage {
         searchFolder.sendKeys(folderName);
 
     }
-    public void enterListNameToDelete(String listName)
-    {
+
+    public void enterListNameToDelete(String listName) {
         searchIconBtn.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(10));
         action.build().perform();
         searchListName.sendKeys(listName);
     }
-   /* click folder name to open that folder*/
-    public void setClickFolderName()
-    {
+
+    /* click folder name to open that folder*/
+    public void setClickFolderName() {
         clickFolderName.click();
     }
 
-   // click menu list to choose delete button
-    public void menuList()
-    {
+    // click menu list to choose delete button
+    public void menuList() {
         clickMenuList.click();
 
     }
-    public void tickCheckBoxToSelectListName()
-    {
+
+    public void tickCheckBoxToSelectListName() {
         tickCheckBox.click();
     }
-    public void deleteListButton()
-    {
+
+    public void deleteListButton() {
         clickDelete.click();
     }
+
     // confirm folder to delete
-    public void confirmDeleteFolder()
-    {
+    public void confirmDeleteFolder() {
 
         confirmDeleteFolder.click();
     }
+
     // validate folder deletion
-    public void validateDeletionFolder()
-    {
+    public void validateDeletionFolder() {
         validationDeleteFolder.isDisplayed();
     }
+
     //enter search list text to select and click on it
-    public void searchListTxt(String searchText)
-    {
+    public void searchListTxt(String searchText) {
         searchListName.sendKeys(searchText);
-   }
+    }
+
     //confirm deletion
-    public void confirmDeletion()
-    {
+    public void confirmDeletion() {
         confirmDelete.click();
     }
+
     // Validate list deletion
-    public void validateListDeleted()
-    {
-        String text="Nothing in this folder";
-        Assert.assertEquals(text,validationDeleteList.getText());
+    public void validateListDeleted() {
+        String text = "Nothing in this folder";
+        Assert.assertEquals(text, validationDeleteList.getText());
     }
 }

@@ -6,13 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OutletProfilePage
-{
-    public OutletProfilePage(WebDriver driver)
-    {
-        PageFactory.initElements(driver,this);
+public class OutletProfilePage {
+    public OutletProfilePage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath="//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[1]/div/div[2]/div/div[1]/small")
+
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[1]/div/div[2]/div/div[1]/small")
     public WebElement validateDesk;
     @FindBy(css = ".contact-details")
     public WebElement validateContact;
@@ -35,18 +34,17 @@ public class OutletProfilePage
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[7]")
     public WebElement validatePROpportunityTab;
 
-    public void validateDeskDisplay()
-    {
+    public void validateDeskDisplay() {
         Assert.assertTrue(validateDesk.isDisplayed());
     }
-    public void validateJournoDisplay()
-    {
+
+    public void validateJournoDisplay() {
         Assert.assertTrue(validateContact.isDisplayed());
         Assert.assertTrue(validateRoxhillSays.isDisplayed());
         Assert.assertTrue(validateSectors.isDisplayed());
     }
-    public void validateAllTabsINOutlet()
-    {
+
+    public void validateAllTabsINOutlet() {
         Assert.assertTrue(validateIAbout.isDisplayed());
         Assert.assertTrue(validateTwitterTab.isDisplayed());
         Assert.assertTrue(validateJournalistTab.isDisplayed());

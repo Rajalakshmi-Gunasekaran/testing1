@@ -8,13 +8,11 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.StreamPage;
 
-public class Streams extends BaseStep
-{
+public class Streams extends BaseStep {
     public StreamPage streamPage = new StreamPage(webDriver);
 
     @When("^I should be in the home page and click on Streams$")
-    public void i_should_be_in_the_home_page_and_click_on_Streams()
-    {
+    public void i_should_be_in_the_home_page_and_click_on_Streams() {
         webDriver.get("https://app-alt.roxhillmedia.com/");
         wait(2);
         streamPage.clkStreams();
@@ -71,8 +69,7 @@ public class Streams extends BaseStep
     }
 
     @When("^I enter outletType as \"(.*?)\"$")
-    public void i_enter_outletType_as(String outletType)
-    {
+    public void i_enter_outletType_as(String outletType) {
         pauseFor(5);
         streamPage.chooseOutletType(outletType);
     }
@@ -86,7 +83,7 @@ public class Streams extends BaseStep
 
     @Then("^I should able to see the  streams results$")
     public void i_should_able_to_see_the_streams_results() {
-        pauseFor(2);
+        pauseFor(10);
         streamPage.setValidateStreamSetUp();
     }
 
@@ -97,9 +94,9 @@ public class Streams extends BaseStep
         streamPage.setEnterStreamToDelete(streamName);
         wait(20);
     }
+
     @When("^I click on SmokeTest streams from the list and I click on delete button$")
-    public void i_click_on_SmokeTest_streams_from_the_list_and_I_click_on_delete_button()
-    {
+    public void i_click_on_SmokeTest_streams_from_the_list_and_I_click_on_delete_button() {
         pauseFor(5);
         streamPage.setClickDeleteStream();
     }

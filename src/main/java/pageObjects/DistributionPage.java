@@ -14,17 +14,17 @@ import java.time.Duration;
 
 import static java.awt.SystemColor.menu;
 
-public class DistributionPage
-{
+public class DistributionPage {
     public WebDriver driver;
     private Actions action;
-   /*initialising web driver*/
-    public DistributionPage(WebDriver driver)
-    {
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+
+    /*initialising web driver*/
+    public DistributionPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[1]/nav/ul/li[5]/a/span")
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/ul/li[5]/a/span")
     public WebElement clickDistributionTab;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav/div[3]/button[2]")
     public WebElement clickNewPressRelease;
@@ -32,7 +32,7 @@ public class DistributionPage
     public WebElement enterPressRelease;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement clickCreatePressRelease;
-    @FindBy(xpath= "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[2]")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[2]")
     public WebElement clickHeaderBlock;
     @FindBy(xpath = "//*[@id=\"mceu_29\"]/button/i")
     public WebElement clickSourceCode;
@@ -64,7 +64,7 @@ public class DistributionPage
     public WebElement enterListNameToCopy;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]/div[2]/form/div[3]/button/i")
     public WebElement clickOkButton;
-    @FindBy(xpath= "//i[@class=\"open-indicator\"][1]")
+    @FindBy(xpath = "//i[@class=\"open-indicator\"][1]")
     public WebElement enterFromEmail;
     @FindBy(xpath = "//ul[@class=\"dropdown-menu\"]//a[contains(text(), 'no-send@roxhillmedia.com')]")
     public WebElement getEnterFromEmail;
@@ -84,7 +84,7 @@ public class DistributionPage
     public WebElement enterPressReleaseName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/span[1]/span/span/i")
     public WebElement clickPressRelease;
-    @FindBy(css =".icon-menu ")
+    @FindBy(css = ".icon-menu ")
     public WebElement clickMenuCheckList;
     @FindBy(xpath = "//ul[@class=\"dropdown-menu show\"]/li/a[contains(.,\"Delete\")]")
     public WebElement clickDeleteButton;
@@ -103,117 +103,114 @@ public class DistributionPage
 
 
     /* validate new press release functionality*/
-    public void setClickDistributionTab()
-    {
+    public void setClickDistributionTab() {
         clickDistributionTab.click();
     }
 
-    public void setClickNewPressRelease()
-    {
+    public void setClickNewPressRelease() {
         clickNewPressRelease.click();
     }
 
-    public void setEnterPressRelease(String pressRelease)
-    {
+    public void setEnterPressRelease(String pressRelease) {
         enterPressRelease.sendKeys(pressRelease);
     }
 
-    public void setClickCreatePressRelease()
-    {
+    public void setClickCreatePressRelease() {
         clickCreatePressRelease.click();
     }
-    public void setClickHeaderBlock()
-    {
+
+    public void setClickHeaderBlock() {
         clickHeaderBlock.click();
     }
-public void clickSourceCode(){
+
+    public void clickSourceCode() {
         clickSourceCode.click();
-}
-    public void setHeaderBlock(String headerText)
-    {
+    }
+
+    public void setHeaderBlock(String headerText) {
         enterText.sendKeys(headerText);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
         action.build().perform();
         clickOkToEnter.click();
     }
-    public void setClickBodyBlock()
-    {
-        JavascriptExecutor js=(JavascriptExecutor) driver;
+
+    public void setClickBodyBlock() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", clickBodyBlock);
         clickBodyBlock.click();
     }
-    public void setClickSourceCodeBodyBlock()
-    {
+
+    public void setClickSourceCodeBodyBlock() {
         clickSourceCodeBodyBlock.click();
     }
-    public void setBodyBlock(String bodyText)
-    {
+
+    public void setBodyBlock(String bodyText) {
         enterBodyContext.sendKeys(bodyText);
-        action =new Actions(driver);
+        action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
         action.build().perform();
         clickOkToEnterBody.click();
     }
 
-    public void clickSaveButtonInPressRelease()
-    {
+    public void clickSaveButtonInPressRelease() {
         clickSaveButton.click();
     }
-    public void validatePressReleaseCreated()
-    {
-       Assert.assertTrue(validatePressRelease.isDisplayed());
+
+    public void validatePressReleaseCreated() {
+        Assert.assertTrue(validatePressRelease.isDisplayed());
     }
-    public void setClickSearchIcon()
-    {
-       clickSearchIcon.click();
+
+    public void setClickSearchIcon() {
+        clickSearchIcon.click();
     }
-    public void setEnterPressReleaseName(String pressRelease)
-    {
+
+    public void setEnterPressReleaseName(String pressRelease) {
         enterPressReleaseName.sendKeys(pressRelease);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
         action.build().perform();
         clickPressRelease.click();
     }
-    public void enterPressReleaseToValidate(String name)
-    {
+
+    public void enterPressReleaseToValidate(String name) {
         enterPressReleaseName.sendKeys(name);
     }
-    public void setClickCreateNewCampaign()
-    {
+
+    public void setClickCreateNewCampaign() {
         clickCreateNewCampaign.click();
     }
-    public void setEnterCampaignNameToCreate(String campaignName)
-    {
+
+    public void setEnterCampaignNameToCreate(String campaignName) {
         enterCampaignNameToCreate.sendKeys(campaignName);
     }
-    public void clickCreateNewCampaign(){
+
+    public void clickCreateNewCampaign() {
         clickCreateButton.click();
     }
-    public void setClickOkButton()
-    {
+
+    public void setClickOkButton() {
         clickOkButton.click();
     }
-    public void setClickCopyFromListBtn()
-    {
+
+    public void setClickCopyFromListBtn() {
         clickCopyFromListBtn.click();
     }
-    public void setEnterListNameToCopy(String listNameToCopy)
-    {
+
+    public void setEnterListNameToCopy(String listNameToCopy) {
         enterListNameToCopy.sendKeys(listNameToCopy);
         enterListNameToCopy.sendKeys(Keys.ENTER);
     }
-    public void setEnterFromEmail()
-    {
+
+    public void setEnterFromEmail() {
         enterFromEmail.click();
-        action =new Actions(driver);
+        action = new Actions(driver);
         action.pause(Duration.ofSeconds(2));
         action.build().perform();
         getEnterFromEmail.click();
     }
-    public void selectPressReleaseNameToSend()
-    {
+
+    public void selectPressReleaseNameToSend() {
         clickPressReleaseToSelect.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(2));
@@ -224,54 +221,54 @@ public void clickSourceCode(){
         action.build().perform();
         clickSave.click();
     }
-    public void clickSendButtonInCampaignPage()
-    {
+
+    public void clickSendButtonInCampaignPage() {
         sendButton.click();
     }
-    public void setValidateCampaignSending()
-    {
+
+    public void setValidateCampaignSending() {
 
         Assert.assertTrue(validateCampaignSending.isDisplayed());
     }
-    public void setClickMenuCheckList()
-    {
+
+    public void setClickMenuCheckList() {
         clickMenuCheckList.click();
     }
-    public void setClickDeleteButton()
-    {
+
+    public void setClickDeleteButton() {
         clickDeleteButton.click();
     }
-    public void setConfirmDeletion()
-    {
+
+    public void setConfirmDeletion() {
         confirmDeletion.click();
     }
-    public void setValidateDeletePressRelease()
-    {
+
+    public void setValidateDeletePressRelease() {
 
         Assert.assertTrue(validateDeletePressRelease.isDisplayed());
     }
-    public void setClickCampaignTab()
-    {
+
+    public void setClickCampaignTab() {
         clickCampaignTab.click();
     }
-    public void setEnterCampaignName(String campaignName)
-    {
+
+    public void setEnterCampaignName(String campaignName) {
         enterCampaignName.sendKeys(campaignName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
         action.build().perform();
         clickCampaign.click();
     }
-    public void enterCampaignName(String campaignName)
-    {
+
+    public void enterCampaignName(String campaignName) {
         enterCampaignName.sendKeys(campaignName);
     }
-    public void setClickCampaign()
-    {
+
+    public void setClickCampaign() {
         clickCampaign.click();
     }
-    public void setValidateCampaignDeleted()
-    {
+
+    public void setValidateCampaignDeleted() {
         Assert.assertTrue(validateCampaignDeleted.isDisplayed());
     }
 }

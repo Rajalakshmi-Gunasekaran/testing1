@@ -8,15 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class RightPanListPage
-{
+public class RightPanListPage {
     public WebDriver driver;
     Actions action;
-    public RightPanListPage(WebDriver driver)
-    {
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+
+    public RightPanListPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[2]/div[7]/div/div[3]/span[1]/span/span/i")
     public WebElement GDPRCheckBox;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
@@ -32,27 +32,25 @@ public class RightPanListPage
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[4]/span/div/div[2]/div[1]/i")
     public WebElement confirmDeleteList;
 
-    public boolean validateGDPRCheckbox()
-    {
+    public boolean validateGDPRCheckbox() {
         return GDPRCheckBox.isSelected();
     }
 
     // validate journalist added to the list
-    public void setValidateJournoAddedToList()
-    {
+    public void setValidateJournoAddedToList() {
         clickSelectAll.click();
-        action=new Actions(driver);
+        action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
         action.build().perform();
         validateJournoAddedToList.isDisplayed();
     }
-    public void chooseJournalist()
-    {
+
+    public void chooseJournalist() {
         clickSelectAll.click();
     }
+
     // remove journalist from the list
-    public void removeJournalist()
-    {
+    public void removeJournalist() {
         removeFromList.click();
     }
     //click on delete button in list page to delete list

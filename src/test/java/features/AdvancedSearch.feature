@@ -1,10 +1,11 @@
-Feature: As a User
+Feature:AdvancedSearch
+  As a User
   I should be able to login and search for Journalists using advanced search filters
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "raji.anand@roxhillmedia.com"
-    And I enter password as "Rajianand123"
+    When I enter Username as "qa@roxhillmedia.com"
+    And I enter password as "qaautomation123"
     And I click on login button
     Then I should be able to login successfully
 
