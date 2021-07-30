@@ -26,9 +26,9 @@ public class HomePage {
     public WebElement clkSelectAll;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
     public WebElement validateWebinarAlert;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[3]/ul")
-    public WebElement clkJournoLink;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[3]/div/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]")
+    /*@FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[3]/ul")
+    public WebElement clkJournoLink;*/
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[3]")
     public WebElement validateJournoLink;
     @FindBy(id = "btn-help-and-feedback")
     public WebElement clickHelpAndFeedbackButton;
@@ -90,9 +90,9 @@ public class HomePage {
     }
 
     /*clicking sign up link*/
-    public void clickSignUpLink() {
+    /*public void clickSignUpLink() {
         clkJournoLink.click();
-    }
+    }*/
 
     /*validating whether the sign up link navigating to the Roxhill site*/
     public void validateQuickLinks() {

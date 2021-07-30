@@ -14,7 +14,7 @@ public class Streams extends BaseStep {
     @When("^I should be in the home page and click on Streams$")
     public void i_should_be_in_the_home_page_and_click_on_Streams() {
         webDriver.get("https://app-alt.roxhillmedia.com/");
-        wait(2);
+        pauseFor(2);
         streamPage.clkStreams();
 
     }
@@ -23,7 +23,7 @@ public class Streams extends BaseStep {
     public void i_click_on_AllJournoMoves_streams_from_the_list() {
         wait(20);
         streamPage.clkAllJournoMoves();
-        pauseFor(60);
+        pauseFor(30);
         streamPage.clkSelectAll();
         wait(10);
     }

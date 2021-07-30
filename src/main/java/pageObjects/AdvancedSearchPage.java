@@ -44,6 +44,10 @@ public class AdvancedSearchPage {
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/p/em")
     public WebElement validateInfoView;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/span/button/span/i")
+    public WebElement clickCopyToList1;
+    @FindBy(xpath= "//*[@id=\"__BVID__1423__BV_toggle_\"]")
+    public WebElement clickActionsToClickCopyToList;
+    @FindBy(xpath = "//span[contains(text(),\"Add 10 journalists to lists\")]")
     public WebElement clickCopyToList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
     public WebElement enterListName;
@@ -76,7 +80,11 @@ public class AdvancedSearchPage {
 
     /* add journalist to the list*/
     public void setClickCopyToList() {
-        clickCopyToList.click();
+        /*clickActionsToClickCopyToList.click();
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(2));
+        action.build().perform();*/
+        clickCopyToList1.click();
     }
 
     /*enter list name to add journalist*/

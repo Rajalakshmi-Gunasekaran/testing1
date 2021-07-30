@@ -23,25 +23,25 @@ Feature: List
     And I enter list name as "SmokeSuiteList" and click on create button
     Then I should see the created list
 
-  @AddingJournalistToTheList
-  Scenario: Validate adding journalist to the list
-    When I should login into the home page and click on search tab
-    And I click on outlet type and enter outlet type as "National"
-    And I Click on outlet name and enter outlet name as "BBC Two"
-    And I click on Add Journalist to list button
-    And I enter list name as "SmokeSuiteList" and click Ok
-    When I should login into the home page and click on lists
-    Then I should able to see the journalist added to the list
+#  @AddingJournalistToTheList
+#  Scenario: Validate adding journalist to the list
+#    When I should login into the home page and click on search tab
+#    And I click on outlet type and enter outlet type as "National"
+#    And I Click on outlet name and enter outlet name as "BBC Two"
+#    And I click on Add Journalist to list button
+#    And I enter list name as "SmokeSuiteList" and click Ok
+#    When I should login into the home page and click on lists
+#    Then I should able to see the journalist added to the list
 
-  @RemovingJournalistFromTheList
-  Scenario: Validate removing journalist from the list
-    When I should login into the home page and click on lists
-    And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
-    And click on the list name from the list
-    And I click select all to remove all journalist from the list
-    And I click on remove from list button
-    And I click tick mark to make sure deletion
-    Then I should able to see the journalist deleted successfully on the list page
+#  @RemovingJournalistFromTheList
+#  Scenario: Validate removing journalist from the list
+#    When I should login into the home page and click on lists
+#    And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
+#    And click on the list name from the list
+#    And I click select all to remove all journalist from the list
+#    And I click on remove from list button
+#    And I click tick mark to make sure deletion
+#    Then I should able to see the journalist deleted successfully on the list page
 
   @GDPRDefaultStatus
   Scenario: Validate GDPR status rejected is unchecked by default

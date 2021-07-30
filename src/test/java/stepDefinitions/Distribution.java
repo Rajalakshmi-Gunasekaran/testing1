@@ -11,7 +11,7 @@ public class Distribution extends BaseStep {
     @When("^I should be in the home page and click on Distribution tab$")
     public void i_should_be_in_the_home_page_and_click_on_Distribution_tab() {
         webDriver.get("https://app-alt.roxhillmedia.com/");
-        wait(2);
+        wait(5);
         distributionPage.setClickDistributionTab();
     }
 
@@ -39,7 +39,7 @@ public class Distribution extends BaseStep {
 
     @When("^I enter header as \"([^\"]*)\" and I click ok$")
     public void i_enter_header_as_and_I_click_ok(String header) {
-        pauseFor(5);
+        pauseFor(2);
         distributionPage.setHeaderBlock(header);
     }
 

@@ -61,7 +61,7 @@ public class Home extends BaseStep {
 
     @When("^I click on sign up links in Headline alerts page$")
     public void i_click_on_sign_up_links_in_Headline_alerts_page() {
-        homePage.clickSignUpLink();
+      //homePage.clickSignUpLink();
     }
 
     @Then("^I should able to navigate to the Roxhill main site$")

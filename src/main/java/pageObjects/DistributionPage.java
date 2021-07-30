@@ -24,7 +24,7 @@ public class DistributionPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/ul/li[5]/a/span")
+    @FindBy(id = "distribution-link-icon")
     public WebElement clickDistributionTab;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav/div[3]/button[2]")
     public WebElement clickNewPressRelease;
@@ -34,15 +34,15 @@ public class DistributionPage {
     public WebElement clickCreatePressRelease;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[2]")
     public WebElement clickHeaderBlock;
-    @FindBy(xpath = "//*[@id=\"mceu_29\"]/button/i")
-    public WebElement clickSourceCode;
+    @FindBy(xpath="//div[@class=\"mce-container mce-flow-layout-item mce-last mce-btn-group\"]/div/div[@aria-label=\"Source code\"][1]")
+    public WebElement clickSourceCodeHeaderBlock;
     @FindBy(xpath = "//div[@class=\"mce-container-body mce-window-body mce-abs-layout\"]/div/div/textarea")
     public WebElement enterText;
     @FindBy(xpath = "//div[@class=\"mce-widget mce-btn mce-primary mce-abs-layout-item mce-first mce-btn-has-text\"]/button/span[contains(text(),\"Ok\")]")
     public WebElement clickOkToEnter;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[3]/div[2]")
     public WebElement clickBodyBlock;
-    @FindBy(xpath = "//*[@id=\"mceu_77-button\"]/i")
+    @FindBy(xpath= "//*[@id=\"mceu_77-button\"]/i")
     public WebElement clickSourceCodeBodyBlock;
     @FindBy(xpath = "//div[@class=\"mce-container-body mce-abs-layout\"]/textarea")
     public WebElement enterBodyContext;
@@ -124,7 +124,7 @@ public class DistributionPage {
     }
 
     public void clickSourceCode() {
-        clickSourceCode.click();
+        clickSourceCodeHeaderBlock.click();
     }
 
     public void setHeaderBlock(String headerText) {
