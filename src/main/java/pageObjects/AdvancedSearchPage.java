@@ -43,7 +43,7 @@ public class AdvancedSearchPage {
     public WebElement chooseInfoView;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/p/em")
     public WebElement validateInfoView;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/span/button/span/i")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]//button")
     public WebElement clickCopyToList1;
     @FindBy(xpath= "//*[@id=\"__BVID__1423__BV_toggle_\"]")
     public WebElement clickActionsToClickCopyToList;
