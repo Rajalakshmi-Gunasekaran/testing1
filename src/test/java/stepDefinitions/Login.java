@@ -4,9 +4,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import pageObjects.Contents;
+import pageObjects.Constants;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -39,7 +37,7 @@ public class Login extends BaseStep {
     @Then("^I should be able to login successfully$")
     public void i_should_be_able_to_login_successfully() {
         String loginSuccessMsg = homePage.getLoginToastMsg();
-        Assert.assertEquals(Contents.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
+        Assert.assertEquals(Constants.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
     }
 
     @When("^I click on userprofile$")

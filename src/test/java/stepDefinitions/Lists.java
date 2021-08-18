@@ -132,7 +132,7 @@ public class Lists extends BaseStep {
     public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page() {
         wait(30);
         String removedJourno = rightPanListPage.validateJournalistRemoval();
-        Assert.assertEquals(Contents.DELETED_JOURNO_MSG, removedJourno);
+        Assert.assertEquals(Constants.DELETED_JOURNO_MSG, removedJourno);
     }
 
     @When("^I enter folder name as \"(.*?)\"and click on the folder name from the list$")

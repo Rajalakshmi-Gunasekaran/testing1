@@ -3,9 +3,7 @@ package stepDefinitions;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import pageObjects.Contents;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
+import pageObjects.Constants;
 import pageObjects.StreamPage;
 
 public class Streams extends BaseStep {
@@ -33,7 +31,7 @@ public class Streams extends BaseStep {
         wait(30);
         String validateStreamPage = streamPage.validateAllJournoStream();
         wait(30);
-        Assert.assertEquals(Contents.STREAM_VALIDATION_NUMBERS, validateStreamPage);
+        Assert.assertEquals(Constants.STREAM_VALIDATION_NUMBERS, validateStreamPage);
     }
 
     @When("^I click on create new stream button$")
