@@ -4,7 +4,11 @@ name: test
 on:
   schedule:
     # 2 am every morning
-    - cron:  '0 2 * * *'
+    - cron: '0 2 * * *'
+  push:
+    # and for edits, while testing
+    branches:
+      - master
 
 jobs:
   test:
