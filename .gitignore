@@ -1,3 +1,7 @@
 .idea/
+.settings/org.eclipse*
 target/
 *.iml
+.DS_Store
+.classpath
+.project

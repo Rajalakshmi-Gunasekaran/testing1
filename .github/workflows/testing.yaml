@@ -1,0 +1,33 @@
+
+name: test
+
+on:
+  schedule:
+    # 2 am every morning
+    - cron:  '0 2 * * *'
+
+jobs:
+  test:
+    name: test
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 15
+      uses: actions/setup-java@v1
+      with:
+        java-version: 15
+        architecture: x64
+    # see https://app.nuclino.com/Roxhill/Development/-GitHub-self-hosted-runner-71beb322-4672-4ed8-8df0-fe373793e6ce
+    # uses Maven
+    - name: Test project
+      env:
+        EXTENT_CONFIG_XML: ./src/main/resources/reportConfig/extent-config.xml
+      run: |
+        mvn -B test
+
+    # Will be a publish step in here
+
+    - name: Cleanup Maven
+      if: always()
+      run: |
+        mvn -B clean
