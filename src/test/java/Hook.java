@@ -15,7 +15,7 @@ public class Hook {
         System.out.println("Calling @Before Hook");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options=new ChromeOptions();
-        options.addArguments("--headless","--window-size=1920,1080");
+        options.addArguments("--headless","--window-size=1920,1080","--enable-javascript");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         BaseStep.setWebDriver(driver);
