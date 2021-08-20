@@ -30,6 +30,7 @@ jobs:
         mvn -B test
 
     - name: Publish report
+      if: always()
       env:
         REPORT_LOCATION: ./target/TSR/tsr3.html
         WEB_LOCATION: /var/www/html/smoke-suite/index.html
