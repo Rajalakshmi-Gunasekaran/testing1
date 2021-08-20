@@ -1,5 +1,5 @@
 
-name: test
+name: Scheduled Smoke-Suite Tests
 
 on:
   schedule:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   test:
-    name: test
+    name: test and publish
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
@@ -29,7 +29,12 @@ jobs:
       run: |
         mvn -B test
 
-    # Will be a publish step in here
+    - name: Publish report
+      env:
+        REPORT_LOCATION: ./target/TSR/tsr3.html
+        WEB_LOCATION: /var/www/html/smoke-suite/index.html
+      run: |
+        cp ${REPORT_LOCATION} ${WEB_LOCATION}
 
     - name: Cleanup Maven
       if: always()
