@@ -8,18 +8,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
 import static org.openqa.selenium.By.cssSelector;
 
-public class StreamPage {
+public class StreamPage extends CommonFunctions
+   {
     public WebDriver driver;
     private Actions action;
 
     /*initialising web driver*/
-    public StreamPage(WebDriver driver) {
+    public StreamPage(WebDriver driver)
+    {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -74,53 +79,67 @@ public class StreamPage {
     public WebElement validateDeletionStream;
 
     /*Validating All Journo moves functionality*/
-    public void clkStreams() {
+    public void clkStreams()
+    {
         clkStreamLink.click();
     }
 
-    public void clkAllJournoMoves() {
+    public void clkAllJournoMoves()
+    {
+
         clickAllJournoMoves.click();
     }
 
-    public void clkSelectAll() {
+    public void clkSelectAll()
+    {
         selectAll.click();
     }
 
-    public String validateAllJournoStream() {
+    public String validateAllJournoStream()throws InterruptedException
+    {
+        Thread.sleep(3000);
         return selectedNumbers.getText();
     }
 
     /*Validating stream set up*/
-    public void clkCreateStream() {
+    public void clkCreateStream()
+    {
         clickCreateStream.click();
     }
 
-    public void setEnterStreamName(String streamName) {
+    public void setEnterStreamName(String streamName)
+    {
         enterStreamName.sendKeys(streamName);
     }
 
-    public void setClickCreateButtonStream() {
+    public void setClickCreateButtonStream()
+    {
         clickCreateButtonStream.click();
     }
 
-    public void setClickOnArticles() {
+    public void setClickOnArticles()
+    {
         clickOnArticles.click();
     }
 
-    public void setClickOutletType() {
+    public void setClickOutletType()
+    {
         clickOutletType.click();
     }
 
-    public void chooseOutletType(String outlet) {
+    public void chooseOutletType(String outlet)
+    {
         clickOutlet.sendKeys(outlet, Keys.ENTER);
 
     }
 
-    public void setClickSaveButton() {
+    public void setClickSaveButton()
+    {
         clickSaveButton.click();
     }
 
-    public void setValidateStreamSetUp() {
+    public void setValidateStreamSetUp()
+    {
         clickFeed.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -129,23 +148,28 @@ public class StreamPage {
     }
 
     /*Validating edit stream functionality*/
-    public void chooseTestStream() {
+    public void chooseTestStream()
+    {
         chooseTestStream.click();
     }
 
-    public void setClickEditStreamButton() {
+    public void setClickEditStreamButton()
+    {
         clickEditStreamButton.click();
     }
 
-    public void setClickTypeOfPublisher() {
+    public void setClickTypeOfPublisher()
+    {
         clickTypeOfPublisher.click();
     }
 
-    public void setChooseJournalist() {
+    public void setChooseJournalist()
+    {
         chooseJournalist.click();
     }
 
-    public void validateEditStream() {
+    public void validateEditStream()
+    {
         clickFeed.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -154,29 +178,33 @@ public class StreamPage {
     }
 
     /* Validating delete streams functionality*/
-    public void setClickSearchStream() {
+    public void setClickSearchStream()
+    {
         clickSearchStream.click();
     }
 
-    public void setEnterStreamToDelete(String deleteStream) {
+    public void setEnterStreamToDelete(String deleteStream)
+    {
         enterStream.sendKeys(deleteStream);
     }
 
-    public void setClickStreamFromList() {
+    public void setClickStreamFromList()
+    {
         clickStreamFromList.click();
     }
 
-    public void setClickDeleteStream() {
+    public void setClickDeleteStream()
+    {
         clickDeleteStream.click();
     }
 
-    public void setClickConfirmDeletion() {
+    public void setClickConfirmDeletion()
+    {
         clickConfirmDeletion.click();
     }
 
-    public void setValidateStreamDeletion() {
+    public void setValidateStreamDeletion()
+    {
         Assert.assertTrue(validateDeletionStream.isDisplayed());
     }
-}
-
-
+    }

@@ -65,7 +65,8 @@ public class SearchPage {
     }
 
     //select the journalist from the list and click on it
-    public void chooseDesk() {
+    public void chooseDesk() throws InterruptedException{
+        Thread.sleep(3000);
         DeskName.click();
     }
 
