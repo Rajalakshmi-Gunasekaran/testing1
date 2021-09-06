@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class LeftPanListsPage {
+public class LeftPanListsPage extends CommonFunctions{
     public WebDriver driver;
     Actions action;
 
@@ -39,7 +39,7 @@ public class LeftPanListsPage {
     public WebElement searchIconBtn;
     @FindBy(xpath = "//div[@class=\"layout-v h-100 d-flex flex-column justify-content-between align-items-stretch\"]/div/form/div/div/input")
     public WebElement searchListName;
-    @FindBy(xpath = "//li[@class=\"d-flex justify-content-start align-items-center px-3 py-2 list-browser-list-item text-nowrap\"]/a/div[contains(text(),\" SmokeSuiteList \")]")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/a/div[1]/strong")
     public WebElement getListName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
     public WebElement validationDeleteList;
@@ -76,7 +76,9 @@ public class LeftPanListsPage {
     }
 
     //click create button to create a new folder
-    public void clickCreate() {
+    public void clickCreate()
+    {
+        elementClickable(clickCreateFolderBtn,driver);
         clickCreateFolderBtn.click();
     }
 
@@ -96,7 +98,9 @@ public class LeftPanListsPage {
     }
 
     //click create list to create new list
-    public void clickCreateList() {
+    public void clickCreateList()
+    {
+        elementClickable(clickCreateBtn,driver);
         clickCreateBtn.click();
     }
 
@@ -117,7 +121,8 @@ public class LeftPanListsPage {
     }
 
     //select list from the option
-    public void setGetListName() {
+    public void setGetListName()throws InterruptedException {
+        Thread.sleep(3000);
         getListName.click();
     }
     //choose journalist from the list
@@ -166,7 +171,8 @@ public class LeftPanListsPage {
     }
 
     // validate folder deletion
-    public void validateDeletionFolder() {
+    public void validateDeletionFolder()throws InterruptedException {
+        Thread.sleep(3000);
         validationDeleteFolder.isDisplayed();
     }
 
@@ -181,7 +187,8 @@ public class LeftPanListsPage {
     }
 
     // Validate list deletion
-    public void validateListDeleted() {
+    public void validateListDeleted() throws InterruptedException{
+        Thread.sleep(3000);
         String text = "Nothing in this folder";
         Assert.assertEquals(text, validationDeleteList.getText());
     }

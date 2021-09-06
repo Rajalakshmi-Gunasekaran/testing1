@@ -98,7 +98,7 @@ public class Distribution extends BaseStep {
     }
 
     @When("^I enter From email as$")
-    public void i_enter_From_email_as() {
+    public void i_enter_From_email_as() throws InterruptedException{
         pauseFor(5);
         distributionPage.setEnterFromEmail();
     }
@@ -122,7 +122,7 @@ public class Distribution extends BaseStep {
     }
 
     @When("^I click on search icon on press release tab$")
-    public void i_click_on_search_icon_on_press_release_tab() {
+    public void i_click_on_search_icon_on_press_release_tab()throws InterruptedException {
         pauseFor(5);
         distributionPage.setClickSearchIcon();
     }
@@ -166,7 +166,7 @@ public class Distribution extends BaseStep {
     }
 
     @When("^I click on search icon on campaign tab$")
-    public void i_click_on_search_icon_on_campaign_tab() {
+    public void i_click_on_search_icon_on_campaign_tab() throws InterruptedException{
         pauseFor(10);
         distributionPage.setClickSearchIcon();
     }
@@ -185,7 +185,7 @@ public class Distribution extends BaseStep {
     }
 
     @Then("^I should able to see the campaign deleted$")
-    public void i_should_able_to_see_the_campaign_deleted() {
+    public void i_should_able_to_see_the_campaign_deleted()throws InterruptedException {
         wait(10);
         distributionPage.setValidateCampaignDeleted();
     }
