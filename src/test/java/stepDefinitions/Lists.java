@@ -83,7 +83,7 @@ public class Lists extends BaseStep {
     }
 
     @When("^I click on the list name from the list$")
-    public void i_click_on_the_list_name_from_the_list() {
+    public void i_click_on_the_list_name_from_the_list()throws InterruptedException {
         pauseFor(5);
         leftPanListsPage.setGetListName();
     }
@@ -114,7 +114,7 @@ public class Lists extends BaseStep {
     }
 
     @When("^I enter list name as \"(.*?)\"and click on the list name from the list$")
-    public void i_enter_list_name_as_and_click_on_the_list_name_from_the_list(String listName) {
+    public void i_enter_list_name_as_and_click_on_the_list_name_from_the_list(String listName)throws InterruptedException {
         wait(30);
         leftPanListsPage.searchListTxt(listName);
         pauseFor(5);
@@ -132,7 +132,7 @@ public class Lists extends BaseStep {
     public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page() {
         wait(30);
         String removedJourno = rightPanListPage.validateJournalistRemoval();
-        Assert.assertEquals(Contents.DELETED_JOURNO_MSG, removedJourno);
+        Assert.assertEquals(Constants.DELETED_JOURNO_MSG, removedJourno);
     }
 
     @When("^I enter folder name as \"(.*?)\"and click on the folder name from the list$")
@@ -180,14 +180,14 @@ public class Lists extends BaseStep {
 
 
     @Then("^I should see the list deleted$")
-    public void i_should_see_the_list_deleted() {
+    public void i_should_see_the_list_deleted()throws InterruptedException {
         pauseFor(5);
         leftPanListsPage.validateListDeleted();
 
     }
 
     @Then("^I should see the folder deleted$")
-    public void i_should_see_the_folder_deleted() {
+    public void i_should_see_the_folder_deleted() throws InterruptedException{
         wait(5);
         leftPanListsPage.validateDeletionFolder();
     }
