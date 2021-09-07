@@ -87,7 +87,6 @@ public class StreamPage extends CommonFunctions{
 
     public void clkAllJournoMoves() throws InterruptedException{
         Thread.sleep(3000);
-        elementVisible(clickAllJournoMoves,driver);
         clickAllJournoMoves.click();
     }
 
