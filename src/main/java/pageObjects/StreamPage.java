@@ -1,5 +1,6 @@
 package pageObjects;
 
+import gherkin.lexer.Th;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.By.cssSelector;
 
-public class StreamPage {
+public class StreamPage extends CommonFunctions{
     public WebDriver driver;
     private Actions action;
 
@@ -78,7 +79,9 @@ public class StreamPage {
         clkStreamLink.click();
     }
 
-    public void clkAllJournoMoves() {
+    public void clkAllJournoMoves() throws InterruptedException{
+        Thread.sleep(3000);
+        elementVisible(clickAllJournoMoves,driver);
         clickAllJournoMoves.click();
     }
 
@@ -86,41 +89,49 @@ public class StreamPage {
         selectAll.click();
     }
 
-    public String validateAllJournoStream() {
+    public String validateAllJournoStream()throws InterruptedException {
+        Thread.sleep(3000);
         return selectedNumbers.getText();
     }
 
     /*Validating stream set up*/
-    public void clkCreateStream() {
+    public void clkCreateStream() throws InterruptedException{
+        Thread.sleep(3000);
         clickCreateStream.click();
     }
 
-    public void setEnterStreamName(String streamName) {
+    public void setEnterStreamName(String streamName) throws InterruptedException{
+        Thread.sleep(3000);
         enterStreamName.sendKeys(streamName);
     }
 
-    public void setClickCreateButtonStream() {
+    public void setClickCreateButtonStream() throws InterruptedException{
+        Thread.sleep(3000);
         clickCreateButtonStream.click();
     }
 
-    public void setClickOnArticles() {
+    public void setClickOnArticles() throws InterruptedException{
+        Thread.sleep(3000);
         clickOnArticles.click();
     }
 
-    public void setClickOutletType() {
+    public void setClickOutletType() throws InterruptedException{
+        Thread.sleep(3000);
         clickOutletType.click();
     }
 
-    public void chooseOutletType(String outlet) {
+    public void chooseOutletType(String outlet) throws InterruptedException{
+        Thread.sleep(3000);
         clickOutlet.sendKeys(outlet, Keys.ENTER);
-
     }
 
-    public void setClickSaveButton() {
+    public void setClickSaveButton() throws InterruptedException{
+        Thread.sleep(3000);
         clickSaveButton.click();
     }
 
-    public void setValidateStreamSetUp() {
+    public void setValidateStreamSetUp() throws InterruptedException{
+        Thread.sleep(3000);
         clickFeed.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -133,19 +144,25 @@ public class StreamPage {
         chooseTestStream.click();
     }
 
-    public void setClickEditStreamButton() {
+    public void setClickEditStreamButton() throws InterruptedException{
+        Thread.sleep(3000);
+        elementVisible(clickEditStreamButton,driver);
         clickEditStreamButton.click();
     }
 
-    public void setClickTypeOfPublisher() {
+    public void setClickTypeOfPublisher() throws InterruptedException{
+        Thread.sleep(3000);
         clickTypeOfPublisher.click();
     }
 
-    public void setChooseJournalist() {
+    public void setChooseJournalist() throws InterruptedException{
+        Thread.sleep(3000);
         chooseJournalist.click();
     }
 
-    public void validateEditStream() {
+    public void validateEditStream()throws InterruptedException {
+        Thread.sleep(3000);
+        elementVisible(clickFeed,driver);
         clickFeed.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -154,27 +171,33 @@ public class StreamPage {
     }
 
     /* Validating delete streams functionality*/
-    public void setClickSearchStream() {
+    public void setClickSearchStream() throws InterruptedException{
+        Thread.sleep(3000);
         clickSearchStream.click();
     }
 
-    public void setEnterStreamToDelete(String deleteStream) {
+    public void setEnterStreamToDelete(String deleteStream) throws InterruptedException{
+        Thread.sleep(3000);
         enterStream.sendKeys(deleteStream);
     }
 
-    public void setClickStreamFromList() {
+    public void setClickStreamFromList() throws InterruptedException{
+        Thread.sleep(3000);
         clickStreamFromList.click();
     }
 
-    public void setClickDeleteStream() {
+    public void setClickDeleteStream() throws InterruptedException{
+        Thread.sleep(3000);
         clickDeleteStream.click();
     }
 
-    public void setClickConfirmDeletion() {
+    public void setClickConfirmDeletion() throws InterruptedException{
+        Thread.sleep(3000);
         clickConfirmDeletion.click();
     }
 
-    public void setValidateStreamDeletion() {
+    public void setValidateStreamDeletion() throws InterruptedException{
+        Thread.sleep(3000);
         Assert.assertTrue(validateDeletionStream.isDisplayed());
     }
 }
