@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 public abstract class CommonFunctions
 
 {
-    {
 
     public void wait(int waitTime,WebDriver driver)
     {
