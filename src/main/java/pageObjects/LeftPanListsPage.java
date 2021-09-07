@@ -39,7 +39,7 @@ public class LeftPanListsPage extends CommonFunctions{
     public WebElement searchIconBtn;
     @FindBy(xpath = "//div[@class=\"layout-v h-100 d-flex flex-column justify-content-between align-items-stretch\"]/div/form/div/div/input")
     public WebElement searchListName;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/a/div[1]/strong")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/a/div[1]")
     public WebElement getListName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
     public WebElement validationDeleteList;
