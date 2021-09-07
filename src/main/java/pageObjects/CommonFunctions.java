@@ -11,6 +11,8 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public abstract class CommonFunctions
+
+{
     {
 
     public void wait(int waitTime,WebDriver driver)
@@ -23,10 +25,11 @@ public abstract class CommonFunctions
         WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
-        public void elementVisible(WebElement locator,WebDriver driver)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, 60);
-            wait.until(ExpectedConditions.visibilityOf(locator));
-        }
+    public void elementVisible(WebElement locator,WebDriver driver)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.visibilityOf(locator));
     }
+}
 
+       

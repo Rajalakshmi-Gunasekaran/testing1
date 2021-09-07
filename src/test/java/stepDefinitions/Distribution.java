@@ -184,7 +184,7 @@ public class Distribution extends BaseStep {
     }
 
     @Then("^I should able to see the campaign deleted$")
-    public void i_should_able_to_see_the_campaign_deleted() throws InterruptedException{
+    public void i_should_able_to_see_the_campaign_deleted()throws InterruptedException{
         wait(10);
         distributionPage.setValidateCampaignDeleted();
     }
