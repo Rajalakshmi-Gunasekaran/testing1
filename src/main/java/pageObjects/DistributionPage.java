@@ -232,7 +232,7 @@ public class DistributionPage extends CommonFunctions{
     }
 
     public void setValidateCampaignSending() {
-
+        elementVisible(validateCampaignSending,driver);
         Assert.assertTrue(validateCampaignSending.isDisplayed());
     }
 
@@ -241,15 +241,17 @@ public class DistributionPage extends CommonFunctions{
     }
 
     public void setClickDeleteButton() {
+        elementVisible(clickDeleteButton,driver);
         clickDeleteButton.click();
     }
 
     public void setConfirmDeletion() {
-        confirmDeletion.click();
+        elementClickable(confirmDeletion,driver);
+    confirmDeletion.click();
     }
 
-    public void setValidateDeletePressRelease() {
-
+    public void setValidateDeletePressRelease()throws InterruptedException {
+Thread.sleep(3000);
         Assert.assertTrue(validateDeletePressRelease.isDisplayed());
     }
 

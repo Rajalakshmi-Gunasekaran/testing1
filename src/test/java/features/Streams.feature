@@ -10,13 +10,13 @@ Feature: Streams
     Then I should be able to login successfully
 
   @AllJournoMoves
-  Scenario: Validate AllJournoMoves stream is displayed
+  Scenario: 1Validate AllJournoMoves stream is displayed
     When I should be in the home page and click on Streams
     And I click on AllJournoMoves streams from the list
     Then I should able to see the AllJournoMoves streams page
 
   @StreamSetUpForArticles
-  Scenario: Validate stream set up functionality
+  Scenario: 2Validate stream set up functionality
     When I should be in the home page and click on Streams
     And I click on create new stream button
     And I enter stream name as "SmokeTest"
@@ -28,7 +28,7 @@ Feature: Streams
     Then I should able to see the  streams results
 
   @EditStreamSetUp
-  Scenario: Validate Edit functionality in streams
+  Scenario: 3Validate Edit functionality in streams
     When I should be in the home page and click on Streams
     And I click on SmokeTest streams from the list and I click on edit streams
     And I click type of publisher and I click type of publisher as Journalist
@@ -36,7 +36,7 @@ Feature: Streams
     Then I should able to see the edited streams
 
   @DeleteStream
-  Scenario: Validate Delete stream functionality
+  Scenario: 4Validate Delete stream functionality
     When I should be in the home page and click on Streams
     And I click on SmokeTest streams from the list and I click on delete button
     And I click on confirm delete button
