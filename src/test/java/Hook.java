@@ -12,6 +12,13 @@ public class Hook {
     @Before
     public void setUp()
     {
+          /*System.out.println("Calling @Before Hook");
+          WebDriverManager.chromedriver().setup();
+          WebDriver driver = new ChromeDriver();
+          driver.manage().window().maximize();
+          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+          BaseStep.setWebDriver(driver);*/
+
         System.out.println("Calling @Before Hook");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options=new ChromeOptions();

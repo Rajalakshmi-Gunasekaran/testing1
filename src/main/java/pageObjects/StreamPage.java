@@ -9,10 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
 import static org.openqa.selenium.By.cssSelector;
 
 public class StreamPage extends CommonFunctions{
@@ -20,7 +23,8 @@ public class StreamPage extends CommonFunctions{
     private Actions action;
 
     /*initialising web driver*/
-    public StreamPage(WebDriver driver) {
+    public StreamPage(WebDriver driver)
+    {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -75,9 +79,11 @@ public class StreamPage extends CommonFunctions{
     public WebElement validateDeletionStream;
 
     /*Validating All Journo moves functionality*/
-    public void clkStreams() {
+    public void clkStreams()
+    {
         clkStreamLink.click();
     }
+
 
     public void clkAllJournoMoves() throws InterruptedException{
         Thread.sleep(3000);
@@ -85,9 +91,11 @@ public class StreamPage extends CommonFunctions{
         clickAllJournoMoves.click();
     }
 
-    public void clkSelectAll() {
+    public void clkSelectAll()
+    {
         selectAll.click();
     }
+
 
     public String validateAllJournoStream()throws InterruptedException {
         Thread.sleep(3000);
@@ -140,10 +148,10 @@ public class StreamPage extends CommonFunctions{
     }
 
     /*Validating edit stream functionality*/
-    public void chooseTestStream() {
+    public void chooseTestStream()
+    {
         chooseTestStream.click();
     }
-
     public void setClickEditStreamButton() throws InterruptedException{
         Thread.sleep(3000);
         elementVisible(clickEditStreamButton,driver);
@@ -198,8 +206,7 @@ public class StreamPage extends CommonFunctions{
 
     public void setValidateStreamDeletion() throws InterruptedException{
         Thread.sleep(3000);
+
         Assert.assertTrue(validateDeletionStream.isDisplayed());
     }
-}
-
-
+    }

@@ -1,22 +1,20 @@
 package stepDefinitions;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import pageObjects.Contents;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
+import pageObjects.Constants;
 import pageObjects.StreamPage;
 
-public class Streams extends BaseStep {
+public class Streams extends BaseStep
+    {
     public StreamPage streamPage = new StreamPage(webDriver);
 
     @When("^I should be in the home page and click on Streams$")
-    public void i_should_be_in_the_home_page_and_click_on_Streams() {
+    public void i_should_be_in_the_home_page_and_click_on_Streams()
+    {
         webDriver.get("https://app-alt.roxhillmedia.com/");
         pauseFor(2);
         streamPage.clkStreams();
-
     }
 
     @When("^I click on AllJournoMoves streams from the list$")
@@ -25,7 +23,6 @@ public class Streams extends BaseStep {
         streamPage.clkAllJournoMoves();
         pauseFor(30);
         streamPage.clkSelectAll();
-        wait(10);
     }
 
     @Then("^I should able to see the AllJournoMoves streams page$")
@@ -33,7 +30,7 @@ public class Streams extends BaseStep {
         wait(30);
         String validateStreamPage = streamPage.validateAllJournoStream();
         wait(30);
-        Assert.assertEquals(Contents.STREAM_VALIDATION_NUMBERS, validateStreamPage);
+        Assert.assertEquals(Constants.STREAM_VALIDATION_NUMBERS, validateStreamPage);
     }
 
     @When("^I click on create new stream button$")
