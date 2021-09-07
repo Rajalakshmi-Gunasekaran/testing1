@@ -206,7 +206,7 @@ public class DistributionPage extends CommonFunctions{
         enterListNameToCopy.sendKeys(Keys.ENTER);
     }
 
-    public void setEnterFromEmail() throws InterruptedException {
+   public void setEnterFromEmail() throws InterruptedException {
         enterFromEmail.click();
         Thread.sleep(3000);
         getEnterFromEmail.click();

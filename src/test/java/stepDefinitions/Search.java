@@ -42,7 +42,7 @@ public class Search extends BaseStep {
     }
 
     @When("^I choose Desk from the list and Click on it$")
-    public void i_choose_Desk_from_the_list_and_Click_on_it() {
+    public void i_choose_Desk_from_the_list_and_Click_on_it()throws InterruptedException {
         search.chooseDesk();
         wait(30);
     }

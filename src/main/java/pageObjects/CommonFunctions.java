@@ -11,7 +11,9 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public abstract class CommonFunctions
+
 {
+    {
 
     public void wait(int waitTime,WebDriver driver)
     {
@@ -29,3 +31,5 @@ public abstract class CommonFunctions
         wait.until(ExpectedConditions.visibilityOf(locator));
     }
 }
+
+       
