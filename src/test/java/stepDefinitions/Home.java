@@ -21,12 +21,16 @@ public class Home extends BaseStep {
     }
 
     @When("^I click on GoBack button$")
-    public void i_click_on_GoBack_button() {
+    public void i_click_on_GoBack_button()
+    {
+        wait(30);
         homePage.setGoBackBtn();
     }
 
     @Then("^I should able to go back to the home page$")
-    public void i_should_able_to_go_back_to_the_home_page() {
+    public void i_should_able_to_go_back_to_the_home_page()
+    {
+        wait(30);
         homePage.setValidateGoBackBtn();
     }
 

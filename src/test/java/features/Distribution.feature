@@ -10,7 +10,7 @@ Feature: Distribution
     Then I should be able to login successfully
 
   @CreateNewPressRelease
-  Scenario: Validate new press release functionality
+  Scenario:1Validate new press release functionality
     When I should be in the home page and click on Distribution tab
     And I click on create new press release button
     And I enter press release name as "SmokeTest" and I click on create button
@@ -21,7 +21,7 @@ Feature: Distribution
     Then I should able to see the created press release
 
   @CreateNewCampaign
-  Scenario: Validate new campaign functionality
+  Scenario:2Validate new campaign functionality
     When I should be in the home page and click on Distribution tab
     And I click on campaign tab
     And I click on create new campaign button
@@ -35,7 +35,7 @@ Feature: Distribution
     Then I should able to see the campaign created
 
   @DeleteCampaign
-  Scenario: Validate delete campaign functionality
+  Scenario:3Validate delete campaign functionality
     When I should be in the home page and click on Distribution tab
     And I click on campaign tab
     And I click on search icon on campaign tab
@@ -47,7 +47,7 @@ Feature: Distribution
     Then I should able to see the campaign deleted
 
   @DeletePressRelease
-  Scenario: Validate delete press release functionality
+  Scenario:4Validate delete press release functionality
     When I should be in the home page and click on Distribution tab
     And I click on search icon on press release tab
     And I enter press release name as "smokeTest" and I click on the name

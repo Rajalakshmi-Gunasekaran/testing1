@@ -14,7 +14,7 @@ import java.time.Duration;
 
 import static java.awt.SystemColor.menu;
 
-public class DistributionPage {
+public class DistributionPage extends CommonFunctions{
     public WebDriver driver;
     private Actions action;
 
@@ -115,7 +115,9 @@ public class DistributionPage {
         enterPressRelease.sendKeys(pressRelease);
     }
 
-    public void setClickCreatePressRelease() {
+    public void setClickCreatePressRelease()
+    {
+        elementClickable(clickCreatePressRelease,driver);
         clickCreatePressRelease.click();
     }
 
@@ -186,6 +188,7 @@ public class DistributionPage {
     }
 
     public void clickCreateNewCampaign() {
+        elementClickable(clickCreateButton,driver);
         clickCreateButton.click();
     }
 
