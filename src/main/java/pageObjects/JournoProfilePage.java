@@ -26,7 +26,7 @@ public class JournoProfilePage {
     public WebElement validateLiveContent;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[1]/div/nav/div[3]")
     public WebElement clkcoverage;
-    @FindBy(id = "doughnut-chart")
+    @FindBy(xpath = "//*[@id="main-view"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/div/div[2]")
     public WebElement validateCoverage;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[1]/div/nav/div[4]")
     public WebElement clkHeadline;
