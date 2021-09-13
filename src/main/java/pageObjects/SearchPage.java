@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-public class SearchPage {
+public class SearchPage extends CommonFunctions{
     public WebDriver driver;
 
     public SearchPage(WebDriver driver) {
@@ -39,72 +39,89 @@ public class SearchPage {
     public WebElement validateCompanyProfile;
 
     //click quick search on home page
-    public void setClkQuickSearch() {
+    public void setClkQuickSearch() throws InterruptedException{
+        Thread.sleep(3000);
         clkQuickSearch.click();
     }
 
     //enter journo name on text area
-    public void enterSearchJourno(String Journo) {
+    public void enterSearchJourno(String Journo)throws InterruptedException
+    {
+        Thread.sleep(3000);
         quickSearch.sendKeys(Journo);
     }
 
     //select the journalist from the list and click on it
-    public void chooseJournalist() {
+    public void chooseJournalist() throws InterruptedException{
+        Thread.sleep(3000);
         JournalistName.click();
     }
 
     //go to journo profile page and validate to see whether land on the right page or not
-    public void goToJournoProfile() {
-
+    public void goToJournoProfile() throws InterruptedException{
+        Thread.sleep(3000);
         Assert.assertTrue(validateJournoProfile.isDisplayed());
     }
 
     //enter desk name on text area
-    public void enterSearchDesk(String Desk) {
+    public void enterSearchDesk(String Desk) throws InterruptedException
+    {
+        Thread.sleep(3000);
         quickSearch.sendKeys(Desk);
     }
 
     //select the journalist from the list and click on it
-    public void chooseDesk() throws InterruptedException{
+    public void chooseDesk() throws InterruptedException
+    {
         Thread.sleep(3000);
         DeskName.click();
     }
 
     //go to desk profile page and validate to see whether land on the right page or not
-    public void goToDeskProfile() {
-
+    public void goToDeskProfile() throws InterruptedException{
+        Thread.sleep(3000);
         Assert.assertTrue(validateDeskProfile.isDisplayed());
     }
 
     //enter outlet name on text area
-    public void enterSearchOutlet(String Outlet) {
+    public void enterSearchOutlet(String Outlet) throws InterruptedException
+    {
+        Thread.sleep(3000);
         quickSearch.sendKeys(Outlet);
     }
 
     //select the outlet from the list and click on it
-    public void chooseOutlet() {
+    public void chooseOutlet() throws InterruptedException
+    {
+        Thread.sleep(3000);
         OutletName.click();
     }
 
     //go to outlet profile page and validate to see whether land on the right page or not
-    public void goToOutletProfile() {
-
+    public void goToOutletProfile() throws InterruptedException
+    {
+        Thread.sleep(3000);
         Assert.assertTrue(validateOutletProfile.isDisplayed());
     }
 
     //enter company name on text area
-    public void enterSearchCompany(String Company) {
+    public void enterSearchCompany(String Company) throws InterruptedException
+    {
+        Thread.sleep(3000);
         quickSearch.sendKeys(Company);
     }
 
     //select the company from the list and click on it
-    public void chooseCompany() {
+    public void chooseCompany() throws InterruptedException
+    {
+        Thread.sleep(3000);
         CompanyName.click();
     }
 
     //go to company profile page and validate to see whether land on the right page or not
-    public void goToCompanyProfile() {
-
+    public void goToCompanyProfile() throws InterruptedException
+    {
+        Thread.sleep(3000);
         Assert.assertTrue(validateCompanyProfile.isDisplayed());
     }
 

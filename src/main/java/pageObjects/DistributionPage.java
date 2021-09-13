@@ -187,8 +187,7 @@ public class DistributionPage extends CommonFunctions{
         enterCampaignNameToCreate.sendKeys(campaignName);
     }
 
-    public void clickCreateNewCampaign()
-    {
+    public void clickCreateNewCampaign() {
         elementClickable(clickCreateButton,driver);
         clickCreateButton.click();
     }

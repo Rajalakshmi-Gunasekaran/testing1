@@ -10,21 +10,21 @@ Feature: List
     Then I should be able to login successfully
 
   @CreateFolder
-  Scenario: 1Validate creating folder
+  Scenario:1Validate creating folder
     When I should login into the home page and click on lists
     And I click on create folder
     And I enter folder name as "AA" and click on create button
     Then I should see the created folder
 
   @CreateList
-  Scenario: 2Validate creating list
+  Scenario:2Validate creating list
     When I should login into the home page and click on lists
     And I click on create list
     And I enter list name as "SmokeSuiteList" and click on create button
     Then I should see the created list
 
  @AddingJournalistToTheList
- Scenario: 3Validate adding journalist to the list
+ Scenario:3Validate adding journalist to the list
     When I should login into the home page and click on search tab
     And I click on outlet type and enter outlet type as "National"
     And I Click on outlet name and enter outlet name as "BBC Two"
@@ -34,7 +34,7 @@ Feature: List
     Then I should able to see the journalist added to the list
 
   @RemovingJournalistFromTheList
-  Scenario: 4Validate removing journalist from the list
+  Scenario:4Validate removing journalist from the list
     When I should login into the home page and click on lists
     And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
     And click on the list name from the list
@@ -44,14 +44,14 @@ Feature: List
     Then I should able to see the journalist deleted successfully on the list page
 
   @GDPRDefaultStatus
-  Scenario: 5Validate GDPR status rejected is unchecked by default
+  Scenario:5Validate GDPR status rejected is unchecked by default
     When I should login into the home page and click on lists
     And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
     And I click on the list name from the list
     Then I should see the GDPR rejected status is unchecked by default
 
   @DeletingList
-  Scenario: 6Validate delete List functionality
+  Scenario:6Validate delete List functionality
     When I should login into the home page and click on lists
     And I click on search icon in the list page and I enter list name as "SmokeSuiteList"
     And click on the list name from the list
@@ -60,7 +60,7 @@ Feature: List
     Then I should see the list deleted
 
   @DeletingFolder
-  Scenario: 7Validate delete folder functionality
+  Scenario:7Validate delete folder functionality
     When I should login into the home page and click on lists
     And I click on search icon in the list page and I enter folder name as "AA"
     And I click on the folder name from the list
