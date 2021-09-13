@@ -25,29 +25,29 @@ public class Distribution extends BaseStep {
     public void i_enter_press_release_name_as_and_I_click_on_create_button(String pressReleaseName) {
         wait(20);
         distributionPage.setEnterPressRelease(pressReleaseName);
-        wait(20);
+        //wait(20);
         distributionPage.setClickCreatePressRelease();
     }
 
     @When("^I click header block to enter text$")
     public void i_click_header_block_to_enter_text() {
-        pauseFor(2);
+        // pauseFor(2);
         distributionPage.setClickHeaderBlock();
-        pauseFor(2);
+       // pauseFor(2);
         distributionPage.clickSourceCode();
     }
 
     @When("^I enter header as \"([^\"]*)\" and I click ok$")
     public void i_enter_header_as_and_I_click_ok(String header) {
-        pauseFor(2);
+        //pauseFor(2);
         distributionPage.setHeaderBlock(header);
     }
 
     @When("^I click body block to enter text$")
     public void i_click_body_block_to_enter_text() {
-        pauseFor(2);
+        //pauseFor(2);
         distributionPage.setClickBodyBlock();
-        pauseFor(2);
+       // pauseFor(2);
         distributionPage.setClickSourceCodeBodyBlock();
     }
 
@@ -93,18 +93,17 @@ public class Distribution extends BaseStep {
 
     @When("^I click on Ok button$")
     public void i_click_on_Ok_button() {
-        pauseFor(10);
+        pauseFor(5);
         distributionPage.setClickOkButton();
+        pauseFor(2);
     }
-
     @When("^I enter From email as$")
-    public void i_enter_From_email_as() {
+    public void i_enter_From_email_as() throws InterruptedException{
         pauseFor(5);
         distributionPage.setEnterFromEmail();
     }
-
     @When("^I select press release name to send campaign$")
-    public void i_select_press_release_name_to_send_campaign() {
+    public void i_select_press_release_name_to_send_campaign()throws InterruptedException {
         pauseFor(2);
         distributionPage.selectPressReleaseNameToSend();
     }
@@ -122,7 +121,7 @@ public class Distribution extends BaseStep {
     }
 
     @When("^I click on search icon on press release tab$")
-    public void i_click_on_search_icon_on_press_release_tab() {
+    public void i_click_on_search_icon_on_press_release_tab()throws InterruptedException {
         pauseFor(5);
         distributionPage.setClickSearchIcon();
     }
@@ -154,7 +153,7 @@ public class Distribution extends BaseStep {
     }
 
     @Then("^I should able to see the press release deleted$")
-    public void i_should_able_to_see_the_press_release_deleted() {
+    public void i_should_able_to_see_the_press_release_deleted() throws InterruptedException{
         wait(5);
         distributionPage.setValidateDeletePressRelease();
     }
@@ -166,7 +165,7 @@ public class Distribution extends BaseStep {
     }
 
     @When("^I click on search icon on campaign tab$")
-    public void i_click_on_search_icon_on_campaign_tab() {
+    public void i_click_on_search_icon_on_campaign_tab() throws InterruptedException{
         pauseFor(10);
         distributionPage.setClickSearchIcon();
     }
@@ -185,7 +184,7 @@ public class Distribution extends BaseStep {
     }
 
     @Then("^I should able to see the campaign deleted$")
-    public void i_should_able_to_see_the_campaign_deleted() {
+    public void i_should_able_to_see_the_campaign_deleted()throws InterruptedException{
         wait(10);
         distributionPage.setValidateCampaignDeleted();
     }

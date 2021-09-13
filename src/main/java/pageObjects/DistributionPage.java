@@ -2,13 +2,12 @@ package pageObjects;
 
 import cucumber.api.java.cs.A;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -76,7 +75,7 @@ public class DistributionPage extends CommonFunctions{
     public WebElement clickSave;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/nav/div[4]/button[2]")
     public WebElement sendButton;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/div/div/div/div[3]/div[2]/form/div[2]/ul/p/span")
+    @FindBy(xpath = "//span[contains(text(),\"This will be sent in 199 years.\")]")
     public WebElement validateCampaignSending;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/div/div/h5/i")
     public WebElement clickSearchIcon;
@@ -163,7 +162,8 @@ public class DistributionPage extends CommonFunctions{
         Assert.assertTrue(validatePressRelease.isDisplayed());
     }
 
-    public void setClickSearchIcon() {
+    public void setClickSearchIcon() throws InterruptedException{
+        Thread.sleep(3000);
         clickSearchIcon.click();
     }
 
@@ -205,15 +205,14 @@ public class DistributionPage extends CommonFunctions{
         enterListNameToCopy.sendKeys(Keys.ENTER);
     }
 
-    public void setEnterFromEmail() {
+   public void setEnterFromEmail() throws InterruptedException {
         enterFromEmail.click();
-        action = new Actions(driver);
-        action.pause(Duration.ofSeconds(2));
-        action.build().perform();
+        Thread.sleep(3000);
         getEnterFromEmail.click();
+        Thread.sleep(3000);
     }
-
-    public void selectPressReleaseNameToSend() {
+    public void selectPressReleaseNameToSend()
+    {
         clickPressReleaseToSelect.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(2));
@@ -225,12 +224,14 @@ public class DistributionPage extends CommonFunctions{
         clickSave.click();
     }
 
-    public void clickSendButtonInCampaignPage() {
+    public void clickSendButtonInCampaignPage()
+    {
+        elementClickable(sendButton,driver);
         sendButton.click();
     }
 
     public void setValidateCampaignSending() {
-
+        elementVisible(validateCampaignSending,driver);
         Assert.assertTrue(validateCampaignSending.isDisplayed());
     }
 
@@ -239,15 +240,17 @@ public class DistributionPage extends CommonFunctions{
     }
 
     public void setClickDeleteButton() {
+        elementVisible(clickDeleteButton,driver);
         clickDeleteButton.click();
     }
 
     public void setConfirmDeletion() {
-        confirmDeletion.click();
+        elementClickable(confirmDeletion,driver);
+    confirmDeletion.click();
     }
 
-    public void setValidateDeletePressRelease() {
-
+    public void setValidateDeletePressRelease()throws InterruptedException {
+Thread.sleep(3000);
         Assert.assertTrue(validateDeletePressRelease.isDisplayed());
     }
 
@@ -263,15 +266,19 @@ public class DistributionPage extends CommonFunctions{
         clickCampaign.click();
     }
 
-    public void enterCampaignName(String campaignName) {
+    public void enterCampaignName(String campaignName)
+    {
         enterCampaignName.sendKeys(campaignName);
     }
 
-    public void setClickCampaign() {
+    public void setClickCampaign()
+    {
         clickCampaign.click();
     }
 
-    public void setValidateCampaignDeleted() {
+    public void setValidateCampaignDeleted() throws InterruptedException
+    {
+        Thread.sleep(3000);
         Assert.assertTrue(validateCampaignDeleted.isDisplayed());
     }
 }

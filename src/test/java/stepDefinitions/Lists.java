@@ -33,29 +33,30 @@ public class Lists extends BaseStep {
     @When("^I enter folder name as \"(.*?)\" and click on create button$")
     public void i_enter_folder_name_as_and_click_on_create_button(String folderName) {
         leftPanListsPage.EnterFolderName(folderName);
-        wait(20);
+        pauseFor(5);
         leftPanListsPage.clickCreate();
     }
 
     @Then("^I should see the created folder$")
     public void i_should_see_the_created_folder() {
-        wait(30);
+        pauseFor(5);
         refreshPage();
-        wait(30);
+        pauseFor(5);
         leftPanListsPage.validateFolderCreated();
     }
 
     @When("^I click on create list$")
     public void i_click_on_create_list() {
-        leftPanListsPage.createList();
+
+        pauseFor(5);leftPanListsPage.createList();
     }
 
     @When("^I enter list name as \"(.*?)\" and click on create button$")
     public void i_enter_list_name_as_and_click_on_create_button(String listName) {
-        wait(30);
+        pauseFor(5);
         leftPanListsPage.enterListName(listName);
         leftPanListsPage.clickCreateList();
-        wait(30);
+        pauseFor(5);
     }
 
     @Then("^I should see the created list$")
@@ -83,7 +84,7 @@ public class Lists extends BaseStep {
     }
 
     @When("^I click on the list name from the list$")
-    public void i_click_on_the_list_name_from_the_list() {
+    public void i_click_on_the_list_name_from_the_list()throws InterruptedException {
         pauseFor(5);
         leftPanListsPage.setGetListName();
     }
@@ -108,18 +109,18 @@ public class Lists extends BaseStep {
 
     @When("^I click tick mark to make sure deletion$")
     public void i_click_tick_mark_to_make_sure_deletion() {
-        wait(20);
+        pauseFor(5);
         leftPanListsPage.confirmDeletion();
-        wait(30);
+        pauseFor(5);
     }
 
     @When("^I enter list name as \"(.*?)\"and click on the list name from the list$")
-    public void i_enter_list_name_as_and_click_on_the_list_name_from_the_list(String listName) {
-        wait(30);
+    public void i_enter_list_name_as_and_click_on_the_list_name_from_the_list(String listName) throws InterruptedException{
+        pauseFor(5);
         leftPanListsPage.searchListTxt(listName);
         pauseFor(5);
         leftPanListsPage.setGetListName();
-        wait(5);
+        pauseFor(5);
     }
 
     @When("^I click on check box of the list name to select$")
@@ -130,16 +131,16 @@ public class Lists extends BaseStep {
 
     @Then("^I should able to see the journalist deleted successfully on the list page$")
     public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page() {
-        wait(30);
+        pauseFor(5);
         String removedJourno = rightPanListPage.validateJournalistRemoval();
-        Assert.assertEquals(Contents.DELETED_JOURNO_MSG, removedJourno);
+        Assert.assertEquals(Constants.DELETED_JOURNO_MSG, removedJourno);
     }
 
     @When("^I enter folder name as \"(.*?)\"and click on the folder name from the list$")
     public void i_enter_folder_name_as_and_click_on_the_folder_name_from_the_list(String folderName) {
-        wait(20);
+        pauseFor(5);
         leftPanListsPage.enterFolderName(folderName);
-        wait(20);
+        pauseFor(5);
         leftPanListsPage.setClickFolderName();
     }
 
@@ -161,7 +162,7 @@ public class Lists extends BaseStep {
 
     @When("^I confirm deletion$")
     public void i_confirm_deletion() {
-        wait(20);
+        pauseFor(5);
         leftPanListsPage.confirmDeleteFolder();
     }
 
@@ -180,21 +181,21 @@ public class Lists extends BaseStep {
 
 
     @Then("^I should see the list deleted$")
-    public void i_should_see_the_list_deleted() {
+    public void i_should_see_the_list_deleted()throws InterruptedException {
         pauseFor(5);
         leftPanListsPage.validateListDeleted();
 
     }
 
     @Then("^I should see the folder deleted$")
-    public void i_should_see_the_folder_deleted() {
-        wait(5);
+    public void i_should_see_the_folder_deleted()throws InterruptedException {
+        pauseFor(10);
         leftPanListsPage.validateDeletionFolder();
     }
 
     @Then("^I should see the GDPR rejected status is unchecked by default$")
     public void i_should_see_the_GDPR_rejected_status_is_unchecked_by_default() {
-        wait(30);
+        pauseFor(10);
         Assert.assertFalse(rightPanListPage.validateGDPRCheckbox());
     }
 
