@@ -1,5 +1,6 @@
 package pageObjects;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,3 +26,6 @@ public abstract class CommonFunctions
             wait.until(ExpectedConditions.visibilityOf(locator));
         }
     }
+
+
+       

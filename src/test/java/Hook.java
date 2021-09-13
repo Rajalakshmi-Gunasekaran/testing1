@@ -12,6 +12,13 @@ public class Hook {
     @Before
     public void setUp()
     {
+          /*System.out.println("Calling @Before Hook");
+          WebDriverManager.chromedriver().setup();
+          WebDriver driver = new ChromeDriver();
+          driver.manage().window().maximize();
+          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+          BaseStep.setWebDriver(driver);*/
+
         System.out.println("Calling @Before Hook");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options=new ChromeOptions();
@@ -19,13 +26,22 @@ public class Hook {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         BaseStep.setWebDriver(driver);
+<<<<<<< HEAD
        /* System.out.println("Calling @Before Hook");
+=======
+        /*System.out.println("Calling @Before Hook");
+>>>>>>> 778a89970eb516e51650a88ee1e2d3185ce21487
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+<<<<<<< HEAD
         BaseStep.setWebDriver(driver);*/
 
+=======
+        BaseStep.setWebDriver(driver);
+*/
+>>>>>>> 778a89970eb516e51650a88ee1e2d3185ce21487
     }
     @After
     public void afterTests()
