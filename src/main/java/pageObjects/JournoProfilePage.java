@@ -26,7 +26,7 @@ public class JournoProfilePage {
     public WebElement validateLiveContent;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[1]/div/nav/div[3]")
     public WebElement clkcoverage;
-    @FindBy(id = "doughnut-chart")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/div/div[2]")
     public WebElement validateCoverage;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[1]/div/nav/div[4]")
     public WebElement clkHeadline;
@@ -40,26 +40,35 @@ public class JournoProfilePage {
     public WebElement validateACLJournalist;
 
 
-    public void validateAllHeaderTabs() {
+    public void validateAllHeaderTabs() throws InterruptedException {
+        Thread.sleep(3000);
         Assert.assertTrue(validateLiveContent.isDisplayed());
     }
 
-    public void validateCoverageTab() {
+    public void validateCoverageTab() throws InterruptedException{
+        Thread.sleep(3000);
         clkcoverage.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateCoverage.isDisplayed());
     }
 
-    public void validateHeadlinesTab() {
+    public void validateHeadlinesTab() throws InterruptedException {
+        Thread.sleep(3000);
         clkHeadline.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateHeadlines.isDisplayed());
     }
 
-    public void validateTwitterTab() {
+    public void validateTwitterTab() throws InterruptedException {
+        Thread.sleep(3000);
         clkTwitter.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateTwitter.isDisplayed());
     }
 
-    public void validateACLJournalist() {
+    public void validateACLJournalist() throws InterruptedException
+    {
+        Thread.sleep(3000);
         Assert.assertTrue(validateACLJournalist.isDisplayed());
     }
 }
