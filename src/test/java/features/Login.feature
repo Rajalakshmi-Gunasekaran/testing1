@@ -2,7 +2,7 @@ Feature: Login
   As a User
   I should be able to send forgotten password link to my email
 
-  @ForgottenPassword
+  @smoke
   Scenario: validate forgotten password link
     When I am on login page
     And I click on forgotten password link

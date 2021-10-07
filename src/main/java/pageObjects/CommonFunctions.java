@@ -1,6 +1,7 @@
 package pageObjects;
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,12 +18,12 @@ public abstract class CommonFunctions
 
         public void elementClickable(WebElement locator, WebDriver driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, 60);
+            WebDriverWait wait = new WebDriverWait(driver, 120);
             wait.until(ExpectedConditions.elementToBeClickable(locator));
         }
         public void elementVisible(WebElement locator,WebDriver driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, 60);
+            WebDriverWait wait = new WebDriverWait(driver, 120);
             wait.until(ExpectedConditions.visibilityOf(locator));
         }
     }

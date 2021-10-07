@@ -1,208 +1,245 @@
 package stepDefinitions;
 
+import cucumber.api.java.ca.I;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
-import pageObjects.*;
+import org.openqa.selenium.WebDriver;
+import pageObjects.AdvancedSearchPage;
+import pageObjects.ListsPage;
+import pageObjects.LoginPage;
+import pageObjects.AdvancedSearchPage;
 
-public class Lists extends BaseStep {
-    public LeftPanListsPage leftPanListsPage;
-    public RightPanListPage rightPanListPage;
-    public LoginPage loginPage;
-    public AdvancedSearchPage advancedSearchPage;
+public class Lists extends BaseStep{
+    LoginPage loginpage;
+    ListsPage listsPage;
+    AdvancedSearchPage advancedSearch;
 
     @When("^I should login into the home page and click on lists$")
-    public void i_should_login_into_the_home_page_and_click_on_lists() {
-        loginPage = new LoginPage(webDriver);
-        leftPanListsPage = new LeftPanListsPage(webDriver);
-        rightPanListPage = new RightPanListPage(webDriver);
-        advancedSearchPage = new AdvancedSearchPage(webDriver);
-
+    public void i_should_login_into_the_home_page_and_click_on_lists()  throws InterruptedException{
+        loginpage = new LoginPage(webDriver);
+        listsPage = new ListsPage(webDriver);
+        advancedSearch=new AdvancedSearchPage(webDriver);
         webDriver.get("https://app-alt.roxhillmedia.com/");
         wait(20);
-        leftPanListsPage.clickListsBtn();
+        listsPage.clickListsBtn();
     }
 
     @When("^I click on create folder$")
     public void i_click_on_create_folder() {
-        wait(20);
-        leftPanListsPage.clickCreateFolder();
-        wait(10);
+        pauseFor(5);
+        listsPage.clickCreateFolder();
     }
 
-    @When("^I enter folder name as \"(.*?)\" and click on create button$")
+    @When("^I enter folder name as \"([^\"]*)\" and click on create button$")
     public void i_enter_folder_name_as_and_click_on_create_button(String folderName) {
-        leftPanListsPage.EnterFolderName(folderName);
         pauseFor(5);
-        leftPanListsPage.clickCreate();
-    }
-
-    @Then("^I should see the created folder$")
-    public void i_should_see_the_created_folder() {
+        listsPage.EnterFolderName(folderName);
         pauseFor(5);
-        refreshPage();
-        pauseFor(5);
-        leftPanListsPage.validateFolderCreated();
-    }
-
-    @When("^I click on create list$")
-    public void i_click_on_create_list() {
-
-        pauseFor(5);leftPanListsPage.createList();
-    }
-
-    @When("^I enter list name as \"(.*?)\" and click on create button$")
-    public void i_enter_list_name_as_and_click_on_create_button(String listName) {
-        pauseFor(5);
-        leftPanListsPage.enterListName(listName);
-        leftPanListsPage.clickCreateList();
+        listsPage.clickCreate();
         pauseFor(5);
     }
 
-    @Then("^I should see the created list$")
-    public void i_should_see_the_created_list() {
+    @When("^I click on search icon in the list page$")
+    public void i_click_on_search_icon_in_the_list_page() throws InterruptedException {
         pauseFor(5);
-        leftPanListsPage.validateListCreated();
+        listsPage.searchIcon();
+        pauseFor(5);
     }
 
-    @When("^I enter list name as \"(.*?)\"$")
-    public void i_enter_list_name_as(String listname) {
+    @When("^I enter folder name as \"([^\"]*)\"$")
+    public void i_enter_folder_name_as(String folderNameToDelete) throws InterruptedException {
         pauseFor(5);
-        leftPanListsPage.enterListNameToValidate(listname);
-    }
-
-    @When("^I click on search icon in the list page and I enter folder name as \"(.*?)\"$")
-    public void i_click_on_search_icon_in_the_list_page_and_I_enter_folder_name_as(String folderName) {
-        pauseFor(5);
-        leftPanListsPage.enterFolderName(folderName);
+        listsPage.searchFolderNameToDelete(folderNameToDelete);
     }
 
     @When("^I click on the folder name from the list$")
-    public void i_click_on_the_folder_name_from_the_list() {
+    public void i_click_on_the_folder_name_from_the_list() throws InterruptedException{
         pauseFor(5);
-        leftPanListsPage.tickCheckBoxToSelectListName();
+        listsPage.tickCheckBoxToSelectListName();
     }
 
-    @When("^I click on the list name from the list$")
-    public void i_click_on_the_list_name_from_the_list()throws InterruptedException {
+    @When("^I click on menu list and click on delete button$")
+    public void i_click_on_menu_list_and_click_on_delete_button()throws InterruptedException {
         pauseFor(5);
-        leftPanListsPage.setGetListName();
+        listsPage.menuList();
+        wait(30);
+        listsPage.deleteListButton();
     }
 
-    @When("^I click on Lists$")
-    public void i_click_on_Lists() {
+    @When("^I confirm deletion$")
+    public void i_confirm_deletion()throws InterruptedException
+    {
         pauseFor(5);
-        leftPanListsPage.clickListsBtn();
+        listsPage.confirmDeleteFolder();
+    }
+
+    @Then("^I should see the folder deleted$")
+    public void i_should_see_the_folder_deleted() throws InterruptedException {
+        pauseFor(5);
+        listsPage.validateDeletionFolder();
+    }
+    @When("^I click on create list$")
+    public void i_click_on_create_list() throws InterruptedException {
+        pauseFor(5);
+        listsPage.createList();
+    }
+
+    @When("^I enter list name to create as \"([^\"]*)\" and click on create button$")
+    public void i_enter_list_name_to_create_as_and_click_on_create_button(String listName) throws InterruptedException {
+        pauseFor(5);
+        listsPage.enterListName(listName);
+        wait(30);
+        listsPage.clickCreateList();
+    }
+
+    @When("^I click on search tab in the home page$")
+    public void i_click_on_search_tab_in_the_home_page() throws InterruptedException {
+        wait(30);
+        advancedSearch.clickAdvancedSearch();
+    }
+    @When("^I click on outlet type and enter outlettype as \"([^\"]*)\"$")
+    public void i_click_on_outlet_type_and_enter_outlettype_as(String outletType) throws InterruptedException {
+        wait(30);
+        advancedSearch.enterOutletType(outletType);
+    }
+
+    @When("^I Click on outlet name and enter outletname as \"([^\"]*)\"$")
+    public void i_Click_on_outlet_name_and_enter_outletname_as(String outletName) throws InterruptedException {
+        wait(30);
+        advancedSearch.enterOutletName(outletName);
+    }
+    @When("^I enter list name to copy journo to the list as \"([^\"]*)\"$")
+    public void i_enter_list_name_to_copy_journo_to_the_list_as(String listName) throws InterruptedException {
+        wait(30);
+        advancedSearch.setEnterListName(listName);
+    }
+    @When("^click Ok$")
+    public void click_Ok() throws InterruptedException {
+        wait(30);
+        advancedSearch.setClickOk();
+    }
+    /* Adding Journalist to the list*/
+    @When("^I click on Add Journalist to list button$")
+    public void i_click_on_Add_Journalist_to_list_button()throws InterruptedException {
+        pauseFor(5);
+        advancedSearch.setClickCopyToList();
+    }
+
+    @When("^I enter list name as \"(.*?)\" and click Ok$")
+    public void i_enter_list_name_as_and_click_Ok(String list) throws InterruptedException{
+        pauseFor(5);
+        advancedSearch.setEnterListName(list);
+        pauseFor(5);
+        advancedSearch.setClickOk();
+    }
+    @When("^I click on lists$")
+    public void i_click_on_lists() throws InterruptedException {
+        pauseFor(5);
+        listsPage.clickListsBtn();
+    }
+
+    @When("^I should see the GDPR rejected status is unchecked by default$")
+    public void i_should_see_the_GDPR_rejected_status_is_unchecked_by_default() throws InterruptedException {
+        pauseFor(5);
+        listsPage.validateGDPRCheckbox();
     }
 
     @When("^I click select all to remove all journalist from the list$")
-    public void i_click_select_all_to_remove_all_journalist_from_the_list() {
+    public void i_click_select_all_to_remove_all_journalist_from_the_list(){
         pauseFor(5);
-        rightPanListPage.chooseJournalist();
+        listsPage.chooseJournalist();
+        wait(30);
     }
 
     @When("^I click on remove from list button$")
     public void i_click_on_remove_from_list_button() {
         pauseFor(5);
-        rightPanListPage.removeJournalist();
+        listsPage.removeJournalist();
+        wait(30);
     }
 
     @When("^I click tick mark to make sure deletion$")
     public void i_click_tick_mark_to_make_sure_deletion() {
         pauseFor(5);
-        leftPanListsPage.confirmDeletion();
-        pauseFor(5);
+        listsPage.setClickDelete();
     }
 
-    @When("^I enter list name as \"(.*?)\"and click on the list name from the list$")
-    public void i_enter_list_name_as_and_click_on_the_list_name_from_the_list(String listName) throws InterruptedException{
+    @When("^I should able to see the journalist deleted successfully on the list page$")
+    public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page()  {
         pauseFor(5);
-        leftPanListsPage.searchListTxt(listName);
-        pauseFor(5);
-        leftPanListsPage.setGetListName();
-        pauseFor(5);
+        listsPage.validateJournalistRemoval();
     }
 
-    @When("^I click on check box of the list name to select$")
-    public void i_click_on_check_box_of_the_list_name_to_select() {
+    @When("^I click on delete list and click on confirm deletion button$")
+    public void i_click_on_delete_list_and_click_on_confirm_deletion_button()  {
         pauseFor(5);
-        leftPanListsPage.tickCheckBoxToSelectListName();
+        listsPage.setClickDelete();
     }
 
-    @Then("^I should able to see the journalist deleted successfully on the list page$")
-    public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page() {
+    @When("^I enter list name as \"([^\"]*)\"")
+    public void i_enter_list_name_as(String listName)  {
         pauseFor(5);
-        String removedJourno = rightPanListPage.validateJournalistRemoval();
-        Assert.assertEquals(Constants.DELETED_JOURNO_MSG, removedJourno);
+        listsPage.enterListName(listName);
     }
-
-    @When("^I enter folder name as \"(.*?)\"and click on the folder name from the list$")
-    public void i_enter_folder_name_as_and_click_on_the_folder_name_from_the_list(String folderName) {
+    @When("^I enter list name to validate list deleted as \"([^\"]*)\"$")
+    public void i_enter_list_name_to_validate_list_deleted_as(String arg1) throws InterruptedException {
         pauseFor(5);
-        leftPanListsPage.enterFolderName(folderName);
-        pauseFor(5);
-        leftPanListsPage.setClickFolderName();
+        listsPage.searchListTxt(arg1);
     }
-
-    @When("^I click on menu list and click on delete button$")
-    public void i_click_on_menu_list_and_click_on_delete_button() {
-        pauseFor(5);
-        leftPanListsPage.menuList();
-        pauseFor(5);
-        leftPanListsPage.deleteListButton();
-
-    }
-
-    //click on delete button in list page to delete list
-    @When("^I click on delete button$")
-    public void i_click_on_delete_button() {
-        pauseFor(5);
-        rightPanListPage.setClickDelete();
-    }
-
-    @When("^I confirm deletion$")
-    public void i_confirm_deletion() {
-        pauseFor(5);
-        leftPanListsPage.confirmDeleteFolder();
-    }
-
-    @When("^I click on search icon in the list page and I enter list name as \"(.*?)\"$")
-    public void i_click_on_search_icon_in_the_list_page_and_I_enter_list_name_as(String list) {
-        pauseFor(5);
-        leftPanListsPage.enterListNameToDelete(list);
-
-    }
-
-    @When("^click on the list name from the list$")
-    public void click_on_the_list_name_from_the_list() {
-        pauseFor(5);
-        leftPanListsPage.tickCheckBoxToSelectListName();
-    }
-
 
     @Then("^I should see the list deleted$")
-    public void i_should_see_the_list_deleted()throws InterruptedException {
+    public void i_should_see_the_list_deleted() throws InterruptedException {
         pauseFor(5);
-        leftPanListsPage.validateListDeleted();
-
+        listsPage.validateListDeleted();
+    }
+    @When("^I enter list name in lists as \"([^\"]*)\" and click on it$")
+    public void i_enter_list_name_in_lists_as_and_click_on_it(String selectListName) throws InterruptedException {
+        pauseFor(5);
+        listsPage.enterListNameToChoose(selectListName);
+        wait(5);
+        listsPage.setClickOkToChooseList();
+    }
+    @When("^I click copy all to lists$")
+    public void i_click_copy_all_to_lists() throws InterruptedException {
+        pauseFor(5);
+        listsPage.setClickCopyAllToListsBtn();
+    }
+    @When("^I enter list name to copy as \"([^\"]*)\" and click ok$")
+    public void i_enter_list_name_to_copy_as_and_click_ok(String listName) throws InterruptedException {
+        pauseFor(5);
+        listsPage.setEnterListNameToCopy(listName);
+        pauseFor(5);
+        listsPage.setClickOkToCopyList();
+    }
+    @When("^I click clear the search field$")
+    public void i_click_clear_the_search_field() throws InterruptedException {
+        pauseFor(5);
+        listsPage.setClickClearField();
+    }
+    @When("^I click select all button to see the copied list$")
+    public void i_click_select_all_button_to_see_the_copied_list() throws InterruptedException {
+       pauseFor(5);
+       listsPage.chooseJournalist();
     }
 
-    @Then("^I should see the folder deleted$")
-    public void i_should_see_the_folder_deleted()throws InterruptedException {
+    @When("^I see the list copied$")
+    public void i_see_the_list_copied() throws InterruptedException {
         pauseFor(10);
-        leftPanListsPage.validateDeletionFolder();
+        listsPage.setValidateListCopied();
     }
 
-    @Then("^I should see the GDPR rejected status is unchecked by default$")
-    public void i_should_see_the_GDPR_rejected_status_is_unchecked_by_default() {
-        pauseFor(10);
-        Assert.assertFalse(rightPanListPage.validateGDPRCheckbox());
+    @When("^I click on delete and confirm delete button to delete the list$")
+    public void i_click_on_delete_and_confirm_delete_button_to_delete_the_list() throws InterruptedException {
+        pauseFor(5);
+        listsPage.setDeleteListBtn();
     }
 
-    @Then("^I should able to see the journalist added to the list$")
-    public void i_should_able_to_see_the_journalist_added_to_the_list() {
-        pauseFor(10);
-        rightPanListPage.setValidateJournoAddedToList();
+    @Then("^I should see the list deleted successfully$")
+    public void i_should_see_the_list_deleted_successfully() throws InterruptedException {
+       pauseFor(5);
+       listsPage.setValidateDeletedList();
     }
 }
+
 

@@ -1,5 +1,8 @@
 package pageObjects;
 
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import gherkin.lexer.Th;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,8 +17,8 @@ public class HomePage {
     public WebElement userprofile;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[3]/div/div/div/div[3]/span")
     public WebElement logout;
-    @FindBy(id = "opoint-link-icon")
-    public WebElement newsOnlineBtn;
+    @FindBy(id = "pinpoint-link-icon")
+    public WebElement clickPinPointTab;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/a")
     public WebElement goBackBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/nav/div[2]/span")
@@ -39,6 +42,8 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"hubspot-feedback-form\"]/div")
     public WebElement validateHelpAndFeedback;
 
+
+
     /* Initialising Web driver*/
     public HomePage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
@@ -55,64 +60,68 @@ public class HomePage {
     }
 
     /*logout from the application*/
-    public void logOut() {
+    public void logOut()throws InterruptedException {
+        Thread.sleep(3000);
         logout.click();
     }
 
-    /*go to news online tab in order to check go back button*/
-    public void setNewsOnlineBtn() {
-        newsOnlineBtn.click();
+   /*go to pin point tab in order to check go back button*/
+    public void setPinpointTab()throws InterruptedException {
+        Thread.sleep(3000);
+        clickPinPointTab.click();
     }
 
     /*clicking go back button*/
-    public void setGoBackBtn() {
+    public void setGoBackBtn()throws InterruptedException {
+        Thread.sleep(3000);
         goBackBtn.click();
     }
 
     /*validating go back button with highlight displayed on home page which is unique for home page*/
     public void setValidateGoBackBtn() {
-
         Assert.assertTrue(validateGoBackBtn.isDisplayed());
     }
 
     /* click on webinar alerts tab*/
-    public void clickWebinar() {
+    public void clickWebinar()throws InterruptedException {
+        Thread.sleep(3000);
         clkWebinarTab.click();
     }
 
-    public void clickSelectAll() {
+    public void clickSelectAll()throws InterruptedException {
+        Thread.sleep(3000);
         clkSelectAll.click();
     }
 
-    public void setValidateWebinarAlert() {
-
+    public void setValidateWebinarAlert() throws InterruptedException{
+Thread.sleep(3000);
         validateWebinarAlert.isDisplayed();
     }
 
-    /*clicking sign up link*/
-    /*public void clickSignUpLink() {
-        clkJournoLink.click();
-    }*/
-
     /*validating whether the sign up link navigating to the Roxhill site*/
-    public void validateQuickLinks() {
+    public void validateQuickLinks()throws InterruptedException {
+        Thread.sleep(3000);
         validateJournoLink.isDisplayed();
     }
 
     /*Validating help and feedback functionality*/
-    public void clickHelpAndFeedback() {
+    public void clickHelpAndFeedback()throws InterruptedException {
+        Thread.sleep(3000);
         clickHelpAndFeedbackButton.click();
     }
 
-    public void setEnterDesc(String desc) {
+    public void setEnterDesc(String desc)throws InterruptedException {
+        Thread.sleep(3000);
         enterDesc.sendKeys(desc);
     }
 
-    public void setClickSendButton() {
+    public void setClickSendButton()throws InterruptedException {
+        Thread.sleep(3000);
         clickSendButton.click();
     }
 
-    public void setValidateHelpAndFeedback() {
+    public void setValidateHelpAndFeedback()throws InterruptedException {
+        Thread.sleep(3000);
         validateHelpAndFeedback.isDisplayed();
     }
 }

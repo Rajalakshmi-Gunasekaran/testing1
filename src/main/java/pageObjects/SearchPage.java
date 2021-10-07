@@ -16,7 +16,6 @@ public class SearchPage extends CommonFunctions{
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div/div/input")
     public WebElement clkQuickSearch;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/nav/div[2]/div/div/input")
@@ -41,6 +40,7 @@ public class SearchPage extends CommonFunctions{
     //click quick search on home page
     public void setClkQuickSearch() throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(clkQuickSearch,driver);
         clkQuickSearch.click();
     }
 
@@ -48,12 +48,14 @@ public class SearchPage extends CommonFunctions{
     public void enterSearchJourno(String Journo)throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(quickSearch,driver);
         quickSearch.sendKeys(Journo);
     }
 
     //select the journalist from the list and click on it
     public void chooseJournalist() throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(JournalistName,driver);
         JournalistName.click();
     }
 
@@ -67,6 +69,7 @@ public class SearchPage extends CommonFunctions{
     public void enterSearchDesk(String Desk) throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(quickSearch,driver);
         quickSearch.sendKeys(Desk);
     }
 
@@ -74,6 +77,7 @@ public class SearchPage extends CommonFunctions{
     public void chooseDesk() throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(DeskName,driver);
         DeskName.click();
     }
 
@@ -87,6 +91,7 @@ public class SearchPage extends CommonFunctions{
     public void enterSearchOutlet(String Outlet) throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(quickSearch,driver);
         quickSearch.sendKeys(Outlet);
     }
 
@@ -94,6 +99,7 @@ public class SearchPage extends CommonFunctions{
     public void chooseOutlet() throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(OutletName,driver);
         OutletName.click();
     }
 
@@ -101,6 +107,7 @@ public class SearchPage extends CommonFunctions{
     public void goToOutletProfile() throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(validateOutletProfile,driver);
         Assert.assertTrue(validateOutletProfile.isDisplayed());
     }
 
@@ -108,6 +115,7 @@ public class SearchPage extends CommonFunctions{
     public void enterSearchCompany(String Company) throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(quickSearch,driver);
         quickSearch.sendKeys(Company);
     }
 
@@ -115,6 +123,7 @@ public class SearchPage extends CommonFunctions{
     public void chooseCompany() throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(CompanyName,driver);
         CompanyName.click();
     }
 
@@ -122,6 +131,7 @@ public class SearchPage extends CommonFunctions{
     public void goToCompanyProfile() throws InterruptedException
     {
         Thread.sleep(3000);
+        elementVisible(validateCompanyProfile,driver);
         Assert.assertTrue(validateCompanyProfile.isDisplayed());
     }
 

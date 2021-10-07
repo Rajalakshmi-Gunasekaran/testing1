@@ -140,4 +140,39 @@ public class Search extends BaseStep {
         wait(30);
 
     }
+    @When("^I click on In lists button$")
+    public void i_click_on_In_lists_button() throws InterruptedException {
+      wait(30);
+      journoProfilePage.setClickInListButton();
+    }
+
+    @When("^I click on search list icon and I enter list name in the search field as \"([^\"]*)\" to add journo$")
+    public void i_click_on_search_list_icon_and_I_enter_list_name_in_the_search_field_as_to_add_journo(String automationList) throws InterruptedException {
+       wait(30);
+       journoProfilePage.setEnterListNameToAdd(automationList);
+    }
+
+    @When("^I click on the list from the list options$")
+    public void i_click_on_the_list_from_the_list_options() throws InterruptedException {
+      wait(30);
+      journoProfilePage.setClickOnAutomationList();
+    }
+
+    @When("^I should see the added list on the right hand side pan$")
+    public void i_should_see_the_added_list_on_the_right_hand_side_pan() throws InterruptedException {
+      wait(30);
+      journoProfilePage.setValidateJournoAddedToList();
+    }
+
+    @When("^I click on remove cross mark on the list name$")
+    public void i_click_on_remove_cross_mark_on_the_list_name() throws InterruptedException {
+wait(30);
+journoProfilePage.setClickRemoveFromList();
+    }
+
+    @Then("^I should see the list removed from the journo page$")
+    public void i_should_see_the_list_removed_from_the_journo_page() throws InterruptedException {
+wait(30);
+journoProfilePage.setValidateJournoRemovalFromList();
+    }
 }

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import gherkin.lexer.Th;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class AdvancedSearchPage {
+public class AdvancedSearchPage extends CommonFunctions{
     public WebDriver driver;
     private Actions action;
 
@@ -53,12 +54,40 @@ public class AdvancedSearchPage {
     public WebElement enterListName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement clickOk;
+    @FindBy(xpath = "//div[@class=\"d-flex flex-column align-items-center pt-2\"]/div[contains(text(),\"Tweets\")]")
+    public WebElement twitterRadioBtn;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Tweets\")]")
+    public WebElement twitterTab;
+    @FindBy(xpath ="//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Articles\")]")
+    public WebElement articlesTab;
+    @FindBy(xpath ="//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Outlets\")]")
+    public WebElement outletsTab;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Journalist alerts\")]")
+    public WebElement journalistAlertsTab;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Forward Features\")]")
+    public WebElement forwardFeaturesTab;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Media Requests\")]")
+    public WebElement mediaRequestTab;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Instagram\")]")
+    public WebElement instagramTab;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"Activities\")]")
+    public WebElement activitiesTab;
+    @FindBy(xpath = "//div[@class=\"label mr-3 text-left\"]/div[contains(text(),\"PR opportunities\")]")
+    public WebElement PROpportunitiesTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[3]/div/div[2]/div[2]/div[1]/div[2]/div/div/input")
+    public WebElement basedInCountry;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[3]/div/div[2]/div[2]/div[2]/div[2]/input")
+    public WebElement anyTownOrPostcode;
+    @FindBy(xpath = "")
+    public WebElement a;
 
-    public void clickAdvancedSearch() {
+    public void clickAdvancedSearch()throws InterruptedException {
+        Thread.sleep(3000);
         AdvancedSearchTab.click();
     }
 
-    public void enterOutletType(String outletTypeName) {
+    public void enterOutletType(String outletTypeName) throws InterruptedException{
+        Thread.sleep(3000);
         outletType.sendKeys(outletTypeName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -66,7 +95,9 @@ public class AdvancedSearchPage {
         outletType.sendKeys(Keys.ENTER);
     }
 
-    public void enterOutletName(String outletName) {
+    public void enterOutletName(String outletName)throws InterruptedException {
+        Thread.sleep(3000);
+        elementVisible(enterOutletName,driver);
         enterOutletName.sendKeys(outletName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -74,19 +105,16 @@ public class AdvancedSearchPage {
         enterOutletName.sendKeys(Keys.ENTER);
     }
 
-    public void setValidateOutletSearch() {
+    public void setValidateOutletSearch() throws InterruptedException{
+        Thread.sleep(3000);
+        elementVisible(validateOutletSearch,driver);
         Assert.assertTrue(validateOutletSearch.isDisplayed());
     }
-
     /* add journalist to the list*/
-    public void setClickCopyToList() {
-        /*clickActionsToClickCopyToList.click();
-        action = new Actions(driver);
-        action.pause(Duration.ofSeconds(2));
-        action.build().perform();*/
+    public void setClickCopyToList() throws InterruptedException{
+        elementClickable(clickCopyToList1,driver);
         clickCopyToList1.click();
     }
-
     /*enter list name to add journalist*/
     public void setEnterListName(String listName) {
         enterListName.sendKeys(listName);
@@ -95,35 +123,46 @@ public class AdvancedSearchPage {
         action.build().perform();
         enterListName.sendKeys(Keys.ENTER);
     }
-
     /*click ok to add journalist to the list*/
     public void setClickOk() {
         clickOk.click();
     }
-
     /* To group by list by country*/
-    public void clickGroupByIcon() {
+    public void clickGroupByIcon()throws InterruptedException {
+        Thread.sleep(3000);
+        elementVisible(clickGroupByButton,driver);
         clickGroupByButton.click();
     }
 
-    public void clickCountryGroupBy() {
+    public void clickCountryGroupBy() throws InterruptedException{
+        Thread.sleep(3000);
+        elementClickable(clickCountry,driver);
         clickCountry.click();
     }
 
-    public void validateListGroupedByCountry() {
+    public void validateListGroupedByCountry()throws InterruptedException {
+        Thread.sleep(3000);
+        //elementVisible(validateGroupBy,driver);
         Assert.assertTrue(validateGroupBy.isDisplayed());
     }
 
     /* validate change info functionality in journalist advanced search by outlet filters*/
-    public void clickChangeInfo() {
+    public void clickChangeInfo()throws InterruptedException
+    {
+        Thread.sleep(3000);
+        elementVisible(clickChangeInfoView,driver);
         clickChangeInfoView.click();
     }
 
-    public void chooseInfo() {
+    public void chooseInfo()throws InterruptedException
+    {
+        Thread.sleep(3000);
+        elementVisible(chooseInfoView,driver);
         chooseInfoView.click();
     }
 
-    public void validateJournalistInfo() {
+    public void validateJournalistInfo()throws InterruptedException {
+        Thread.sleep(3000);
         Assert.assertTrue(validateInfoView.isDisplayed());
     }
 }

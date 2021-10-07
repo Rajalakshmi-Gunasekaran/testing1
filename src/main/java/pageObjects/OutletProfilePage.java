@@ -34,16 +34,17 @@ public class OutletProfilePage {
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[7]")
     public WebElement validatePROpportunityTab;
 
+    /*validate Desk display*/
     public void validateDeskDisplay() {
         Assert.assertTrue(validateDesk.isDisplayed());
     }
-
+/*validate journo display*/
     public void validateJournoDisplay() {
         Assert.assertTrue(validateContact.isDisplayed());
         Assert.assertTrue(validateRoxhillSays.isDisplayed());
         Assert.assertTrue(validateSectors.isDisplayed());
     }
-
+/*validate all tabs in outlet profile*/
     public void validateAllTabsINOutlet() {
         Assert.assertTrue(validateIAbout.isDisplayed());
         Assert.assertTrue(validateTwitterTab.isDisplayed());
