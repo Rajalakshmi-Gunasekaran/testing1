@@ -21,6 +21,14 @@ public class LoginPage {
     public WebElement clickSendEmailButton;
     @FindBy(xpath = "/html/body/div/div/div[2]/div[1]")
     public WebElement validateForgotPassword;
+    @FindBy(xpath = "//a[@class=\"mt-1 d-flex align-items-center\"][contains(text(),\"User Settings\")]")
+    public WebElement clickSettingsBtn;
+    @FindBy(xpath = "")
+    public WebElement chooseCountryDropDownBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/section[2]/div/div[1]/form/div[2]/div")
+    public WebElement clickChooseCountry;
+    @FindBy(xpath = "//button[@class=\"waiting-button ml-2 btn btn-sm btn-success d-flex align-items-center text-uppercase\"]")
+    public WebElement clickSaveChangesBtn;
 
     /* initialising web driver*/
     public LoginPage(WebDriver driver) {
@@ -56,5 +64,16 @@ public class LoginPage {
 
     public void setValidateForgotPassword() {
         validateForgotPassword.isDisplayed();
+    }
+    public void ClickUserSettings() {
+        clickSettingsBtn.click();
+    }
+
+    public void chooseCountry() {
+        clickChooseCountry.click();
+    }
+
+    public void saveChanges() {
+        clickSaveChangesBtn.click();
     }
 }

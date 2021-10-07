@@ -9,15 +9,15 @@ Feature:AdvancedSearch
     And I click on login button
     Then I should be able to login successfully
 
-  @SearchJournalistUsingOutletFilter
-  Scenario: Validate search functionality using outlet filter
+  @smoke
+  Scenario:1Validate search functionality using outlet filter
     When I should login into the home page and click on search tab
     And I click on outlet type and enter outlet type as "National"
     And I Click on outlet name and enter outlet name as "BBC Two"
     Then I should see the Journalist list for the selected outlet
 
-  @Group-ByJournalistList
-  Scenario: Validate Group-By functionality using outlet filter
+  @smoke
+  Scenario:2Validate Group-By functionality using outlet filter
     When I should login into the home page and click on search tab
     And I click on outlet type and enter outlet type as "National"
     And I Click on outlet name and enter outlet name as "BBC Two"
@@ -25,8 +25,8 @@ Feature:AdvancedSearch
     And I choose country as Group-By
     Then I should able to see the journalist list grouped by country
 
-  @ChangeInfoViewInJournalistList
-  Scenario: Validate change Info view functionality using outlet filter
+  @smoke
+  Scenario:3Validate change Info view functionality using outlet filter
     When I should login into the home page and click on search tab
     And I click on outlet type and enter outlet type as "National"
     And I Click on outlet name and enter outlet name as "BBC Two"

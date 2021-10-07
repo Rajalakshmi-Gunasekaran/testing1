@@ -9,8 +9,8 @@ Feature: Distribution
     And I click on login button
     Then I should be able to login successfully
 
-  @CreateNewPressRelease
-  Scenario: Validate new press release functionality
+  @smoke
+  Scenario:AValidate new press release functionality
     When I should be in the home page and click on Distribution tab
     And I click on create new press release button
     And I enter press release name as "SmokeTest" and I click on create button
@@ -20,8 +20,17 @@ Feature: Distribution
     And I enter body as "The press release can be added in the body template"
     Then I should able to see the created press release
 
-  @CreateNewCampaign
-  Scenario: Validate new campaign functionality
+   @editPressRelease
+     Scenario: validate edit press release functionality
+     When I should be in the home page and click on Distribution tab
+     And I click on search icon on press release tab
+     And I enter press release name as "Functional Test"
+     And I click on selected press release
+     And I edit content by adding block
+     Then I should see the edited press release
+
+  @smoke
+  Scenario:BValidate new campaign functionality
     When I should be in the home page and click on Distribution tab
     And I click on campaign tab
     And I click on create new campaign button
@@ -34,8 +43,41 @@ Feature: Distribution
     And I click on send button in Campaign page
     Then I should able to see the campaign created
 
-  @DeleteCampaign
-  Scenario: Validate delete campaign functionality
+    @functional
+    Scenario: validate archive and unarchive press release
+      When I should be in the home page and click on Distribution tab
+    And I click on search icon on press release tab
+    And I enter press release name as "smokeTest" and I click on the name
+    And I click on the menu to select archive option
+    And I click on archive press release
+    And I click on archived press release tab
+    And I click on search icon on archive tab
+    And I enter press release name as "smokeTest" in archived and I click on the name
+    And I click on the menu to select unarchive option
+    And I click on press release tab
+    And I click on search icon on press release tab
+    And I enter press release name as "smokeTest"
+    Then I should see the unarchived press release
+
+@archiveCampaign
+  Scenario: validate archive and unarchive campaign
+    When I should be in the home page and click on Distribution tab
+    And I click on campaign tab
+    And I click on search icon on campaign tab
+    And I enter campaign name as "SmokeSuite" and I click on the name
+    And I click on the menu to select archive option
+    And I click on archive campaign
+    And I click on archived campaign tab
+    And I click on search icon on archive tab
+    And I enter campaign name to un archive as "SmokeSuite" and I click on the name
+    And I click on the menu to select unarchive option
+    And I click on campaign tab
+    And I click on search icon on campaign tab
+    And I enter campaign name as "SmokeSuite"
+    Then I should see the unarchived campaign
+
+  @smoke
+  Scenario:CValidate delete campaign functionality
     When I should be in the home page and click on Distribution tab
     And I click on campaign tab
     And I click on search icon on campaign tab
@@ -46,8 +88,8 @@ Feature: Distribution
     And I enter campaign name as "SmokeSuite"
     Then I should able to see the campaign deleted
 
-  @DeletePressRelease
-  Scenario: Validate delete press release functionality
+  @smoke
+  Scenario:DValidate delete press release functionality
     When I should be in the home page and click on Distribution tab
     And I click on search icon on press release tab
     And I enter press release name as "smokeTest" and I click on the name
@@ -56,3 +98,12 @@ Feature: Distribution
     And I click on search icon on press release tab
     And I enter press release name as "smokeTest"
     Then I should able to see the press release deleted
+
+    @view
+    Scenario: Validate view campaign functionality
+      When I should be in the home page and click on Distribution tab
+      And I click on campaign tab
+      And I click on search icon on campaign tab
+      And I enter campaign name as "functional testing"
+      And I click on the name
+      Then I should see the campaign report

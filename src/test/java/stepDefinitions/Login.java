@@ -4,9 +4,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import pageObjects.Contents;
+import pageObjects.Constants;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -39,7 +37,7 @@ public class Login extends BaseStep {
     @Then("^I should be able to login successfully$")
     public void i_should_be_able_to_login_successfully() {
         String loginSuccessMsg = homePage.getLoginToastMsg();
-        Assert.assertEquals(Contents.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
+        Assert.assertEquals(Constants.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
     }
 
     @When("^I click on userprofile$")
@@ -49,7 +47,7 @@ public class Login extends BaseStep {
     }
 
     @When("^I choose logout and click on it$")
-    public void i_choose_logout_and_click_on_it() {
+    public void i_choose_logout_and_click_on_it()throws InterruptedException {
         homePage.logOut();
         wait(10);
     }
@@ -87,5 +85,27 @@ public class Login extends BaseStep {
     public void i_validate_with_the_forgotten_password_link_sent_message() {
         pauseFor(5);
         loginPage.setValidateForgotPassword();
+    }
+    @When("^I choose user settings and click on it$")
+    public void i_choose_user_settings_and_click_on_it()  {
+        wait(30);
+        loginPage.ClickUserSettings();
+    }
+
+    @When("^I navigate to the user settings page and choose preferred country as United Kingdom$")
+    public void i_navigate_to_the_user_settings_page_and_choose_preferred_country_as_United_Kingdom() {
+        wait(30);
+        loginPage.chooseCountry();
+    }
+
+    @When("^I click save changes button$")
+    public void i_click_save_changes_button()  {
+        wait(30);
+        loginPage.saveChanges();
+    }
+    @Then("^I should navigate to the home page$")
+    public void i_should_navigate_to_the_home_page() {
+        wait(30);
+        homePage.setValidateGoBackBtn();
     }
 }
