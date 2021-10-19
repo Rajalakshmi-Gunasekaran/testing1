@@ -289,4 +289,69 @@ distributionPage.setClickPressReleaseToEdit();
        wait(30);
        distributionPage.setValidateViewCampaign();
     }
+    @When("^I click on Blocks tab$")
+    public void i_click_on_Blocks_tab() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickBlocksTab();
+    }
+
+    @When("^I click on create new block button$")
+    public void i_click_on_create_new_block_button() throws InterruptedException {
+      wait(30);
+      distributionPage.setClickCreateNewBlock();
+    }
+
+    @When("^I enter block name as \"([^\"]*)\" and I click on create button$")
+    public void i_enter_block_name_as_and_I_click_on_create_button(String blockName) throws InterruptedException {
+        wait(30);
+        distributionPage.enterBlockNameToCreate(blockName);
+    }
+
+    @When("^I click on insert link from header section$")
+    public void i_click_on_insert_link_from_header_section() throws InterruptedException {
+        wait(30);
+        distributionPage.clickInsertLink();
+    }
+
+    @When("^I enter URL as \"([^\"]*)\"$")
+    public void i_enter_URL_as(String URLLink) throws InterruptedException {
+        wait(30);
+        distributionPage.enterURLToCreateLinkInHeader(URLLink);
+    }
+
+
+    @When("^I click on Ok button in the insert link dialog box$")
+    public void i_click_on_Ok_button_in_the_insert_link_dialog_box() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickOkBtnToInsertLink();
+    }
+
+    @When("^I click on save button in the block page$")
+    public void i_click_on_save_button_in_the_block_page() throws InterruptedException {
+      wait(30);
+      distributionPage.setClickSaveBtn();
+    }
+
+    @When("^I click on duplicate button to make a copy of block$")
+    public void i_click_on_duplicate_button_to_make_a_copy_of_block() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickDuplicateBtn();
+    }
+
+    @Then("^I should delete the block$")
+    public void i_should_delete_the_block() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickDeleteButtonInBlock();
+    }
+    @When("^I choose block name from list$")
+    public void i_choose_block_name_from_list() throws InterruptedException {
+        wait(30);
+        distributionPage.setChooseBlockNameToEdit();
+    }
+
+    @When("^I click on clear content button and confirm clear in block$")
+    public void i_click_on_clear_content_button_and_confirm_clear_in_block() throws InterruptedException {
+       wait(30);
+       distributionPage.setClickClearContent();
+    }
 }
