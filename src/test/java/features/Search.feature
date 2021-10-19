@@ -36,3 +36,16 @@ Feature: Search
     And I enter Company name as "Apple"
     And I choose Company from the list and Click on it
     Then I should navigate to the Company profile page
+
+
+   @functional1
+   Scenario:Validate adding journo to the list from quick search
+     When I should login into the home page and click on Quick search tab
+     And I enter Journalist name as "simon english"
+     And I click on add to list short link
+     And I enter quick search list name as "QuickSearchList" and I click on Ok to create new list from quick search
+     And I close the quick search bar
+     And I click on lists tab in home page
+     And I should see the Journalist added to the list
+     Then I delete the list and confirm deletion
+

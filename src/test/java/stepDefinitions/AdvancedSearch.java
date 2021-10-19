@@ -77,6 +77,33 @@ public class AdvancedSearch extends BaseStep {
         pauseFor(5);
         advancedSearchPage.validateJournalistInfo();
     }
+    @When("^I click on add journalist to list button$")
+    public void i_click_on_add_journalist_to_list_button() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.setClickAddJournoToListBtn();
+    }
 
+    @When("^I enter list name from the advanced search journalist tab as \"([^\"]*)\" and click ok$")
+    public void i_enter_list_name_from_the_advanced_search_journalist_tab_as_and_click_ok(String advancedSearchList) throws InterruptedException {
+        wait(30);
+        advancedSearchPage.enterListNameToCreateAdvancedSearchList(advancedSearchList);
+    }
 
+    @When("^I click on list tab in home page$")
+    public void i_click_on_list_tab_in_home_page() throws InterruptedException {
+        pauseFor(5);
+        listsPage.clickListsBtn();
+    }
+
+    @When("^I validate journo added to the list from advanced search$")
+    public void i_validate_journo_added_to_the_list_from_advanced_search() throws InterruptedException {
+        wait(30);
+        listsPage.validateJournoAddedToListFromAdvancedSearch();
+    }
+
+    @Then("^I should delete the list$")
+    public void i_should_delete_the_list() throws InterruptedException {
+        wait(30);
+        listsPage.clickListsBtn();
+    }
 }

@@ -224,4 +224,27 @@ public class Streams extends BaseStep
            wait(30);
            streamPage.validateTweetStreams();
         }
+        @When("^I click on activities from the options$")
+        public void i_click_on_activities_from_the_options() throws InterruptedException {
+            wait(30);
+            streamPage.setClickActivities();
+        }
+
+        @When("^I click on journalists$")
+        public void i_click_on_journalists() throws InterruptedException {
+           wait(30);
+           streamPage.setClickJournalists();
+        }
+
+        @When("^I enter journalist as \"([^\"]*)\"$")
+        public void i_enter_journalist_as(String journoName) throws InterruptedException {
+           wait(30);
+           streamPage.setEnterJournoName(journoName);
+        }
+
+        @When("^I should able to see the streams results for activities$")
+        public void i_should_able_to_see_the_streams_results_for_activities() throws InterruptedException {
+            wait(30);
+            streamPage.validateActivitiesStream();
+        }
     }

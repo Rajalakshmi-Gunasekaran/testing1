@@ -99,6 +99,10 @@ public class ListsPage extends CommonFunctions{
     public WebElement validatePinpointList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
     public WebElement validateJournoAddedToStreamList;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]")
+    public WebElement validateJournoAddedToListFromQuickSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
+    public WebElement ValidateJournoAddedToListFromQuickSearch;
 
     //click on List button on home page
     public void clickListsBtn() throws InterruptedException{
@@ -359,5 +363,17 @@ public class ListsPage extends CommonFunctions{
         clickSelectAll.click();
         Thread.sleep(3000);
         validateJournoAddedToStreamList.isDisplayed();
+    }
+
+    public void validateJournoAddedToQuickSearchList() throws InterruptedException{
+        Thread.sleep(3000);
+        validateJournoAddedToListFromQuickSearch.isDisplayed();
+    }
+
+    public void validateJournoAddedToListFromAdvancedSearch() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSelectAll.click();
+        Thread.sleep(3000);
+        validateJournoAddedToListFromQuickSearch.isDisplayed();
     }
 }

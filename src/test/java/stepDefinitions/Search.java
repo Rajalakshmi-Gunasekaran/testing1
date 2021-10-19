@@ -6,8 +6,7 @@ import pageObjects.*;
 
 public class Search extends BaseStep {
     public SearchPage search = new SearchPage(webDriver);
-    public HomePage homePage = new HomePage(webDriver);
-    public LoginPage loginPage = new LoginPage(webDriver);
+    public ListsPage listsPage = new ListsPage(webDriver);
     public OutletProfilePage outletProfilePage = new OutletProfilePage(webDriver);
     public JournoProfilePage journoProfilePage = new JournoProfilePage(webDriver);
 
@@ -174,5 +173,41 @@ journoProfilePage.setClickRemoveFromList();
     public void i_should_see_the_list_removed_from_the_journo_page() throws InterruptedException {
 wait(30);
 journoProfilePage.setValidateJournoRemovalFromList();
+    }
+    @When("^I click on add to list short link$")
+    public void i_click_on_add_to_list_short_link() throws InterruptedException {
+        wait(30);
+        search.setClickAddToList();
+    }
+    @When("^I enter quick search list name as \"([^\"]*)\" and I click on Ok to create new list from quick search$")
+    public void i_enter_quick_search_list_name_as_and_I_click_on_Ok_to_create_new_list_from_quick_search(String listName) throws InterruptedException {
+    wait(30);
+    search.setEnterQuickSearchListNameToCreate(listName);
+    wait(30);
+    search.setClickOkToCreateQuickSearchList();
+    }
+
+    @When("^I close the quick search bar$")
+    public void i_close_the_quick_search_bar() throws InterruptedException {
+        pauseFor(5);
+        search.setCloseQuickSearchBar();
+    }
+
+    @When("^I click on lists tab in home page$")
+    public void i_click_on_lists_tab_in_home_page() throws InterruptedException {
+        wait(30);
+        listsPage.clickListsBtn();
+    }
+
+    @When("^I should see the Journalist added to the list$")
+    public void i_should_see_the_Journalist_added_to_the_list() throws InterruptedException {
+       wait(30);
+       listsPage.validateJournoAddedToQuickSearchList();
+    }
+
+    @Then("^I delete the list and confirm deletion$")
+    public void i_delete_the_list_and_confirm_deletion() throws InterruptedException {
+       wait(30);
+       listsPage.setDeleteListBtn();
     }
 }

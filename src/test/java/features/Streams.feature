@@ -71,3 +71,16 @@ Feature: Streams
       And I click on save button
       And I should able to see the  streams results for tweet
       Then I delete the streams
+
+  @functional1
+  Scenario: validate stream set up for activities
+    When I should be in the home page and click on Streams
+    And I click on create new stream button
+    And I enter stream name as "Testing"
+    And I click on create button
+    And I click on activities from the options
+    And I click on journalists
+    And I enter journalist as "Simon English"
+    And I click on save button
+    And I should able to see the streams results for activities
+    Then I delete the streams

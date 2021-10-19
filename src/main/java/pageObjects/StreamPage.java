@@ -94,6 +94,17 @@ public class StreamPage extends CommonFunctions{
     public WebElement clickTweetOption;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]")
     public WebElement validateTweetStreamsResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[1]/div[1]/div[5]/div/div")
+    public WebElement clickActivities;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[3]/div/div[9]/div/span")
+    public WebElement clickJournalists;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[2]/div/div[1]/div[1]/div[3]/div/div/div[1]/div/div/input")
+    public WebElement enterJournalistName;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div")
+    public WebElement validateActivityStream;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div/div[2]/ul/li/div/a/strong")
+    public WebElement validateActivityPreview;
+
 
 
     /*Validating All Journo moves functionality*/
@@ -294,5 +305,31 @@ public class StreamPage extends CommonFunctions{
     public void validateTweetStreams() throws InterruptedException{
         Thread.sleep(3000);
         validateTweetStreamsResults.isDisplayed();
+    }
+
+    public void setClickActivities()throws InterruptedException {
+        Thread.sleep(3000);
+        clickActivities.click();
+    }
+
+    public void setClickJournalists() throws InterruptedException{
+        Thread.sleep(3000);
+        clickJournalists.click();
+    }
+
+    public void setEnterJournoName(String journoName) throws InterruptedException{
+        Thread.sleep(3000);
+        enterJournalistName.sendKeys(journoName);
+        Thread.sleep(3000);
+        enterJournalistName.sendKeys(Keys.ENTER);
+    }
+
+    public void validateActivitiesStream() throws InterruptedException{
+        Thread.sleep(3000);
+        validateActivityPreview.isDisplayed();
+        Thread.sleep(3000);
+        clickFeed.click();
+        Thread.sleep(3000);
+        validateActivityStream.isDisplayed();
     }
 }
