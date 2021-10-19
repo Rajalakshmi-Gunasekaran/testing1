@@ -78,8 +78,12 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement basedInCountry;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[3]/div/div[2]/div[2]/div[2]/div[2]/input")
     public WebElement anyTownOrPostcode;
-    @FindBy(xpath = "")
-    public WebElement a;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
+    public WebElement enterListNameFromAdvancedSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/span/button")
+    public WebElement clickAddJournoToListBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[3]/button")
+    public WebElement clickOkToCreateAdvancedSearch;
 
     public void clickAdvancedSearch()throws InterruptedException {
         Thread.sleep(3000);
@@ -164,5 +168,19 @@ public class AdvancedSearchPage extends CommonFunctions{
     public void validateJournalistInfo()throws InterruptedException {
         Thread.sleep(3000);
         Assert.assertTrue(validateInfoView.isDisplayed());
+    }
+
+    public void setClickAddJournoToListBtn()throws InterruptedException {
+        Thread.sleep(3000);
+        clickAddJournoToListBtn.click();
+    }
+
+    public void enterListNameToCreateAdvancedSearchList(String advancedSearchList)throws InterruptedException {
+        Thread.sleep(3000);
+        enterListNameFromAdvancedSearch.sendKeys(advancedSearchList);
+        Thread.sleep(3000);
+        enterListNameFromAdvancedSearch.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
+        clickOkToCreateAdvancedSearch.click();
     }
 }

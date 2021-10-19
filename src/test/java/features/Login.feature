@@ -9,3 +9,4 @@ Feature: Login
     And I enter email id in the email text field as "qa@roxhillmedia.com"
     And I click send email button
     Then I validate with the forgotten password link sent message
+

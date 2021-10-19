@@ -1,8 +1,10 @@
 package pageObjects;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -36,6 +38,17 @@ public class SearchPage extends CommonFunctions{
     public WebElement CompanyName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[1]/div/div[2]/div[1]/div")
     public WebElement validateCompanyProfile;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/li[1]/div[2]")
+    public WebElement mouseHoverOverToAddList;
+    @FindBy(xpath = "//button[contains(text(),\" Add to list \")]")
+    public WebElement clickAddToListLink;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/div/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
+    public WebElement enterQuickSearchListNameToCreate;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/div/div/div/div/div[3]/div[2]/form/div[3]/button/i")
+    public WebElement clickOkToCreateQuickSearchList;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/nav/div[2]/div/i[2]")
+    public WebElement clickCloseQuickSearchBar;
+
 
     //click quick search on home page
     public void setClkQuickSearch() throws InterruptedException{
@@ -134,6 +147,28 @@ public class SearchPage extends CommonFunctions{
         elementVisible(validateCompanyProfile,driver);
         Assert.assertTrue(validateCompanyProfile.isDisplayed());
     }
+    //Creating object of an Actions class and Performing the mouse hover action on the target element.
+    public void setClickAddToList()throws InterruptedException{
+       Thread.sleep(3000);
+        Actions action = new Actions(driver);
+        action.moveToElement(mouseHoverOverToAddList).perform();
+        Thread.sleep(3000);
+        clickAddToListLink.click();
+    }
+    public void setEnterQuickSearchListNameToCreate(String quickSearchListName)throws InterruptedException{
+        Thread.sleep(3000);
+        enterQuickSearchListNameToCreate.sendKeys(quickSearchListName);
+        enterQuickSearchListNameToCreate.sendKeys(Keys.ENTER);
 
+    }
+    //click ok to create new list
+    public void setClickOkToCreateQuickSearchList()throws InterruptedException{
+        Thread.sleep(3000);
+        clickOkToCreateQuickSearchList.click();
+    }
+    public void setCloseQuickSearchBar()throws InterruptedException {
+        Thread.sleep(3000);
+        clickCloseQuickSearchBar.click();
+    }
 }
 

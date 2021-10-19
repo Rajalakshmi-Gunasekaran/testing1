@@ -33,3 +33,14 @@ Feature:AdvancedSearch
     And I click on change info icon
     And I choose info as Roxhill says
     Then I should able to see the journalist list view by Roxhill says inside the tile
+
+  @functional
+  Scenario:Validate adding journo to the list from advanced search
+    When I should login into the home page and click on search tab
+    And I click on outlet type and enter outlet type as "National"
+    And I Click on outlet name and enter outlet name as "BBC Two"
+    And I click on add journalist to list button
+    And I enter list name from the advanced search journalist tab as "AdvancedSearchList" and click ok
+    And I click on list tab in home page
+    And I validate journo added to the list from advanced search
+    Then I should delete the list
