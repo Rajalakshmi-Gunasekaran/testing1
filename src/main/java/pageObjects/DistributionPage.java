@@ -139,45 +139,75 @@ public class DistributionPage extends CommonFunctions{
     public WebElement getChooseBlock;
     @FindBy(xpath = "//*[@id=\"headerImage\"]/p/img")
     public WebElement validateEditPressRelease;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/ul/li[3]/a/div")
+    public WebElement clickBlockTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav/div[3]/button[2]")
+    public WebElement clickCreateNewBlock;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[2]/div[1]/input")
+    public WebElement enterBlockName;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[3]/button")
+    public WebElement clickCreateBtn;
+    @FindBy(xpath = "//i[@class=\"mce-ico mce-i-link\"]")
+    public WebElement clickURLLink;
+    @FindBy(css = ".mce-textbox")
+    public WebElement enterURLLink;
+    @FindBy(xpath = "//div[@class=\"mce-widget mce-btn mce-primary mce-abs-layout-item mce-first mce-btn-has-text\"]/button/span[contains(text(),\"Ok\")]")
+    public WebElement clickOkToEnterURLInHeader;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/nav/div[4]/button[2]")
+    public WebElement clickSaveBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/nav/div[4]/button[1]")
+    public WebElement clickDuplicateBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/span")
+    public WebElement clickClearContentBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/span/div/div[2]/div[1]")
+    public WebElement confirmClearContent;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/nav/div[4]/span")
+    public WebElement clickDeleteBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/nav/div[4]/span/div/div[2]/div[1]/i")
+    public WebElement confirmDeletionInBlock;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/form/div/div/input")
+    public WebElement enterBlockNameToEdit;
+    @FindBy(xpath = "//li[@class=\"widget px-3 py-2\"]/a[contains(text(),\" FunctionalTesting \")]")
+    public WebElement chooseBlockFromSearch;
 
     /* validate new press release functionality*/
     public void setClickDistributionTab()throws InterruptedException {
         Thread.sleep(3000);
         clickDistributionTab.click();
     }
-
+    //click create new press release
     public void setClickNewPressRelease()throws InterruptedException
     {
         Thread.sleep(3000);
         elementVisible(clickNewPressRelease,driver);
         clickNewPressRelease.click();
     }
-
+// enter press release name to create new press release
     public void setEnterPressRelease(String pressRelease)throws InterruptedException {
         Thread.sleep(3000);
         elementVisible(enterPressRelease,driver);
         enterPressRelease.sendKeys(pressRelease);
            }
-
+//click create press release after enter press release name
     public void setClickCreatePressRelease()throws InterruptedException
     {
         Thread.sleep(3000);
         elementClickable(clickCreatePressRelease,driver);
         clickCreatePressRelease.click();
     }
-
+//click header block to enter header content
     public void setClickHeaderBlock()throws InterruptedException {
         Thread.sleep(3000);
         elementVisible(clickHeaderBlock,driver);
         clickHeaderBlock.click();
     }
-
+//click source code button to enter header text
     public void clickSourceCode()throws InterruptedException {
         Thread.sleep(3000);
         elementVisible(clickSourceCodeHeaderBlock,driver);
         clickSourceCodeHeaderBlock.click();
     }
-
+//enter text into header block
     public void setHeaderBlock(String headerText)throws InterruptedException {
         Thread.sleep(3000);
         enterText.sendKeys(headerText);
@@ -186,19 +216,19 @@ public class DistributionPage extends CommonFunctions{
         action.build().perform();
         clickOkToEnter.click();
     }
-
+//click body block to add body content
     public void setClickBodyBlock() throws InterruptedException{
         Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", clickBodyBlock);
         clickBodyBlock.click();
     }
-
+//click source code button in the body block
     public void setClickSourceCodeBodyBlock()throws InterruptedException {
         Thread.sleep(3000);
         clickSourceCodeBodyBlock.click();
     }
-
+//enter body content
     public void setBodyBlock(String bodyText)throws InterruptedException {
         Thread.sleep(3000);
         enterBodyContext.sendKeys(bodyText);
@@ -207,23 +237,23 @@ public class DistributionPage extends CommonFunctions{
         action.build().perform();
         clickOkToEnterBody.click();
     }
-
+//click save to add press relaese
     public void clickSaveButtonInPressRelease()throws InterruptedException
     {
         Thread.sleep(3000);
         clickSaveButton.click();
     }
-
+//validate press release
     public void validatePressReleaseCreated()throws InterruptedException {
         Thread.sleep(3000);
         Assert.assertTrue(validatePressRelease.isDisplayed());
     }
-
+//click search icon to search for press release
     public void setClickSearchIcon() throws InterruptedException{
         Thread.sleep(3000);
         clickSearchIcon.click();
     }
-
+//enter press release name in the search field
     public void setEnterPressReleaseName(String pressRelease) throws InterruptedException{
         Thread.sleep(3000);
         enterPressReleaseName.sendKeys(pressRelease);
@@ -232,64 +262,69 @@ public class DistributionPage extends CommonFunctions{
         action.build().perform();
         clickPressRelease.click();
     }
-
+//enter press release name to validate
     public void enterPressReleaseToValidate(String name)throws InterruptedException {
         Thread.sleep(3000);
         enterPressReleaseName.sendKeys(name);
     }
+    //click press release to edit content
     public void setClickPressReleaseToEdit()throws InterruptedException{
         Thread.sleep(3000);
         selectPressReleaseToEdit.click();
     }
+    //choose block to edit
 public void setClickChooseBlock()throws InterruptedException{
         Thread.sleep(3000);
         chooseBlock.click();
 }
+//click on the desired block form the drop down
 public void setChooseBlock()throws InterruptedException{
         Thread.sleep(3000);
         getChooseBlock.click();
 }
+//validate edit press release
 public void setValidateEditPressRelease()throws InterruptedException{
         Thread.sleep(3000);
         validateEditPressRelease.isDisplayed();
 }
+//click create new campaign
     public void setClickCreateNewCampaign() throws InterruptedException{
         Thread.sleep(3000);
         elementVisible(clickCreateNewCampaign,driver);
         clickCreateNewCampaign.click();
     }
-
+//enter campaign name to create
     public void setEnterCampaignNameToCreate(String campaignName) throws InterruptedException {
         Thread.sleep(3000);
         elementVisible(enterCampaignNameToCreate,driver);
         enterCampaignNameToCreate.sendKeys(campaignName);
     }
-
+//click create new campaign
     public void clickCreateNewCampaign() throws InterruptedException{
         Thread.sleep(3000);
         elementClickable(clickCreateButton,driver);
         clickCreateButton.click();
     }
-
+//click ok button
     public void setClickOkButton() throws InterruptedException{
         Thread.sleep(3000);
         elementClickable(clickOkButton,driver);
         clickOkButton.click();
     }
-
+//click copy from list button
     public void setClickCopyFromListBtn()throws InterruptedException
     {
         Thread.sleep(3000);
         elementVisible(clickCopyFromListBtn,driver);
         clickCopyFromListBtn.click();
     }
-
+//enter list name to copy
     public void setEnterListNameToCopy(String listNameToCopy)throws InterruptedException {
         Thread.sleep(3000);
         enterListNameToCopy.sendKeys(listNameToCopy);
         enterListNameToCopy.sendKeys(Keys.ENTER);
     }
-
+//enter from email to send campaign
    public void setEnterFromEmail() throws InterruptedException
    {
        Thread.sleep(3000);
@@ -300,6 +335,7 @@ public void setValidateEditPressRelease()throws InterruptedException{
         getEnterFromEmail.click();
       //  Thread.sleep(3000);
     }
+    //select press release name to send
     public void selectPressReleaseNameToSend()throws InterruptedException
     {
         Thread.sleep(3000);
@@ -313,48 +349,48 @@ public void setValidateEditPressRelease()throws InterruptedException{
         action.build().perform();
         clickSave.click();
     }
-
+//click send button in campaign page
     public void clickSendButtonInCampaignPage()throws InterruptedException
     {
         Thread.sleep(3000);
         elementClickable(sendButton,driver);
         sendButton.click();
     }
-
+//validate campaign ready to send dialogue box
     public void setValidateCampaignSending() throws InterruptedException{
         Thread.sleep(3000);
         elementVisible(validateCampaignSending,driver);
         Assert.assertTrue(validateCampaignSending.isDisplayed());
     }
-
+//click menu check list to choose option
     public void setClickMenuCheckList()throws InterruptedException {
         Thread.sleep(3000);
         elementVisible(clickMenuCheckList,driver);
         clickMenuCheckList.click();
     }
-
+//choose delete option from the menu list
     public void setClickDeleteButton() throws InterruptedException{
         Thread.sleep(3000);
         elementVisible(clickDeleteButton,driver);
         clickDeleteButton.click();
     }
-
+//click confirm delete to confirm deletion
     public void setConfirmDeletion()throws InterruptedException {
         Thread.sleep(3000);
         elementClickable(confirmDeletion,driver);
     confirmDeletion.click();
     }
-
+//validate chosen press release is deleted
     public void setValidateDeletePressRelease()throws InterruptedException {
         Thread.sleep(3000);
         Assert.assertTrue(validateDeletePressRelease.isDisplayed());
     }
-
+//click campaign tab
     public void setClickCampaignTab()throws InterruptedException {
         Thread.sleep(3000);
         clickCampaignTab.click();
     }
-
+//enter campaign name to
     public void setEnterCampaignName(String campaignName)throws InterruptedException {
         Thread.sleep(3000);
         enterCampaignName.sendKeys(campaignName);
@@ -395,12 +431,14 @@ public void setValidateEditPressRelease()throws InterruptedException{
         Thread.sleep(3000);
         searchIconInArchive.click();
     }
+    /*enter press release name to archive*/
     public void setEnterPressReleaseNameToArchive(String archivePressReleaseName)throws InterruptedException{
         Thread.sleep(3000);
         enterPressReleaseNameToArchive.sendKeys(archivePressReleaseName);
         Thread.sleep(3000);
         clickPressReleaseToArchive.click();
     }
+    /*enter campaign name to unarchive */
     public void setEnterCampaignNameToUnArchive(String UnArchiveCampaign)throws InterruptedException{
         Thread.sleep(3000);
         enterUnArchiveCampaignName.sendKeys(UnArchiveCampaign);
@@ -418,11 +456,12 @@ public void setValidateEditPressRelease()throws InterruptedException{
         Thread.sleep(3000);
         clickPressReleaseTab.click();
     }
+    /*validate unarchive press release*/
     public void validateUnArchivePressRelease()throws InterruptedException{
         Thread.sleep(3000);
         validateUnArchivePressRelease.isDisplayed();
     }
-
+    //click archive campaign
     public void clickArchiveCampaign()throws InterruptedException{
         Thread.sleep(3000);
         clickArchiveCampaign.click();
@@ -446,5 +485,67 @@ public void setValidateEditPressRelease()throws InterruptedException{
     public void setValidateViewCampaign()throws InterruptedException{
         Thread.sleep(3000);
         validateViewCampaign.isDisplayed();
+    }
+//click block tab in distribution page
+    public void setClickBlocksTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickBlockTab.click();
+    }
+//click create new block
+    public void setClickCreateNewBlock() throws InterruptedException{
+        Thread.sleep(3000);
+        clickCreateNewBlock.click();
+    }
+//enter block name to create new block
+    public void enterBlockNameToCreate(String blockName) throws InterruptedException{
+        Thread.sleep(3000);
+        enterBlockName.sendKeys(blockName);
+        Thread.sleep(3000);
+        clickCreateBtn.click();
+    }
+//click insert link button to insert content in header
+    public void clickInsertLink() throws InterruptedException{
+        Thread.sleep(3000);
+        clickURLLink.click();
+    }
+//enter URL link in the header link pop up
+    public void enterURLToCreateLinkInHeader(String urlLink) throws InterruptedException{
+        Thread.sleep(3000);
+        enterURLLink.sendKeys(urlLink);
+    }
+//click ok button to insert link in header block
+    public void setClickOkBtnToInsertLink() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOkToEnterURLInHeader.click();
+    }
+//click save button
+    public void setClickSaveBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSaveBtn.click();
+    }
+//click duplicate button to create a copy of the block
+    public void setClickDuplicateBtn()throws InterruptedException {
+        Thread.sleep(3000);
+        clickDuplicateBtn.click();
+    }
+
+    public void setClickDeleteButtonInBlock() throws InterruptedException{
+        Thread.sleep(3000);
+        clickDeleteBtn.click();
+        Thread.sleep(3000);
+        confirmDeletionInBlock.click();
+    }
+
+
+    public void setChooseBlockNameToEdit() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseBlockFromSearch.click();
+    }
+
+    public void setClickClearContent() throws InterruptedException{
+        Thread.sleep(3000);
+        clickClearContentBtn.click();
+        Thread.sleep(3000);
+        confirmClearContent.click();
     }
 }

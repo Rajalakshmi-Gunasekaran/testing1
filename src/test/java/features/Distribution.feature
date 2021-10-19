@@ -107,3 +107,25 @@ Feature: Distribution
       And I enter campaign name as "functional testing"
       And I click on the name
       Then I should see the campaign report
+
+    @functional1
+    Scenario:BValidate creating, duplicating and deleting block
+      When I should be in the home page and click on Distribution tab
+      And I click on Blocks tab
+      And I click on create new block button
+      And I enter block name as "FunctionalTesting" and I click on create button
+      And I click on insert link from header section
+      And I enter URL as "RoxhillMedia.com"
+      And I click on Ok button in the insert link dialog box
+      And I click on save button in the block page
+      And I click on duplicate button to make a copy of block
+      Then I should delete the block
+
+  @functional2
+  Scenario:BValidate editing, clear contents and deleting block
+    When I should be in the home page and click on Distribution tab
+    And I click on Blocks tab
+    And I choose block name from list
+    And I click on clear content button and confirm clear in block
+    And I click on save button in the block page
+    Then I should delete the block
