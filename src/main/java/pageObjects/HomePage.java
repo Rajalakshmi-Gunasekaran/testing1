@@ -41,8 +41,10 @@ public class HomePage {
     public WebElement clickSendButton;
     @FindBy(xpath = "//*[@id=\"hubspot-feedback-form\"]/div")
     public WebElement validateHelpAndFeedback;
-
-
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/nav/div[2]/nav/a[5]")
+    public WebElement clickJournoFavouritesTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div")
+    public WebElement validateJournoAddedToFavourites;
 
     /* Initialising Web driver*/
     public HomePage(WebDriver webDriver) {
@@ -123,5 +125,14 @@ Thread.sleep(3000);
     public void setValidateHelpAndFeedback()throws InterruptedException {
         Thread.sleep(3000);
         validateHelpAndFeedback.isDisplayed();
+    }
+    public void validateJournoAddedToFavourites()throws InterruptedException {
+        Thread.sleep(3000);
+         validateJournoAddedToFavourites.isDisplayed();
+    }
+
+    public void setClickFavouriteJournoTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickJournoFavouritesTab.click();
     }
 }

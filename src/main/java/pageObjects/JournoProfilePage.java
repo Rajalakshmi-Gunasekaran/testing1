@@ -53,6 +53,58 @@ public class JournoProfilePage {
     public WebElement clickRemoveFromList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/div")
     public WebElement validateJournoRemovalFromList;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[1]/span/span")
+    public WebElement clickFavouriteJournoBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[1]/span/span")
+    public WebElement unCheckFavouriteBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[2]/span")
+    public WebElement clickGDPRNote;
+    @FindBy(xpath = "//*[@id=\"addCustomerNoteFormSubject\"]")
+    public WebElement enterSubjectForGDPR;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/form/div[3]/div/div[2]/span")
+    public WebElement clickGDPRRadioBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[3]/button[2]")
+    public WebElement clickSaveBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[2]")
+    public WebElement validateGDPRNote;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/form/div[3]/div/div[1]")
+    public WebElement clickGDPRUnknownRadioBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[2]/span")
+    public WebElement ValidateGDPRUnknown;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[3]")
+    public WebElement clickAddToStreams;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/div")
+    public WebElement clickStreamNameToAddJourno;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[3]/button[2]")
+    public WebElement clickSaveBtnInStream;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[3]/span")
+    public WebElement validateJournoAddedToStream;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[2]/div/div[2]/ul/li[1]/div")
+    public WebElement clickRemoveJournoFromStream;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[3]/span")
+    public WebElement validateJournoRemoval;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[1]/div/nav/div[8]")
+    public WebElement clickNotesAndActivityTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/nav/div[2]/div[5]/button[2]")
+    public WebElement clickAddActivityBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div[3]/div/div/div[2]/form/div/div/div[2]/input")
+    public WebElement enterSubject;
+    @FindBy(xpath = "//button[@class=\"waiting-button btn btn-sm btn-primary ml-2\"]/i")
+    public WebElement clickSaveButton;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div/div[1]/div[1]/div")
+    public WebElement validateActivity;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/nav/div[2]/div[5]/button[1]")
+    public WebElement clickNotesBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div[1]")
+    public WebElement validateNotes;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div/div[2]/div/span")
+    public WebElement clickDeleteActivity;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div/div[2]/div/span/div/div[2]/div[1]/i")
+    public WebElement clickConfirmDelete;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div[3]/div/span")
+    public WebElement clickDeleteNotes;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div[3]/div/span/div/div[2]/div[1]/i")
+    public WebElement clickConfirmDeleteNotes;
 
     public void validateAllHeaderTabs() throws InterruptedException {
         Thread.sleep(3000);
@@ -120,5 +172,124 @@ public class JournoProfilePage {
     public void setValidateJournoRemovalFromList()throws InterruptedException{
         Thread.sleep(3000);
         validateJournoRemovalFromList.isDisplayed();
+    }
+
+    public void setClickFavouriteBtn()throws InterruptedException {
+        Thread.sleep(3000);
+        clickFavouriteJournoBtn.click();
+    }
+    public void setUnCheckFavouriteJournoBtn()throws InterruptedException{
+      Thread.sleep(3000);
+      unCheckFavouriteBtn.click();
+    }
+
+    public void setClickGDPRNote() throws InterruptedException{
+        Thread.sleep(3000);
+        clickGDPRNote.click();
+    }
+
+    public void enterSubjectInGDPRNote(String gdprSubject)throws InterruptedException {
+        Thread.sleep(3000);
+        enterSubjectForGDPR.sendKeys(gdprSubject);
+    }
+
+    public void setClickGDPRRadioBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickGDPRRadioBtn.click();
+    }
+    public void setClickSaveBtnInGDPR() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSaveBtn.click();
+    }
+    public void validateGDPRNote() throws InterruptedException{
+       Thread.sleep(3000);
+       validateGDPRNote.isDisplayed();
+    }
+
+    public void setClickGDPRStatusUnknown() throws InterruptedException{
+        Thread.sleep(3000);
+        clickGDPRUnknownRadioBtn.click();
+    }
+
+    public void setValidateGDPRUnknown() throws InterruptedException{
+        Thread.sleep(3000);
+        ValidateGDPRUnknown.isDisplayed();
+    }
+
+    public void setClickAddToStreamsBtn()throws InterruptedException {
+        Thread.sleep(3000);
+        clickAddToStreams.click();
+    }
+
+    public void setClickStreamNameToAddJourno() throws InterruptedException{
+        Thread.sleep(3000);
+        clickStreamNameToAddJourno.click();
+    }
+
+    public void setClickSaveBtnInStream()throws InterruptedException {
+        Thread.sleep(3000);
+        clickSaveBtnInStream.click();
+    }
+
+    public void setValidateJournoAddedToStream() throws InterruptedException{
+        Thread.sleep(3000);
+        validateJournoAddedToStream.isDisplayed();
+    }
+
+    public void setClickRemoveFromStream()throws InterruptedException {
+        Thread.sleep(3000);
+        clickRemoveJournoFromStream.click();
+    }
+
+    public void validateJournoRemovedFromStream() throws InterruptedException{
+        Thread.sleep(3000);
+        validateJournoRemoval.isDisplayed();
+    }
+
+    public void setClickNotesAndActivityTab()throws InterruptedException {
+        Thread.sleep(3000);
+        clickNotesAndActivityTab.click();
+    }
+
+    public void setClickAddActivityBtn()throws InterruptedException {
+        Thread.sleep(3000);
+        clickAddActivityBtn.click();
+    }
+
+    public void enterSubject(String subject) throws InterruptedException{
+        Thread.sleep(3000);
+        enterSubject.sendKeys(subject);
+    }
+    public void setClickSaveBtnInNotesAndActivity() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSaveButton.click();
+    }
+    public void validateActivityCreatedForJourno()throws InterruptedException {
+        Thread.sleep(3000);
+        validateActivity.isDisplayed();
+    }
+
+    public void setClickDeleteActivity() throws InterruptedException{
+    Thread.sleep(3000);
+    clickDeleteActivity.click();
+    Thread.sleep(3000);
+    clickConfirmDelete.click();
+    }
+
+    public void setClickNotesBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickNotesBtn.click();
+    }
+
+    public void validateNotesCreatedForJourno() throws InterruptedException{
+        Thread.sleep(3000);
+        validateNotes.isDisplayed();
+    }
+
+    public void setClickDeleteNotes() throws InterruptedException{
+        Thread.sleep(3000);
+        clickDeleteNotes.click();
+        Thread.sleep(3000);
+        clickConfirmDeleteNotes.click();
     }
 }
