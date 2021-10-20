@@ -24,7 +24,7 @@ Feature: JournoProfile
     And I choose Journalist from the list and Click on it
     Then I should see all the available information about the ACL journalist
 
-  @functional
+  @functional1
   Scenario: validate adding Journalist and removing journo from the list in journo profile page
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -35,3 +35,69 @@ Feature: JournoProfile
     And I should see the added list on the right hand side pan
     And I click on remove cross mark on the list name
     Then I should see the list removed from the journo page
+
+  @functional2
+  Scenario: validate adding and removing Journalist to favourites
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click on add to favourites button in journo profile page
+    And I click on home button
+    And I click on favourite journalist tab
+    And I should see the journo added to favourites
+    And I click on Quick Search tab
+    And I choose Journalist from the list and Click on it
+    Then I un click on add to favourites button
+
+  @functional3
+  Scenario: validate editing GDPR note
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click on GDPR note button in journo profile page
+    And I enter subject in GDPR note as "Approved"
+    And I click on GDPR approved radio button
+    And I click on save button in GDPR note
+    And I should see the GDPR note as approved
+    And I click on GDPR note button in journo profile page
+    And I click GDPR status to Unknown
+    And I click on save button in GDPR note
+    Then I should see GDPR status as unknown
+
+  @functional4
+  Scenario: validate adding and removing journo from stream in journo profile
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click on add to streams button in journo profile page
+    And I click on stream name to add journo
+    And I click on save button in add to streams
+    And I should see the journo added to stream
+    And I click on add to streams button in journo profile page
+    And I click remove journo from streams
+    And I click on save button in add to streams
+    Then I should see journo removed from streams
+
+  @functional5
+  Scenario: validate adding and deleting activity for a journo
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click on notes and activity tab in journo profile page
+    And I click on add activity button
+    And I enter subject as "Automation Testing"
+    And I click on save button in notes and activity
+    And I should see the activity created for the journo
+    Then I delete the activity created for the journo
+
+  @functional6
+  Scenario: validate adding and deleting notes for the journo
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click on notes and activity tab in journo profile page
+    And I click on add notes button
+    And I enter subject as "Automation Testing"
+    And I click on save button in notes and activity
+    And I should see the notes created for the journo
+    Then I delete the notes created for the journo
