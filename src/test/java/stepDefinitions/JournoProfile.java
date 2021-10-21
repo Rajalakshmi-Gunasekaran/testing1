@@ -172,4 +172,22 @@ public class JournoProfile extends BaseStep {
         wait(30);
         journoProfilePage.setClickDeleteNotes();
     }
+    @When("^I click on from date in calender$")
+    public void i_click_on_from_date_in_calender() throws InterruptedException {
+        wait(30);
+        journoProfilePage.setClickCalender();
+    }
+
+    @When("^I choose a date to filter coverage results$")
+    public void i_choose_a_date_to_filter_coverage_results() throws InterruptedException {
+       wait(30);
+      journoProfilePage.setChooseDateToFilterCoverage();
+    }
+
+    @Then("^I should see the results for the selected time period$")
+    public void i_should_see_the_results_for_the_selected_time_period() throws InterruptedException {
+       wait(30);
+       journoProfilePage.validateResultsForSelectedDates();
+    }
+
 }

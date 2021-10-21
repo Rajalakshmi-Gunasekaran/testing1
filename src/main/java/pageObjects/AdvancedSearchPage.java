@@ -84,6 +84,84 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement clickAddJournoToListBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement clickOkToCreateAdvancedSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[2]/a/div")
+    public WebElement clickOutletTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div/input")
+    public WebElement enterSector;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[2]/div/div/i")
+    public WebElement clickFrequency;
+    @FindBy(xpath = "//span[contains(text(),\"Weekly\")]")
+    public WebElement chooseFrequency;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[3]/div/div[2]/div[2]/div[2]/div[2]/input")
+    public WebElement enterPostCode;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[1]/div/div[2]/div")
+    public WebElement validateOutletSearchResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/div/input")
+    public WebElement clickBasedInCountry;
+    @FindBy(xpath = "//span[contains(text(),\"United Kingdom\")]")
+    public WebElement chooseCountryUnitedKingdom;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div/input")
+    public WebElement clickLocality;
+    @FindBy(xpath = "//span[contains(text(),\"Regions - UK\")]")
+    public WebElement chooseLocality;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div[1]/div/div/div/div[1]/div/div[1]/div[1]/button")
+    public WebElement clickOutletHitsInOutletsTile;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[4]/div/div[2]/div[2]/div[2]/input")
+    public WebElement enterKeyword;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[3]/div/div/div[2]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]")
+    public WebElement validateOutletTweetResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[3]/a/div")
+    public WebElement clickArticlesTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/div[3]/div[2]/div/div/input")
+    public WebElement enterCompanyName;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div[3]/div/div")
+    public WebElement validateArticleSearchResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[4]/a/div")
+    public WebElement clickJournalistAlertsTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div/input")
+    public WebElement enterOutlet;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[1]/div[1]/div[2]")
+    public WebElement validateJournalistAlertsResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[5]/a/div")
+    public WebElement clickForwardFeatures;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div/div/input")
+    public WebElement enterOutletToSearchForwardFeatures;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div/div[1]/div/div[1]/div/div/a/div")
+    public WebElement validateForwardFeaturesResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[9]/a/div")
+    public WebElement clickActivityTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[3]/div/div[2]/ul/li/div/a")
+    public WebElement validateActivityResultsForOutlet;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[6]/a/div")
+    public WebElement clickMediaRequestTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/a")
+    public WebElement validateMediaRequestsForOutlet;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[10]/a/div")
+    public WebElement clickPROpportunities;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[2]/div/div/input")
+    public WebElement enterSection;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div/div[1]")
+    public WebElement validatePROpportunities;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[7]/a/div")
+    public WebElement clickTweetTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/input")
+    public WebElement enterKeywordForTweetSearch;
+    @FindBy(xpath = "//*[@id=\"tweetSearchFiltersExcludeRetweets\"]/span")
+    public WebElement clickReTweet;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav/div[2]/div[1]/button[1]/span/span")
+    public WebElement selectAll;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav/div[2]/div[1]/button[2]/span/span")
+    public WebElement validateTweetKeywordSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[8]/a")
+    public WebElement clickInstagramTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/select")
+    public WebElement clickTypeOfPublisher;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/select/option[2]")
+    public WebElement chooseTypeOfPublisher;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div/div/input")
+    public WebElement enterOutletType;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav/div[2]/div[1]/button[2]/span/span")
+    public WebElement validateInstagramResults;
 
     public void clickAdvancedSearch()throws InterruptedException {
         Thread.sleep(3000);
@@ -182,5 +260,193 @@ public class AdvancedSearchPage extends CommonFunctions{
         enterListNameFromAdvancedSearch.sendKeys(Keys.ENTER);
         Thread.sleep(3000);
         clickOkToCreateAdvancedSearch.click();
+    }
+    public void setClickOutletTab()throws InterruptedException {
+        Thread.sleep(3000);
+        clickOutletTab.click();
+    }
+    public void enterSectorName(String sector) throws InterruptedException{
+        Thread.sleep(3000);
+        enterSector.sendKeys(sector);
+        Thread.sleep(3000);
+        enterSector.sendKeys(Keys.ENTER);
+    }
+
+    public void setClickFrequency() throws InterruptedException{
+        Thread.sleep(3000);
+        clickFrequency.click();
+        Thread.sleep(3000);
+        chooseFrequency.click();
+    }
+
+    public void enterPostCode(String postcode) throws InterruptedException{
+        Thread.sleep(3000);
+        enterPostCode.sendKeys(postcode);
+    }
+
+    public void seValidateOutletSearch() throws InterruptedException{
+        Thread.sleep(3000);
+        validateOutletSearchResults.isDisplayed();
+    }
+
+    public void setClickBasedInCountry() throws InterruptedException{
+        Thread.sleep(3000);
+        clickBasedInCountry.click();
+        Thread.sleep(3000);
+        chooseCountryUnitedKingdom.click();
+    }
+
+    public void setEnterLocality(String locality) throws InterruptedException{
+        Thread.sleep(3000);
+        clickLocality.sendKeys(locality);
+        Thread.sleep(3000);
+        chooseLocality.click();
+    }
+
+    public void enterKeyword(String keyword) throws InterruptedException{
+        Thread.sleep(3000);
+        enterKeyword.sendKeys(keyword);
+    }
+
+    public void setChooseOutletHits() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOutletHitsInOutletsTile.click();
+    }
+
+    public void validateTweetsForOutlets() throws InterruptedException{
+        Thread.sleep(3000);
+        validateOutletTweetResults.isDisplayed();
+    }
+
+    public void setClickArticleTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickArticlesTab.click();
+    }
+
+    public void enterCompany(String company) throws InterruptedException{
+        Thread.sleep(3000);
+        enterCompanyName.sendKeys(company);
+        Thread.sleep(3000);
+        enterCompanyName.sendKeys(Keys.ENTER);
+    }
+
+    public void setValidateArticleSearchResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateArticleSearchResults.isDisplayed();
+    }
+
+    public void setJournoAlertsTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickJournalistAlertsTab.click();
+    }
+
+    public void setEnterOutlet(String outlet) throws InterruptedException{
+        Thread.sleep(3000);
+        enterOutlet.sendKeys(outlet);
+        Thread.sleep(3000);
+        enterOutlet.sendKeys(Keys.ENTER);
+    }
+
+    public void validateJournoAlertsResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateJournalistAlertsResults.isDisplayed();
+    }
+
+    public void setClickForwardFeaturesTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickForwardFeatures.click();
+    }
+
+    public void setEnterOutletName(String outletName) throws InterruptedException{
+        Thread.sleep(3000);
+        enterOutletToSearchForwardFeatures.sendKeys(outletName);
+        Thread.sleep(3000);
+        enterOutletToSearchForwardFeatures.sendKeys(Keys.ENTER);
+    }
+
+    public void validateForwardFeaturesResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateForwardFeaturesResults.isDisplayed();
+    }
+    public void setActivityTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickActivityTab.click();
+    }
+
+    public void validateActivityForOutletSearch() throws InterruptedException{
+        Thread.sleep(3000);
+        validateActivityResultsForOutlet.isDisplayed();
+    }
+
+    public void setMediaRequestTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickMediaRequestTab.click();
+    }
+
+    public void validateMediaRequestResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateMediaRequestsForOutlet.isDisplayed();
+    }
+
+    public void setClickPROpportunitiesTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickPROpportunities.click();
+    }
+
+    public void enterSection(String section) throws InterruptedException{
+        Thread.sleep(3000);
+        enterSection.sendKeys(section);
+        Thread.sleep(3000);
+        enterSection.sendKeys(Keys.ENTER);
+    }
+
+    public void validatePROpportunitiesResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validatePROpportunities.isDisplayed();
+    }
+
+    public void setClickTweetsTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickTweetTab.click();
+    }
+
+    public void enterKeywordForTweetSearch(String keyword)throws InterruptedException {
+        Thread.sleep(3000);
+        enterKeywordForTweetSearch.sendKeys(keyword);
+        Thread.sleep(3000);
+        enterKeywordForTweetSearch.sendKeys(Keys.ENTER);
+    }
+
+    public void clickExcludeRetweet() throws InterruptedException{
+        Thread.sleep(3000);
+        clickReTweet.click();
+    }
+
+    public void validateTweetResults() throws InterruptedException{
+        Thread.sleep(3000);
+        selectAll.click();
+        Thread.sleep(3000);
+        validateTweetKeywordSearch.isDisplayed();
+    }
+
+    public void setClickInstagramTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickInstagramTab.click();
+    }
+
+    public void chooseTypeOfPublisher() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseTypeOfPublisher.click();
+    }
+
+    public void enterOutletTypeForInstaSearch(String outletType) throws InterruptedException{
+        Thread.sleep(3000);
+        enterOutletType.sendKeys(outletType);
+    }
+    public void validateInstagramResults() throws InterruptedException{
+        Thread.sleep(3000);
+        selectAll.click();
+        Thread.sleep(3000);
+        validateInstagramResults.isDisplayed();
     }
 }

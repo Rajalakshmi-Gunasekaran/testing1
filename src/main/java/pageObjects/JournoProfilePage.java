@@ -105,6 +105,14 @@ public class JournoProfilePage {
     public WebElement clickDeleteNotes;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div[3]/div/span/div/div[2]/div[1]/i")
     public WebElement clickConfirmDeleteNotes;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/input")
+    public WebElement clickCalender;
+    @FindBy(xpath = "//button[@class=\"pika-next\"]")
+    public WebElement chooseMonth;
+    @FindBy(xpath = "//table[@class=\"pika-table\"]/tbody/tr[3]/td[1]")
+    public WebElement chooseDate;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[4]/div/div[3]")
+    public WebElement validateResultsForChosenDates;
 
     public void validateAllHeaderTabs() throws InterruptedException {
         Thread.sleep(3000);
@@ -291,5 +299,23 @@ public class JournoProfilePage {
         clickDeleteNotes.click();
         Thread.sleep(3000);
         clickConfirmDeleteNotes.click();
+    }
+
+    public void setClickCalender() throws InterruptedException{
+        Thread.sleep(3000);
+        clickCalender.click();
+    }
+
+    public void setChooseDateToFilterCoverage() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseMonth.click();
+        chooseMonth.click();
+        Thread.sleep(3000);
+        chooseDate.click();
+    }
+
+    public void validateResultsForSelectedDates() throws InterruptedException{
+        Thread.sleep(3000);
+        validateResultsForChosenDates.isDisplayed();
     }
 }

@@ -106,4 +106,196 @@ public class AdvancedSearch extends BaseStep {
         wait(30);
         listsPage.clickListsBtn();
     }
+    @When("^I click on outlets tab from the left hand side pan$")
+    public void i_click_on_outlets_tab_from_the_left_hand_side_pan() throws InterruptedException {
+        wait(30);
+       advancedSearchPage.setClickOutletTab();
+    }
+    @When("^I Click on sector and enter sector name as \"([^\"]*)\"$")
+    public void i_Click_on_sector_and_enter_sector_name_as(String sector) throws InterruptedException {
+        wait(30);
+        advancedSearchPage.enterSectorName(sector);
+    }
+
+    @When("^I click on frequency and choose frequency as weekly$")
+    public void i_click_on_frequency_and_choose_frequency_as_weekly() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setClickFrequency();
+    }
+
+    @When("^I click on any town or post code text field and enter post code as \"([^\"]*)\"$")
+    public void i_click_on_any_town_or_post_code_text_field_and_enter_post_code_as(String postcode) throws InterruptedException {
+       wait(30);
+       advancedSearchPage.enterPostCode(postcode);
+    }
+
+    @Then("^I should see the outlets listed for the search criteria$")
+    public void i_should_see_the_outlets_listed_for_the_search_criteria() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.seValidateOutletSearch();
+    }
+    @When("^I Click on based in country and choose country as United Kingdom$")
+    public void i_Click_on_based_in_country_and_choose_country_as_United_Kingdom() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.setClickBasedInCountry();
+    }
+
+    @When("^I click on based in localities and enter locality as \"([^\"]*)\"$")
+    public void i_click_on_based_in_localities_and_enter_locality_as(String locality) throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setEnterLocality(locality);
+    }
+
+    @When("^I enter keyword as \"([^\"]*)\"$")
+    public void i_enter_keyword_as(String keyword) throws InterruptedException {
+       wait(30);
+       advancedSearchPage.enterKeyword(keyword);
+    }
+
+    @When("^I choose outlet to see the hits$")
+    public void i_choose_outlet_to_see_the_hits() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.setChooseOutletHits();
+    }
+
+    @Then("^I should see the tweets for the relevant search$")
+    public void i_should_see_the_tweets_for_the_relevant_search() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.validateTweetsForOutlets();
+    }
+    @When("^I click on articles tab from the left hand side pan$")
+    public void i_click_on_articles_tab_from_the_left_hand_side_pan() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setClickArticleTab();
+    }
+
+    @When("^I enter company as \"([^\"]*)\"$")
+    public void i_enter_company_as(String company) throws InterruptedException {
+       wait(30);
+       advancedSearchPage.enterCompany(company);
+    }
+
+    @Then("^I should see the articles for the relevant search$")
+    public void i_should_see_the_articles_for_the_relevant_search() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setValidateArticleSearchResults();
+    }
+    @When("^I click on journalist alerts tab from the left hand side pan$")
+    public void i_click_on_journalist_alerts_tab_from_the_left_hand_side_pan() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setJournoAlertsTab();
+    }
+
+    @When("^I Click on outlet and enter outlet name as \"([^\"]*)\"$")
+    public void i_Click_on_outlet_and_enter_outlet_name_as(String outlet) throws InterruptedException {
+       wait(30);
+       advancedSearchPage.setEnterOutlet(outlet);
+    }
+
+    @Then("^I should see the journalist alerts for the relevant search$")
+    public void i_should_see_the_journalist_alerts_for_the_relevant_search() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.validateJournoAlertsResults();
+    }
+    @When("^I click on forward features tab from the left hand side pan$")
+    public void i_click_on_forward_features_tab_from_the_left_hand_side_pan() throws InterruptedException {
+         wait(30);
+         advancedSearchPage.setClickForwardFeaturesTab();
+    }
+    @When("^I Click on outlet in forward features tab and enter outlet name as \"([^\"]*)\"$")
+    public void i_Click_on_outlet_in_forward_features_tab_and_enter_outlet_name_as(String outletName) throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setEnterOutletName(outletName);
+    }
+    @Then("^I should see the forward features for the relevant search$")
+    public void i_should_see_the_forward_features_for_the_relevant_search() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.validateForwardFeaturesResults();
+    }
+    @When("^I click on Activities tab from the left hand side pan$")
+    public void i_click_on_Activities_tab_from_the_left_hand_side_pan() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setActivityTab();
+    }
+
+    @Then("^I should see the activities for the relevant search$")
+    public void i_should_see_the_activities_for_the_relevant_search() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.validateActivityForOutletSearch();
+    }
+
+    @When("^I click on media requests tab from the left hand side pan$")
+    public void i_click_on_media_requests_tab_from_the_left_hand_side_pan() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setMediaRequestTab();
+    }
+
+    @Then("^I should see the media requests results for the relevant search$")
+    public void i_should_see_the_media_requests_results_for_the_relevant_search() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.validateMediaRequestResults();
+    }
+    @When("^I click on PR opportunities tab from the left hand side pan$")
+    public void i_click_on_PR_opportunities_tab_from_the_left_hand_side_pan() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setClickPROpportunitiesTab();
+    }
+
+    @When("^I enter section as \"([^\"]*)\"$")
+    public void i_enter_section_as(String section) throws InterruptedException {
+        wait(30);
+        advancedSearchPage.enterSection(section);
+    }
+
+    @Then("^I should see the PR Opportunities results for the relevant search$")
+    public void i_should_see_the_PR_Opportunities_results_for_the_relevant_search() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.validatePROpportunitiesResults();
+    }
+    @When("^I click on tweets tab from the left hand side pan$")
+    public void i_click_on_tweets_tab_from_the_left_hand_side_pan() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.setClickTweetsTab();
+    }
+
+    @When("^I enter keywords as \"([^\"]*)\"$")
+    public void i_enter_keywords_as(String keyword) throws InterruptedException {
+        wait(30);
+        advancedSearchPage.enterKeywordForTweetSearch(keyword);
+    }
+
+    @When("^I Click on exclude retweets checkbox$")
+    public void i_Click_on_exclude_retweets_checkbox() throws InterruptedException {
+      wait(30);
+      advancedSearchPage.clickExcludeRetweet();
+    }
+
+    @Then("^I should see the tweets results for the relevant search$")
+    public void i_should_see_the_tweets_results_for_the_relevant_search() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.validateTweetResults();
+    }
+    @When("^I click on Instagram tab from the left hand side pan$")
+    public void i_click_on_Instagram_tab_from_the_left_hand_side_pan() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.setClickInstagramTab();
+    }
+
+    @When("^I click type of publisher and choose journalists only$")
+    public void i_click_type_of_publisher_and_choose_journalists_only() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.chooseTypeOfPublisher();
+    }
+
+    @When("^I click on outlet type and enter \"([^\"]*)\"$")
+    public void i_click_on_outlet_type_and_enter(String outletType) throws InterruptedException {
+       wait(30);
+       advancedSearchPage.enterOutletTypeForInstaSearch(outletType);
+    }
+
+    @Then("^I should see the Instagram results for the relevant search$")
+    public void i_should_see_the_Instagram_results_for_the_relevant_search() throws InterruptedException {
+       wait(30);
+       advancedSearchPage.validateInstagramResults();
+    }
 }

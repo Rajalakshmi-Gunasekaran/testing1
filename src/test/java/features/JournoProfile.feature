@@ -101,3 +101,12 @@ Feature: JournoProfile
     And I click on save button in notes and activity
     And I should see the notes created for the journo
     Then I delete the notes created for the journo
+
+  @functional7
+  Scenario: validate changing dates in live content tab
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click on from date in calender
+    And I choose a date to filter coverage results
+    Then I should see the results for the selected time period
