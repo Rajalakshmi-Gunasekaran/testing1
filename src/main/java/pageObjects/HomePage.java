@@ -12,7 +12,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage extends CommonFunctions{
+    public WebDriver driver;
+
+
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[2]/div")
     public WebElement userprofile;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[3]/div/div/div/div[3]/span")
@@ -45,12 +48,34 @@ public class HomePage {
     public WebElement clickJournoFavouritesTab;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div")
     public WebElement validateJournoAddedToFavourites;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/nav/div[2]/nav/a[2]")
+    public WebElement clickAllAlertsTabInSubHeaders;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/nav/div[2]/nav/a[4]")
+    public WebElement clickNewEditionsInSubHeaders;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
+    public WebElement validateAllAlertsResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
+    public WebElement validateNewEditionsResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button")
+    public WebElement selectAll;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[1]/div[1]/div[2]/a")
+    public WebElement clickOutletLogo;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[1]/div/div[1]/div/div/div[2]/div/div")
+    public WebElement validateOutletLogoNavigatesToOutletProfile;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[5]/a")
+    public WebElement clickSearchAllAlerts;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]")
+    public WebElement validateSearchAllAlertsNavigatesToAdvancedSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div")
+    public WebElement clickAlertFromAllAlerts;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
+    public WebElement validateAlertsResults;
 
     /* Initialising Web driver*/
-    public HomePage(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, this);
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-
     /*  validating login with user profile logo*/
     public String getLoginToastMsg() {
         return userprofile.getText();
@@ -134,5 +159,60 @@ Thread.sleep(3000);
     public void setClickFavouriteJournoTab() throws InterruptedException{
         Thread.sleep(3000);
         clickJournoFavouritesTab.click();
+    }
+
+    public void setClickAllAlertsTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickAllAlertsTabInSubHeaders.click();
+    }
+
+    public void setClickSelectAll() throws InterruptedException{
+        Thread.sleep(3000);
+        clkSelectAll.click();
+    }
+
+    public void setValidateAllAlertsResults()throws InterruptedException {
+        Thread.sleep(3000);
+        validateAllAlertsResults.isDisplayed();
+    }
+
+    public void setClickNewEditionsTab()throws InterruptedException {
+        Thread.sleep(3000);
+        clickNewEditionsInSubHeaders.click();
+    }
+
+    public void setValidateNewEditionResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateNewEditionsResults.isDisplayed();
+    }
+
+    public void setClickOutletLogo() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOutletLogo.click();
+    }
+
+    public void setValidateOutletLogoNavigatesToOutletProfile() throws InterruptedException{
+        Thread.sleep(3000);
+        validateOutletLogoNavigatesToOutletProfile.isDisplayed();
+    }
+
+    public void setClickSearchAllAlertsBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSearchAllAlerts.click();
+    }
+
+    public void setValidateSearchAllAlertsNavigatesToAdvancedSearch() throws InterruptedException{
+        Thread.sleep(3000);
+        validateSearchAllAlertsNavigatesToAdvancedSearch.isDisplayed();
+    }
+
+    public void setClickAlertTile() throws InterruptedException{
+        Thread.sleep(3000);
+        clickAlertFromAllAlerts.click();
+    }
+
+    public void setValidateAlertsResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateAlertsResults.isDisplayed();
     }
 }

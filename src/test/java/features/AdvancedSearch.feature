@@ -126,3 +126,16 @@ Feature:AdvancedSearch
     And I click type of publisher and choose journalists only
     And I click on outlet type and enter "Blogs"
     Then I should see the Instagram results for the relevant search
+
+  @functional12
+  Scenario:Validate clear all filters button in search
+    When I should login into the home page and click on search tab
+    And I click on outlets tab from the left hand side pan
+    And I click on outlet type and enter outlet type as "Blogs"
+    And I Click on sector and enter sector name as "Fashion"
+    And I click on frequency and choose frequency as weekly
+    And I click on any town or post code text field and enter post code as "IG7"
+    And I should see the outlets listed for the search criteria
+    And I click on clear all button at the top
+    Then I should see the search filters are cleared and the result pane is empty
+

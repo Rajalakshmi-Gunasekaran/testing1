@@ -100,4 +100,75 @@ public class Home extends BaseStep {
         wait(30);
         homePage.setValidateHelpAndFeedback();
     }
+    @When("^I should login into the home page and click on AllAlerts in sub menu$")
+    public void i_should_login_into_the_home_page_and_click_on_AllAlerts_in_sub_menu() throws InterruptedException{
+        loginPage = new LoginPage(webDriver);
+        homePage = new HomePage(webDriver);
+        webDriver.get("https://app-alt.roxhillmedia.com/");
+        wait(30);
+        homePage.setClickAllAlertsTab();
+    }
+
+    @When("^I click on select all to validate$")
+    public void i_click_on_select_all_to_validate() throws InterruptedException{
+       wait(30);
+        homePage.setClickSelectAll();
+    }
+
+    @Then("^I should see the all alerts results$")
+    public void i_should_see_the_all_alerts_results() throws InterruptedException{
+        wait(30);
+        homePage.setValidateAllAlertsResults();
+    }
+
+    @When("^I should login into the home page and click on New Editions in sub menu$")
+    public void i_should_login_into_the_home_page_and_click_on_New_Editions_in_sub_menu() throws InterruptedException{
+        loginPage = new LoginPage(webDriver);
+        homePage = new HomePage(webDriver);
+        webDriver.get("https://app-alt.roxhillmedia.com/");
+        wait(30);
+        homePage.setClickNewEditionsTab();
+    }
+
+    @Then("^I should see the new editions results$")
+    public void i_should_see_the_new_editions_results() throws InterruptedException{
+        wait(30);
+         homePage.setValidateNewEditionResults();
+    }
+
+    @When("^I choose outlet and click on outlet logo$")
+    public void i_choose_outlet_and_click_on_outlet_logo() throws InterruptedException{
+        wait(30);
+        homePage.setClickOutletLogo();
+    }
+
+    @Then("^I should see navigate to the outlet profile$")
+    public void i_should_see_navigate_to_the_outlet_profile() throws InterruptedException{
+        wait(30);
+        homePage.setValidateOutletLogoNavigatesToOutletProfile();
+    }
+
+    @When("^I click on search all alerts button$")
+    public void i_click_on_search_all_alerts_button() throws InterruptedException{
+        wait(30);
+        homePage.setClickSearchAllAlertsBtn();
+    }
+
+    @Then("^I should navigate to the alerts tab in advanced search$")
+    public void i_should_navigate_to_the_alerts_tab_in_advanced_search() throws InterruptedException{
+        wait(30);
+        homePage.setValidateSearchAllAlertsNavigatesToAdvancedSearch();
+    }
+
+    @When("^I choose alert to select and click on it$")
+    public void i_choose_alert_to_select_and_click_on_it() throws InterruptedException{
+        wait(30);
+        homePage.setClickAlertTile();
+    }
+
+    @Then("^I should see the alert been selected$")
+    public void i_should_see_the_alert_been_selected() throws InterruptedException{
+         wait(30);
+         homePage.setValidateAlertsResults();
+    }
 }

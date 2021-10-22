@@ -298,4 +298,16 @@ public class AdvancedSearch extends BaseStep {
        wait(30);
        advancedSearchPage.validateInstagramResults();
     }
+    @When("^I click on clear all button at the top$")
+    public void i_click_on_clear_all_button_at_the_top() throws Throwable {
+       wait(30);
+       advancedSearchPage.setClickClearAll();
+    }
+
+    @Then("^I should see the search filters are cleared and the result pane is empty$")
+    public void i_should_see_the_search_filters_are_cleared_and_the_result_pane_is_empty() throws Throwable {
+       wait(30);
+       advancedSearchPage.validateClearAllFiltersResult();
+    }
+
 }

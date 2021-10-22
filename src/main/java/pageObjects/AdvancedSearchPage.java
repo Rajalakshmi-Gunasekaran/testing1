@@ -162,6 +162,10 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement enterOutletType;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav/div[2]/div[1]/button[2]/span/span")
     public WebElement validateInstagramResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[1]/nav/button")
+    public WebElement clickClearAllFilters;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div")
+    public WebElement validateClearAllFilterResults;
 
     public void clickAdvancedSearch()throws InterruptedException {
         Thread.sleep(3000);
@@ -448,5 +452,15 @@ public class AdvancedSearchPage extends CommonFunctions{
         selectAll.click();
         Thread.sleep(3000);
         validateInstagramResults.isDisplayed();
+    }
+
+    public void setClickClearAll() throws InterruptedException {
+        Thread.sleep(3000);
+         clickClearAllFilters.click();
+    }
+
+    public void validateClearAllFiltersResult() throws InterruptedException{
+        Thread.sleep(3000);
+        validateClearAllFilterResults.isDisplayed();
     }
 }

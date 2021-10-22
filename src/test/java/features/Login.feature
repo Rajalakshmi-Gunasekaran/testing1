@@ -10,3 +10,16 @@ Feature: Login
     And I click send email button
     Then I validate with the forgotten password link sent message
 
+  @functional
+  Scenario:Validate user settings feature
+    When I click on userprofile
+    And I choose user settings and click on it
+    And I navigate to the user settings page and choose preferred country as United Kingdom
+    And I click save changes button
+    Then I should navigate to the home page
+
+  @smoke
+  Scenario:5Validate logout feature
+    When I click on userprofile
+    And I choose logout and click on it
+    Then I should logout from the application
