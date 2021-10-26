@@ -70,6 +70,14 @@ public class HomePage extends CommonFunctions{
     public WebElement clickAlertFromAllAlerts;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/div[1]/button[2]/span/span")
     public WebElement validateAlertsResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/nav/div[2]/form/input")
+    public WebElement enterKeyword;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[1]")
+    public WebElement validateKeywordSearchResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/nav/div[2]/nav/a[3]")
+    public WebElement clickWebinarTab;
+    @FindBy(xpath = "//a[contains(text(),\"here\")]")
+    public WebElement clickSignUpHere;
 
     /* Initialising Web driver*/
     public HomePage(WebDriver driver) {
@@ -214,5 +222,25 @@ Thread.sleep(3000);
     public void setValidateAlertsResults() throws InterruptedException{
         Thread.sleep(3000);
         validateAlertsResults.isDisplayed();
+    }
+
+    public void setEnterQuickFindByKeyword(String keyword) throws InterruptedException{
+        Thread.sleep(3000);
+        enterKeyword.sendKeys(keyword);
+    }
+
+    public void validateQuickByFindKeyword() throws InterruptedException{
+        Thread.sleep(3000);
+        validateKeywordSearchResults.isDisplayed();
+    }
+
+    public void setClickWebinarTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickWebinarTab.click();
+    }
+
+    public void setClickSignUpHere() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSignUpHere.click();
     }
 }

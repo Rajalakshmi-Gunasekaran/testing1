@@ -171,4 +171,34 @@ public class Home extends BaseStep {
          wait(30);
          homePage.setValidateAlertsResults();
     }
+    @When("^I click on quick find by keyword text field and enter text as \"([^\"]*)\"$")
+    public void i_click_on_quick_find_by_keyword_text_field_and_enter_text_as(String keyword) throws InterruptedException {
+          wait(30);
+          homePage.setEnterQuickFindByKeyword(keyword);
+    }
+
+    @Then("^I should see the results for the search$")
+    public void i_should_see_the_results_for_the_search() throws InterruptedException {
+          wait(30);
+          homePage.validateQuickByFindKeyword();
+    }
+    @When("^I should login into the home page and click on webinars in sub menu$")
+    public void i_should_login_into_the_home_page_and_click_on_webinars_in_sub_menu() throws InterruptedException {
+        loginPage = new LoginPage(webDriver);
+        homePage = new HomePage(webDriver);
+        webDriver.get("https://app-alt.roxhillmedia.com/");
+        wait(30);
+          homePage.setClickWebinarTab();
+    }
+
+    @When("^I click sign up here link$")
+    public void i_click_sign_up_here_link() throws InterruptedException {
+           wait(30);
+           homePage.setClickSignUpHere();
+    }
+
+    @Then("^I should see the results as per the search$")
+    public void i_should_see_the_results_as_per_the_search() throws InterruptedException {
+        wait(30);
+    }
 }

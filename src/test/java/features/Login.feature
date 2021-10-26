@@ -18,8 +18,3 @@ Feature: Login
     And I click save changes button
     Then I should navigate to the home page
 
-  @smoke
-  Scenario:5Validate logout feature
-    When I click on userprofile
-    And I choose logout and click on it
-    Then I should logout from the application
