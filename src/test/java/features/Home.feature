@@ -27,23 +27,16 @@ Feature:Home
     And I click on sign up links in Headline alerts page
     Then I should able to navigate to the Roxhill main site
 
-  @smoke
-  Scenario:4Validate help and feedback functionality
-    When I am on login page and I click help and feedback functionality
-    And I enter description in the text field as "Test-Raji"
-    And I click on send button
-    Then I should able to send help and feedback email to the roxhill site
-
-  @functional
-  Scenario:Validate user settings feature
-   When I click on userprofile
-   And I choose user settings and click on it
-   And I navigate to the user settings page and choose preferred country as United Kingdom
-   And I click save changes button
-   Then I should navigate to the home page
+#  @smoke
+#  Scenario:4Validate help and feedback functionality
+#    When I am on login page and I click help and feedback functionality
+#    And I enter description in the text field as "Test-Raji"
+#    And I click on send button
+#    Then I should able to send help and feedback email to the roxhill site
 
   @smoke
   Scenario:5Validate logout feature
     When I click on userprofile
     And I choose logout and click on it
     Then I should logout from the application
+

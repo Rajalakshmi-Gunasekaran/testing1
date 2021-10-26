@@ -13,9 +13,9 @@ Feature: List
   Scenario:1Validate creating and deleting folder
     When I should login into the home page and click on lists
     And I click on create folder
-    And I enter folder name as "AA" and click on create button
+    And I enter folder name as "SmokeTest" and click on create button
     And I click on search icon in the list page
-    And I enter folder name as "AA"
+    And I enter folder name as "SmokeTest"
     And I click on the folder name from the list
     And I click on menu list and click on delete button
     And I confirm deletion
