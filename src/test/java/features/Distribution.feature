@@ -20,7 +20,7 @@ Feature: Distribution
     And I enter body as "The press release can be added in the body template"
     Then I should able to see the created press release
 
-   @editPressRelease
+   @functional1
      Scenario: validate edit press release functionality
      When I should be in the home page and click on Distribution tab
      And I click on search icon on press release tab
@@ -59,7 +59,7 @@ Feature: Distribution
     And I enter press release name as "smokeTest"
     Then I should see the unarchived press release
 
-@archiveCampaign
+@functional
   Scenario: validate archive and unarchive campaign
     When I should be in the home page and click on Distribution tab
     And I click on campaign tab
@@ -99,7 +99,7 @@ Feature: Distribution
     And I enter press release name as "smokeTest"
     Then I should able to see the press release deleted
 
-    @view
+    @functional
     Scenario: Validate view campaign functionality
       When I should be in the home page and click on Distribution tab
       And I click on campaign tab
@@ -108,7 +108,7 @@ Feature: Distribution
       And I click on the name
       Then I should see the campaign report
 
-    @functional1
+    @functional
     Scenario:BValidate creating, duplicating and deleting block
       When I should be in the home page and click on Distribution tab
       And I click on Blocks tab
@@ -121,7 +121,7 @@ Feature: Distribution
       And I click on duplicate button to make a copy of block
       Then I should delete the block
 
-  @functional2
+  @functional
   Scenario:BValidate editing, clear contents and deleting block
     When I should be in the home page and click on Distribution tab
     And I click on Blocks tab

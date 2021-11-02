@@ -38,7 +38,7 @@ Feature: Search
     Then I should navigate to the Company profile page
 
 
-   @functional1
+   @functional
    Scenario:Validate adding journo to the list from quick search
      When I should login into the home page and click on Quick search tab
      And I enter Journalist name as "simon english"

@@ -42,10 +42,12 @@ Feature:AdvancedSearch
     And I click on add journalist to list button
     And I enter list name from the advanced search journalist tab as "AdvancedSearchList" and click ok
     And I click on list tab in home page
+    And I click on search icon in the list page to look for advancedSearch list
+    And I enter list name in lists as "AdvancedSearchList" and click on it to validate the lists
     And I validate journo added to the list from advanced search
     Then I should delete the list
 
-  @functional2
+  @functional
   Scenario:Validate outlet search using outlet type, sector, frequency and coverage area any town or post code filter
     When I should login into the home page and click on search tab
     And I click on outlets tab from the left hand side pan
@@ -55,8 +57,8 @@ Feature:AdvancedSearch
     And I click on any town or post code text field and enter post code as "IG7"
     Then I should see the outlets listed for the search criteria
 
-  @functional3
-  Scenario:Validate outlet search tweet hits filtered bu country, region and keyword filter
+  @functional
+  Scenario:Validate outlet search tweet hits filtered by country, region and keyword filter
     When I should login into the home page and click on search tab
     And I click on outlets tab from the left hand side pan
     And I Click on based in country and choose country as United Kingdom
@@ -65,7 +67,7 @@ Feature:AdvancedSearch
     And I choose outlet to see the hits
     Then I should see the tweets for the relevant search
 
-  @functional4
+  @functional
   Scenario:Validate article search by filtering sector and company
     When I should login into the home page and click on search tab
     And I click on articles tab from the left hand side pan
@@ -73,36 +75,35 @@ Feature:AdvancedSearch
     And I enter company as "Next Plc"
     Then I should see the articles for the relevant search
 
-  @functional5
+  @functional
   Scenario:Validate journalist alerts search by filtering outlet
     When I should login into the home page and click on search tab
     And I click on journalist alerts tab from the left hand side pan
     And I Click on outlet and enter outlet name as "Evening Standard"
     Then I should see the journalist alerts for the relevant search
 
-  @functional6
+  @functional
   Scenario:Validate forward features search by filtering outlet
     When I should login into the home page and click on search tab
     And I click on forward features tab from the left hand side pan
     And I Click on outlet in forward features tab and enter outlet name as "Railway Pro"
     Then I should see the forward features for the relevant search
 
-  @functional7
+  @functional
   Scenario:Validate Activities search by filtering outlet
     When I should login into the home page and click on search tab
     And I click on Activities tab from the left hand side pan
     And I Click on outlet and enter outlet name as "Evening Standard"
     Then I should see the activities for the relevant search
 
-  @functional8
+  @functional
   Scenario:Validate Media requests search by outlet
     When I should login into the home page and click on search tab
     And I click on media requests tab from the left hand side pan
     And I click on outlet type and enter outlet type as "National"
-    And I Click on outlet and enter outlet name as "Evening Standard"
     Then I should see the media requests results for the relevant search
 
-  @functional9
+  @functional
   Scenario:Validate PR Opportunities search by outlet type, outlet and section
     When I should login into the home page and click on search tab
     And I click on PR opportunities tab from the left hand side pan
@@ -111,7 +112,7 @@ Feature:AdvancedSearch
     And I enter section as "Food & Drink"
     Then I should see the PR Opportunities results for the relevant search
 
-  @functional10
+  @functional
   Scenario:Validate tweet search by keywords and exclude retweets
     When I should login into the home page and click on search tab
     And I click on tweets tab from the left hand side pan
@@ -119,7 +120,7 @@ Feature:AdvancedSearch
     And I Click on exclude retweets checkbox
     Then I should see the tweets results for the relevant search
 
-  @functional11
+  @functional
   Scenario:Validate Instagram search by type of publisher, outlet type and sector
     When I should login into the home page and click on search tab
     And I click on Instagram tab from the left hand side pan
@@ -127,7 +128,7 @@ Feature:AdvancedSearch
     And I click on outlet type and enter "Blogs"
     Then I should see the Instagram results for the relevant search
 
-  @functional12
+  @functional
   Scenario:Validate clear all filters button in search
     When I should login into the home page and click on search tab
     And I click on outlets tab from the left hand side pan

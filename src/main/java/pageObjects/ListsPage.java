@@ -23,15 +23,15 @@ public class ListsPage extends CommonFunctions{
     public WebElement listsBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav[1]/div[3]/button[1]")
     public WebElement CreateFolder;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[3]/div/div/div[3]/div[2]/form/div[2]/div/input")
+    @FindBy(xpath = "//input[@class=\"form-control mb-3\"]")
     public WebElement folderName;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[3]/div/div/div[3]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//button[contains(text(),\"Create\")]")
     public WebElement clickCreateFolderBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/nav[1]/div[3]/button[2]")
     public WebElement CreateList;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[2]/div[1]/input")
+    @FindBy(xpath = "//input[@class=\"form-control mb-3\"]")
     public WebElement listName;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[2]/div/div/div[3]/div[2]/form/div[3]/button/i")
+    @FindBy(xpath = "//button[contains(text(),\"Create\")]")
     public WebElement clickCreateBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[2]/h5")
     public WebElement validateNewListCreated;
@@ -51,14 +51,16 @@ public class ListsPage extends CommonFunctions{
     public WebElement clickMenuList;
     @FindBy(css = ".mr-1.icon-trash")
     public WebElement clickDelete;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[5]/div/div/div[3]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//button[contains(text(),\"Delete\")]")
     public WebElement confirmDeleteFolder;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
+    @FindBy(xpath = "//small[contains(text(),\"Nothing in this folder\")]")
     public WebElement validationDeleteFolder;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/span/span/span/i")
     public WebElement tickCheckBox;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/span/div/div[2]/div[1]/i")
     public WebElement confirmDelete;
+    @FindBy(xpath = "//a[contains(text(),\"SmokeSuiteList\")]")
+    public WebElement clickSmokeSuiteListNameFromLandingPage;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[2]/div[7]/div/div[3]/span[1]/span/span/i")
     public WebElement GDPRCheckBox;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
@@ -102,7 +104,7 @@ public class ListsPage extends CommonFunctions{
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]")
     public WebElement validateJournoAddedToListFromQuickSearch;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
-    public WebElement ValidateJournoAddedToListFromQuickSearch;
+    public WebElement ValidateJournoAddedToListFromAdvancedSearch;
 
     //click on List button on home page
     public void clickListsBtn() throws InterruptedException{
@@ -115,38 +117,43 @@ public class ListsPage extends CommonFunctions{
         clickSmokeSuiteList.click();
     }
     //click create folder in lists page
-    public void clickCreateFolder() {
+    public void clickCreateFolder() throws InterruptedException{
+        Thread.sleep(3000);
         elementVisible(CreateFolder,driver);
         CreateFolder.click();
     }
 
     //enter folder name to create new folder
-    public void EnterFolderName(String setFolderName) {
-        elementVisible(folderName,driver);
+    public void EnterFolderName(String setFolderName) throws InterruptedException{
+        Thread.sleep(3000);
         folderName.sendKeys(setFolderName);
     }
 
     //click create button to create a new folder
-    public void clickCreate()
+    public void clickCreate() throws InterruptedException
     {
+        Thread.sleep(3000);
         elementClickable(clickCreateFolderBtn,driver);
         clickCreateFolderBtn.click();
     }
 
     //validate the new folder is created
-    public void validateFolderCreated() {
+    public void validateFolderCreated() throws InterruptedException {
+        Thread.sleep(3000);
         Assert.assertTrue(clickFolderName.isDisplayed());
     }
 
     //click create new list button
-    public void createList() {
+    public void createList() throws InterruptedException{
+        Thread.sleep(3000);
         elementVisible(CreateList,driver);
         CreateList.click();
     }
 
     //enter list name to create new list
-    public void enterListName(String ListName)
+    public void enterListName(String ListName) throws InterruptedException
     {
+        Thread.sleep(3000);
         elementVisible(listName,driver);
         listName.sendKeys(ListName);
     }
@@ -154,7 +161,7 @@ public class ListsPage extends CommonFunctions{
     //click create list to create new list
     public void clickCreateList()throws InterruptedException
     {
-        Thread.sleep(30);
+        Thread.sleep(3000);
         elementVisible(clickCreateBtn,driver);
         clickCreateBtn.click();
     }
@@ -187,7 +194,7 @@ public class ListsPage extends CommonFunctions{
     }
     public void searchFolderNameToDelete(String folderToDelete)throws InterruptedException
     {
-        Thread.sleep(30);
+        Thread.sleep(3000);
         searchFolder.sendKeys(folderToDelete);
     }
 
@@ -206,7 +213,8 @@ public class ListsPage extends CommonFunctions{
     }
 
     // click menu list to choose delete button
-    public void menuList() {
+    public void menuList() throws InterruptedException{
+        Thread.sleep(3000);
         elementClickable(clickMenuList,driver);
         clickMenuList.click();
     }
@@ -236,8 +244,9 @@ public class ListsPage extends CommonFunctions{
     }
 
     //enter search list text to select and click on it
-    public void searchListTxt(String searchText)
+    public void searchListTxt(String searchText) throws InterruptedException
     {
+        Thread.sleep(3000);
         elementVisible(searchListName,driver);
         searchListName.sendKeys(searchText);
     }
@@ -259,7 +268,12 @@ public class ListsPage extends CommonFunctions{
         String text = "Nothing in this folder";
         Assert.assertEquals(text, validationDeleteList.getText());
     }
-    public boolean validateGDPRCheckbox() {
+    public void clickSmokeSuiteListName() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSmokeSuiteListNameFromLandingPage.click();
+    }
+    public boolean validateGDPRCheckbox() throws InterruptedException{
+        Thread.sleep(3000);
         elementVisible(GDPRCheckBox,driver);
         return GDPRCheckBox.isSelected();
     }
@@ -273,13 +287,15 @@ public class ListsPage extends CommonFunctions{
         validateJournoAddedToList.isDisplayed();
     }
 
-    public void chooseJournalist() {
+    public void chooseJournalist() throws InterruptedException{
+        Thread.sleep(3000);
         elementClickable(clickSelectAll,driver);
         clickSelectAll.click();
     }
 
     // remove journalist from the list
-    public void removeJournalist() {
+    public void removeJournalist()throws InterruptedException {
+        Thread.sleep(3000);
         elementClickable(removeFromList,driver);
         removeFromList.click();
         wait(30,driver);
@@ -287,8 +303,9 @@ public class ListsPage extends CommonFunctions{
     }
 
     //click on delete button in list page to delete list
-    public void setClickDelete()
+    public void setClickDelete() throws InterruptedException
     {
+        Thread.sleep(3000);
         elementClickable(deleteList,driver);
         deleteList.click();
         elementClickable(confirmDeleteList,driver);
@@ -296,8 +313,9 @@ public class ListsPage extends CommonFunctions{
     }
 
     // validate journalist removed from the list
-    public String validateJournalistRemoval()
+    public String validateJournalistRemoval() throws InterruptedException
     {
+        Thread.sleep(3000);
         return  validateJournalistRemovedFromList.getText();
     }
     //click on copy all to lists button in lists page
@@ -374,6 +392,6 @@ public class ListsPage extends CommonFunctions{
         Thread.sleep(3000);
         clickSelectAll.click();
         Thread.sleep(3000);
-        validateJournoAddedToListFromQuickSearch.isDisplayed();
+        ValidateJournoAddedToListFromAdvancedSearch.isDisplayed();
     }
 }

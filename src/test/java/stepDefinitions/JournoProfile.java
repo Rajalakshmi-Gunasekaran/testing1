@@ -49,7 +49,7 @@ public class JournoProfile extends BaseStep {
 
     @When("^I click on GDPR note button in journo profile page$")
     public void i_click_on_GDPR_note_button_in_journo_profile_page() throws InterruptedException {
-        wait(30);
+        pauseFor(10);
         journoProfilePage.setClickGDPRNote();
     }
 
@@ -83,8 +83,8 @@ public class JournoProfile extends BaseStep {
         journoProfilePage.setClickGDPRStatusUnknown();
     }
 
-    @Then("^I should see GDPR status as unknown$")
-    public void i_should_see_GDPR_status_as_unknown() throws InterruptedException {
+    @Then("^I should see the GDPR note as unknown$")
+    public void i_should_see_the_GDPR_note_as_unknown() throws InterruptedException {
         wait(30);
         journoProfilePage.setValidateGDPRUnknown();
     }
@@ -124,7 +124,7 @@ public class JournoProfile extends BaseStep {
     }
     @When("^I click on notes and activity tab in journo profile page$")
     public void i_click_on_notes_and_activity_tab_in_journo_profile_page() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         journoProfilePage.setClickNotesAndActivityTab();
     }
 
@@ -146,7 +146,7 @@ public class JournoProfile extends BaseStep {
     }
     @When("^I should see the activity created for the journo$")
     public void i_should_see_the_activity_created_for_the_journo() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         journoProfilePage.validateActivityCreatedForJourno();
     }
 
@@ -163,7 +163,7 @@ public class JournoProfile extends BaseStep {
 
     @When("^I should see the notes created for the journo$")
     public void i_should_see_the_notes_created_for_the_journo() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         journoProfilePage.validateNotesCreatedForJourno();
     }
 

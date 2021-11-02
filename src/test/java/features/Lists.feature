@@ -19,6 +19,8 @@ Feature: List
     And I click on the folder name from the list
     And I click on menu list and click on delete button
     And I confirm deletion
+    And I click on search icon in the list page
+    And I enter folder name as "SmokeTest"
     Then I should see the folder deleted
 
   @smoke
@@ -33,6 +35,7 @@ Feature: List
     And I enter list name to copy journo to the list as "SmokeSuiteList"
     And click Ok
     And I click on lists
+    And I click on SmokeSuiteList to see the journo added from advanced search
     And I should see the GDPR rejected status is unchecked by default
     And I click select all to remove all journalist from the list
     And I click on remove from list button
@@ -51,10 +54,9 @@ Feature: List
       And I enter list name in lists as "AutomationList" and click on it
       And I click copy all to lists
       And I enter list name to copy as "functionalList" and click ok
-      And I click clear the search field
       And I click on search icon in the list page
       And I enter list name in lists as "functionalList" and click on it
       And I click select all button to see the copied list
       And I see the list copied
-      And I click on delete and confirm delete button to delete the list
-      Then I should see the list deleted successfully
+      Then I click on delete and confirm delete button to delete the list
+

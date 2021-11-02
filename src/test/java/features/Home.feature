@@ -40,3 +40,11 @@ Feature:Home
     And I choose logout and click on it
     Then I should logout from the application
 
+  @functional
+  Scenario:Validate user settings feature
+    When I click on userprofile
+    And I choose user settings and click on it
+    And I navigate to the user settings page and choose preferred country as United Kingdom
+    And I click save changes button
+    Then I should navigate to the home page
+

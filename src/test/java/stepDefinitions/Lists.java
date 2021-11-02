@@ -26,42 +26,42 @@ public class Lists extends BaseStep{
     }
 
     @When("^I click on create folder$")
-    public void i_click_on_create_folder() {
+    public void i_click_on_create_folder() throws InterruptedException{
         pauseFor(5);
         listsPage.clickCreateFolder();
     }
 
     @When("^I enter folder name as \"([^\"]*)\" and click on create button$")
-    public void i_enter_folder_name_as_and_click_on_create_button(String folderName) {
-        pauseFor(5);
+    public void i_enter_folder_name_as_and_click_on_create_button(String folderName)throws InterruptedException {
+        wait(30);
         listsPage.EnterFolderName(folderName);
-        pauseFor(5);
+        wait(30);
         listsPage.clickCreate();
-        pauseFor(5);
+        wait(30);
     }
 
     @When("^I click on search icon in the list page$")
     public void i_click_on_search_icon_in_the_list_page() throws InterruptedException {
-        pauseFor(5);
+        wait(30);
         listsPage.searchIcon();
-        pauseFor(5);
+        wait(30);
     }
 
     @When("^I enter folder name as \"([^\"]*)\"$")
     public void i_enter_folder_name_as(String folderNameToDelete) throws InterruptedException {
-        pauseFor(5);
+        wait(30);
         listsPage.searchFolderNameToDelete(folderNameToDelete);
     }
 
     @When("^I click on the folder name from the list$")
     public void i_click_on_the_folder_name_from_the_list() throws InterruptedException{
-        pauseFor(5);
+        wait(30);
         listsPage.tickCheckBoxToSelectListName();
     }
 
     @When("^I click on menu list and click on delete button$")
     public void i_click_on_menu_list_and_click_on_delete_button()throws InterruptedException {
-        pauseFor(5);
+        wait(30);
         listsPage.menuList();
         wait(30);
         listsPage.deleteListButton();
@@ -70,7 +70,7 @@ public class Lists extends BaseStep{
     @When("^I confirm deletion$")
     public void i_confirm_deletion()throws InterruptedException
     {
-        pauseFor(5);
+        wait(30);
         listsPage.confirmDeleteFolder();
     }
 
@@ -89,7 +89,7 @@ public class Lists extends BaseStep{
     public void i_enter_list_name_to_create_as_and_click_on_create_button(String listName) throws InterruptedException {
         pauseFor(5);
         listsPage.enterListName(listName);
-        wait(30);
+        pauseFor(5);
         listsPage.clickCreateList();
     }
 
@@ -100,23 +100,23 @@ public class Lists extends BaseStep{
     }
     @When("^I click on outlet type and enter outlettype as \"([^\"]*)\"$")
     public void i_click_on_outlet_type_and_enter_outlettype_as(String outletType) throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearch.enterOutletType(outletType);
     }
 
     @When("^I Click on outlet name and enter outletname as \"([^\"]*)\"$")
     public void i_Click_on_outlet_name_and_enter_outletname_as(String outletName) throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearch.enterOutletName(outletName);
     }
     @When("^I enter list name to copy journo to the list as \"([^\"]*)\"$")
     public void i_enter_list_name_to_copy_journo_to_the_list_as(String listName) throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearch.setEnterListName(listName);
     }
     @When("^click Ok$")
     public void click_Ok() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearch.setClickOk();
     }
     /* Adding Journalist to the list*/
@@ -135,8 +135,13 @@ public class Lists extends BaseStep{
     }
     @When("^I click on lists$")
     public void i_click_on_lists() throws InterruptedException {
-        pauseFor(5);
+        pauseFor(10);
         listsPage.clickListsBtn();
+    }
+    @When("^I click on SmokeSuiteList to see the journo added from advanced search$")
+    public void i_click_on_SmokeSuiteList_to_see_the_journo_added_from_advanced_search() throws InterruptedException {
+        pauseFor(5);
+        listsPage.clickSmokeSuiteListName();
     }
 
     @When("^I should see the GDPR rejected status is unchecked by default$")
@@ -146,39 +151,39 @@ public class Lists extends BaseStep{
     }
 
     @When("^I click select all to remove all journalist from the list$")
-    public void i_click_select_all_to_remove_all_journalist_from_the_list(){
+    public void i_click_select_all_to_remove_all_journalist_from_the_list()throws InterruptedException{
         pauseFor(5);
         listsPage.chooseJournalist();
         wait(30);
     }
 
     @When("^I click on remove from list button$")
-    public void i_click_on_remove_from_list_button() {
+    public void i_click_on_remove_from_list_button()throws InterruptedException {
         pauseFor(5);
         listsPage.removeJournalist();
         wait(30);
     }
 
     @When("^I click tick mark to make sure deletion$")
-    public void i_click_tick_mark_to_make_sure_deletion() {
+    public void i_click_tick_mark_to_make_sure_deletion()throws InterruptedException {
         pauseFor(5);
         listsPage.setClickDelete();
     }
 
     @When("^I should able to see the journalist deleted successfully on the list page$")
-    public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page()  {
+    public void i_should_able_to_see_the_journalist_deleted_successfully_on_the_list_page() throws InterruptedException {
         pauseFor(5);
         listsPage.validateJournalistRemoval();
     }
 
     @When("^I click on delete list and click on confirm deletion button$")
-    public void i_click_on_delete_list_and_click_on_confirm_deletion_button()  {
+    public void i_click_on_delete_list_and_click_on_confirm_deletion_button() throws InterruptedException {
         pauseFor(5);
         listsPage.setClickDelete();
     }
 
     @When("^I enter list name as \"([^\"]*)\"")
-    public void i_enter_list_name_as(String listName)  {
+    public void i_enter_list_name_as(String listName)throws InterruptedException  {
         pauseFor(5);
         listsPage.enterListName(listName);
     }
@@ -229,16 +234,10 @@ public class Lists extends BaseStep{
         listsPage.setValidateListCopied();
     }
 
-    @When("^I click on delete and confirm delete button to delete the list$")
+    @Then("^I click on delete and confirm delete button to delete the list$")
     public void i_click_on_delete_and_confirm_delete_button_to_delete_the_list() throws InterruptedException {
         pauseFor(5);
         listsPage.setDeleteListBtn();
-    }
-
-    @Then("^I should see the list deleted successfully$")
-    public void i_should_see_the_list_deleted_successfully() throws InterruptedException {
-       pauseFor(5);
-       listsPage.setValidateDeletedList();
     }
 }
 

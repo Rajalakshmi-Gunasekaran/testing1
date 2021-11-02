@@ -9,43 +9,43 @@ Feature: SubHeaders
     And I click on login button
     Then I should be able to login successfully
 
-  @functional1
+  @functional
   Scenario:Validate AllAlerts tab in home page
     When I should login into the home page and click on AllAlerts in sub menu
     And I click on select all to validate
     Then I should see the all alerts results
 
-  @functional2
+  @functional
   Scenario:Validate New Editions tab in home page
     When I should login into the home page and click on New Editions in sub menu
     And I click on select all to validate
     Then I should see the new editions results
 
-  @functional3
+  @functional
   Scenario:Validate outlet logo under New Editions tab in home page
     When I should login into the home page and click on New Editions in sub menu
     And I choose outlet and click on outlet logo
     Then I should see navigate to the outlet profile
 
-  @functional4
+  @functional
   Scenario:Validate New Editions tab in home page
     When I should login into the home page and click on New Editions in sub menu
     And I click on search all alerts button
     Then I should navigate to the alerts tab in advanced search
 
-  @functional5
+  @functional
   Scenario:Validate selecting alerts one by one in alerts tab in home page
     When I should login into the home page and click on AllAlerts in sub menu
     And I choose alert to select and click on it
     Then I should see the alert been selected
 
-  @functional6
+  @functional
   Scenario: validate quick find by keyword in new editions tab
     When I should login into the home page and click on New Editions in sub menu
     And I click on quick find by keyword text field and enter text as "Health"
     Then I should see the results for the search
 
-  @functional7
+  @functional
   Scenario:Validate sign up here link in alerts tab in home page
     When I should login into the home page and click on webinars in sub menu
     And I click sign up here link
