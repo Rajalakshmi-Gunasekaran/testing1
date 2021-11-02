@@ -24,7 +24,7 @@ Feature: JournoProfile
     And I choose Journalist from the list and Click on it
     Then I should see all the available information about the ACL journalist
 
-  @functional1
+  @functional
   Scenario: validate adding Journalist and removing journo from the list in journo profile page
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -36,7 +36,7 @@ Feature: JournoProfile
     And I click on remove cross mark on the list name
     Then I should see the list removed from the journo page
 
-  @functional2
+  @functional
   Scenario: validate adding and removing Journalist to favourites
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -49,7 +49,7 @@ Feature: JournoProfile
     And I choose Journalist from the list and Click on it
     Then I un click on add to favourites button
 
-  @functional3
+  @functional
   Scenario: validate editing GDPR note
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -62,9 +62,9 @@ Feature: JournoProfile
     And I click on GDPR note button in journo profile page
     And I click GDPR status to Unknown
     And I click on save button in GDPR note
-    Then I should see GDPR status as unknown
+    Then I should see the GDPR note as unknown
 
-  @functional4
+  @functional
   Scenario: validate adding and removing journo from stream in journo profile
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -78,7 +78,7 @@ Feature: JournoProfile
     And I click on save button in add to streams
     Then I should see journo removed from streams
 
-  @functional5
+  @functional
   Scenario: validate adding and deleting activity for a journo
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -90,7 +90,7 @@ Feature: JournoProfile
     And I should see the activity created for the journo
     Then I delete the activity created for the journo
 
-  @functional6
+  @functional
   Scenario: validate adding and deleting notes for the journo
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -102,7 +102,7 @@ Feature: JournoProfile
     And I should see the notes created for the journo
     Then I delete the notes created for the journo
 
-  @functional7
+  @functional
   Scenario: validate changing dates in live content tab
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"

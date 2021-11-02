@@ -135,9 +135,9 @@ public class DistributionPage extends CommonFunctions{
     public WebElement validateViewCampaign;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div")
     public WebElement chooseBlock;
-    @FindBy(xpath = "//div[@class=\"dropdown-toggle clearfix\"]/ul//li[contains(text(),\"1Raji\")]")
+    @FindBy(xpath = "//ul/li/a/span[contains(text(),\"1Raji\")]")
     public WebElement getChooseBlock;
-    @FindBy(xpath = "//*[@id=\"headerImage\"]/p/img")
+    @FindBy(xpath = "//div[@id=\"headerImage\"]")
     public WebElement validateEditPressRelease;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/ul/li[3]/a/div")
     public WebElement clickBlockTab;

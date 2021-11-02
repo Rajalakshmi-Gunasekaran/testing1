@@ -72,7 +72,7 @@ Feature: Streams
       And I should able to see the  streams results for tweet
       Then I delete the streams
 
-  @functional1
+  @functional
   Scenario: validate stream set up for activities
     When I should be in the home page and click on Streams
     And I click on create new stream button

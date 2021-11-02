@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class JournoProfilePage {
+public class JournoProfilePage extends CommonFunctions {
     public WebDriver driver;
     public Actions action;
 
@@ -49,7 +49,7 @@ public class JournoProfilePage {
     public WebElement clickInListBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[1]/div/div[1]/input")
     public WebElement enterListNameToAdd;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[2]/div/div[2]/ul/li/div")
+    @FindBy(xpath = "//span[contains(text(),\"Remove all\")]")
     public WebElement clickRemoveFromList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/div")
     public WebElement validateJournoRemovalFromList;
@@ -291,6 +291,7 @@ public class JournoProfilePage {
 
     public void validateNotesCreatedForJourno() throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(validateNotes,driver);
         validateNotes.isDisplayed();
     }
 

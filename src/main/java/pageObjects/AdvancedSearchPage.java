@@ -150,7 +150,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement clickReTweet;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav/div[2]/div[1]/button[1]/span/span")
     public WebElement selectAll;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav/div[2]/div[1]/button[2]/span/span")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div/div/div[1]/div[1]/a/i")
     public WebElement validateTweetKeywordSearch;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[8]/a")
     public WebElement clickInstagramTab;
@@ -225,7 +225,6 @@ public class AdvancedSearchPage extends CommonFunctions{
         elementClickable(clickCountry,driver);
         clickCountry.click();
     }
-
     public void validateListGroupedByCountry()throws InterruptedException {
         Thread.sleep(3000);
         //elementVisible(validateGroupBy,driver);
@@ -262,8 +261,12 @@ public class AdvancedSearchPage extends CommonFunctions{
         enterListNameFromAdvancedSearch.sendKeys(advancedSearchList);
         Thread.sleep(3000);
         enterListNameFromAdvancedSearch.sendKeys(Keys.ENTER);
+    }
+    public void clickOkToCopyListFromAdvancedSearch()throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickOkToCreateAdvancedSearch,driver);
         clickOkToCreateAdvancedSearch.click();
+        Thread.sleep(3000);
     }
     public void setClickOutletTab()throws InterruptedException {
         Thread.sleep(3000);

@@ -282,6 +282,7 @@ public class StreamPage extends CommonFunctions{
     //click on add journo to lists from streams
     public void clickAddJournoToListBtnFromStream()throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickAddJournoToListBtn,driver);
         clickAddJournoToListBtn.click();
     }
     //enter list name to add journos from streams

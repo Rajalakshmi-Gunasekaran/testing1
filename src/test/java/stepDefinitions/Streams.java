@@ -196,10 +196,11 @@ public class Streams extends BaseStep
         public void i_click_Ok_to_copy_journo_from_streams() throws InterruptedException {
            wait(30);
            streamPage.setClickOkBtnToCreateStreamList();
+           pauseFor(5);
         }
         @When("^I click on list tab in homepage to see journo added from streams$")
         public void i_click_on_list_tab_in_homepage_to_see_journo_added_from_streams() throws InterruptedException {
-           wait(30);
+           pauseFor(5);
            listsPage.clickListsBtn();
         }
 
