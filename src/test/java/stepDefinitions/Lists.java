@@ -42,7 +42,7 @@ public class Lists extends BaseStep{
 
     @When("^I click on search icon in the list page$")
     public void i_click_on_search_icon_in_the_list_page() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         listsPage.searchIcon();
         wait(30);
     }

@@ -4,8 +4,8 @@ Feature:Home
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "qa@roxhillmedia.com"
-    And I enter password as "qaautomation123"
+    When I enter Username
+    And I enter password
     And I click on login button
     Then I should be able to login successfully
 
@@ -27,12 +27,12 @@ Feature:Home
     And I click on sign up links in Headline alerts page
     Then I should able to navigate to the Roxhill main site
 
-#  @smoke
-#  Scenario:4Validate help and feedback functionality
-#    When I am on login page and I click help and feedback functionality
-#    And I enter description in the text field as "Test-Raji"
-#    And I click on send button
-#    Then I should able to send help and feedback email to the roxhill site
+  @smoke
+  Scenario:4Validate help and feedback functionality
+    When I am on login page and I click help and feedback functionality
+    And I enter description in the text field as "Test-Raji"
+    And I click on send button
+    Then I should able to send help and feedback email to the roxhill site
 
   @smoke
   Scenario:5Validate logout feature

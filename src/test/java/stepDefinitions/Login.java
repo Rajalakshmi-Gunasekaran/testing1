@@ -19,14 +19,14 @@ public class Login extends BaseStep {
         wait(10);
     }
 
-    @When("^I enter Username as \"(.*?)\"$")
-    public void i_enter_Username_as(String UserName) {
-        loginPage.setUserName(UserName);
+    @When("^I enter Username$")
+    public void i_enter_Username() throws Exception {
+        loginPage.setUserName();
     }
 
-    @When("^I enter password as \"(.*?)\"$")
-    public void i_enter_password_as(String Password) {
-        loginPage.setPassword(Password);
+    @When("^I enter password$")
+    public void i_enter_password() throws Exception {
+        loginPage.setPassword();
     }
 
     @When("^I click on login button$")

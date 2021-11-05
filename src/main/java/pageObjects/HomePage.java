@@ -78,6 +78,8 @@ public class HomePage extends CommonFunctions{
     public WebElement clickWebinarTab;
     @FindBy(xpath = "//a[contains(text(),\"here\")]")
     public WebElement clickSignUpHere;
+    @FindBy(xpath = "//a[contains(text(),\" FunctionalTest \")]")
+    public WebElement validateFunctionalTestStreamTab;
 
     /* Initialising Web driver*/
     public HomePage(WebDriver driver) {
@@ -242,5 +244,10 @@ Thread.sleep(3000);
     public void setClickSignUpHere() throws InterruptedException{
         Thread.sleep(3000);
         clickSignUpHere.click();
+    }
+
+    public void validateFunctionalTestStream() throws InterruptedException {
+        Thread.sleep(3000);
+        validateFunctionalTestStreamTab.isDisplayed();
     }
 }

@@ -58,4 +58,33 @@ public class ReadyMadeList extends BaseStep{
      wait(30);
      readyMadeListPage.validateRMLHomePage();
    }
+   @When("^I choose RML and click on it$")
+   public void i_choose_RML_and_click_on_it() throws InterruptedException {
+     wait(30);
+     readyMadeListPage.chooseRMLList();
+   }
+
+   @When("^I click on Download all button$")
+   public void i_click_on_Download_all_button() throws InterruptedException {
+     wait(30);
+     readyMadeListPage.clickDownloadBtn();
+   }
+
+   @When("^I click desk from left hand side column selection$")
+   public void i_click_desk_from_left_hand_side_column_selection() throws InterruptedException {
+     wait(30);
+     readyMadeListPage.clickAddDeskColumn();
+   }
+
+   @When("^I click desk from right hand side to remove it$")
+   public void i_click_desk_from_right_hand_side_to_remove_it() throws InterruptedException {
+      wait(30);
+      readyMadeListPage.clickAddDeskColumn();
+   }
+
+   @Then("^I should click cancel button$")
+   public void i_should_click_cancel_button() throws InterruptedException {
+     wait(30);
+     readyMadeListPage.clickCancelBtn();
+   }
 }

@@ -104,7 +104,12 @@ public class StreamPage extends CommonFunctions{
     public WebElement validateActivityStream;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div/div[2]/ul/li/div/a/strong")
     public WebElement validateActivityPreview;
-
+    @FindBy(xpath = "//span[contains(text(),\"FunctionalTest\")]")
+    public WebElement clickFunctionalTest;
+    @FindBy(xpath = "//button[contains(text(),\" On homepage \")]")
+    public WebElement clickOnHomePageChkBox;
+    @FindBy(xpath = "//button[contains(text(),\" Save \")]")
+    public WebElement clickSaveBtn;
 
 
     /*Validating All Journo moves functionality*/
@@ -332,5 +337,20 @@ public class StreamPage extends CommonFunctions{
         clickFeed.click();
         Thread.sleep(3000);
         validateActivityStream.isDisplayed();
+    }
+
+    public void clickFunctionalTestStream() throws InterruptedException{
+        Thread.sleep(3000);
+        clickFunctionalTest.click();
+    }
+
+    public void ClickOnHomePageChkBox() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOnHomePageChkBox.click();
+    }
+
+    public void clickSaveBtnInStream() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSaveBtn.click();
     }
 }
