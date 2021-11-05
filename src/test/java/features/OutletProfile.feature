@@ -4,8 +4,8 @@ Feature: OutletProfile
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "qa@roxhillmedia.com"
-    And I enter password as "qaautomation123"
+    When I enter Username
+    And I enter password
     And I click on login button
     Then I should be able to login successfully
 

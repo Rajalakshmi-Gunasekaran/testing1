@@ -190,4 +190,15 @@ public class JournoProfile extends BaseStep {
        journoProfilePage.validateResultsForSelectedDates();
     }
 
+    @When("^I choose sector and click on it$")
+    public void i_choose_sector_and_click_on_it() throws InterruptedException {
+       wait(30);
+       journoProfilePage.chooseAndClickSector();
+    }
+
+    @Then("^I should navigate to the advanced search Journalist page$")
+    public void i_should_navigate_to_the_advanced_search_Journalist_page() throws InterruptedException {
+       wait(30);
+       journoProfilePage.validateAdvancedSearchSectorSearch();
+    }
 }

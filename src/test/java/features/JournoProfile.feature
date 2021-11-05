@@ -4,8 +4,8 @@ Feature: JournoProfile
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "qa@roxhillmedia.com"
-    And I enter password as "qaautomation123"
+    When I enter Username
+    And I enter password
     And I click on login button
     Then I should be able to login successfully
 
@@ -110,3 +110,11 @@ Feature: JournoProfile
     And I click on from date in calender
     And I choose a date to filter coverage results
     Then I should see the results for the selected time period
+
+  @functional
+  Scenario: validate navigating to advanced search sector filter from journo profile page
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I choose sector and click on it
+    Then I should navigate to the advanced search Journalist page

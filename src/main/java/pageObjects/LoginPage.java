@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends CommonFunctions{
     @FindBy(id = "login_username")
     public WebElement UsrTxt;
     @FindBy(id = "login_password")
@@ -36,13 +36,13 @@ public class LoginPage {
     }
 
     /* enter valid username*/
-    public void setUserName(String UserName) {
-        UsrTxt.sendKeys(UserName);
+    public void setUserName()throws Exception {
+        UsrTxt.sendKeys(readPropertyFile("UserName"));
     }
 
     /*enter valid password*/
-    public void setPassword(String Password) {
-        passTxt.sendKeys(Password);
+    public void setPassword()throws Exception {
+        passTxt.sendKeys(readPropertyFile("Password"));
     }
 
     /*logging to the application*/

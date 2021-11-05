@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public abstract class CommonFunctions
@@ -25,6 +28,12 @@ public abstract class CommonFunctions
         {
             WebDriverWait wait = new WebDriverWait(driver, 120);
             wait.until(ExpectedConditions.visibilityOf(locator));
+        }
+        public String readPropertyFile(String key) throws Exception {
+            FileInputStream inputStream=new FileInputStream(FilePath.configFilePath);
+            Properties properties=new Properties();
+            properties.load(inputStream);
+            return properties.getProperty(key);
         }
     }
 

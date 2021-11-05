@@ -113,6 +113,10 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement chooseDate;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[4]/div/div[3]")
     public WebElement validateResultsForChosenDates;
+    @FindBy(xpath = "//a[contains(text(),\" FinTech \")]")
+    public WebElement chooseAndClickSectorLink;
+    @FindBy(xpath = "//span[contains(text(),\"FinTech\")]")
+    public WebElement validateAdvancedSearchSectorSearchFromJourno;
 
     public void validateAllHeaderTabs() throws InterruptedException {
         Thread.sleep(3000);
@@ -318,5 +322,15 @@ public class JournoProfilePage extends CommonFunctions {
     public void validateResultsForSelectedDates() throws InterruptedException{
         Thread.sleep(3000);
         validateResultsForChosenDates.isDisplayed();
+    }
+
+    public void chooseAndClickSector()throws InterruptedException {
+        Thread.sleep(3000);
+        chooseAndClickSectorLink.click();
+    }
+
+    public void validateAdvancedSearchSectorSearch()throws InterruptedException {
+        Thread.sleep(3000);
+        validateAdvancedSearchSectorSearchFromJourno.isDisplayed();
     }
 }

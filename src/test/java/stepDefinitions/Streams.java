@@ -3,6 +3,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import pageObjects.Constants;
+import pageObjects.HomePage;
 import pageObjects.ListsPage;
 import pageObjects.StreamPage;
 
@@ -10,6 +11,7 @@ public class Streams extends BaseStep
     {
     public StreamPage streamPage = new StreamPage(webDriver);
     public ListsPage listsPage=new ListsPage(webDriver);
+    public HomePage homePage=new HomePage(webDriver);
 
     @When("^I should be in the home page and click on Streams$")
     public void i_should_be_in_the_home_page_and_click_on_Streams()throws InterruptedException
@@ -247,5 +249,49 @@ public class Streams extends BaseStep
         public void i_should_able_to_see_the_streams_results_for_activities() throws InterruptedException {
             wait(30);
             streamPage.validateActivitiesStream();
+        }
+        @When("^I click on FunctionalTest streams from the list$")
+        public void i_click_on_FunctionalTest_streams_from_the_list() throws InterruptedException {
+            wait(30);
+            streamPage.clickFunctionalTestStream();
+        }
+
+        @When("^I click On Homepage checkbox$")
+        public void i_click_On_Homepage_checkbox() throws InterruptedException {
+            wait(30);
+            streamPage.ClickOnHomePageChkBox();
+    }
+
+        @When("^I click on save button to save the changes$")
+        public void i_click_on_save_button_to_save_the_changes() throws InterruptedException {
+           wait(30);
+           streamPage.clickSaveBtnInStream();
+        }
+
+        @When("^I click on Home button to go back to the home page$")
+        public void i_click_on_Home_button_to_go_back_to_the_home_page() throws InterruptedException {
+           pauseFor(10);
+           homePage.setGoBackBtn();
+        }
+
+        @When("^I should see the FunctionalTest stream tab in sub headers$")
+        public void i_should_see_the_FunctionalTest_stream_tab_in_sub_headers() throws InterruptedException {
+            wait(30);
+            homePage.validateFunctionalTestStream();
+        }
+
+        @When("^I click on streams tab header$")
+        public void i_click_on_streams_tab_header() throws InterruptedException {
+            wait(30);
+            streamPage.clkStreams();
+        }
+
+        @Then("^I uncheck the On homepage checkbox and save changes$")
+        public void i_uncheck_the_On_homepage_checkbox_and_save_changes() throws InterruptedException {
+            wait(30);
+            streamPage.ClickOnHomePageChkBox();
+            pauseFor(5);
+            streamPage.clickSaveBtnInStream();
+            pauseFor(5);
         }
     }

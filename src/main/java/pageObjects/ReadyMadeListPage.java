@@ -30,6 +30,17 @@ public class ReadyMadeListPage extends CommonFunctions{
     public WebElement clickCollapsibleChevron;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div")
     public WebElement validateRMLHomePage;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[1]/a/div[1]")
+    public WebElement chooseAndClickRMLList;
+    @FindBy(xpath = "//span[contains(text(),\"Download all\")]")
+    public WebElement clickDownloadBtnInRML;
+    @FindBy(xpath = "//span[contains(text(),\"Desks\")]")
+    public WebElement clickAddDesk;
+    @FindBy(xpath = "")
+    public WebElement clickRemoveDesk;
+    @FindBy(xpath = "//button[contains(text(),\" Cancel \")]")
+    public WebElement clickCancel;
+
 
 
     public void clickReadyMadeListTab() throws InterruptedException{
@@ -75,5 +86,30 @@ public class ReadyMadeListPage extends CommonFunctions{
     public void validateRMLHomePage() throws InterruptedException{
         Thread.sleep(3000);
         validateRMLHomePage.isDisplayed();
+    }
+
+    public void chooseRMLList() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseAndClickRMLList.click();
+    }
+
+    public void clickDownloadBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickDownloadBtnInRML.click();
+    }
+
+    public void clickAddDeskColumn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickAddDesk.click();
+    }
+
+    /*public void clickRemoveDeskColumn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickRemoveDesk.click();
+    }*/
+
+    public void clickCancelBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickCancel.click();
     }
 }

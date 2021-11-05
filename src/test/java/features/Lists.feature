@@ -4,12 +4,12 @@ Feature: List
 
   Background: Logged in to the application
     Given I navigate to application login url
-    When I enter Username as "qa@roxhillmedia.com"
-    And I enter password as "qaautomation123"
+    When I enter Username
+    And I enter password
     And I click on login button
     Then I should be able to login successfully
 
-  @smoke
+  @smoke1
   Scenario:1Validate creating and deleting folder
     When I should login into the home page and click on lists
     And I click on create folder
