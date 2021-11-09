@@ -454,4 +454,37 @@ journoProfilePage.setValidateJournoRemovalFromList();
 wait(30);
 outletProfilePage.validateJournoSortDirection();
     }
+    @Then("^I should see the contact details for selected outlet$")
+    public void i_should_see_the_contact_details_for_selected_outlet() throws InterruptedException {
+       wait(30);
+       outletProfilePage.validateContactDetails();
+    }
+    @When("^I choose and click on journalist link in alerts tile$")
+    public void i_choose_and_click_on_journalist_link_in_alerts_tile() throws InterruptedException {
+        wait(30);
+        outletProfilePage.chooseAndClickJournoLink();
+    }
+
+    @Then("^I should navigate to the respective journo page$")
+    public void i_should_navigate_to_the_respective_journo_page() throws InterruptedException {
+        wait(30);
+        outletProfilePage.validateJournoLinkRedirectsToJournoPage();
+    }
+    @When("^I click on PR opportunity tab$")
+    public void i_click_on_PR_opportunity_tab() throws InterruptedException {
+        wait(30);
+        outletProfilePage.setClickPROpportunityTab();
+    }
+
+    @When("^I choose and click on sections as Home Interest$")
+    public void i_choose_and_click_on_sections_as_Home_Interest() throws InterruptedException {
+        wait(30);
+        outletProfilePage.setClickSectionHomeInterest();
+    }
+
+    @Then("^I should validate results for the section search$")
+    public void i_should_validate_results_for_the_section_search() throws InterruptedException {
+        wait(30);
+        outletProfilePage.validateSectionFilterSearchResult();
+    }
 }

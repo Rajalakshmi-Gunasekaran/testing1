@@ -9,31 +9,31 @@ Feature: SubHeaders
     And I click on login button
     Then I should be able to login successfully
 
-  @functional
+  @smoke
   Scenario:Validate AllAlerts tab in home page
     When I should login into the home page and click on AllAlerts in sub menu
     And I click on select all to validate
     Then I should see the all alerts results
 
-  @functional
+  @smoke
   Scenario:Validate New Editions tab in home page
     When I should login into the home page and click on New Editions in sub menu
     And I click on select all to validate
     Then I should see the new editions results
 
-  @functional
+  @smoke
   Scenario:Validate outlet logo under New Editions tab in home page
     When I should login into the home page and click on New Editions in sub menu
     And I choose outlet and click on outlet logo
     Then I should see navigate to the outlet profile
 
-  @functional
+  @smoke
   Scenario:Validate New Editions tab in home page
     When I should login into the home page and click on New Editions in sub menu
     And I click on search all alerts button
     Then I should navigate to the alerts tab in advanced search
 
-  @functional
+  @smoke
   Scenario:Validate selecting alerts one by one in alerts tab in home page
     When I should login into the home page and click on AllAlerts in sub menu
     And I choose alert to select and click on it

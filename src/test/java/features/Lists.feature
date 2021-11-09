@@ -9,7 +9,7 @@ Feature: List
     And I click on login button
     Then I should be able to login successfully
 
-  @smoke1
+  @smoke
   Scenario:1Validate creating and deleting folder
     When I should login into the home page and click on lists
     And I click on create folder
@@ -60,3 +60,10 @@ Feature: List
       And I see the list copied
       Then I click on delete and confirm delete button to delete the list
 
+  @functional
+  Scenario: validate viewing list in list view
+    When I should login into the home page and click on lists
+    And I click on search icon in the list page
+    And I enter list name in lists as "AutomationList" and click on it
+    And I click on list view button
+    Then I should see the list in list view

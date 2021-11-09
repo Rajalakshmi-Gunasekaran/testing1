@@ -118,3 +118,22 @@ Feature: JournoProfile
     And I choose Journalist from the list and Click on it
     And I choose sector and click on it
     Then I should navigate to the advanced search Journalist page
+
+  @functional
+  Scenario: validate view in tab button in live content tab
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click view in tab button to see expanded view
+    And I should see the selected item in expanded view
+    And I click filter button to hide filters
+    Then I should hide filters in journo profile page
+
+  @functional
+  Scenario:Validate company chart view expanded as a coverage article in Journo profile
+    When I should login into the home page and click on Quick search tab
+    And I enter Journalist name as "simon english"
+    And I choose Journalist from the list and Click on it
+    And I click view in tab button to see expanded view
+    And I choose and click Barclays plc link to see the coverage article for the selected item
+    Then I see the articles for the coverage section

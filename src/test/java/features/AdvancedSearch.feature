@@ -34,7 +34,7 @@ Feature:AdvancedSearch
     And I choose info as Roxhill says
     Then I should able to see the journalist list view by Roxhill says inside the tile
 
-  @functional1
+  @functional
   Scenario:Validate adding journo to the list from advanced search
     When I should login into the home page and click on search tab
     And I click on outlet type and enter outlet type as "National"

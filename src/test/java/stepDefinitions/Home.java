@@ -201,4 +201,15 @@ public class Home extends BaseStep {
     public void i_should_see_the_results_as_per_the_search() throws InterruptedException {
         wait(30);
     }
+    @When("^I should login into the home page and click on home button$")
+    public void i_should_login_into_the_home_page_and_click_on_home_button() throws InterruptedException {
+        homePage = new HomePage(webDriver);
+        wait(30);
+        homePage.setGoBackBtn();
+    }
+    @Then("^I should see the roxhill highlights$")
+    public void i_should_see_the_roxhill_highlights() throws InterruptedException {
+        wait(30);
+        homePage.validateRoxhillHighlghtResults();
+    }
 }

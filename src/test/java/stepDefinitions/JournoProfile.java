@@ -201,4 +201,37 @@ public class JournoProfile extends BaseStep {
        wait(30);
        journoProfilePage.validateAdvancedSearchSectorSearch();
     }
+    @When("^I click view in tab button to see expanded view$")
+    public void i_click_view_in_tab_button_to_see_expanded_view() throws InterruptedException {
+        wait(30);
+        journoProfilePage.setClickViewInTabBtn();
+    }
+
+    @Then("^I should see the selected item in expanded view$")
+    public void i_should_see_the_selected_item_in_expanded_view() throws InterruptedException {
+        wait(30);
+        journoProfilePage.validateItemInExpandedView();
+    }
+    @When("^I click filter button to hide filters$")
+    public void i_click_filter_button_to_hide_filters() throws InterruptedException {
+        wait(30);
+        journoProfilePage.clickFiltersBtn();
+    }
+
+    @Then("^I should hide filters in journo profile page$")
+    public void i_should_hide_filters_in_journo_profile_page() throws InterruptedException {
+        wait(30);
+        journoProfilePage.validateHideFilters();
+    }
+    @When("^I choose and click Barclays plc link to see the coverage article for the selected item$")
+    public void i_choose_and_click_Barclays_plc_link_to_see_the_coverage_article_for_the_selected_item() throws InterruptedException {
+       wait(30);
+       journoProfilePage.setClickCompanyLinkInChartView();
+    }
+
+    @Then("^I see the articles for the coverage section$")
+    public void i_see_the_articles_for_the_coverage_section() throws InterruptedException {
+       wait(30);
+       journoProfilePage.validateCompanyCoverageResults();
+    }
 }

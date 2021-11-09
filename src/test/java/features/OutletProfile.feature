@@ -54,7 +54,7 @@ Feature: OutletProfile
     And I click on clear all button
     Then I should see journos for all the desks
 
-  @functional1
+  @functional
   Scenario:Validate adding activity for a journo
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -141,3 +141,28 @@ Feature: OutletProfile
     And I click on sort direction button
     Then I should see the results for sorting direction
 
+  @functional
+  Scenario:Validate contact details in alerts tab
+    When I should login into the home page and click on Quick search tab
+    And I enter Outlet name as "evening standard"
+    And I choose Outlet from the list and Click on it
+    And I click on alerts tab
+    Then I should see the contact details for selected outlet
+
+  @functional
+  Scenario:Validate journalist link in alerts tab navigates to journalist profile page
+    When I should login into the home page and click on Quick search tab
+    And I enter Outlet name as "evening standard"
+    And I choose Outlet from the list and Click on it
+    And I click on alerts tab
+    And I choose and click on journalist link in alerts tile
+    Then I should navigate to the respective journo page
+
+  @functional
+  Scenario:Validate PR opportunity results filtered by section search
+    When I should login into the home page and click on Quick search tab
+    And I enter Outlet name as "evening standard"
+    And I choose Outlet from the list and Click on it
+    And I click on PR opportunity tab
+    And I choose and click on sections as Home Interest
+    Then I should validate results for the section search
