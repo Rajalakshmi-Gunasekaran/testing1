@@ -110,4 +110,26 @@ public class Pinpoint extends BaseStep {
        pauseFor(5);
        pinpointPage.setValidateTweetAndMoreSearch();
     }
+    @When("^I click on outlet search icon$")
+    public void i_click_on_outlet_search_icon() throws InterruptedException {
+       wait(30);
+       pinpointPage.clickOutletSearchIcon();
+    }
+
+    @Then("^I should navigate to the advanced search outlet tab$")
+    public void i_should_navigate_to_the_advanced_search_outlet_tab() throws InterruptedException {
+        wait(30);
+        pinpointPage.validateNavigateToAdvancedSearchOutletTab();
+    }
+    @When("^I click on journalist search icon$")
+    public void i_click_on_journalist_search_icon() throws InterruptedException {
+        pauseFor(5);
+        pinpointPage.setClickJournoSearchIcon();
+    }
+
+    @Then("^I should navigate to the advanced search journo tab$")
+    public void i_should_navigate_to_the_advanced_search_journo_tab() throws InterruptedException {
+        wait(30);
+        pinpointPage.setValidateNavigateToAdvancedSearchJournoTab();
+    }
 }

@@ -48,3 +48,7 @@ Feature:Home
     And I click save changes button
     Then I should navigate to the home page
 
+  @functional
+  Scenario:Validate Roxhill highlights feature
+    When I should login into the home page and click on home button
+    Then I should see the roxhill highlights

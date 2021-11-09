@@ -20,7 +20,7 @@ Feature: Distribution
     And I enter body as "The press release can be added in the body template"
     Then I should able to see the created press release
 
-   @functional1
+   @functional
      Scenario: validate edit press release functionality
      When I should be in the home page and click on Distribution tab
      And I click on search icon on press release tab

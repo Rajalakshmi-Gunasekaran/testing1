@@ -110,7 +110,12 @@ public class StreamPage extends CommonFunctions{
     public WebElement clickOnHomePageChkBox;
     @FindBy(xpath = "//button[contains(text(),\" Save \")]")
     public WebElement clickSaveBtn;
-
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[4]/button[2]/span")
+    public WebElement clickDefaultHomepageBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/nav/div[2]/nav/a[1]")
+    public WebElement validateDefaultHomepageResults;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[4]/button[2]/span/span")
+    public WebElement clickUncheckDefaultHomepage;
 
     /*Validating All Journo moves functionality*/
     public void clkStreams()throws InterruptedException
@@ -352,5 +357,20 @@ public class StreamPage extends CommonFunctions{
     public void clickSaveBtnInStream() throws InterruptedException{
         Thread.sleep(3000);
         clickSaveBtn.click();
+    }
+
+    public void clickDefaultHomePage() throws InterruptedException{
+        Thread.sleep(3000);
+        clickDefaultHomepageBtn.click();
+    }
+
+    public void validateDefaultHomePage() throws InterruptedException{
+        Thread.sleep(3000);
+        validateDefaultHomepageResults.isDisplayed();
+    }
+
+    public void UncheckDefaultHomePage() throws InterruptedException{
+        Thread.sleep(3000);
+        clickUncheckDefaultHomepage.click();
     }
 }

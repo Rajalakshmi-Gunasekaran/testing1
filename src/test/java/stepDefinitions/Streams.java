@@ -294,4 +294,29 @@ public class Streams extends BaseStep
             streamPage.clickSaveBtnInStream();
             pauseFor(5);
         }
+        @When("^I click on Default Homepage$")
+        public void i_click_on_Default_Homepage() throws InterruptedException {
+           wait(30);
+           streamPage.clickDefaultHomePage();
+           pauseFor(5);
+           streamPage.clickSaveBtnInStream();
+           pauseFor(5);
+        }
+
+        @When("^I should see the FunctionalTest stream tab as default home page in sub headers$")
+        public void i_should_see_the_FunctionalTest_stream_tab_as_default_home_page_in_sub_headers() throws InterruptedException {
+           wait(30);
+           streamPage.validateDefaultHomePage();
+        }
+
+        @Then("^I uncheck the default homepage checkbox and save changes$")
+        public void i_uncheck_the_default_homepage_checkbox_and_save_changes() throws InterruptedException {
+            wait(30);
+            streamPage.UncheckDefaultHomePage();
+            wait(30);
+            streamPage.ClickOnHomePageChkBox();
+            wait(30);
+            streamPage.clickSaveBtnInStream();
+            pauseFor(5);
+        }
     }

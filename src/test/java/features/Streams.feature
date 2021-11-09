@@ -85,7 +85,7 @@ Feature: Streams
     And I should able to see the streams results for activities
     Then I delete the streams
 
-  @functional1
+  @functional
   Scenario: validate set up selected stream tab in home page
     When I should be in the home page and click on Streams
     And I click on FunctionalTest streams from the list
@@ -97,3 +97,15 @@ Feature: Streams
     And I click on FunctionalTest streams from the list
     Then I uncheck the On homepage checkbox and save changes
 
+  @functional
+  Scenario: validate set up selected stream tab in default home page
+    When I should be in the home page and click on Streams
+    And I click on FunctionalTest streams from the list
+    And I click On Homepage checkbox
+    And I click on Default Homepage
+    And I click on save button to save the changes
+    And I click on Home button to go back to the home page
+    And I should see the FunctionalTest stream tab as default home page in sub headers
+    And I click on streams tab header
+    And I click on FunctionalTest streams from the list
+    Then I uncheck the default homepage checkbox and save changes

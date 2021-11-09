@@ -41,7 +41,14 @@ public class PinpointPage extends CommonFunctions{
     public WebElement chooseTweetRadioBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[1]/nav/div[3]/button")
     public WebElement validateTweetAndMoreSearch;
-
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[4]/div[1]/div/div[2]/span[2]/button")
+    public WebElement clickOutletSearchIcon;
+    @FindBy(xpath = "//nav[@class=\"super-toolbar d-flex flex-row justify-content-start align-items-center py-0 branded\"]")
+    public WebElement validateNavigateToAdvancedSearchOutletTab;
+    @FindBy(xpath = "//*[@id=\"searchJournalistButton\"]/i")
+    public WebElement clickJournoSearchIcon;
+    @FindBy(xpath = "//nav[@class=\"super-toolbar d-flex flex-row justify-content-start align-items-center py-0 branded\"]")
+    public WebElement validateNavigateToAdvancedSearchJournoTab;
 
     /*clicking pinpoint tab from the header menu in home page*/
     public void clickPinpointTab() {
@@ -116,5 +123,26 @@ public class PinpointPage extends CommonFunctions{
     public void setValidateTweetAndMoreSearch()throws InterruptedException{
         Thread.sleep(3000);
         validateTweetAndMoreSearch.isDisplayed();
+    }
+
+    public void clickOutletSearchIcon() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOutletSearchIcon.click();
+    }
+
+    public void validateNavigateToAdvancedSearchOutletTab() throws InterruptedException{
+        Thread.sleep(3000);
+        validateNavigateToAdvancedSearchOutletTab.isDisplayed();
+    }
+
+    public void setClickJournoSearchIcon()throws InterruptedException {
+        Thread.sleep(3000);
+        elementVisible(clickJournoSearchIcon,driver);
+        clickJournoSearchIcon.click();
+    }
+
+    public void setValidateNavigateToAdvancedSearchJournoTab() throws InterruptedException{
+        Thread.sleep(3000);
+        validateNavigateToAdvancedSearchJournoTab.isDisplayed();
     }
 }

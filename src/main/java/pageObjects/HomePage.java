@@ -80,6 +80,8 @@ public class HomePage extends CommonFunctions{
     public WebElement clickSignUpHere;
     @FindBy(xpath = "//a[contains(text(),\" FunctionalTest \")]")
     public WebElement validateFunctionalTestStreamTab;
+    @FindBy(xpath = "//div[@class=\"highlight-column h-100\"]")
+    public WebElement validateRoxhillHighlights;
 
     /* Initialising Web driver*/
     public HomePage(WebDriver driver) {
@@ -249,5 +251,10 @@ Thread.sleep(3000);
     public void validateFunctionalTestStream() throws InterruptedException {
         Thread.sleep(3000);
         validateFunctionalTestStreamTab.isDisplayed();
+    }
+
+    public void validateRoxhillHighlghtResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateRoxhillHighlights.isDisplayed();
     }
 }

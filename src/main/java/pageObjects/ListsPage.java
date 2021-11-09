@@ -105,6 +105,10 @@ public class ListsPage extends CommonFunctions{
     public WebElement validateJournoAddedToListFromQuickSearch;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
     public WebElement ValidateJournoAddedToListFromAdvancedSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div[1]/div[2]/div/div[1]/div[1]/div/nav[2]/div[2]/span[2]/button")
+    public WebElement clickListViewButton;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div/div/div[1]/div/div/div")
+    public WebElement validateListViewResults;
 
     //click on List button on home page
     public void clickListsBtn() throws InterruptedException{
@@ -192,6 +196,7 @@ public class ListsPage extends CommonFunctions{
         Thread.sleep(3000);
         getListName.click();
     }
+    // search folder name to delete
     public void searchFolderNameToDelete(String folderToDelete)throws InterruptedException
     {
         Thread.sleep(3000);
@@ -218,12 +223,13 @@ public class ListsPage extends CommonFunctions{
         elementClickable(clickMenuList,driver);
         clickMenuList.click();
     }
-
+    //click checkbox to select list name
     public void tickCheckBoxToSelectListName()throws InterruptedException {
         Thread.sleep(3000);
         elementVisible(tickCheckBox,driver);
         tickCheckBox.click();
     }
+    //delete list button
     public void deleteListButton()throws InterruptedException
     {
         Thread.sleep(3000);
@@ -268,10 +274,12 @@ public class ListsPage extends CommonFunctions{
         String text = "Nothing in this folder";
         Assert.assertEquals(text, validationDeleteList.getText());
     }
+    //click smoke suite list name
     public void clickSmokeSuiteListName() throws InterruptedException{
         Thread.sleep(3000);
         clickSmokeSuiteListNameFromLandingPage.click();
     }
+    //validate GDPR checkbox
     public boolean validateGDPRCheckbox() throws InterruptedException{
         Thread.sleep(3000);
         elementVisible(GDPRCheckBox,driver);
@@ -286,7 +294,7 @@ public class ListsPage extends CommonFunctions{
         action.build().perform();
         validateJournoAddedToList.isDisplayed();
     }
-
+    //choose journalist from the list
     public void chooseJournalist() throws InterruptedException{
         Thread.sleep(3000);
         elementClickable(clickSelectAll,driver);
@@ -382,16 +390,26 @@ public class ListsPage extends CommonFunctions{
         Thread.sleep(3000);
         validateJournoAddedToStreamList.isDisplayed();
     }
-
+    //validate journo added to quick search list
     public void validateJournoAddedToQuickSearchList() throws InterruptedException{
         Thread.sleep(3000);
         validateJournoAddedToListFromQuickSearch.isDisplayed();
     }
-
+    //validate journo added to list from advanced search
     public void validateJournoAddedToListFromAdvancedSearch() throws InterruptedException{
         Thread.sleep(3000);
         clickSelectAll.click();
         Thread.sleep(3000);
         ValidateJournoAddedToListFromAdvancedSearch.isDisplayed();
+    }
+    //click list view button in lists page
+    public void setClickListViewBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickListViewButton.click();
+    }
+    //validate list view results
+    public void setValidateListView() throws InterruptedException{
+        Thread.sleep(3000);
+        validateListViewResults.isDisplayed();
     }
 }

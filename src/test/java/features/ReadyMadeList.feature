@@ -9,7 +9,7 @@ Feature:ReadyMadeList
     And I click on login button
     Then I should be able to login successfully
 
-  @functional
+  @smoke
   Scenario:Validate search ready made lists filtered by outlet
     When I should login into the home page and click on search tab
     And I click on ready made list tab from the left hand side

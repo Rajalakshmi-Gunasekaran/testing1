@@ -239,6 +239,17 @@ public class Lists extends BaseStep{
         pauseFor(5);
         listsPage.setDeleteListBtn();
     }
+    @When("^I click on list view button$")
+    public void i_click_on_list_view_button() throws InterruptedException {
+        wait(30);
+        listsPage.setClickListViewBtn();
+    }
+
+    @Then("^I should see the list in list view$")
+    public void i_should_see_the_list_in_list_view() throws InterruptedException {
+       wait(30);
+       listsPage.setValidateListView();
+    }
 }
 
 

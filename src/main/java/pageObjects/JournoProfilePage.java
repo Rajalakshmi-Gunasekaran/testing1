@@ -117,6 +117,18 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement chooseAndClickSectorLink;
     @FindBy(xpath = "//span[contains(text(),\"FinTech\")]")
     public WebElement validateAdvancedSearchSectorSearchFromJourno;
+    @FindBy(xpath = "//*[@id=\"journalist-live-content-coverage-expand-btn\"]")
+    public WebElement clickViewInBtn;
+    @FindBy(xpath = "//div[contains(text(),\"Topics\")]")
+    public WebElement validateExpandedView;
+    @FindBy(xpath = "//span[contains(text(),\"Filters\")]")
+    public WebElement clickFilterButton;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]")
+    public WebElement validateHideFilters;
+    @FindBy(xpath = "//span[contains(text(),\" Barclays Plc \")]")
+    public WebElement clickCompanyLinkInChartView;
+    @FindBy(xpath = "//a[contains(text(),\"Barclays Plc\")]")
+    public WebElement validateCompanyCoverageArticlesResults;
 
     public void validateAllHeaderTabs() throws InterruptedException {
         Thread.sleep(3000);
@@ -332,5 +344,35 @@ public class JournoProfilePage extends CommonFunctions {
     public void validateAdvancedSearchSectorSearch()throws InterruptedException {
         Thread.sleep(3000);
         validateAdvancedSearchSectorSearchFromJourno.isDisplayed();
+    }
+
+    public void setClickViewInTabBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickViewInBtn.click();
+    }
+
+    public void validateItemInExpandedView() throws InterruptedException{
+        Thread.sleep(3000);
+        validateExpandedView.isDisplayed();
+    }
+
+    public void clickFiltersBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickFilterButton.click();
+    }
+
+    public void validateHideFilters() throws InterruptedException{
+        Thread.sleep(3000);
+        validateHideFilters.isDisplayed();
+    }
+
+    public void setClickCompanyLinkInChartView() throws InterruptedException{
+        Thread.sleep(3000);
+        clickCompanyLinkInChartView.click();
+    }
+
+    public void validateCompanyCoverageResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateCompanyCoverageArticlesResults.isDisplayed();
     }
 }

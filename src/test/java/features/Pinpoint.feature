@@ -28,7 +28,7 @@ Feature: Pinpoint
     And I should able to see the journo added to list
     Then I should delete and confirm delete list
 
-   @functional
+  @smoke
    Scenario: Validate tweet search by adding more search terms in pinpoint
      When I should login into the home page and click on pinpoint
      And I enter search text as "Apple"
@@ -36,3 +36,17 @@ Feature: Pinpoint
      And I click on more search text and enter third search item as "Mobile"
      And I click on tweet radio button option
      Then I should able to see the results for tweet search and more results
+
+  @smoke
+  Scenario: Validate outlet search icon navigates to the advanced search outlet tab
+    When I should login into the home page and click on pinpoint
+    And I enter search text as "Brexit"
+    And I click on outlet search icon
+    Then I should navigate to the advanced search outlet tab
+
+  @smoke
+  Scenario: Validate journalist search icon navigates to the advanced search journo tab
+    When I should login into the home page and click on pinpoint
+    And I enter search text as "Brexit"
+    And I click on journalist search icon
+    Then I should navigate to the advanced search journo tab

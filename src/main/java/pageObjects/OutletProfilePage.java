@@ -118,6 +118,18 @@ public class OutletProfilePage {
     public WebElement enterQuickFindByKeyword;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[2]")
     public WebElement validateQuickFindByKeywordResult;
+    @FindBy(xpath = "//div[@class=\"contact-details\"]")
+    public WebElement validateContactDetailsInOutletPage;
+    @FindBy(xpath = "//div[contains(text(),\" Home Interest \")]")
+    public WebElement clickHomeInterestSection;
+    @FindBy(xpath = "//a[contains(text(),\" PR opportunities \")]")
+    public WebElement clickPROpportunityTab;
+    @FindBy(xpath = "//div[@class=\"propportunity-tile h-100\"]")
+    public WebElement validatePROpportunitySectionSearch;
+    @FindBy(xpath = "//ul[@class=\"list-unstyled m-0\"]")
+    public WebElement clickJournoLink;
+    @FindBy(xpath = "//div[contains(text(),\"Evening Standard\")]")
+    public WebElement validateJournoProfileFromOutletPage;
 
     /*validate Desk display*/
     public void validateDeskDisplay() {
@@ -343,5 +355,35 @@ public class OutletProfilePage {
     public void validateJournoSortDirection() throws InterruptedException{
         Thread.sleep(3000);
         validateSortDirectionJourno.isDisplayed();
+    }
+
+    public void validateContactDetails() throws InterruptedException{
+        Thread.sleep(3000);
+        validateContactDetailsInOutletPage.isDisplayed();
+    }
+
+    public void chooseAndClickJournoLink()throws InterruptedException {
+        Thread.sleep(3000);
+        clickJournoLink.click();
+    }
+
+    public void validateJournoLinkRedirectsToJournoPage()throws InterruptedException {
+        Thread.sleep(3000);
+        validateJournoProfileFromOutletPage.isDisplayed();
+    }
+
+    public void setClickPROpportunityTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickPROpportunityTab.click();
+    }
+
+    public void setClickSectionHomeInterest() throws InterruptedException{
+        Thread.sleep(3000);
+        clickHomeInterestSection.click();
+    }
+
+    public void validateSectionFilterSearchResult() throws InterruptedException{
+        Thread.sleep(3000);
+        validatePROpportunitySectionSearch.isDisplayed();
     }
 }
