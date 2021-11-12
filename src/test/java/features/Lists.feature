@@ -45,9 +45,9 @@ Feature: List
     And I enter list name to validate list deleted as "SmokeSuiteList"
     Then I should see the list deleted
 
-    @functional
+    @functional31
     Scenario: validate copying list from one to another functionality
-      When I should login into the home page and click on lists
+      When I should login ino the home page and click on lists
       And I click on create list
       And I enter list name to create as "functionalList" and click on create button
       And I click on search icon in the list page
@@ -60,7 +60,7 @@ Feature: List
       And I see the list copied
       Then I click on delete and confirm delete button to delete the list
 
-  @functional
+  @functional32
   Scenario: validate viewing list in list view
     When I should login into the home page and click on lists
     And I click on search icon in the list page

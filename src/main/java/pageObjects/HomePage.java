@@ -82,6 +82,18 @@ public class HomePage extends CommonFunctions{
     public WebElement validateFunctionalTestStreamTab;
     @FindBy(xpath = "//div[@class=\"highlight-column h-100\"]")
     public WebElement validateRoxhillHighlights;
+    @FindBy(xpath = " //a[contains(text(),\"View Roxhill Help \")]")
+    public WebElement clickViewRoxhillHelpBtn;
+    @FindBy(xpath = "//*[@id=\"header-menu-section\"]/div/div[1]/div/div/div")
+    public WebElement validateNavigateToRoxhillHelp;
+    @FindBy(xpath = "//button[contains(text(),\" Roxhill End-User Licence Agreement \")]")
+    public WebElement clickEndUserLicenseAgreement;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/div[4]/div/div/div[3]/div/div/div[2]")
+    public WebElement validateEULAForm;
+    @FindBy(xpath = "//button[contains(text(),\" Close \")]")
+    public WebElement clickCloseBtn;
+    @FindBy(xpath = "//*[@id=\"header-menu-section\"]")
+    public WebElement validateSignUpWebinar;
 
     /* Initialising Web driver*/
     public HomePage(WebDriver driver) {
@@ -207,54 +219,84 @@ Thread.sleep(3000);
         Thread.sleep(3000);
         validateOutletLogoNavigatesToOutletProfile.isDisplayed();
     }
-
+    //click search all alerts button in home page
     public void setClickSearchAllAlertsBtn() throws InterruptedException{
         Thread.sleep(3000);
         clickSearchAllAlerts.click();
     }
-
+    //validate search all alerts navigates to advanced search alert page
     public void setValidateSearchAllAlertsNavigatesToAdvancedSearch() throws InterruptedException{
         Thread.sleep(3000);
         validateSearchAllAlertsNavigatesToAdvancedSearch.isDisplayed();
     }
-
+    //click alerts tile to select alert from the options
     public void setClickAlertTile() throws InterruptedException{
         Thread.sleep(3000);
         clickAlertFromAllAlerts.click();
     }
-
+    //validate alerts results
     public void setValidateAlertsResults() throws InterruptedException{
         Thread.sleep(3000);
         validateAlertsResults.isDisplayed();
     }
-
+    //enter quick find by keyword in text field headline home page
     public void setEnterQuickFindByKeyword(String keyword) throws InterruptedException{
         Thread.sleep(3000);
         enterKeyword.sendKeys(keyword);
     }
-
+    //validate quick by find keyword in home page headline alerts tab
     public void validateQuickByFindKeyword() throws InterruptedException{
         Thread.sleep(3000);
         validateKeywordSearchResults.isDisplayed();
     }
-
+    //click webinar alerts tab in headers home page
     public void setClickWebinarTab() throws InterruptedException{
         Thread.sleep(3000);
         clickWebinarTab.click();
     }
-
+    //click sign up here link
     public void setClickSignUpHere() throws InterruptedException{
         Thread.sleep(3000);
         clickSignUpHere.click();
     }
-
+    //validate stream sets as default home page
     public void validateFunctionalTestStream() throws InterruptedException {
         Thread.sleep(3000);
         validateFunctionalTestStreamTab.isDisplayed();
     }
-
+     //validate Roxhill highlights displays in the right side of home page
     public void validateRoxhillHighlghtResults() throws InterruptedException{
         Thread.sleep(3000);
         validateRoxhillHighlights.isDisplayed();
+    }
+    //click "view in roxhill help" button
+    public void setClickViewRoxhillHelp() throws InterruptedException{
+        Thread.sleep(3000);
+        clickViewRoxhillHelpBtn.click();
+    }
+    //validate navigate to the roxhill help page
+    public void validateNavigateToRoxhillHelpPage() throws InterruptedException{
+        Thread.sleep(3000);
+        validateNavigateToRoxhillHelp.isDisplayed();
+    }
+
+    public void setClickEndUserLicenseAgreementLink() throws InterruptedException{
+        Thread.sleep(3000);
+        clickEndUserLicenseAgreement.click();
+    }
+
+    public void validateEULAFormPage() throws InterruptedException{
+        Thread.sleep(3000);
+        validateEULAForm.isDisplayed();
+    }
+
+    public void setClickCloseBtnToCloseEULA() throws InterruptedException{
+        Thread.sleep(3000);
+        clickCloseBtn.click();
+    }
+
+    public void setValidateSignUpHere() throws InterruptedException{
+        Thread.sleep(3000);
+        validateSignUpWebinar.isDisplayed();
     }
 }

@@ -15,7 +15,7 @@ Feature: Pinpoint
     And I enter search text as "Brexit"
     Then I should able to see the results in graph view
 
-  @functional
+  @functional48
   Scenario: validate adding journo to list from pinpoint
     When I should login into the home page and click on pinpoint
     And I enter search text as "Brexit"

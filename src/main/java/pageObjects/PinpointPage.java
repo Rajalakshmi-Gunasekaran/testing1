@@ -127,6 +127,7 @@ public class PinpointPage extends CommonFunctions{
 
     public void clickOutletSearchIcon() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickOutletSearchIcon,driver);
         clickOutletSearchIcon.click();
     }
 
@@ -137,7 +138,7 @@ public class PinpointPage extends CommonFunctions{
 
     public void setClickJournoSearchIcon()throws InterruptedException {
         Thread.sleep(3000);
-        elementVisible(clickJournoSearchIcon,driver);
+        elementClickable(clickJournoSearchIcon,driver);
         clickJournoSearchIcon.click();
     }
 

@@ -24,7 +24,7 @@ Feature: OutletProfile
     And I choose Outlet from the list and Click on it
     Then I should see all the available tabs for that particular outlet
 
-  @functional
+  @functional33
   Scenario:Validate select and deselect all in group in journo tab
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -34,7 +34,7 @@ Feature: OutletProfile
     And I click on deselect in group button
     Then I should see journos are deselected in group
 
-  @functional
+  @functional34
   Scenario:Validate hide and un hide all in group in journo tab
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -44,7 +44,7 @@ Feature: OutletProfile
     And I click on un hide in group button
     Then I should see journos are un hide in group
 
-  @functional
+  @functional35
   Scenario:Validate select and clear desk
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -54,7 +54,7 @@ Feature: OutletProfile
     And I click on clear all button
     Then I should see journos for all the desks
 
-  @functional
+  @functional36
   Scenario:Validate adding activity for a journo
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -67,7 +67,7 @@ Feature: OutletProfile
     And I should see the activity added for the journo
     Then I delete and confirm delete activity
 
-  @functional
+  @functional37
   Scenario:Validate sector displayed in journo tile
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -75,7 +75,7 @@ Feature: OutletProfile
     And I click on sector for the chosen journo
     Then I should see all the available sector for that particular journo
 
-  @functional
+  @functional38
   Scenario:Validate coverage displayed in journo tile
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -83,7 +83,7 @@ Feature: OutletProfile
     And I click on coverage for the chosen journo
     Then I should see all the available topic coverage for that particular journo
 
-  @functional
+  @functional39
   Scenario:Validate tweets displayed in journo tile
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -91,7 +91,7 @@ Feature: OutletProfile
     And I click on tweets for the chosen journo
     Then I should see all the available tweets for that particular journo
 
-  @functional
+  @functional40
   Scenario:Validate Instagram displayed in journo tile
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -99,7 +99,7 @@ Feature: OutletProfile
     And I click on instagram for the chosen journo
     Then I should see all the available Instagram results for that particular journo
 
-  @functional
+  @functional41
   Scenario:Validate add to favourites button to add journo to favourites list
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -113,7 +113,7 @@ Feature: OutletProfile
     And I choose Outlet from the list and Click on it
     Then I should uncheck favourite button in outlet profile page
 
-  @functional
+  @functional42
   Scenario:Validate search by journo name in journalist tab
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -121,7 +121,7 @@ Feature: OutletProfile
     And I enter journo name to search as "Ojo"
     Then I should see the searched journo at the top
 
-  @functional
+  @functional43
   Scenario:Validate quick find by keyword search in alerts tab
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -130,7 +130,7 @@ Feature: OutletProfile
     And I enter quick find by keyword as "retire"
     Then I should see the result for the search keyword
 
-  @functional
+  @functional44
   Scenario:Validate group by and sort direction in journalist tab
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -141,7 +141,7 @@ Feature: OutletProfile
     And I click on sort direction button
     Then I should see the results for sorting direction
 
-  @functional
+  @functional45
   Scenario:Validate contact details in alerts tab
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -149,7 +149,7 @@ Feature: OutletProfile
     And I click on alerts tab
     Then I should see the contact details for selected outlet
 
-  @functional
+  @functional46
   Scenario:Validate journalist link in alerts tab navigates to journalist profile page
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"
@@ -158,7 +158,7 @@ Feature: OutletProfile
     And I choose and click on journalist link in alerts tile
     Then I should navigate to the respective journo page
 
-  @functional
+  @functional47
   Scenario:Validate PR opportunity results filtered by section search
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"

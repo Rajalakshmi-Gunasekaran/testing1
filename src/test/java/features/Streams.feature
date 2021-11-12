@@ -35,7 +35,7 @@ Feature: Streams
     And I click on search icon and enter stream name as "SmokeTest"
     Then I should see the stream deleted on left hand side
 
-    @functional
+    @functional53
     Scenario: validate stream setup for journo alerts, forward features and media requests
       When I should be in the home page and click on Streams
       And I click on create new stream button
@@ -47,7 +47,7 @@ Feature: Streams
       And I should able to see the  streams results for journo alerts,forward features and media request
       Then I delete the streams
 
-    @functional
+    @functional54
     Scenario: validate adding journo to the lists from streams
       When I should be in the home page and click on Streams
       And I click on search icon and enter stream name as "All Journo Moves"
@@ -59,7 +59,7 @@ Feature: Streams
       And I should able to see the journo added to list from streams
       Then I should delete and confirm delete stream list added from streams tab
 
-    @functional
+    @functional55
       Scenario: validate stream set up for tweets
       When I should be in the home page and click on Streams
       And I click on create new stream button
@@ -72,7 +72,7 @@ Feature: Streams
       And I should able to see the  streams results for tweet
       Then I delete the streams
 
-  @functional
+  @functional56
   Scenario: validate stream set up for activities
     When I should be in the home page and click on Streams
     And I click on create new stream button
@@ -85,7 +85,7 @@ Feature: Streams
     And I should able to see the streams results for activities
     Then I delete the streams
 
-  @functional
+  @functional57
   Scenario: validate set up selected stream tab in home page
     When I should be in the home page and click on Streams
     And I click on FunctionalTest streams from the list
@@ -97,7 +97,7 @@ Feature: Streams
     And I click on FunctionalTest streams from the list
     Then I uncheck the On homepage checkbox and save changes
 
-  @functional
+  @functional58
   Scenario: validate set up selected stream tab in default home page
     When I should be in the home page and click on Streams
     And I click on FunctionalTest streams from the list
