@@ -112,13 +112,13 @@ public class Pinpoint extends BaseStep {
     }
     @When("^I click on outlet search icon$")
     public void i_click_on_outlet_search_icon() throws InterruptedException {
-       wait(30);
+       pauseFor(5);
        pinpointPage.clickOutletSearchIcon();
     }
 
     @Then("^I should navigate to the advanced search outlet tab$")
     public void i_should_navigate_to_the_advanced_search_outlet_tab() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         pinpointPage.validateNavigateToAdvancedSearchOutletTab();
     }
     @When("^I click on journalist search icon$")
@@ -129,7 +129,7 @@ public class Pinpoint extends BaseStep {
 
     @Then("^I should navigate to the advanced search journo tab$")
     public void i_should_navigate_to_the_advanced_search_journo_tab() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         pinpointPage.setValidateNavigateToAdvancedSearchJournoTab();
     }
 }

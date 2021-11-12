@@ -40,7 +40,7 @@ Feature:Home
     And I choose logout and click on it
     Then I should logout from the application
 
-  @functional
+  @functional19
   Scenario:Validate user settings feature
     When I click on userprofile
     And I choose user settings and click on it
@@ -48,7 +48,20 @@ Feature:Home
     And I click save changes button
     Then I should navigate to the home page
 
-  @functional
+  @functional20
   Scenario:Validate Roxhill highlights feature
     When I should login into the home page and click on home button
     Then I should see the roxhill highlights
+
+  @functional61
+  Scenario: Validate Roxhill end user license agreement available at the bottom of Help & feedback page
+    When I am on login page and I click help and feedback functionality
+    And I click on End User License Agreement link
+    And I should see the Terms and conditions
+    Then I click close button to close the EULA form
+
+  @functional62
+  Scenario: Validate View Roxhill Help button in Help & feedback page
+    When I am on login page and I click help and feedback functionality
+    And I click on View Roxhill Help button
+    Then I should navigate to the roxhill help page

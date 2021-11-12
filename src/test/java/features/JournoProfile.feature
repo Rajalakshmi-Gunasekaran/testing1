@@ -24,7 +24,7 @@ Feature: JournoProfile
     And I choose Journalist from the list and Click on it
     Then I should see all the available information about the ACL journalist
 
-  @functional
+  @functional21
   Scenario: validate adding Journalist and removing journo from the list in journo profile page
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -36,7 +36,7 @@ Feature: JournoProfile
     And I click on remove cross mark on the list name
     Then I should see the list removed from the journo page
 
-  @functional
+  @functional22
   Scenario: validate adding and removing Journalist to favourites
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -49,7 +49,7 @@ Feature: JournoProfile
     And I choose Journalist from the list and Click on it
     Then I un click on add to favourites button
 
-  @functional
+  @functional23
   Scenario: validate editing GDPR note
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -64,7 +64,7 @@ Feature: JournoProfile
     And I click on save button in GDPR note
     Then I should see the GDPR note as unknown
 
-  @functional
+  @functional24
   Scenario: validate adding and removing journo from stream in journo profile
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -78,7 +78,7 @@ Feature: JournoProfile
     And I click on save button in add to streams
     Then I should see journo removed from streams
 
-  @functional
+  @functional25
   Scenario: validate adding and deleting activity for a journo
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -90,7 +90,7 @@ Feature: JournoProfile
     And I should see the activity created for the journo
     Then I delete the activity created for the journo
 
-  @functional
+  @functional26
   Scenario: validate adding and deleting notes for the journo
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -102,7 +102,7 @@ Feature: JournoProfile
     And I should see the notes created for the journo
     Then I delete the notes created for the journo
 
-  @functional
+  @functional27
   Scenario: validate changing dates in live content tab
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -111,7 +111,7 @@ Feature: JournoProfile
     And I choose a date to filter coverage results
     Then I should see the results for the selected time period
 
-  @functional
+  @functional28
   Scenario: validate navigating to advanced search sector filter from journo profile page
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -119,7 +119,7 @@ Feature: JournoProfile
     And I choose sector and click on it
     Then I should navigate to the advanced search Journalist page
 
-  @functional
+  @functional29
   Scenario: validate view in tab button in live content tab
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"
@@ -129,7 +129,7 @@ Feature: JournoProfile
     And I click filter button to hide filters
     Then I should hide filters in journo profile page
 
-  @functional
+  @functional30
   Scenario:Validate company chart view expanded as a coverage article in Journo profile
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"

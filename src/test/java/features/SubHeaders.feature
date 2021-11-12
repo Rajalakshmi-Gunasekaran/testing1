@@ -39,13 +39,13 @@ Feature: SubHeaders
     And I choose alert to select and click on it
     Then I should see the alert been selected
 
-  @functional
+  @functional59
   Scenario: validate quick find by keyword in new editions tab
     When I should login into the home page and click on New Editions in sub menu
     And I click on quick find by keyword text field and enter text as "Health"
     Then I should see the results for the search
 
-  @functional
+  @functional60
   Scenario:Validate sign up here link in alerts tab in home page
     When I should login into the home page and click on webinars in sub menu
     And I click sign up here link

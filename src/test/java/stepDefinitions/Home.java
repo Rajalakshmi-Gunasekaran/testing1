@@ -200,6 +200,9 @@ public class Home extends BaseStep {
     @Then("^I should see the results as per the search$")
     public void i_should_see_the_results_as_per_the_search() throws InterruptedException {
         wait(30);
+        webDriver.get("https://roxhillmedia.com/events/");
+        wait(30);
+        homePage.setValidateSignUpHere();
     }
     @When("^I should login into the home page and click on home button$")
     public void i_should_login_into_the_home_page_and_click_on_home_button() throws InterruptedException {
@@ -211,5 +214,35 @@ public class Home extends BaseStep {
     public void i_should_see_the_roxhill_highlights() throws InterruptedException {
         wait(30);
         homePage.validateRoxhillHighlghtResults();
+    }
+    @When("^I click on View Roxhill Help button$")
+    public void i_click_on_View_Roxhill_Help_button() throws InterruptedException {
+        wait(30);
+        homePage.setClickViewRoxhillHelp();
+    }
+
+    @Then("^I should navigate to the roxhill help page$")
+    public void i_should_navigate_to_the_roxhill_help_page() throws InterruptedException {
+        wait(30);
+        webDriver.get("https://roxhillmedia.com/help/");
+        wait(30);
+        homePage.validateNavigateToRoxhillHelpPage();
+    }
+    @When("^I click on End User License Agreement link$")
+    public void i_click_on_End_User_License_Agreement_link() throws InterruptedException {
+        wait(30);
+        homePage.setClickEndUserLicenseAgreementLink();
+    }
+
+    @When("^I should see the Terms and conditions$")
+    public void i_should_see_the_Terms_and_conditions() throws InterruptedException {
+       wait(30);
+       homePage.validateEULAFormPage();
+    }
+
+    @Then("^I click close button to close the EULA form$")
+    public void i_click_close_button_to_close_the_EULA_form() throws InterruptedException {
+       wait(30);
+       homePage.setClickCloseBtnToCloseEULA();
     }
 }
