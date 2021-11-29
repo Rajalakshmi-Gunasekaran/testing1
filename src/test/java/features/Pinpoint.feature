@@ -50,3 +50,29 @@ Feature: Pinpoint
     And I enter search text as "Brexit"
     And I click on journalist search icon
     Then I should navigate to the advanced search journo tab
+
+  @functional63
+  Scenario: Validate applying filters country, Sector and outlet type in pinpoint to search for related journo
+    When I should login into the home page and click on pinpoint
+    And I enter search text as "Brexit"
+    And I choose country as UnitedKingdom
+    And I choose sector as politics
+    And I choose outlet type as Television
+    Then I should see the results for the filtered search
+
+  @functional64
+   Scenario: Validate graph results in pinpoint by choosing segment toggle button
+    When I should login into the home page and click on pinpoint.
+    And I enter search text as "Brexit"
+    And I click segment toggle bar on outlet type
+    And I disable the national outlet type
+    Then I should see the results in graph view for other outlet types
+
+  @functional65
+  Scenario: Validate stack view results in pinpoint by choosing segment toggle button
+    When I should login into the home page and click on pinpoint
+    And I enter search text as "Brexit"
+    And I click segment toggle bar on country
+    And I disable the country united kingdom
+    And I click stack button
+    Then I should see the results in stack view for other countries

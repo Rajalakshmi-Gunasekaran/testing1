@@ -25,8 +25,8 @@ public class Hook {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         BaseStep.setWebDriver(driver);*/
     }
-    @After
-    public void afterTests()
+   @After
+  public void afterTests()
     {
         BaseStep.getWebDriver().quit();
     }

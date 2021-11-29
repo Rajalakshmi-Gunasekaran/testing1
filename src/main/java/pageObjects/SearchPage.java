@@ -24,7 +24,7 @@ public class SearchPage extends CommonFunctions{
     public WebElement quickSearch;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/li[1]/div[2]/div[1]/div[1]/a")
     public WebElement JournalistName;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[1]/div/div[2]/div/div[1]/img")
+    @FindBy(xpath = "//div[@class=\"journalist-main d-flex p-3\"]")
     public WebElement validateJournoProfile;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[3]/div[2]/div/div/div/div/ul/li[1]/a")
     public WebElement DeskName;

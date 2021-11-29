@@ -11,9 +11,9 @@ public class Search extends BaseStep {
     public JournoProfilePage journoProfilePage = new JournoProfilePage(webDriver);
 
     @When("^I should login into the home page and click on Quick search tab$")
-    public void i_should_login_into_the_home_page_and_click_on_Quick_search_tab() throws InterruptedException
+    public void i_should_login_into_the_home_page_and_click_on_Quick_search_tab() throws Exception
     {
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(10);
         search.setClkQuickSearch();
     }
@@ -218,7 +218,7 @@ journoProfilePage.setValidateJournoRemovalFromList();
 
     @When("^I click on add activity for the journo$")
     public void i_click_on_add_activity_for_the_journo() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         outletProfilePage.setClickAddActivity();
     }
     @When("^I enter subject for an activity as \"([^\"]*)\"$")
@@ -321,7 +321,7 @@ journoProfilePage.setValidateJournoRemovalFromList();
     }
     @When("^I click on add to favourites button$")
     public void i_click_on_add_to_favourites_button() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         outletProfilePage.setClickAddToFavouritesBtn();
     }
 
@@ -339,7 +339,7 @@ journoProfilePage.setValidateJournoRemovalFromList();
 
     @Then("^I should see the outlet added to favourite outlets tab$")
     public void i_should_see_the_outlet_added_to_favourite_outlets_tab() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         outletProfilePage.validateOutletAddedToFavourites();
     }
     @When("^I click on Quick search tab$")
@@ -403,7 +403,7 @@ journoProfilePage.setValidateJournoRemovalFromList();
         outletProfilePage.setClickAlertsTab();
     }
 
-    @When("^I enter quick find by keyword as \"([^\"]*)\"$")
+    @When("^I enter quick find by keyword as\"([^\"]*)\"$")
     public void i_enter_quick_find_by_keyword_as(String keyword) throws InterruptedException {
       wait(30);
       outletProfilePage.setEnterQuickFindByKeyword(keyword);
@@ -451,8 +451,8 @@ journoProfilePage.setValidateJournoRemovalFromList();
 
     @Then("^I should see the results for sorting direction$")
     public void i_should_see_the_results_for_sorting_direction() throws InterruptedException {
-wait(30);
-outletProfilePage.validateJournoSortDirection();
+        wait(30);
+        outletProfilePage.validateJournoSortDirection();
     }
     @Then("^I should see the contact details for selected outlet$")
     public void i_should_see_the_contact_details_for_selected_outlet() throws InterruptedException {

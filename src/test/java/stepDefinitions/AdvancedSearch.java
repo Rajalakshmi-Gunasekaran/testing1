@@ -12,10 +12,10 @@ public class AdvancedSearch extends BaseStep {
 
     /* Journalist search using advanced search filtering by outlet type and outlet */
     @When("^I should login into the home page and click on search tab$")
-    public void i_should_login_into_the_home_page_and_click_on_search_tab() throws InterruptedException{
+    public void i_should_login_into_the_home_page_and_click_on_search_tab() throws Exception {
         advancedSearchPage = new AdvancedSearchPage(webDriver);
         listsPage = new ListsPage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(10);
         advancedSearchPage.clickAdvancedSearch();
     }
@@ -105,8 +105,10 @@ public class AdvancedSearch extends BaseStep {
 
     @When("^I enter list name in lists as \"([^\"]*)\" and click on it to validate the lists$")
     public void i_enter_list_name_in_lists_as_and_click_on_it_to_validate_the_lists(String listName) throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         listsPage.enterListNameToValidate(listName);
+        wait(30);
+        listsPage.setClickOnAdvancedSearchListToValidate();
     }
 
     @When("^I validate journo added to the list from advanced search$")
@@ -133,13 +135,13 @@ public class AdvancedSearch extends BaseStep {
 
     @When("^I click on frequency and choose frequency as weekly$")
     public void i_click_on_frequency_and_choose_frequency_as_weekly() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.setClickFrequency();
     }
 
     @When("^I click on any town or post code text field and enter post code as \"([^\"]*)\"$")
     public void i_click_on_any_town_or_post_code_text_field_and_enter_post_code_as(String postcode) throws InterruptedException {
-       wait(30);
+       pauseFor(5);
        advancedSearchPage.enterPostCode(postcode);
     }
 
@@ -191,7 +193,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the articles for the relevant search$")
     public void i_should_see_the_articles_for_the_relevant_search() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.setValidateArticleSearchResults();
     }
     @When("^I click on journalist alerts tab from the left hand side pan$")
@@ -246,7 +248,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the media requests results for the relevant search$")
     public void i_should_see_the_media_requests_results_for_the_relevant_search() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.validateMediaRequestResults();
     }
     @When("^I click on PR opportunities tab from the left hand side pan$")
@@ -323,5 +325,25 @@ public class AdvancedSearch extends BaseStep {
        wait(30);
        advancedSearchPage.validateClearAllFiltersResult();
     }
+    @When("^I choose outlet from the result and click on it$")
+    public void i_choose_outlet_from_the_result_and_click_on_it() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setChooseAndClickOnOutlet();
+    }
 
+    @When("^I click on search all outlet's journalist button$")
+    public void i_click_on_search_all_outlet_s_journalist_button() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setClickSearchAllOutletJournoBtn();
+    }
+    @When("^I click yes leave button to handle pop up window$")
+    public void i_click_yes_leave_button_to_handle_pop_up_window() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setClickYesLeaveBtn();
+    }
+    @Then("^I automatically navigate to the journalist tab to see the journos for the selected outlet$")
+    public void i_automatically_navigate_to_the_journalist_tab_to_see_the_journos_for_the_selected_outlet() throws InterruptedException {
+        wait(30);
+        advancedSearchPage.setValidateSearchAllOutletJournoBtn();
+    }
 }

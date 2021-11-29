@@ -9,7 +9,7 @@ Feature: Search
     And I click on login button
     Then I should be able to login successfully
 
-  @smoke
+  @smoke1
   Scenario:1Validate search by Journalist name
     When I should login into the home page and click on Quick search tab
     And I enter Journalist name as "simon english"

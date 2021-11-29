@@ -166,3 +166,30 @@ Feature: OutletProfile
     And I click on PR opportunity tab
     And I choose and click on sections as Home Interest
     Then I should validate results for the section search
+
+  @functional66
+  Scenario:Validate journos in List view
+    When I should login into the home page and click on Quick search tab
+    And I enter Outlet name as "evening standard"
+    And I choose Outlet from the list and Click on it
+    And I click on list view button to see the journos
+    Then I should see the results in list view
+
+  @functional67
+  Scenario:Validate choosing page numbers to see all journos
+    When I should login into the home page and click on Quick search tab
+    And I enter Outlet name as "evening standard"
+    And I choose Outlet from the list and Click on it
+    And I click on right arrow to move page numbers
+    And I choose and click on page numbers to see journos in different page
+    Then I should navigate to the respective page as per the search
+
+  @functional68
+  Scenario:Validate outlet url in contact info
+    When I should login into the home page and click on Quick search tab
+    And I enter Outlet name as "evening standard"
+    And I choose Outlet from the list and Click on it
+    And I click on Website link to navigate to the website url
+    Then I should navigate to the respective page for website link
+
+

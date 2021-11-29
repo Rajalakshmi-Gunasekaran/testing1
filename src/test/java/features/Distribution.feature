@@ -129,3 +129,48 @@ Feature: Distribution
     And I click on clear content button and confirm clear in block
     And I click on save button in the block page
     Then I should delete the block
+
+  @functional69
+  Scenario: Validate creating new campaign using new campaign button and add recipients manually by add recipient button
+    When I should be in the home page and click on Distribution tab
+    And I click on campaign tab
+    And I click on new campaign button in right hand side campaign home page
+    And I enter new campaign name as "Automation"
+    And I click on create button to create new campaign
+    And I click on Add Recipient button
+    And I enter email address
+    And I enter first name as "QA"
+    And I enter last name as "Test"
+    And I click on add button
+    And I enter From email as
+    And I click on save button in the new campaign page
+    Then I should delete the campaign
+
+  @functional70
+  Scenario: Validating creating and deleting press release from right hand side options
+    When I should be in the home page and click on Distribution tab
+    And I click on new press release button
+    And I enter new press release name as "Testing"
+    And I click on create button to create new press release
+    Then I should delete the press release
+
+  @functional71
+  Scenario: Validate creating campaign from press release page using start campaign button
+    When I should be in the home page and click on Distribution tab
+    And I choose and click on press release
+    And I click on start campaign button
+    And I enter campaign name from press release as "Automation" and I click on create button
+    And I click on choose journalist by name
+    And I enter journalist name as "Matt Simon" and I click on Ok button to add recipient
+    And I enter From email as
+    And I click on save button in the new campaign page
+    Then I should delete the campaign
+
+  @functional72
+  Scenario: Validate view press release from campaign page
+    When I should be in the home page and click on Distribution tab
+    And I click on campaign tab
+    And I choose and click on campaign
+    And I click on view press release link
+    Then I should see the press release
+

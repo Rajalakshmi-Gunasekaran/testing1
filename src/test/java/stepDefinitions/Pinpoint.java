@@ -14,12 +14,12 @@ public class Pinpoint extends BaseStep {
     public ListsPage listsPage;
 
     @When("^I should login into the home page and click on pinpoint$")
-    public void i_should_login_into_the_home_page_and_click_on_pinpoint() {
+    public void i_should_login_into_the_home_page_and_click_on_pinpoint() throws Exception {
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
         pinpointPage = new PinpointPage(webDriver);
         listsPage = new ListsPage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(10);
         pinpointPage.clickPinpointTab();
     }
@@ -74,7 +74,7 @@ public class Pinpoint extends BaseStep {
 
     @When("^I should able to see the journo added to list$")
     public void i_should_able_to_see_the_journo_added_to_list() throws InterruptedException {
-        pauseFor(5);
+        pauseFor(10);
         listsPage.validateJournoAddedToPinpointList();
     }
 
@@ -129,7 +129,68 @@ public class Pinpoint extends BaseStep {
 
     @Then("^I should navigate to the advanced search journo tab$")
     public void i_should_navigate_to_the_advanced_search_journo_tab() throws InterruptedException {
-        pauseFor(5);
+        pauseFor(10);
         pinpointPage.setValidateNavigateToAdvancedSearchJournoTab();
+    }
+    @When("^I choose country as UnitedKingdom$")
+    public void i_choose_country_as_UnitedKingdom() throws InterruptedException {
+        pauseFor(5);
+        pinpointPage.setChooseCountryAsUnitedKingdom();
+    }
+
+    @When("^I choose sector as politics$")
+    public void i_choose_sector_as_politics() throws InterruptedException {
+        pauseFor(5);
+        pinpointPage.setChooseSectorAsPolitics();
+    }
+
+    @When("^I choose outlet type as Television$")
+    public void i_choose_outlet_type_as_Television() throws InterruptedException {
+       pauseFor(5);
+       pinpointPage.setChooseOutletTypeAsTelevision();
+    }
+    @Then("^I should see the results for the filtered search$")
+    public void i_should_see_the_results_for_the_filtered_search() throws InterruptedException {
+        pauseFor(5);
+        pinpointPage.setValidateFilteredResults();
+    }
+    @When("^I click segment toggle bar on outlet type$")
+    public void i_click_segment_toggle_bar_on_outlet_type() throws InterruptedException {
+        pauseFor(5);
+        pinpointPage.setClickSegmentToggleBtn();
+    }
+
+    @When("^I disable the national outlet type$")
+    public void i_disable_the_national_outlet_type() throws InterruptedException {
+        pauseFor(5);
+        pinpointPage.setUnClickNationalOutletType();
+    }
+
+    @Then("^I should see the results in graph view for other outlet types$")
+    public void i_should_see_the_results_in_graph_view_for_other_outlet_types() throws InterruptedException {
+       pauseFor(5);
+       pinpointPage.validateGraphViewForFilteredResults();
+    }
+    @When("^I click segment toggle bar on country$")
+    public void i_click_segment_toggle_bar_on_country() throws InterruptedException {
+      pauseFor(5);
+      pinpointPage.setClickSegmentBtnInCountry();
+    }
+
+    @When("^I disable the country united kingdom$")
+    public void i_disable_the_country_united_kingdom() throws InterruptedException {
+       pauseFor(5);
+       pinpointPage.setDisableCountryAsUnitedKingdom();
+    }
+
+    @When("^I click stack button$")
+    public void i_click_stack_button() throws InterruptedException {
+       pauseFor(5);
+       pinpointPage.setClickStackBtn();
+    }
+    @Then("^I should see the results in stack view for other countries$")
+    public void i_should_see_the_results_in_stack_view_for_other_countries() throws InterruptedException {
+      pauseFor(5);
+      pinpointPage.setValidateStackViewResults();
     }
 }

@@ -23,7 +23,7 @@ Feature: List
     And I enter folder name as "SmokeTest"
     Then I should see the folder deleted
 
-  @smoke
+  @smoke123
   Scenario:2Validate creating list, adding journalists to the list, default GDPR status, removing journo from the list and delete list
     When I should login into the home page and click on lists
     And I click on create list
@@ -47,7 +47,7 @@ Feature: List
 
     @functional31
     Scenario: validate copying list from one to another functionality
-      When I should login ino the home page and click on lists
+      When I should login into the home page and click on lists
       And I click on create list
       And I enter list name to create as "functionalList" and click on create button
       And I click on search icon in the list page

@@ -84,7 +84,7 @@ public class StreamPage extends CommonFunctions{
     public WebElement enterTopicSearchTerm;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[1]/div")
     public WebElement validateJournoAlerts;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div[1]/div/nav/div[2]/div[4]/span/button")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div[1]/div/nav/div[2]/div[4]")
     public WebElement clickAddJournoToListBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div[1]/div/nav/div[2]/div[4]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
     public WebElement enterListNameToAddStreams;
@@ -292,7 +292,7 @@ public class StreamPage extends CommonFunctions{
     //click on add journo to lists from streams
     public void clickAddJournoToListBtnFromStream()throws InterruptedException{
         Thread.sleep(3000);
-        elementClickable(clickAddJournoToListBtn,driver);
+       // elementClickable(clickAddJournoToListBtn,driver);
         clickAddJournoToListBtn.click();
     }
     //enter list name to add journos from streams

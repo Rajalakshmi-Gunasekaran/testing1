@@ -71,7 +71,7 @@ Feature:AdvancedSearch
   Scenario:Validate article search by filtering sector and company
     When I should login into the home page and click on search tab
     And I click on articles tab from the left hand side pan
-    And I Click on sector and enter sector name as "Fashion"
+    And I Click on sector and enter sector name as "Financial services"
     And I enter company as "Next Plc"
     Then I should see the articles for the relevant search
 
@@ -86,7 +86,7 @@ Feature:AdvancedSearch
   Scenario:Validate forward features search by filtering outlet
     When I should login into the home page and click on search tab
     And I click on forward features tab from the left hand side pan
-    And I Click on outlet in forward features tab and enter outlet name as "Railway Pro"
+    And I Click on outlet in forward features tab and enter outlet name as "FMCG Magazine"
     Then I should see the forward features for the relevant search
 
   @functional7
@@ -140,3 +140,13 @@ Feature:AdvancedSearch
     And I click on clear all button at the top
     Then I should see the search filters are cleared and the result pane is empty
 
+  @functional73
+  Scenario: Validate search all outlet's journalist button in outlet tab
+    When I should login into the home page and click on search tab
+    And I click on outlets tab from the left hand side pan
+    And I click on outlet type and enter outlet type as "Freelance"
+    And I Click on based in country and choose country as United Kingdom
+    And I choose outlet from the result and click on it
+    And I click on search all outlet's journalist button
+    And I click yes leave button to handle pop up window
+    Then I automatically navigate to the journalist tab to see the journos for the selected outlet
