@@ -23,7 +23,7 @@ Feature: List
     And I enter folder name as "SmokeTest"
     Then I should see the folder deleted
 
-  @smoke123
+  @smoke
   Scenario:2Validate creating list, adding journalists to the list, default GDPR status, removing journo from the list and delete list
     When I should login into the home page and click on lists
     And I click on create list
