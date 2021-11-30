@@ -8,14 +8,12 @@ import pageObjects.LoginPage;
 import pageObjects.PinpointPage;
 
 public class Pinpoint extends BaseStep {
-    public LoginPage loginPage;
     public HomePage homePage;
     public PinpointPage pinpointPage;
     public ListsPage listsPage;
 
     @When("^I should login into the home page and click on pinpoint$")
     public void i_should_login_into_the_home_page_and_click_on_pinpoint() throws Exception {
-        loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
         pinpointPage = new PinpointPage(webDriver);
         listsPage = new ListsPage(webDriver);

@@ -16,7 +16,7 @@ public class AdvancedSearch extends BaseStep {
         advancedSearchPage = new AdvancedSearchPage(webDriver);
         listsPage = new ListsPage(webDriver);
         webDriver.get(readPropertyFile1("url1"));
-        wait(10);
+        wait(30);
         advancedSearchPage.clickAdvancedSearch();
     }
 
@@ -113,7 +113,7 @@ public class AdvancedSearch extends BaseStep {
 
     @When("^I validate journo added to the list from advanced search$")
     public void i_validate_journo_added_to_the_list_from_advanced_search() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         listsPage.validateJournoAddedToListFromAdvancedSearch();
     }
 

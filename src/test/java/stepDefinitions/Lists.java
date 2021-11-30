@@ -11,13 +11,11 @@ import pageObjects.LoginPage;
 import pageObjects.AdvancedSearchPage;
 
 public class Lists extends BaseStep{
-    LoginPage loginpage;
     ListsPage listsPage;
     AdvancedSearchPage advancedSearch;
 
     @When("^I should login into the home page and click on lists$")
     public void i_should_login_into_the_home_page_and_click_on_lists() throws Exception {
-        loginpage = new LoginPage(webDriver);
         listsPage = new ListsPage(webDriver);
         advancedSearch=new AdvancedSearchPage(webDriver);
         webDriver.get(readPropertyFile1("url1"));

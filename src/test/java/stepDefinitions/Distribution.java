@@ -11,14 +11,14 @@ public class Distribution extends BaseStep {
     @When("^I should be in the home page and click on Distribution tab$")
     public void i_should_be_in_the_home_page_and_click_on_Distribution_tab() throws Exception {
         webDriver.get(readPropertyFile1("url1"));
-        wait(5);
+        wait(30);
         distributionPage.setClickDistributionTab();
     }
 
     @When("^I click on create new press release button$")
     public void i_click_on_create_new_press_release_button() throws InterruptedException{
         distributionPage.setClickNewPressRelease();
-        wait(20);
+        wait(30);
     }
 
     @When("^I enter press release name as \"(.*?)\" and I click on create button$")
@@ -155,7 +155,7 @@ public class Distribution extends BaseStep {
 
     @Then("^I should able to see the press release deleted$")
     public void i_should_able_to_see_the_press_release_deleted() throws InterruptedException{
-        wait(5);
+        wait(30);
         distributionPage.setValidateDeletePressRelease();
     }
 
@@ -190,13 +190,13 @@ public class Distribution extends BaseStep {
 
     @When("^I enter campaign name as \"(.*?)\"$")
     public void i_enter_campaign_name_as(String name) throws InterruptedException{
-        wait(10);
+        wait(30);
         distributionPage.enterCampaignName(name);
     }
 
     @Then("^I should able to see the campaign deleted$")
     public void i_should_able_to_see_the_campaign_deleted()throws InterruptedException{
-        wait(10);
+        wait(30);
         distributionPage.setValidateCampaignDeleted();
     }
 
