@@ -11,16 +11,14 @@ import pageObjects.LoginPage;
 import pageObjects.AdvancedSearchPage;
 
 public class Lists extends BaseStep{
-    LoginPage loginpage;
     ListsPage listsPage;
     AdvancedSearchPage advancedSearch;
 
     @When("^I should login into the home page and click on lists$")
-    public void i_should_login_into_the_home_page_and_click_on_lists()  throws InterruptedException{
-        loginpage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_click_on_lists() throws Exception {
         listsPage = new ListsPage(webDriver);
         advancedSearch=new AdvancedSearchPage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(20);
         listsPage.clickListsBtn();
     }
@@ -207,7 +205,7 @@ public class Lists extends BaseStep{
     }
     @When("^I click copy all to lists$")
     public void i_click_copy_all_to_lists() throws InterruptedException {
-        pauseFor(5);
+        pauseFor(10);
         listsPage.setClickCopyAllToListsBtn();
     }
     @When("^I enter list name to copy as \"([^\"]*)\" and click ok$")

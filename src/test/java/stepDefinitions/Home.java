@@ -9,13 +9,11 @@ import pageObjects.LoginPage;
 
 public class Home extends BaseStep {
     public HomePage homePage;
-    public LoginPage loginPage;
 
     @When("^I should login into the home page and click on PinpointTab$")
-    public void i_should_login_into_the_home_page_and_click_on_PinpointTab() throws InterruptedException{
-        loginPage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_click_on_PinpointTab() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(2);
         homePage.setPinpointTab();
     }
@@ -35,10 +33,9 @@ public class Home extends BaseStep {
     }
 
     @When("^I should login into the home page and click on Webinars tab in sub menu$")
-    public void i_should_login_into_the_home_page_and_click_on_Webinars_tab_in_sub_menu()throws InterruptedException {
-        loginPage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_click_on_Webinars_tab_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
         homePage.clickWebinar();
     }
@@ -56,10 +53,9 @@ public class Home extends BaseStep {
     }
 
     @When("^I should login into the home page and see HeadlineAlerts in sub menu$")
-    public void i_should_login_into_the_home_page_and_see_HeadlineAlerts_in_sub_menu() throws InterruptedException{
-        loginPage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_see_HeadlineAlerts_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
     }
 
@@ -75,10 +71,9 @@ public class Home extends BaseStep {
     }
 
     @When("^I am on login page and I click help and feedback functionality$")
-    public void i_am_on_login_page_and_I_click_help_and_feedback_functionality()throws InterruptedException {
-        loginPage = new LoginPage(webDriver);
+    public void i_am_on_login_page_and_I_click_help_and_feedback_functionality() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
         homePage.clickHelpAndFeedback();
     }
@@ -101,10 +96,9 @@ public class Home extends BaseStep {
         homePage.setValidateHelpAndFeedback();
     }
     @When("^I should login into the home page and click on AllAlerts in sub menu$")
-    public void i_should_login_into_the_home_page_and_click_on_AllAlerts_in_sub_menu() throws InterruptedException{
-        loginPage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_click_on_AllAlerts_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
         homePage.setClickAllAlertsTab();
     }
@@ -122,10 +116,9 @@ public class Home extends BaseStep {
     }
 
     @When("^I should login into the home page and click on New Editions in sub menu$")
-    public void i_should_login_into_the_home_page_and_click_on_New_Editions_in_sub_menu() throws InterruptedException{
-        loginPage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_click_on_New_Editions_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
         homePage.setClickNewEditionsTab();
     }
@@ -183,10 +176,9 @@ public class Home extends BaseStep {
           homePage.validateQuickByFindKeyword();
     }
     @When("^I should login into the home page and click on webinars in sub menu$")
-    public void i_should_login_into_the_home_page_and_click_on_webinars_in_sub_menu() throws InterruptedException {
-        loginPage = new LoginPage(webDriver);
+    public void i_should_login_into_the_home_page_and_click_on_webinars_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
           homePage.setClickWebinarTab();
     }
@@ -198,9 +190,9 @@ public class Home extends BaseStep {
     }
 
     @Then("^I should see the results as per the search$")
-    public void i_should_see_the_results_as_per_the_search() throws InterruptedException {
+    public void i_should_see_the_results_as_per_the_search() throws Exception {
         wait(30);
-        webDriver.get("https://roxhillmedia.com/events/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
         homePage.setValidateSignUpHere();
     }
@@ -222,9 +214,9 @@ public class Home extends BaseStep {
     }
 
     @Then("^I should navigate to the roxhill help page$")
-    public void i_should_navigate_to_the_roxhill_help_page() throws InterruptedException {
+    public void i_should_navigate_to_the_roxhill_help_page() throws Exception {
         wait(30);
-        webDriver.get("https://roxhillmedia.com/help/");
+        webDriver.get(readPropertyFile1("url1"));
         wait(30);
         homePage.validateNavigateToRoxhillHelpPage();
     }

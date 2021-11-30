@@ -14,8 +14,8 @@ public class Login extends BaseStep {
     public HomePage homePage = new HomePage(webDriver);
 
     @Given("^I navigate to application login url$")
-    public void i_navigate_to_application_login_url() {
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+    public void i_navigate_to_application_login_url() throws Exception {
+        webDriver.get(readPropertyFile1("url1"));
         wait(10);
     }
 
@@ -58,8 +58,8 @@ public class Login extends BaseStep {
     }
 
     @When("^I am on login page$")
-    public void i_am_on_login_page() {
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+    public void i_am_on_login_page() throws Exception {
+        webDriver.get(readPropertyFile1("url1"));
         wait(10);
     }
 

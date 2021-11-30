@@ -9,21 +9,21 @@ public class Distribution extends BaseStep {
     public DistributionPage distributionPage = new DistributionPage(webDriver);
 
     @When("^I should be in the home page and click on Distribution tab$")
-    public void i_should_be_in_the_home_page_and_click_on_Distribution_tab() throws InterruptedException{
-        webDriver.get("https://app-alt.roxhillmedia.com/");
-        wait(5);
+    public void i_should_be_in_the_home_page_and_click_on_Distribution_tab() throws Exception {
+        webDriver.get(readPropertyFile1("url1"));
+        wait(30);
         distributionPage.setClickDistributionTab();
     }
 
     @When("^I click on create new press release button$")
     public void i_click_on_create_new_press_release_button() throws InterruptedException{
         distributionPage.setClickNewPressRelease();
-        wait(20);
+        wait(30);
     }
 
     @When("^I enter press release name as \"(.*?)\" and I click on create button$")
     public void i_enter_press_release_name_as_and_I_click_on_create_button(String pressReleaseName) throws InterruptedException{
-        wait(20);
+        wait(30);
         distributionPage.setEnterPressRelease(pressReleaseName);
         wait(30);
         distributionPage.setClickCreatePressRelease();
@@ -73,9 +73,9 @@ public class Distribution extends BaseStep {
 
     @When("^I enter campaign name as \"(.*?)\" and I click on create button$")
     public void i_enter_campaign_name_as_and_I_click_on_create_button(String campaignNameToCreate) throws InterruptedException{
-        pauseFor(10);
+        pauseFor(5);
         distributionPage.setEnterCampaignNameToCreate(campaignNameToCreate);
-        pauseFor(10);
+        pauseFor(5);
         distributionPage.clickCreateNewCampaign();
     }
 
@@ -99,7 +99,7 @@ public class Distribution extends BaseStep {
     }
     @When("^I enter From email as$")
     public void i_enter_From_email_as() throws InterruptedException{
-        pauseFor(5);
+        pauseFor(10);
         distributionPage.setEnterFromEmail();
     }
     @When("^I select press release name to send campaign$")
@@ -155,7 +155,7 @@ public class Distribution extends BaseStep {
 
     @Then("^I should able to see the press release deleted$")
     public void i_should_able_to_see_the_press_release_deleted() throws InterruptedException{
-        wait(5);
+        wait(30);
         distributionPage.setValidateDeletePressRelease();
     }
 
@@ -190,13 +190,13 @@ public class Distribution extends BaseStep {
 
     @When("^I enter campaign name as \"(.*?)\"$")
     public void i_enter_campaign_name_as(String name) throws InterruptedException{
-        wait(10);
+        wait(30);
         distributionPage.enterCampaignName(name);
     }
 
     @Then("^I should able to see the campaign deleted$")
     public void i_should_able_to_see_the_campaign_deleted()throws InterruptedException{
-        wait(10);
+        wait(30);
         distributionPage.setValidateCampaignDeleted();
     }
 
@@ -353,5 +353,127 @@ public class Distribution extends BaseStep {
     public void i_click_on_clear_content_button_and_confirm_clear_in_block() throws InterruptedException {
        wait(30);
        distributionPage.setClickClearContent();
+    }
+    @When("^I click on new press release button$")
+    public void i_click_on_new_press_release_button() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickPressReleaseBtn();
+    }
+    @When("^I enter new press release name as \"([^\"]*)\"$")
+    public void i_enter_new_press_release_name_as(String newPressRelease) throws InterruptedException {
+       wait(30);
+       distributionPage.setEnterNewPressReleaseNameToCreate(newPressRelease);
+    }
+
+    @When("^I click on create button to create new press release$")
+    public void i_click_on_create_button_to_create_new_press_release() throws InterruptedException {
+       wait(30);
+       distributionPage.setClickCreateNewPressReleaseBtn();
+    }
+    @When("^I click on new campaign button in right hand side campaign home page$")
+    public void i_click_on_new_campaign_button_in_right_hand_side_campaign_home_page() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickCampaignBtn();
+    }
+    @When("^I enter new campaign name as \"([^\"]*)\"$")
+    public void i_enter_new_campaign_name_as(String campaignName) throws InterruptedException {
+        wait(30);
+        distributionPage.enterCampaignNameToCreateNewCampaign(campaignName);
+    }
+
+    @When("^I click on create button to create new campaign$")
+    public void i_click_on_create_button_to_create_new_campaign() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickCreateBtnToCreateNewCampaign();
+    }
+    @When("^I click on Add Recipient button$")
+    public void i_click_on_Add_Recipient_button() throws InterruptedException {
+       wait(30);
+       distributionPage.setClickAddRecipientBtn();
+    }
+
+    @When("^I enter email address$")
+    public void i_enter_email_address() throws InterruptedException {
+        wait(30);
+        distributionPage.enterEmailAddress();
+    }
+
+    @When("^I enter first name as \"([^\"]*)\"$")
+    public void i_enter_first_name_as(String firstName) throws InterruptedException {
+       wait(30);
+       distributionPage.enterFirstName(firstName);
+    }
+
+    @When("^I enter last name as \"([^\"]*)\"$")
+    public void i_enter_last_name_as(String lastName) throws InterruptedException {
+        wait(30);
+        distributionPage.enterLastName(lastName);
+    }
+
+    @When("^I click on add button$")
+    public void i_click_on_add_button() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickAddBtn();
+    }
+    @When("^I click on choose journalist by name$")
+    public void i_click_on_choose_journalist_by_name() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickJournalistByName();
+    }
+
+    @When("^I enter journalist name as \"([^\"]*)\" and I click on Ok button to add recipient$")
+    public void i_enter_journalist_name_as_and_I_click_on_Ok_button_to_add_recipient(String journoName) throws InterruptedException {
+        wait(30);
+        distributionPage.setEnterJournoNameToAddRecipient(journoName);
+        wait(30);
+        distributionPage.clickOkButton();
+    }
+    @When("^I click on save button in the new campaign page$")
+    public void i_click_on_save_button_in_the_new_campaign_page() throws InterruptedException {
+       wait(30);
+       distributionPage.setClickSaveBtnInCampaignPage();
+    }
+    @When("^I should delete the campaign$")
+    public void i_should_delete_the_campaign() throws InterruptedException {
+       wait(30);
+       distributionPage.setDeleteCampaign();
+    }
+    @Then("^I should delete the press release$")
+    public void i_should_delete_the_press_release() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickDeletePressRelease();
+    }
+    @When("^I choose and click on press release$")
+    public void i_choose_and_click_on_press_release() throws InterruptedException {
+        wait(30);
+        distributionPage.setChooseAndClickPressRelease();
+    }
+
+    @When("^I click on start campaign button$")
+    public void i_click_on_start_campaign_button() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickStartCampaignBtn();
+    }
+    @When("^I enter campaign name from press release as \"([^\"]*)\" and I click on create button$")
+    public void i_enter_campaign_name_from_press_release_as_and_I_click_on_create_button(String pressRelease) throws InterruptedException{
+        wait(30);
+        distributionPage.setEnterCampaignNameFromPressRelease(pressRelease);
+    }
+    @When("^I choose and click on campaign$")
+    public void i_choose_and_click_on_campaign() throws InterruptedException {
+       wait(30);
+       distributionPage.setChooseAndClickCampaign();
+    }
+
+    @When("^I click on view press release link$")
+    public void i_click_on_view_press_release_link() throws InterruptedException {
+        wait(30);
+        distributionPage.setClickViewPressReleaseLink();
+    }
+
+    @Then("^I should see the press release$")
+    public void i_should_see_the_press_release() throws InterruptedException {
+        wait(30);
+        distributionPage.setValidatePressRelease();
     }
 }

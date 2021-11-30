@@ -14,9 +14,9 @@ public class Streams extends BaseStep
     public HomePage homePage=new HomePage(webDriver);
 
     @When("^I should be in the home page and click on Streams$")
-    public void i_should_be_in_the_home_page_and_click_on_Streams()throws InterruptedException
+    public void i_should_be_in_the_home_page_and_click_on_Streams() throws Exception
     {
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+        webDriver.get(readPropertyFile1("url1"));
         pauseFor(2);
         streamPage.clkStreams();
     }
@@ -184,7 +184,7 @@ public class Streams extends BaseStep
 
         @When("^I click on Add all journo to list button$")
         public void i_click_on_Add_all_journo_to_list_button() throws InterruptedException {
-           wait(30);
+           pauseFor(5);
            streamPage.clickAddJournoToListBtnFromStream();
         }
 
@@ -208,7 +208,7 @@ public class Streams extends BaseStep
 
         @When("^I should able to see the journo added to list from streams$")
         public void i_should_able_to_see_the_journo_added_to_list_from_streams() throws InterruptedException {
-        wait(3000);
+        wait(30);
         listsPage.setValidateJournoAddedToStreamList();
         }
 

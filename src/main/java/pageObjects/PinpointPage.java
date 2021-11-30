@@ -49,6 +49,28 @@ public class PinpointPage extends CommonFunctions{
     public WebElement clickJournoSearchIcon;
     @FindBy(xpath = "//nav[@class=\"super-toolbar d-flex flex-row justify-content-start align-items-center py-0 branded\"]")
     public WebElement validateNavigateToAdvancedSearchJournoTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[1]/div[2]/div/ul[2]/li[1]/div/div/div/div/div")
+    public WebElement clickOnCountryAsUK;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[2]/div[2]/div/ul[2]/li[1]/span/i")
+    public WebElement clickOnSectorAsPolitics;
+    @FindBy(xpath = "//span[contains(text(),\"Television\")]")
+    public WebElement clickOnOutletTypeAsTelevision;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[1]/nav/div[3]/button")
+    public WebElement validatePinPointResultsForAppliedFilterSearch;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[3]/div[1]/div/div[2]/div/label/span")
+    public WebElement clickOnSegmentToggleBarInOutletType;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[3]/div[2]/div/ul[2]/li[1]/span/label/span")
+    public WebElement clickDeselectNationalOutletType;
+    @FindBy(xpath = "//div[@class=\"position-relative no-select idle\"]")
+    public WebElement validateGraphViewResultsForOtherOutletTypes;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[1]/div[1]/div/div[2]/div/label/span")
+    public WebElement clickSegmentBtnInCountry;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[3]/div/div[1]/div[2]/div/ul[2]/li[1]/span/label/span/i")
+    public WebElement clickDisableUnitedKingdomInCountry;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div/div[1]/div/label/span")
+    public WebElement clickStackBtn;
+    @FindBy(xpath = "//div[@class=\"analyse-graph-wrapper h-100\"]")
+    public WebElement validateStackViewResults;
 
     /*clicking pinpoint tab from the header menu in home page*/
     public void clickPinpointTab() {
@@ -137,7 +159,7 @@ public class PinpointPage extends CommonFunctions{
     }
 
     public void setClickJournoSearchIcon()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementClickable(clickJournoSearchIcon,driver);
         clickJournoSearchIcon.click();
     }
@@ -145,5 +167,61 @@ public class PinpointPage extends CommonFunctions{
     public void setValidateNavigateToAdvancedSearchJournoTab() throws InterruptedException{
         Thread.sleep(3000);
         validateNavigateToAdvancedSearchJournoTab.isDisplayed();
+    }
+
+    public void setChooseCountryAsUnitedKingdom() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOnCountryAsUK.click();
+    }
+
+    public void setChooseSectorAsPolitics() throws InterruptedException{
+        Thread.sleep(6000);
+        elementClickable(clickOnSectorAsPolitics,driver);
+        clickOnSectorAsPolitics.click();
+    }
+
+    public void setChooseOutletTypeAsTelevision() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOnOutletTypeAsTelevision.click();
+    }
+
+    public void setValidateFilteredResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validatePinPointResultsForAppliedFilterSearch.isDisplayed();
+    }
+
+    public void setClickSegmentToggleBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickOnSegmentToggleBarInOutletType.click();
+    }
+
+    public void setUnClickNationalOutletType() throws InterruptedException{
+        Thread.sleep(3000);
+        clickDeselectNationalOutletType.click();
+    }
+
+    public void validateGraphViewForFilteredResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateGraphViewResultsForOtherOutletTypes.isDisplayed();
+    }
+
+    public void setClickSegmentBtnInCountry() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSegmentBtnInCountry.click();
+    }
+
+    public void setDisableCountryAsUnitedKingdom() throws InterruptedException{
+        Thread.sleep(3000);
+        clickDisableUnitedKingdomInCountry.click();
+    }
+
+    public void setClickStackBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickStackBtn.click();
+    }
+
+    public void setValidateStackViewResults() throws InterruptedException{
+        Thread.sleep(3000);
+        validateStackViewResults.isDisplayed();
     }
 }

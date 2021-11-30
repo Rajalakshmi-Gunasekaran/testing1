@@ -18,9 +18,9 @@ public class ReadyMadeListPage extends CommonFunctions{
     public WebElement clickListInReadyMadeList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div/div[1]")
     public WebElement validateReadyMadeListsFilteredByOutlet;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[2]/a/div")
+    @FindBy(xpath = "//div[contains(text(),\"EU Nationals Business desks\")]")
     public WebElement clickFolderInRML;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div[2]/div/div[2]/ul/li[11]/a/div[1]")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[2]/div[2]/div/div[2]/ul/li[11]")
     public WebElement clickListInsideFolderInRML;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[3]/div/div[2]/div[2]/div[3]/input")
     public WebElement enterJobTitleInRML;
@@ -65,6 +65,7 @@ public class ReadyMadeListPage extends CommonFunctions{
 
     public void clickOnListInsideFolder()throws InterruptedException {
         Thread.sleep(3000);
+        //elementVisible(clickListInsideFolderInRML,driver);
         clickListInsideFolderInRML.click();
     }
 
@@ -95,6 +96,7 @@ public class ReadyMadeListPage extends CommonFunctions{
 
     public void clickDownloadBtn() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickDownloadBtnInRML,driver);
         clickDownloadBtnInRML.click();
     }
 

@@ -72,13 +72,13 @@ public class ReadyMadeList extends BaseStep{
 
    @When("^I click desk from left hand side column selection$")
    public void i_click_desk_from_left_hand_side_column_selection() throws InterruptedException {
-     wait(30);
+     pauseFor(5);
      readyMadeListPage.clickAddDeskColumn();
    }
 
    @When("^I click desk from right hand side to remove it$")
    public void i_click_desk_from_right_hand_side_to_remove_it() throws InterruptedException {
-      wait(30);
+      pauseFor(5);
       readyMadeListPage.clickAddDeskColumn();
    }
 

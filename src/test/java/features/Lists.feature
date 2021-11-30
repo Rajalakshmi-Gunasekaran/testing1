@@ -47,7 +47,7 @@ Feature: List
 
     @functional31
     Scenario: validate copying list from one to another functionality
-      When I should login ino the home page and click on lists
+      When I should login into the home page and click on lists
       And I click on create list
       And I enter list name to create as "functionalList" and click on create button
       And I click on search icon in the list page

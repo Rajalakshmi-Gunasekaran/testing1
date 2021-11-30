@@ -63,6 +63,8 @@ public class ListsPage extends CommonFunctions{
     public WebElement clickSmokeSuiteListNameFromLandingPage;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[2]/div[7]/div/div[3]/span[1]/span/span/i")
     public WebElement GDPRCheckBox;
+    @FindBy(xpath = "//span[contains(text(),\"AdvancedSearchList\")]")
+    public WebElement setClickOnAdvancedSearchListToValidate;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
     public WebElement validateJournoAddedToList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[1]/span/span")
@@ -79,7 +81,7 @@ public class ListsPage extends CommonFunctions{
     public WebElement confirmDeleteList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/a/div[1]/strong")
     public WebElement clickSmokeSuiteList;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[4]/div[2]/span/button/span/i")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div[1]/div[2]/div/div[1]/div[1]/div/nav[1]/div[4]/div[2]")
     public WebElement clickCopyAllToListsBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
     public WebElement enterListNameToCopy;
@@ -97,10 +99,16 @@ public class ListsPage extends CommonFunctions{
     public WebElement clickOkToChooseList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[1]/form/div/div/div/button")
     public WebElement clickClearField;
+    @FindBy(xpath = "//a[contains(text(),\"PinPointList\")]")
+    public WebElement clickOnPinpointListToValidate;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
     public WebElement validatePinpointList;
+    @FindBy(xpath = "//a[contains(text(),\" StreamList \")]")
+    public WebElement clickStreamListToValidate;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
     public WebElement validateJournoAddedToStreamList;
+    @FindBy(xpath = "//a[contains(text(),\" QuickSearchList \")]")
+    public WebElement clickQuickSearchListToValidate;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]")
     public WebElement validateJournoAddedToListFromQuickSearch;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div[1]/div/nav[1]/div[2]/button[2]/span/span")
@@ -164,8 +172,7 @@ public class ListsPage extends CommonFunctions{
 
     //click create list to create new list
     public void clickCreateList()throws InterruptedException
-    {
-        Thread.sleep(3000);
+    {        Thread.sleep(3000);
         elementVisible(clickCreateBtn,driver);
         clickCreateBtn.click();
     }
@@ -306,7 +313,7 @@ public class ListsPage extends CommonFunctions{
         Thread.sleep(3000);
         elementClickable(removeFromList,driver);
         removeFromList.click();
-        wait(30,driver);
+        Thread.sleep(3000);
         confirmRemoveJournoFromList.click();
     }
 
@@ -378,6 +385,8 @@ public class ListsPage extends CommonFunctions{
 
     public void validateJournoAddedToPinpointList() throws InterruptedException{
         Thread.sleep(3000);
+        clickOnPinpointListToValidate.click();
+        Thread.sleep(3000);
         clickSelectAll.click();
         Thread.sleep(3000);
         validatePinpointList.isDisplayed();
@@ -386,12 +395,17 @@ public class ListsPage extends CommonFunctions{
     //validate journo added to streams list
     public void setValidateJournoAddedToStreamList()throws InterruptedException{
         Thread.sleep(3000);
+        clickStreamListToValidate.click();
+        Thread.sleep(3000);
+        elementClickable(clickSelectAll,driver);
         clickSelectAll.click();
         Thread.sleep(3000);
         validateJournoAddedToStreamList.isDisplayed();
     }
     //validate journo added to quick search list
     public void validateJournoAddedToQuickSearchList() throws InterruptedException{
+        Thread.sleep(3000);
+        clickQuickSearchListToValidate.click();
         Thread.sleep(3000);
         validateJournoAddedToListFromQuickSearch.isDisplayed();
     }
@@ -407,9 +421,14 @@ public class ListsPage extends CommonFunctions{
         Thread.sleep(3000);
         clickListViewButton.click();
     }
-    //validate list view results
+    // validate list view results
     public void setValidateListView() throws InterruptedException{
         Thread.sleep(3000);
         validateListViewResults.isDisplayed();
+    }
+    // click on advanced search list to validate list of journos filtered from advanced search
+    public void setClickOnAdvancedSearchListToValidate() throws InterruptedException{
+        Thread.sleep(3000);
+        setClickOnAdvancedSearchListToValidate.click();
     }
 }

@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OutletProfilePage {
+public class OutletProfilePage extends CommonFunctions{
+    WebDriver driver;
     public OutletProfilePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -52,7 +53,7 @@ public class OutletProfilePage {
     public WebElement validateUnHideJourno;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[2]/div")
     public WebElement chooseJournoToAddActivity;
-        @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[1]/div/nav[1]/div[5]/span/button")
+    @FindBy(xpath = "//i[@class=\"icon-flag\"]")
     public WebElement clickAddActivityForAllBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[1]/div/div[1]/div/div/div[3]/div/div/div[2]/form/div/div/div[2]/input")
     public WebElement enterSubjectFieldInActivity;
@@ -130,6 +131,17 @@ public class OutletProfilePage {
     public WebElement clickJournoLink;
     @FindBy(xpath = "//div[contains(text(),\"Evening Standard\")]")
     public WebElement validateJournoProfileFromOutletPage;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[1]/div/nav[2]/div[2]/span[2]/button")
+    public WebElement clickListViewBtn;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div")
+    public WebElement validateResultsInListview;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[1]/div/nav[2]/ul/li[5]/a/i")
+    public WebElement clickRightArrowToSelectPageNumber;
+    @FindBy(xpath = "//li[@class=\"page-item\"]/a[contains(text(),\"3\")]")
+    public WebElement clickPageNumber;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[1]/div/div[1]")
+    public WebElement validatePageNumberListingJourno;
+
 
     /*validate Desk display*/
     public void validateDeskDisplay() {
@@ -385,5 +397,28 @@ public class OutletProfilePage {
     public void validateSectionFilterSearchResult() throws InterruptedException{
         Thread.sleep(3000);
         validatePROpportunitySectionSearch.isDisplayed();
+    }
+
+    public void setClickListViewBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clickListViewBtn.click();
+    }
+
+    public void setValidateResultsInListView() throws InterruptedException{
+        Thread.sleep(3000);
+        validateResultsInListview.isDisplayed();
+    }
+    public void setClickRightSideArrowToChangePageNumber() throws InterruptedException{
+        Thread.sleep(3000);
+        clickRightArrowToSelectPageNumber.click();
+    }
+    public void setClickPageNumber() throws InterruptedException{
+        Thread.sleep(3000);
+        clickPageNumber.click();
+    }
+
+    public void validateJournoByPageNumber() throws InterruptedException{
+        Thread.sleep(3000);
+        validatePageNumberListingJourno.isDisplayed();
     }
 }

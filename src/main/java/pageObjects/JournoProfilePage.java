@@ -43,7 +43,7 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement clickOnAutomationList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[3]/button[2]")
     public WebElement clickOnSaveButton;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[2]/div/div[2]/ul/li[1]/div")
+    @FindBy(xpath = "//div[@class=\"journalist-main d-flex p-3\"]")
     public WebElement validateJournoAddedToList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/nav/div[3]/button[4]")
     public WebElement clickInListBtn;
@@ -272,6 +272,7 @@ public class JournoProfilePage extends CommonFunctions {
 
     public void setClickNotesAndActivityTab()throws InterruptedException {
         Thread.sleep(3000);
+        elementClickable(clickNotesAndActivityTab,driver);
         clickNotesAndActivityTab.click();
     }
 
