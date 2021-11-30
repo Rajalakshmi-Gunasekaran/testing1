@@ -18,7 +18,7 @@ public class Hook {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         BaseStep.setWebDriver(driver);
-        /*System.out.println("Calling @Before Hook");
+       /* System.out.println("Calling @Before Hook");
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

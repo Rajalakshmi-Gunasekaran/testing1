@@ -76,7 +76,7 @@ public class HomePage extends CommonFunctions{
     public WebElement validateKeywordSearchResults;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/nav/div[2]/nav/a[3]")
     public WebElement clickWebinarTab;
-    @FindBy(xpath = "//a[contains(text(),\"here\")]")
+    @FindBy(xpath = "//p[contains(text(),\"Sign up \")]")
     public WebElement clickSignUpHere;
     @FindBy(xpath = "//a[contains(text(),\" FunctionalTest \")]")
     public WebElement validateFunctionalTestStreamTab;

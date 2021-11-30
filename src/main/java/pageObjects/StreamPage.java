@@ -100,6 +100,8 @@ public class StreamPage extends CommonFunctions{
     public WebElement clickJournalists;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[2]/div/div[1]/div[1]/div[3]/div/div/div[1]/div/div/input")
     public WebElement enterJournalistName;
+    @FindBy(xpath = "//span[contains(text(),\"Simon English\")]")
+    public WebElement chooseJournoFromDropDown;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div")
     public WebElement validateActivityStream;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div/div[2]/ul/li/div/a/strong")
@@ -331,8 +333,10 @@ public class StreamPage extends CommonFunctions{
     public void setEnterJournoName(String journoName) throws InterruptedException{
         Thread.sleep(3000);
         enterJournalistName.sendKeys(journoName);
-        Thread.sleep(3000);
-        enterJournalistName.sendKeys(Keys.ENTER);
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(5));
+        action.build().perform();
+        chooseJournoFromDropDown.click();
     }
 
     public void validateActivitiesStream() throws InterruptedException{

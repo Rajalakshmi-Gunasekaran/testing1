@@ -403,12 +403,11 @@ journoProfilePage.setValidateJournoRemovalFromList();
         outletProfilePage.setClickAlertsTab();
     }
 
-    @When("^I enter quick find by keyword as\"([^\"]*)\"$")
-    public void i_enter_quick_find_by_keyword_as(String keyword) throws InterruptedException {
-      wait(30);
-      outletProfilePage.setEnterQuickFindByKeyword(keyword);
+    @When("^I enter quick find by keyword as \"([^\"]*)\"$")
+    public void i_enter_quick_find_by_keyword_as(String keyword) throws Throwable {
+        wait(30);
+        outletProfilePage.setEnterQuickFindByKeyword(keyword);
     }
-
     @Then("^I should see the result for the search keyword$")
     public void i_should_see_the_result_for_the_search_keyword() throws InterruptedException {
      wait(30);

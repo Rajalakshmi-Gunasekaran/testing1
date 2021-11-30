@@ -225,7 +225,7 @@ public class AdvancedSearch extends BaseStep {
     }
     @Then("^I should see the forward features for the relevant search$")
     public void i_should_see_the_forward_features_for_the_relevant_search() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.validateForwardFeaturesResults();
     }
     @When("^I click on Activities tab from the left hand side pan$")
@@ -236,7 +236,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the activities for the relevant search$")
     public void i_should_see_the_activities_for_the_relevant_search() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.validateActivityForOutletSearch();
     }
 
@@ -265,7 +265,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the PR Opportunities results for the relevant search$")
     public void i_should_see_the_PR_Opportunities_results_for_the_relevant_search() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.validatePROpportunitiesResults();
     }
     @When("^I click on tweets tab from the left hand side pan$")
@@ -288,7 +288,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the tweets results for the relevant search$")
     public void i_should_see_the_tweets_results_for_the_relevant_search() throws InterruptedException {
-       wait(30);
+       pauseFor(5);
        advancedSearchPage.validateTweetResults();
     }
     @When("^I click on Instagram tab from the left hand side pan$")
@@ -311,7 +311,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the Instagram results for the relevant search$")
     public void i_should_see_the_Instagram_results_for_the_relevant_search() throws InterruptedException {
-       wait(30);
+       pauseFor(5);
        advancedSearchPage.validateInstagramResults();
     }
     @When("^I click on clear all button at the top$")
@@ -322,7 +322,7 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the search filters are cleared and the result pane is empty$")
     public void i_should_see_the_search_filters_are_cleared_and_the_result_pane_is_empty() throws Throwable {
-       wait(30);
+       pauseFor(5);
        advancedSearchPage.validateClearAllFiltersResult();
     }
     @When("^I choose outlet from the result and click on it$")
@@ -343,7 +343,7 @@ public class AdvancedSearch extends BaseStep {
     }
     @Then("^I automatically navigate to the journalist tab to see the journos for the selected outlet$")
     public void i_automatically_navigate_to_the_journalist_tab_to_see_the_journos_for_the_selected_outlet() throws InterruptedException {
-        wait(30);
+        pauseFor(5);
         advancedSearchPage.setValidateSearchAllOutletJournoBtn();
     }
 }

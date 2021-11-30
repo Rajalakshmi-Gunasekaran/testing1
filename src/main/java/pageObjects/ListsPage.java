@@ -342,6 +342,9 @@ public class ListsPage extends CommonFunctions{
     public void setEnterListNameToCopy(String listNameToCopy)throws InterruptedException{
         Thread.sleep(3000);
         enterListNameToCopy.sendKeys(listNameToCopy);
+        action = new Actions(driver);
+        action.pause(Duration.ofSeconds(2));
+        action.build().perform();
         enterListNameToCopy.sendKeys(Keys.ENTER);
     }
     //click ok to copy lists from one to another

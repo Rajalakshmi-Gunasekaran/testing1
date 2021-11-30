@@ -66,7 +66,7 @@ public class Home extends BaseStep {
 
     @Then("^I should able to navigate to the Roxhill main site$")
     public void i_should_able_to_navigate_to_the_Roxhill_main_site() throws InterruptedException{
-        wait(30);
+        pauseFor(5);
         homePage.validateQuickLinks();
     }
 
@@ -125,7 +125,7 @@ public class Home extends BaseStep {
 
     @Then("^I should see the new editions results$")
     public void i_should_see_the_new_editions_results() throws InterruptedException{
-        wait(30);
+        pauseFor(5);
          homePage.setValidateNewEditionResults();
     }
 
@@ -137,7 +137,7 @@ public class Home extends BaseStep {
 
     @Then("^I should see navigate to the outlet profile$")
     public void i_should_see_navigate_to_the_outlet_profile() throws InterruptedException{
-        wait(30);
+        pauseFor(5);
         homePage.setValidateOutletLogoNavigatesToOutletProfile();
     }
 
@@ -149,7 +149,7 @@ public class Home extends BaseStep {
 
     @Then("^I should navigate to the alerts tab in advanced search$")
     public void i_should_navigate_to_the_alerts_tab_in_advanced_search() throws InterruptedException{
-        wait(30);
+        pauseFor(5);
         homePage.setValidateSearchAllAlertsNavigatesToAdvancedSearch();
     }
 
@@ -192,7 +192,7 @@ public class Home extends BaseStep {
     @Then("^I should see the results as per the search$")
     public void i_should_see_the_results_as_per_the_search() throws Exception {
         wait(30);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get("https://news.roxhillmedia.com/");
         wait(30);
         homePage.setValidateSignUpHere();
     }
@@ -216,7 +216,7 @@ public class Home extends BaseStep {
     @Then("^I should navigate to the roxhill help page$")
     public void i_should_navigate_to_the_roxhill_help_page() throws Exception {
         wait(30);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get("https://roxhillmedia.com/help/");
         wait(30);
         homePage.validateNavigateToRoxhillHelpPage();
     }

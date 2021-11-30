@@ -7,7 +7,6 @@ import pageObjects.SearchPage;
 
 public class OutletProfile extends BaseStep{
     public OutletProfilePage outletProfilePage=new OutletProfilePage(webDriver);
-    public SearchPage search = new SearchPage(webDriver);
 
     @When("^I click on list view button to see the journos$")
     public void i_click_on_list_view_button_to_see_the_journos() throws InterruptedException {

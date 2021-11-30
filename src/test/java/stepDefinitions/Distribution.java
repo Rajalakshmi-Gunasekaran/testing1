@@ -155,7 +155,7 @@ public class Distribution extends BaseStep {
 
     @Then("^I should able to see the press release deleted$")
     public void i_should_able_to_see_the_press_release_deleted() throws InterruptedException{
-        wait(30);
+        pauseFor(5);
         distributionPage.setValidateDeletePressRelease();
     }
 
