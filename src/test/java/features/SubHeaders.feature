@@ -45,8 +45,4 @@ Feature: SubHeaders
     And I click on quick find by keyword text field and enter text as "Health"
     Then I should see the results for the search
 
-  @functional60
-  Scenario:Validate sign up here link in alerts tab in home page
-    When I should login into the home page and click on webinars in sub menu
-    And I click sign up here link
-    Then I should see the results as per the search
+ 
