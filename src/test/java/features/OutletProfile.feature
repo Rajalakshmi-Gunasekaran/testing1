@@ -184,12 +184,5 @@ Feature: OutletProfile
     And I choose and click on page numbers to see journos in different page
     Then I should navigate to the respective page as per the search
 
-  @functional68
-  Scenario:Validate outlet url in contact info
-    When I should login into the home page and click on Quick search tab
-    And I enter Outlet name as "evening standard"
-    And I choose Outlet from the list and Click on it
-    And I click on Website link to navigate to the website url
-    Then I should navigate to the respective page for website link
 
 

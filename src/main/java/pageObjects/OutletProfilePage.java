@@ -113,7 +113,7 @@ public class OutletProfilePage extends CommonFunctions{
     public WebElement clickSortOption;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div[1]/div/div/div/div[2]/div/div[2]")
     public WebElement validateSortDirectionJourno;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[6]")
+    @FindBy(xpath = "//a[contains(text(),\" Alerts \")]")
     public WebElement clickAlertsTabs;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[1]/div/nav/div[2]/form/input")
     public WebElement enterQuickFindByKeyword;
