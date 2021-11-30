@@ -53,8 +53,4 @@ Feature:Home
     And I should see the Terms and conditions
     Then I click close button to close the EULA form
 
-  @functional62
-  Scenario: Validate View Roxhill Help button in Help & feedback page
-    When I am on login page and I click help and feedback functionality
-    And I click on View Roxhill Help button
-    Then I should navigate to the roxhill help page
+  
