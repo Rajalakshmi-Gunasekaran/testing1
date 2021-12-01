@@ -152,7 +152,7 @@ public class Lists extends BaseStep{
     public void i_click_select_all_to_remove_all_journalist_from_the_list()throws InterruptedException{
         pauseFor(5);
         listsPage.chooseJournalist();
-        wait(30);
+       wait(30);
     }
 
     @When("^I click on remove from list button$")

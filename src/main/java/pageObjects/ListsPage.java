@@ -121,7 +121,6 @@ public class ListsPage extends CommonFunctions{
     //click on List button on home page
     public void clickListsBtn() throws InterruptedException{
         Thread.sleep(3000);
-        elementClickable(listsBtn,driver);
         listsBtn.click();
     }
     //click list name on the list
@@ -180,7 +179,6 @@ public class ListsPage extends CommonFunctions{
     //click magnifying glass to search list
     public void searchIcon()throws InterruptedException {
         Thread.sleep(3000);
-        //elementClickable(searchIconBtn,driver);
         searchIconBtn.click();
     }
     //enter search list name in search list text area
