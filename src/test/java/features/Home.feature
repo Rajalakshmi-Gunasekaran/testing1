@@ -53,4 +53,3 @@ Feature:Home
     And I should see the Terms and conditions
     Then I click close button to close the EULA form
 
-  

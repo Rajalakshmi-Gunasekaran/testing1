@@ -44,5 +44,3 @@ Feature: SubHeaders
     When I should login into the home page and click on New Editions in sub menu
     And I click on quick find by keyword text field and enter text as "Health"
     Then I should see the results for the search
-
- 
