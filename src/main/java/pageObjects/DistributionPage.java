@@ -381,7 +381,7 @@ public class DistributionPage extends CommonFunctions{
         Thread.sleep(3000);
         elementVisible(enterFromEmail,driver);
         enterFromEmail.click();
-        // Thread.sleep(3000);
+        Thread.sleep(3000);
         elementVisible(getEnterFromEmail,driver);
         getEnterFromEmail.click();
         //Thread.sleep(3000);

@@ -177,7 +177,7 @@ public class Distribution extends BaseStep {
 
     @When("^I click on search icon on campaign tab$")
     public void i_click_on_search_icon_on_campaign_tab() throws InterruptedException{
-        pauseFor(10);
+        pauseFor(5);
         distributionPage.setClickSearchIcon();
     }
 

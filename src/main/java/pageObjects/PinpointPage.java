@@ -166,7 +166,7 @@ public class PinpointPage extends CommonFunctions{
     }
 
     public void setValidateNavigateToAdvancedSearchJournoTab() throws InterruptedException{
-        Thread.sleep(6000);
+        Thread.sleep(9000);
         validateNavigateToAdvancedSearchJournoTab.isDisplayed();
     }
 

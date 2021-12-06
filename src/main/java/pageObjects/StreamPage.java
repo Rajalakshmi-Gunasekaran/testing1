@@ -172,6 +172,7 @@ public class StreamPage extends CommonFunctions{
     /*click outlet type*/
     public void setClickOutletType() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickOutletType,driver);
         clickOutletType.click();
     }
     /* choose outlet type*/

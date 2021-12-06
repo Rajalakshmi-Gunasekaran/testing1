@@ -187,7 +187,7 @@ public class OutletProfilePage extends CommonFunctions{
     public void validateJournalistTabsINOutlet() throws InterruptedException{
         Thread.sleep(3000);
         clickJournalistTab.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickSelectAll.click();
         Thread.sleep(3000);
         Assert.assertTrue(validateJournalistTab.isDisplayed());

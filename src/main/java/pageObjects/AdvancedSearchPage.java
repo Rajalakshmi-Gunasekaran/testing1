@@ -104,7 +104,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement clickForwardFeatures;
     @FindBy(xpath = "//span[contains(text(),\"Select all\")]")
     public WebElement clickSelectAllInForwardFeatures;
-    @FindBy(xpath = "//span[contains(text(),\"100\")]")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div")
     public WebElement validateForwardFeaturesResults;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[9]/a/div")
     public WebElement clickActivityTab;

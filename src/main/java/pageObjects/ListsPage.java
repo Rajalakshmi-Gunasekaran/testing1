@@ -186,7 +186,8 @@ public class ListsPage extends CommonFunctions{
 
     //click magnifying glass to search list
     public void searchIcon()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
+        elementVisible(searchIconBtn,driver);
         searchIconBtn.click();
     }
     //enter search list name in search list text area
@@ -316,10 +317,10 @@ public class ListsPage extends CommonFunctions{
 
     // remove journalist from the list
     public void removeJournalist()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         elementClickable(removeFromList,driver);
         removeFromList.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         confirmRemoveJournoFromList.click();
     }
 
