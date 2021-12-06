@@ -13,7 +13,7 @@ public class OutletProfilePage extends CommonFunctions{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[1]/div/div[2]/div/div[1]/small")
+    @FindBy(xpath = "//div[@class=\"dept-type dept-type-desk\"]")
     public WebElement validateDesk;
     @FindBy(css = ".contact-details")
     public WebElement validateContact;
@@ -21,19 +21,33 @@ public class OutletProfilePage extends CommonFunctions{
     public WebElement validateRoxhillSays;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[1]/div/div[2]/div/div[4]/div[1]")
     public WebElement validateSectors;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[1]")
+    @FindBy(xpath = "//a[contains(text(),\"About\")]")
+    public WebElement clickIAbout;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div")
     public WebElement validateIAbout;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[2]")
+    @FindBy(xpath = "//a[contains(text(),\"Twitter\")]")
+    public WebElement clickTwitterTab;
+    @FindBy(xpath = "//span[contains(text(),\"Select all\")]")
+    public WebElement clickSelectAll;
+    @FindBy(xpath = "//span[contains(text(),\"50\")]")
     public WebElement validateTwitterTab;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[3]")
+    @FindBy(xpath = "//a[contains(text(),\"Journalists\")]")
+    public WebElement clickJournalistTab;
+    @FindBy(xpath = "//span[contains(text(),\"333\")]")
     public WebElement validateJournalistTab;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[4]")
+    @FindBy(xpath = "//a[contains(text(),\" Headlines \")]")
+    public WebElement clickHeadlinesTab;
+    @FindBy(xpath = "//span[contains(text(),\"50\")]")
     public WebElement validateHeadlinesTab;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[5]")
+    @FindBy(xpath = "//a[contains(text(),\" Activities \")]")
+    public WebElement clickActivitiesTab;
+    @FindBy(xpath = "//strong[contains(text(),\"Simon English\")]")
     public WebElement validateActivitiesTab;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[6]")
+    @FindBy(xpath = "//a[contains(text(),\" Alerts \")]")
+    public WebElement clickAlertsTab;
+    @FindBy(xpath = "//div[@class=\"position-relative fill-height flex-column-reverse\"]")
     public WebElement validateAlertsTab;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/nav/div[2]/nav/a[7]")
+    @FindBy(xpath = "//div[@class=\"tile-list pt-3 px-1\"]")
     public WebElement validatePROpportunityTab;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[1]/div[1]/div[2]/button[1]")
     public WebElement clickSelectAllInGroupBtn;
@@ -153,45 +167,94 @@ public class OutletProfilePage extends CommonFunctions{
         Assert.assertTrue(validateRoxhillSays.isDisplayed());
         Assert.assertTrue(validateSectors.isDisplayed());
     }
-/*validate all tabs in outlet profile*/
-    public void validateAllTabsINOutlet() {
+    /*validate I about tab in outlet profile*/
+    public void validateIAboutTabsINOutlet() throws InterruptedException{
+        Thread.sleep(6000);
+        clickIAbout.click();
+        Thread.sleep(6000);
         Assert.assertTrue(validateIAbout.isDisplayed());
+    }
+    /*validate Twitter tab in outlet profile*/
+    public void validateTwitterTabINOutlet() throws InterruptedException{
+        Thread.sleep(6000);
+        clickTwitterTab.click();
+        Thread.sleep(3000);
+        clickSelectAll.click();
+        Thread.sleep(6000);
         Assert.assertTrue(validateTwitterTab.isDisplayed());
+    }
+    /*validate journo tab in outlet profile*/
+    public void validateJournalistTabsINOutlet() throws InterruptedException{
+        Thread.sleep(3000);
+        clickJournalistTab.click();
+        Thread.sleep(3000);
+        clickSelectAll.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateJournalistTab.isDisplayed());
+    }
+    /*validate Header lines tab in outlet profile*/
+    public void validateHeadlinesTabsINOutlet() throws InterruptedException{
+        Thread.sleep(3000);
+        clickHeadlinesTab.click();
+        Thread.sleep(3000);
+        clickSelectAll.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateHeadlinesTab.isDisplayed());
+    }
+    /*validate Activities tab in outlet profile*/
+    public void validateActivitiesTabsINOutlet() throws InterruptedException{
+        Thread.sleep(3000);
+        clickActivitiesTab.click();
+        Thread.sleep(3000);
+        clickSelectAll.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateActivitiesTab.isDisplayed());
+    }
+    /*validate Alerts tab in outlet profile*/
+    public void validateAlertsTabsINOutlet() throws InterruptedException{
+        Thread.sleep(3000);
+        clickAlertsTabs.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validateAlertsTab.isDisplayed());
+    }
+    /*validate PR Opportunity tab in outlet profile*/
+    public void validatePROpportunityTabINOutlet() throws InterruptedException{
+        Thread.sleep(3000);
+        clickPROpportunityTab.click();
+        Thread.sleep(3000);
         Assert.assertTrue(validatePROpportunityTab.isDisplayed());
     }
-
+    //choose journo in journalist tab to add activity
     public void chooseJournoToAddActivity() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         chooseJournoToAddActivity.click();
     }
-
+    // click add activity
     public void setClickAddActivity() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickAddActivityForAllBtn.click();
     }
+    //enter subject for activity
     public void setEnterSubjectForActivity(String enterSubject) throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterSubjectFieldInActivity.sendKeys(enterSubject);
     }
+    //click save button in activity page
     public void setClickSaveBtn()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickSaveActivity.click();
     }
-
+     //click activity tab
     public void setClickActivityTab() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOnActivitiesTab.click();
     }
-
+    // validate activity for the journo
     public void validateActivityForJourno() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateActivityCreatedForJourno.isDisplayed();
     }
-
+    // click delete activity created for journo
     public void setClickDeleteActivity() throws InterruptedException{
         Thread.sleep(3000);
         deleteActivity.click();
@@ -203,37 +266,37 @@ public class OutletProfilePage extends CommonFunctions{
         Thread.sleep(3000);
         chooseDesk.click();
     }
-
+    // validate journo chosen for desk
     public void validateJournoForChosenDesk() throws InterruptedException{
         Thread.sleep(3000);
         validateJournoForChosenDesk.isDisplayed();
     }
-
+    // click clear all button in desks outlet profile
     public void setClickClearAll() throws InterruptedException{
         Thread.sleep(3000);
         clickClearAllDesk.click();
     }
-
+    // validate all journo for all desks
     public void validateAllJournosForAllDesks() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateAllJournosAfterClearAllDesk.isDisplayed();
     }
-
+     // click hide button to hide journo
     public void setClickHide() throws InterruptedException{
         Thread.sleep(3000);
         clickHideBtn.click();
     }
-
+    // validate hide journo tile for the chosen
     public void validateHideJourno()throws InterruptedException {
         Thread.sleep(3000);
         validateHideJourno.isDisplayed();
     }
-
+     // click un hide button to see the hidden journo again
     public void setClickUnhide() throws InterruptedException{
         Thread.sleep(3000);
         clickUnHideJournoBtn.click();
     }
-
+    // validate the hide journo can see again using un hide button
     public void validateUnHideJourno() throws InterruptedException{
         Thread.sleep(3000);
         validateUnHideJourno.isDisplayed();
@@ -260,7 +323,7 @@ public class OutletProfilePage extends CommonFunctions{
     }
 
     public void setClickAddToFavouritesBtn() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickAddToFavouriteBtn.click();
     }
 
@@ -270,12 +333,12 @@ public class OutletProfilePage extends CommonFunctions{
     }
 
     public void setClickFavouritesOutletTab()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOutletFavouritesTab.click();
     }
 
     public void validateOutletAddedToFavourites() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateOutletFavourites.isDisplayed();
     }
 

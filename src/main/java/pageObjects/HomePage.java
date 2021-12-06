@@ -124,7 +124,7 @@ public class HomePage extends CommonFunctions{
 
     /*clicking go back button*/
     public void setGoBackBtn()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         goBackBtn.click();
     }
 
@@ -135,23 +135,25 @@ public class HomePage extends CommonFunctions{
 
     /* click on webinar alerts tab*/
     public void clickWebinar()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
+        elementClickable(clkWebinarTab,driver);
         clkWebinarTab.click();
     }
 
     public void clickSelectAll()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
+        elementClickable(clkSelectAll,driver);
         clkSelectAll.click();
     }
 
     public void setValidateWebinarAlert() throws InterruptedException{
-Thread.sleep(3000);
+        Thread.sleep(6000);
         validateWebinarAlert.isDisplayed();
     }
 
     /*validating whether the sign up link navigating to the Roxhill site*/
     public void validateQuickLinks()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateJournoLink.isDisplayed();
     }
 
@@ -163,11 +165,13 @@ Thread.sleep(3000);
 
     public void setEnterDesc(String desc)throws InterruptedException {
         Thread.sleep(3000);
+        elementVisible(enterDesc,driver);
         enterDesc.sendKeys(desc);
     }
 
     public void setClickSendButton()throws InterruptedException {
         Thread.sleep(3000);
+        elementClickable(clickSendButton,driver);
         clickSendButton.click();
     }
 
@@ -182,26 +186,30 @@ Thread.sleep(3000);
 
     public void setClickFavouriteJournoTab() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickJournoFavouritesTab,driver);
         clickJournoFavouritesTab.click();
     }
 
     public void setClickAllAlertsTab() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
+        elementClickable(clickAllAlertsTabInSubHeaders,driver);
         clickAllAlertsTabInSubHeaders.click();
     }
 
     public void setClickSelectAll() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
+        elementClickable(clkSelectAll,driver);
         clkSelectAll.click();
     }
 
     public void setValidateAllAlertsResults()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateAllAlertsResults.isDisplayed();
     }
 
     public void setClickNewEditionsTab()throws InterruptedException {
         Thread.sleep(3000);
+        elementClickable(clickNewEditionsInSubHeaders,driver);
         clickNewEditionsInSubHeaders.click();
     }
 
@@ -212,6 +220,7 @@ Thread.sleep(3000);
 
     public void setClickOutletLogo() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickOutletLogo,driver);
         clickOutletLogo.click();
     }
 
@@ -222,6 +231,7 @@ Thread.sleep(3000);
     //click search all alerts button in home page
     public void setClickSearchAllAlertsBtn() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickSearchAllAlerts,driver);
         clickSearchAllAlerts.click();
     }
     //validate search all alerts navigates to advanced search alert page
@@ -232,6 +242,7 @@ Thread.sleep(3000);
     //click alerts tile to select alert from the options
     public void setClickAlertTile() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickAlertFromAllAlerts,driver);
         clickAlertFromAllAlerts.click();
     }
     //validate alerts results
@@ -242,6 +253,7 @@ Thread.sleep(3000);
     //enter quick find by keyword in text field headline home page
     public void setEnterQuickFindByKeyword(String keyword) throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(enterKeyword,driver);
         enterKeyword.sendKeys(keyword);
     }
     //validate quick by find keyword in home page headline alerts tab
@@ -252,21 +264,25 @@ Thread.sleep(3000);
     //click webinar alerts tab in headers home page
     public void setClickWebinarTab() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickWebinarTab,driver);
         clickWebinarTab.click();
     }
     //click sign up here link
     public void setClickSignUpHere() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickSignUpHere,driver);
         clickSignUpHere.click();
     }
     //validate stream sets as default home page
     public void validateFunctionalTestStream() throws InterruptedException {
         Thread.sleep(3000);
+        elementVisible(validateFunctionalTestStreamTab,driver);
         validateFunctionalTestStreamTab.isDisplayed();
     }
      //validate Roxhill highlights displays in the right side of home page
     public void validateRoxhillHighlghtResults() throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(validateRoxhillHighlights,driver);
         validateRoxhillHighlights.isDisplayed();
     }
     //click "view in roxhill help" button

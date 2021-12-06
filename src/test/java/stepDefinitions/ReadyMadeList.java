@@ -9,42 +9,42 @@ public class ReadyMadeList extends BaseStep{
 
    @When("^I click on ready made list tab from the left hand side$")
    public void i_click_on_ready_made_list_tab_from_the_left_hand_side() throws InterruptedException {
-      wait(10);
+      wait(120);
       readyMadeListPage.clickReadyMadeListTab();
    }
 
    @When("^I choose and click on list$")
    public void i_choose_and_click_on_list() throws InterruptedException {
-      wait(30);
+      wait(120);
       readyMadeListPage.clickOnListsInRML();
    }
 
    @Then("^I should see the Journalist list for the selected outlet in ready made lists$")
    public void i_should_see_the_Journalist_list_for_the_selected_outlet_in_ready_made_lists() throws InterruptedException {
-      wait(30);
+      wait(120);
       readyMadeListPage.validateReadyMadeListFilteredByOutlet();
    }
    @When("^I choose folder and click on it$")
    public void i_choose_folder_and_click_on_it() throws InterruptedException {
-     wait(30);
+     wait(120);
      readyMadeListPage.clickFolderInReadyMadeList();
    }
 
    @When("^I choose and click on list inside selected folder$")
    public void i_choose_and_click_on_list_inside_selected_folder() throws InterruptedException {
-      wait(30);
+      wait(120);
       readyMadeListPage.clickOnListInsideFolder();
    }
 
    @When("^I Click on job title and enter job title as \"([^\"]*)\"$")
    public void i_Click_on_job_title_and_enter_job_title_as(String jobTitle) throws InterruptedException {
-      wait(30);
+      wait(120);
       readyMadeListPage.enterJobTitleInRML(jobTitle);
    }
 
    @Then("^I should see the Journalist list for the selected job title in ready made lists$")
    public void i_should_see_the_Journalist_list_for_the_selected_job_title_in_ready_made_lists() throws InterruptedException {
-      wait(30);
+      wait(120);
       readyMadeListPage.validateSelectedJobTitleInReadyMadeList();
    }
    @When("^I click on collapsible chevron$")
@@ -55,18 +55,18 @@ public class ReadyMadeList extends BaseStep{
 
    @Then("^I should see the ready made list home page$")
    public void i_should_see_the_ready_made_list_home_page() throws InterruptedException {
-     wait(30);
+     wait(120);
      readyMadeListPage.validateRMLHomePage();
    }
    @When("^I choose RML and click on it$")
    public void i_choose_RML_and_click_on_it() throws InterruptedException {
-     wait(30);
+     wait(120);
      readyMadeListPage.chooseRMLList();
    }
 
    @When("^I click on Download all button$")
    public void i_click_on_Download_all_button() throws InterruptedException {
-     wait(30);
+     wait(120);
      readyMadeListPage.clickDownloadBtn();
    }
 
@@ -84,7 +84,7 @@ public class ReadyMadeList extends BaseStep{
 
    @Then("^I should click cancel button$")
    public void i_should_click_cancel_button() throws InterruptedException {
-     wait(30);
+     wait(120);
      readyMadeListPage.clickCancelBtn();
    }
 }

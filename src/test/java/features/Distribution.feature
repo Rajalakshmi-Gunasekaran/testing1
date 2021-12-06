@@ -20,14 +20,14 @@ Feature: Distribution
     And I enter body as "The press release can be added in the body template"
     Then I should able to see the created press release
 
-   @functional13
-     Scenario: validate edit press release functionality
-     When I should be in the home page and click on Distribution tab
-     And I click on search icon on press release tab
-     And I enter press release name as "Functional Test"
-     And I click on selected press release
-     And I edit content by adding block
-     Then I should see the edited press release
+  @functional13
+  Scenario: validate edit press release functionality
+    When I should be in the home page and click on Distribution tab
+    And I click on search icon on press release tab
+    And I enter press release name as "Functional Test"
+    And I click on selected press release
+    And I edit content by adding block
+    Then I should see the edited press release
 
   @smoke
   Scenario:BValidate new campaign functionality
@@ -43,9 +43,9 @@ Feature: Distribution
     And I click on send button in Campaign page
     Then I should able to see the campaign created
 
-    @functional14
-    Scenario: validate archive and unarchive press release
-      When I should be in the home page and click on Distribution tab
+  @functional14
+  Scenario: validate archive and unarchive press release
+    When I should be in the home page and click on Distribution tab
     And I click on search icon on press release tab
     And I enter press release name as "smokeTest" and I click on the name
     And I click on the menu to select archive option
@@ -59,7 +59,7 @@ Feature: Distribution
     And I enter press release name as "smokeTest"
     Then I should see the unarchived press release
 
-@functional15
+  @functional15
   Scenario: validate archive and unarchive campaign
     When I should be in the home page and click on Distribution tab
     And I click on campaign tab
@@ -99,27 +99,27 @@ Feature: Distribution
     And I enter press release name as "smokeTest"
     Then I should able to see the press release deleted
 
-    @functional16
-    Scenario: Validate view campaign functionality
-      When I should be in the home page and click on Distribution tab
-      And I click on campaign tab
-      And I click on search icon on campaign tab
-      And I enter campaign name as "functional testing"
-      And I click on the name
-      Then I should see the campaign report
+  @functional16
+  Scenario: Validate view campaign functionality
+    When I should be in the home page and click on Distribution tab
+    And I click on campaign tab
+    And I click on search icon on campaign tab
+    And I enter campaign name as "functional testing"
+    And I click on the name
+    Then I should see the campaign report
 
-    @functional17
-    Scenario:BValidate creating, duplicating and deleting block
-      When I should be in the home page and click on Distribution tab
-      And I click on Blocks tab
-      And I click on create new block button
-      And I enter block name as "FunctionalTesting" and I click on create button
-      And I click on insert link from header section
-      And I enter URL as "RoxhillMedia.com"
-      And I click on Ok button in the insert link dialog box
-      And I click on save button in the block page
-      And I click on duplicate button to make a copy of block
-      Then I should delete the block
+  @functional17
+  Scenario:BValidate creating, duplicating and deleting block
+    When I should be in the home page and click on Distribution tab
+    And I click on Blocks tab
+    And I click on create new block button
+    And I enter block name as "FunctionalTesting" and I click on create button
+    And I click on insert link from header section
+    And I enter URL as "RoxhillMedia.com"
+    And I click on Ok button in the insert link dialog box
+    And I click on save button in the block page
+    And I click on duplicate button to make a copy of block
+    Then I should delete the block
 
   @functional18
   Scenario:BValidate editing, clear contents and deleting block
@@ -173,4 +173,3 @@ Feature: Distribution
     And I choose and click on campaign
     And I click on view press release link
     Then I should see the press release
-

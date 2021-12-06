@@ -102,9 +102,9 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement validateJournalistAlertsResults;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[5]/a/div")
     public WebElement clickForwardFeatures;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div/div/input")
-    public WebElement enterOutletToSearchForwardFeatures;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div/div[1]/div/div[1]/div/div/a/div")
+    @FindBy(xpath = "//span[contains(text(),\"Select all\")]")
+    public WebElement clickSelectAllInForwardFeatures;
+    @FindBy(xpath = "//span[contains(text(),\"100\")]")
     public WebElement validateForwardFeaturesResults;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/ul/li[9]/a/div")
     public WebElement clickActivityTab;
@@ -242,11 +242,13 @@ public class AdvancedSearchPage extends CommonFunctions{
     // click add journo to list button
     public void setClickAddJournoToListBtn()throws InterruptedException {
         Thread.sleep(3000);
+        elementClickable(clickAddJournoToListBtn,driver);
         clickAddJournoToListBtn.click();
     }
     // enter list name to create advanced search list
     public void enterListNameToCreateAdvancedSearchList(String advancedSearchList)throws InterruptedException {
         Thread.sleep(3000);
+        elementVisible(enterListNameFromAdvancedSearch,driver);
         enterListNameFromAdvancedSearch.sendKeys(advancedSearchList);
         Thread.sleep(3000);
         enterListNameFromAdvancedSearch.sendKeys(Keys.ENTER);
@@ -256,16 +258,17 @@ public class AdvancedSearchPage extends CommonFunctions{
         Thread.sleep(3000);
         elementClickable(clickOkToCreateAdvancedSearch,driver);
         clickOkToCreateAdvancedSearch.click();
-        Thread.sleep(3000);
     }
     // click outlet tab
     public void setClickOutletTab()throws InterruptedException {
         Thread.sleep(3000);
+        elementClickable(clickOutletTab,driver);
         clickOutletTab.click();
     }
     // enter sector name to filter outlet results
     public void enterSectorName(String sector) throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(enterSector,driver);
         enterSector.sendKeys(sector);
         Thread.sleep(3000);
         enterSector.sendKeys(Keys.ENTER);
@@ -273,6 +276,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     // click frequency filter to search for outlet
     public void setClickFrequency() throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickFrequency,driver);
         clickFrequency.click();
         Thread.sleep(3000);
         chooseFrequency.click();
@@ -280,6 +284,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     // enter post code to search for applied filter
     public void enterPostCode(String postcode) throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(enterPostCode,driver);
         enterPostCode.sendKeys(postcode);
     }
     // validate outlet search for sector, frequency and post code
@@ -290,6 +295,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     // click based in country
     public void setClickBasedInCountry() throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(clickBasedInCountry,driver);
         clickBasedInCountry.click();
         Thread.sleep(3000);
         chooseCountryUnitedKingdom.click();
@@ -297,6 +303,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     // enter locality to filter results for tweet
     public void setEnterLocality(String locality) throws InterruptedException{
         Thread.sleep(3000);
+        elementClickable(clickLocality,driver);
         clickLocality.sendKeys(locality);
         Thread.sleep(3000);
         chooseLocality.click();
@@ -304,6 +311,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     // enter keyword filter to search for tweet
     public void enterKeyword(String keyword) throws InterruptedException{
         Thread.sleep(3000);
+        elementVisible(enterKeyword,driver);
         enterKeyword.sendKeys(keyword);
     }
      // choose outlet hits to filter out to search for tweets
@@ -356,15 +364,11 @@ public class AdvancedSearchPage extends CommonFunctions{
         Thread.sleep(3000);
         clickForwardFeatures.click();
     }
-   // enter outlet name to choose outlet
-    public void setEnterOutletName(String outletName) throws InterruptedException{
-        Thread.sleep(3000);
-        enterOutletToSearchForwardFeatures.sendKeys(outletName);
-        Thread.sleep(3000);
-        enterOutletToSearchForwardFeatures.sendKeys(Keys.ENTER);
-    }
+
     //validate forward features results by search results
     public void validateForwardFeaturesResults() throws InterruptedException{
+        Thread.sleep(6000);
+        clickSelectAllInForwardFeatures.click();
         Thread.sleep(3000);
         validateForwardFeaturesResults.isDisplayed();
     }

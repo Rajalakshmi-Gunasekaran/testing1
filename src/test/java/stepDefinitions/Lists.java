@@ -31,44 +31,44 @@ public class Lists extends BaseStep{
 
     @When("^I enter folder name as \"([^\"]*)\" and click on create button$")
     public void i_enter_folder_name_as_and_click_on_create_button(String folderName)throws InterruptedException {
-        wait(30);
+        wait(60);
         listsPage.EnterFolderName(folderName);
-        wait(30);
+        wait(60);
         listsPage.clickCreate();
-        wait(30);
+        wait(60);
     }
 
     @When("^I click on search icon in the list page$")
     public void i_click_on_search_icon_in_the_list_page() throws InterruptedException {
         pauseFor(5);
         listsPage.searchIcon();
-        wait(30);
+        wait(60);
     }
 
     @When("^I enter folder name as \"([^\"]*)\"$")
     public void i_enter_folder_name_as(String folderNameToDelete) throws InterruptedException {
-        wait(30);
+        wait(60);
         listsPage.searchFolderNameToDelete(folderNameToDelete);
     }
 
     @When("^I click on the folder name from the list$")
     public void i_click_on_the_folder_name_from_the_list() throws InterruptedException{
-        wait(30);
+        wait(60);
         listsPage.tickCheckBoxToSelectListName();
     }
 
     @When("^I click on menu list and click on delete button$")
     public void i_click_on_menu_list_and_click_on_delete_button()throws InterruptedException {
-        wait(30);
+        wait(60);
         listsPage.menuList();
-        wait(30);
+        wait(60);
         listsPage.deleteListButton();
     }
 
     @When("^I confirm deletion$")
     public void i_confirm_deletion()throws InterruptedException
     {
-        wait(30);
+        wait(60);
         listsPage.confirmDeleteFolder();
     }
 
@@ -93,7 +93,7 @@ public class Lists extends BaseStep{
 
     @When("^I click on search tab in the home page$")
     public void i_click_on_search_tab_in_the_home_page() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearch.clickAdvancedSearch();
     }
     @When("^I click on outlet type and enter outlettype as \"([^\"]*)\"$")
@@ -152,14 +152,14 @@ public class Lists extends BaseStep{
     public void i_click_select_all_to_remove_all_journalist_from_the_list()throws InterruptedException{
         pauseFor(5);
         listsPage.chooseJournalist();
-       wait(30);
+       wait(60);
     }
 
     @When("^I click on remove from list button$")
     public void i_click_on_remove_from_list_button()throws InterruptedException {
         pauseFor(5);
         listsPage.removeJournalist();
-        wait(30);
+        wait(60);
     }
 
     @When("^I click tick mark to make sure deletion$")
@@ -239,14 +239,36 @@ public class Lists extends BaseStep{
     }
     @When("^I click on list view button$")
     public void i_click_on_list_view_button() throws InterruptedException {
-        wait(30);
+        wait(60);
         listsPage.setClickListViewBtn();
     }
 
     @Then("^I should see the list in list view$")
     public void i_should_see_the_list_in_list_view() throws InterruptedException {
-       wait(30);
+       wait(60);
        listsPage.setValidateListView();
+    }
+    @When("^I click on activities tab in lists page$")
+    public void i_click_on_activities_tab_in_lists_page() throws InterruptedException {
+        wait(120);
+        listsPage.setClickActivityTabInList();
+    }
+
+    @Then("^I should see the activities for the journos in the list in lists page$")
+    public void i_should_see_the_activities_for_the_journos_in_the_list_in_lists_page() throws InterruptedException {
+         wait(120);
+         listsPage.setValidateActivityResultsForTheList();
+    }
+    @When("^I click on alerts tab for the chosen list in the lists page$")
+    public void i_click_on_alerts_tab_for_the_chosen_list_in_the_lists_page() throws InterruptedException {
+         wait(120);
+         listsPage.setClickAlertsTabInList();
+    }
+
+    @Then("^I should see the alerts for the journos in the list in lists page$")
+    public void i_should_see_the_alerts_for_the_journos_in_the_list_in_lists_page() throws InterruptedException {
+        wait(120);
+        listsPage.setValidateAlertsResultsForTheList();
     }
 }
 

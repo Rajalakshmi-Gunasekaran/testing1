@@ -106,6 +106,10 @@ public class StreamPage extends CommonFunctions{
     public WebElement validateActivityStream;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div/div[2]/ul/li/div/a/strong")
     public WebElement validateActivityPreview;
+    @FindBy(xpath = "//input[@class=\"search-input form-control form-control-sm\"]")
+    public WebElement enterKeywordInQuickFindByKeyword;
+    @FindBy(xpath = "//h5[contains(text(),\"testing\")]")
+    public WebElement validateKeywordSearchInActivityStream;
     @FindBy(xpath = "//span[contains(text(),\"FunctionalTest\")]")
     public WebElement clickFunctionalTest;
     @FindBy(xpath = "//button[contains(text(),\" On homepage \")]")
@@ -134,12 +138,12 @@ public class StreamPage extends CommonFunctions{
     /*click select all */
     public void clkSelectAll()throws InterruptedException
     {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         selectAll.click();
     }
    /*validate all journo streams*/
     public String validateAllJournoStream()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         return selectedNumbers.getText();
     }
     /*Validating stream set up*/
@@ -185,7 +189,7 @@ public class StreamPage extends CommonFunctions{
     }
     /* validate stream set up*/
     public void setValidateStreamSetUp() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickFeed.click();
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -205,18 +209,18 @@ public class StreamPage extends CommonFunctions{
     }
 /*click type of publisher*/
     public void setClickTypeOfPublisher() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementVisible(clickTypeOfPublisher,driver);
         clickTypeOfPublisher.click();
     }
 /*choose journalist from the options*/
     public void setChooseJournalist() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         chooseJournalist.click();
     }
 /*validate edit stream */
     public void validateEditStream()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementVisible(clickFeed,driver);
         clickFeed.click();
         action = new Actions(driver);
@@ -293,20 +297,20 @@ public class StreamPage extends CommonFunctions{
     }
     //click on add journo to lists from streams
     public void clickAddJournoToListBtnFromStream()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
        // elementClickable(clickAddJournoToListBtn,driver);
         clickAddJournoToListBtn.click();
     }
     //enter list name to add journos from streams
     public void setEnterListNameToAddStreams(String streamList)throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterListNameToAddStreams.sendKeys(streamList);
         Thread.sleep(3000);
         enterListNameToAddStreams.sendKeys(Keys.ENTER);
     }
     //click ok to create list to add journos from stream
     public void setClickOkBtnToCreateStreamList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOkBtnToCreateStreamList.click();
     }
     //click on tweet option to set up stream
@@ -321,17 +325,17 @@ public class StreamPage extends CommonFunctions{
     }
 
     public void setClickActivities()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickActivities.click();
     }
 
     public void setClickJournalists() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickJournalists.click();
     }
 
     public void setEnterJournoName(String journoName) throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterJournalistName.sendKeys(journoName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));
@@ -340,14 +344,22 @@ public class StreamPage extends CommonFunctions{
     }
 
     public void validateActivitiesStream() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateActivityPreview.isDisplayed();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickFeed.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateActivityStream.isDisplayed();
     }
+    public void setEnterKeywordInQuickFindByKeyword(String keyword) throws InterruptedException{
+        Thread.sleep(3000);
+        enterKeywordInQuickFindByKeyword.sendKeys(keyword);
+    }
 
+    public void validateKeywordSearchInActivityStream()throws InterruptedException {
+        Thread.sleep(6000);
+        validateKeywordSearchInActivityStream.click();
+    }
     public void clickFunctionalTestStream() throws InterruptedException{
         Thread.sleep(3000);
         clickFunctionalTest.click();

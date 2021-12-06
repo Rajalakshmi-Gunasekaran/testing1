@@ -16,7 +16,7 @@ public class AdvancedSearch extends BaseStep {
         advancedSearchPage = new AdvancedSearchPage(webDriver);
         listsPage = new ListsPage(webDriver);
         webDriver.get(readPropertyFile1("url1"));
-        wait(30);
+        wait(60);
         advancedSearchPage.clickAdvancedSearch();
     }
 
@@ -85,7 +85,7 @@ public class AdvancedSearch extends BaseStep {
 
     @When("^I enter list name from the advanced search journalist tab as \"([^\"]*)\" and click ok$")
     public void i_enter_list_name_from_the_advanced_search_journalist_tab_as_and_click_ok(String advancedSearchList) throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.enterListNameToCreateAdvancedSearchList(advancedSearchList);
         pauseFor(5);
         advancedSearchPage.clickOkToCopyListFromAdvancedSearch();
@@ -99,7 +99,7 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on search icon in the list page to look for advancedSearch list$")
     public void i_click_on_search_icon_in_the_list_page_to_look_for_advancedSearch_list() throws InterruptedException {
-      wait(30);
+      wait(60);
       listsPage.searchIcon();
     }
 
@@ -107,7 +107,7 @@ public class AdvancedSearch extends BaseStep {
     public void i_enter_list_name_in_lists_as_and_click_on_it_to_validate_the_lists(String listName) throws InterruptedException {
         pauseFor(5);
         listsPage.enterListNameToValidate(listName);
-        wait(30);
+        wait(60);
         listsPage.setClickOnAdvancedSearchListToValidate();
     }
 
@@ -119,17 +119,17 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should delete the list$")
     public void i_should_delete_the_list() throws InterruptedException {
-        wait(30);
+        wait(60);
         listsPage.clickListsBtn();
     }
     @When("^I click on outlets tab from the left hand side pan$")
     public void i_click_on_outlets_tab_from_the_left_hand_side_pan() throws InterruptedException {
-        wait(30);
+        wait(60);
        advancedSearchPage.setClickOutletTab();
     }
     @When("^I Click on sector and enter sector name as \"([^\"]*)\"$")
     public void i_Click_on_sector_and_enter_sector_name_as(String sector) throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.enterSectorName(sector);
     }
 
@@ -147,47 +147,47 @@ public class AdvancedSearch extends BaseStep {
 
     @Then("^I should see the outlets listed for the search criteria$")
     public void i_should_see_the_outlets_listed_for_the_search_criteria() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.seValidateOutletSearch();
     }
     @When("^I Click on based in country and choose country as United Kingdom$")
     public void i_Click_on_based_in_country_and_choose_country_as_United_Kingdom() throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.setClickBasedInCountry();
     }
 
     @When("^I click on based in localities and enter locality as \"([^\"]*)\"$")
     public void i_click_on_based_in_localities_and_enter_locality_as(String locality) throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setEnterLocality(locality);
     }
 
     @When("^I enter keyword as \"([^\"]*)\"$")
     public void i_enter_keyword_as(String keyword) throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.enterKeyword(keyword);
     }
 
     @When("^I choose outlet to see the hits$")
     public void i_choose_outlet_to_see_the_hits() throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.setChooseOutletHits();
     }
 
     @Then("^I should see the tweets for the relevant search$")
     public void i_should_see_the_tweets_for_the_relevant_search() throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.validateTweetsForOutlets();
     }
     @When("^I click on articles tab from the left hand side pan$")
     public void i_click_on_articles_tab_from_the_left_hand_side_pan() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setClickArticleTab();
     }
 
     @When("^I enter company as \"([^\"]*)\"$")
     public void i_enter_company_as(String company) throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.enterCompany(company);
     }
 
@@ -198,31 +198,27 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on journalist alerts tab from the left hand side pan$")
     public void i_click_on_journalist_alerts_tab_from_the_left_hand_side_pan() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setJournoAlertsTab();
     }
 
     @When("^I Click on outlet and enter outlet name as \"([^\"]*)\"$")
     public void i_Click_on_outlet_and_enter_outlet_name_as(String outlet) throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.setEnterOutlet(outlet);
     }
 
     @Then("^I should see the journalist alerts for the relevant search$")
     public void i_should_see_the_journalist_alerts_for_the_relevant_search() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.validateJournoAlertsResults();
     }
     @When("^I click on forward features tab from the left hand side pan$")
     public void i_click_on_forward_features_tab_from_the_left_hand_side_pan() throws InterruptedException {
-         wait(30);
+         wait(60);
          advancedSearchPage.setClickForwardFeaturesTab();
     }
-    @When("^I Click on outlet in forward features tab and enter outlet name as \"([^\"]*)\"$")
-    public void i_Click_on_outlet_in_forward_features_tab_and_enter_outlet_name_as(String outletName) throws InterruptedException {
-        wait(30);
-        advancedSearchPage.setEnterOutletName(outletName);
-    }
+
     @Then("^I should see the forward features for the relevant search$")
     public void i_should_see_the_forward_features_for_the_relevant_search() throws InterruptedException {
         pauseFor(5);
@@ -230,7 +226,7 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on Activities tab from the left hand side pan$")
     public void i_click_on_Activities_tab_from_the_left_hand_side_pan() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setActivityTab();
     }
 
@@ -242,7 +238,7 @@ public class AdvancedSearch extends BaseStep {
 
     @When("^I click on media requests tab from the left hand side pan$")
     public void i_click_on_media_requests_tab_from_the_left_hand_side_pan() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setMediaRequestTab();
     }
 
@@ -253,13 +249,13 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on PR opportunities tab from the left hand side pan$")
     public void i_click_on_PR_opportunities_tab_from_the_left_hand_side_pan() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setClickPROpportunitiesTab();
     }
 
     @When("^I enter section as \"([^\"]*)\"$")
     public void i_enter_section_as(String section) throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.enterSection(section);
     }
 
@@ -270,19 +266,19 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on tweets tab from the left hand side pan$")
     public void i_click_on_tweets_tab_from_the_left_hand_side_pan() throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.setClickTweetsTab();
     }
 
     @When("^I enter keywords as \"([^\"]*)\"$")
     public void i_enter_keywords_as(String keyword) throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.enterKeywordForTweetSearch(keyword);
     }
 
     @When("^I Click on exclude retweets checkbox$")
     public void i_Click_on_exclude_retweets_checkbox() throws InterruptedException {
-      wait(30);
+      wait(60);
       advancedSearchPage.clickExcludeRetweet();
     }
 
@@ -293,19 +289,19 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on Instagram tab from the left hand side pan$")
     public void i_click_on_Instagram_tab_from_the_left_hand_side_pan() throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.setClickInstagramTab();
     }
 
     @When("^I click type of publisher and choose journalists only$")
     public void i_click_type_of_publisher_and_choose_journalists_only() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.chooseTypeOfPublisher();
     }
 
     @When("^I click on outlet type and enter \"([^\"]*)\"$")
     public void i_click_on_outlet_type_and_enter(String outletType) throws InterruptedException {
-       wait(30);
+       wait(60);
        advancedSearchPage.enterOutletTypeForInstaSearch(outletType);
     }
 
@@ -316,7 +312,7 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I click on clear all button at the top$")
     public void i_click_on_clear_all_button_at_the_top() throws Throwable {
-       wait(30);
+       wait(60);
        advancedSearchPage.setClickClearAll();
     }
 
@@ -327,18 +323,18 @@ public class AdvancedSearch extends BaseStep {
     }
     @When("^I choose outlet from the result and click on it$")
     public void i_choose_outlet_from_the_result_and_click_on_it() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setChooseAndClickOnOutlet();
     }
 
     @When("^I click on search all outlet's journalist button$")
     public void i_click_on_search_all_outlet_s_journalist_button() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setClickSearchAllOutletJournoBtn();
     }
     @When("^I click yes leave button to handle pop up window$")
     public void i_click_yes_leave_button_to_handle_pop_up_window() throws InterruptedException {
-        wait(30);
+        wait(60);
         advancedSearchPage.setClickYesLeaveBtn();
     }
     @Then("^I automatically navigate to the journalist tab to see the journos for the selected outlet$")

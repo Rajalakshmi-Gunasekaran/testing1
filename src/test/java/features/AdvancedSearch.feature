@@ -86,7 +86,6 @@ Feature:AdvancedSearch
   Scenario:Validate forward features search by filtering outlet
     When I should login into the home page and click on search tab
     And I click on forward features tab from the left hand side pan
-    And I Click on outlet in forward features tab and enter outlet name as "FMCG Magazine"
     Then I should see the forward features for the relevant search
 
   @functional7

@@ -37,6 +37,16 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement clkTwitter;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/nav/div[2]/a")
     public WebElement validateTwitter;
+    @FindBy(xpath = "//div[contains(text(),\"Bio & Alerts\")]")
+    public WebElement clickBioAndAlertsTab;
+    @FindBy(xpath = "//div[@class=\"d-flex h-100 w-100\"]")
+    public WebElement validateBioAndAlerts;
+    @FindBy(xpath = "//div[contains(text(),\"Interview\")]")
+    public WebElement clickInterviewTab;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div")
+    public WebElement validateInterview;
+    @FindBy(xpath = "//strong[contains(text(),\"Simon English\")]")
+    public WebElement validateNotesAndActivity;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div/h3")
     public WebElement validateACLJournalist;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/div")
@@ -131,12 +141,12 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement validateCompanyCoverageArticlesResults;
 
     public void validateAllHeaderTabs() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         Assert.assertTrue(validateLiveContent.isDisplayed());
     }
 
     public void validateCoverageTab() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clkcoverage.click();
         Thread.sleep(3000);
         Assert.assertTrue(validateCoverage.isDisplayed());
@@ -155,7 +165,26 @@ public class JournoProfilePage extends CommonFunctions {
         Thread.sleep(3000);
         Assert.assertTrue(validateTwitter.isDisplayed());
     }
+    public void validateBioAndAlertsTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickBioAndAlertsTab.click();
+        Thread.sleep(3000);
+        Assert.assertTrue(validateBioAndAlerts.isDisplayed());
+    }
 
+    public void validateInterviewTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clickInterviewTab.click();
+        Thread.sleep(3000);
+        Assert.assertTrue(validateInterview.isDisplayed());
+    }
+
+    public void validateNotesAndActivity() throws InterruptedException{
+        Thread.sleep(3000);
+        clickNotesAndActivityTab.click();
+        Thread.sleep(3000);
+        Assert.assertTrue(validateNotesAndActivity.isDisplayed());
+    }
     public void validateACLJournalist() throws InterruptedException
     {
         Thread.sleep(3000);
@@ -163,28 +192,28 @@ public class JournoProfilePage extends CommonFunctions {
     }
     //click on In list button to add journo to lists
     public void setClickInListButton()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickInListBtn.click();
     }
     //enter list name to add journo
     public void setEnterListNameToAdd(String automationListName)throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterListNameToAdd.sendKeys(automationListName);
     }
     //click on AutomationList to choose the list to add journo
     public void setClickOnAutomationList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOnAutomationList.click();
     }
 
     //validate journo added to list
     public void setValidateJournoAddedToList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateJournoAddedToList.isDisplayed();
     }
     //click on remove journo from list
     public void setClickRemoveFromList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickRemoveFromList.click();
     }
     //click on save button to add journo to the list
@@ -194,7 +223,7 @@ public class JournoProfilePage extends CommonFunctions {
     }
     //validate journo removed from list
     public void setValidateJournoRemovalFromList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateJournoRemovalFromList.isDisplayed();
     }
 
@@ -271,13 +300,13 @@ public class JournoProfilePage extends CommonFunctions {
     }
 
     public void setClickNotesAndActivityTab()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementClickable(clickNotesAndActivityTab,driver);
         clickNotesAndActivityTab.click();
     }
 
     public void setClickAddActivityBtn()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickAddActivityBtn.click();
     }
 
@@ -290,7 +319,7 @@ public class JournoProfilePage extends CommonFunctions {
         clickSaveButton.click();
     }
     public void validateActivityCreatedForJourno()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateActivity.isDisplayed();
     }
 
@@ -302,12 +331,12 @@ public class JournoProfilePage extends CommonFunctions {
     }
 
     public void setClickNotesBtn() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickNotesBtn.click();
     }
 
     public void validateNotesCreatedForJourno() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementVisible(validateNotes,driver);
         validateNotes.isDisplayed();
     }

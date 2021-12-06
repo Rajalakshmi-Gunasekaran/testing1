@@ -84,7 +84,8 @@ public class PinpointPage extends CommonFunctions{
     }
 
     /* validate the pinpoint page with*/
-    public void validatePinpointPage() {
+    public void validatePinpointPage()throws InterruptedException {
+        Thread.sleep(6000);
         Assert.assertTrue(validateViewMatches.isDisplayed());
     }
 
@@ -95,23 +96,23 @@ public class PinpointPage extends CommonFunctions{
     }
     //click on add to list button in journo tab to add the journo to the list
     public void setClickAddJournalistToListBtn()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementClickable(clickAddJournalistToListBtn,driver);
         clickAddJournalistToListBtn.click();
     }
     //enter list name to add journo from pinpoint
     public void setEnterListNameInSearchTextField(String listNameToAddJournoFromPinpoint)throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterListNameInSearchTextField.sendKeys(listNameToAddJournoFromPinpoint);
     }
     //click create new list option to create new list in pinpoint
     public void clickCreateListInPinpoint()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterListNameInSearchTextField.sendKeys(Keys.ENTER);
     }
     //click ok to create list in pin point
     public void clickOkToCreateListInPinpoint()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOkToSaveJournoToTheList.click();
     }
     //click on plus sign to add second search text
@@ -143,18 +144,18 @@ public class PinpointPage extends CommonFunctions{
     }
     //validate tweet search with more search items
     public void setValidateTweetAndMoreSearch()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateTweetAndMoreSearch.isDisplayed();
     }
 
     public void clickOutletSearchIcon() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementClickable(clickOutletSearchIcon,driver);
         clickOutletSearchIcon.click();
     }
 
     public void validateNavigateToAdvancedSearchOutletTab() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateNavigateToAdvancedSearchOutletTab.isDisplayed();
     }
 
@@ -165,7 +166,7 @@ public class PinpointPage extends CommonFunctions{
     }
 
     public void setValidateNavigateToAdvancedSearchJournoTab() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateNavigateToAdvancedSearchJournoTab.isDisplayed();
     }
 

@@ -109,3 +109,10 @@ Feature: Streams
     And I click on streams tab header
     And I click on FunctionalTest streams from the list
     Then I uncheck the default homepage checkbox and save changes
+
+  @functional76
+  Scenario: validate keyword search result using quick find by keyword text field
+    When I should be in the home page and click on Streams
+    And I click on FunctionalTest streams from the list
+    And I enter keyword in quick find by keyword text area as "Testing"
+    Then I should see the search result for the chosen keyword
