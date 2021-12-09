@@ -207,7 +207,7 @@ public class Search extends BaseStep {
 
     @When("^I close the quick search bar$")
     public void i_close_the_quick_search_bar() throws InterruptedException {
-        pauseFor(5);
+        pauseFor(2);
         search.setCloseQuickSearchBar();
     }
 

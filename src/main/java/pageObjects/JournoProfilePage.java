@@ -342,9 +342,9 @@ public class JournoProfilePage extends CommonFunctions {
     }
 
     public void setClickDeleteNotes() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickDeleteNotes.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickConfirmDeleteNotes.click();
     }
 

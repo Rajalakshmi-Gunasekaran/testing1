@@ -46,7 +46,7 @@ public class SearchPage extends CommonFunctions{
     public WebElement enterQuickSearchListNameToCreate;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/div/div/div/div/div[3]/div[2]/form/div[3]/button/i")
     public WebElement clickOkToCreateQuickSearchList;
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/nav/div[2]/div/i[2]")
+    @FindBy(xpath = "//i[@class=\"close-cross icon-cross p-3\"]")
     public WebElement clickCloseQuickSearchBar;
 
 
@@ -167,7 +167,7 @@ public class SearchPage extends CommonFunctions{
         clickOkToCreateQuickSearchList.click();
     }
     public void setCloseQuickSearchBar()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickCloseQuickSearchBar.click();
     }
 }
