@@ -67,3 +67,19 @@ Feature: List
     And I enter list name in lists as "AutomationList" and click on it
     And I click on list view button
     Then I should see the list in list view
+
+  @functional74
+  Scenario: validate alerts tab for chosen list in list page
+    When I should login into the home page and click on lists
+    And I click on search icon in the list page
+    And I enter list name in lists as "AutomationList" and click on it
+    And I click on alerts tab for the chosen list in the lists page
+    Then I should see the alerts for the journos in the list in lists page
+
+  @functional75
+  Scenario: validate activities tab for chosen list in list page
+    When I should login into the home page and click on lists
+    And I click on search icon in the list page
+    And I enter list name in lists as "AutomationList" and click on it
+    And I click on activities tab in lists page
+    Then I should see the activities for the journos in the list in lists page

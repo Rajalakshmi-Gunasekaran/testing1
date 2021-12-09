@@ -18,19 +18,19 @@ public class Pinpoint extends BaseStep {
         pinpointPage = new PinpointPage(webDriver);
         listsPage = new ListsPage(webDriver);
         webDriver.get(readPropertyFile1("url1"));
-        wait(10);
+        wait(120);
         pinpointPage.clickPinpointTab();
     }
 
     @When("^I enter search text as \"(.*?)\"$")
     public void i_enter_search_text_as(String pinpointSearchTxt) {
-        wait(10);
+        wait(120);
         pinpointPage.EnterTextPinpoint(pinpointSearchTxt);
     }
 
     @Then("^I should able to see the results in graph view$")
-    public void i_should_able_to_see_the_results_in_graph_view() {
-        wait(10);
+    public void i_should_able_to_see_the_results_in_graph_view() throws InterruptedException{
+        wait(120);
         pinpointPage.validatePinpointPage();
     }
 
@@ -84,23 +84,23 @@ public class Pinpoint extends BaseStep {
 
     @When("^I click on more search text and enter second search item as \"([^\"]*)\"$")
     public void i_click_on_more_search_text_and_enter_second_search_item_as(String searchText2) throws InterruptedException {
-        wait(30);
+        wait(120);
         pinpointPage.setClickPlusSignToAddSecondSearchText();
-        wait(30);
+        wait(120);
         pinpointPage.setEnterSecondSearchTextField(searchText2);
     }
 
     @When("^I click on more search text and enter third search item as \"([^\"]*)\"$")
     public void i_click_on_more_search_text_and_enter_third_search_item_as(String searchText) throws InterruptedException {
-        wait(30);
+        wait(120);
         pinpointPage.setClickPlusSignToAddThirdSearchText();
-        wait(30);
+        wait(120);
         pinpointPage.setEnterThirdSearchTextField(searchText);
     }
 
     @When("^I click on tweet radio button option$")
     public void i_click_on_tweet_radio_button_option() throws InterruptedException {
-        wait(30);
+        wait(120);
         pinpointPage.clickOnTweetOption();
     }
     @Then("^I should able to see the results for tweet search and more results$")

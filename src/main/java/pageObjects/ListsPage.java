@@ -117,6 +117,14 @@ public class ListsPage extends CommonFunctions{
     public WebElement clickListViewButton;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div/div/div/div[1]/div/div/div")
     public WebElement validateListViewResults;
+    @FindBy(xpath = "//a[contains(text(),\"Activities\")]")
+    public WebElement clickActivityTabInList;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[1]")
+    public WebElement validateActivityResultsForTheList;
+    @FindBy(xpath = "//a[contains(text(),\" Alerts \")]")
+    public WebElement clickAlertsTabInList;
+    @FindBy(xpath = "//div[@class=\"wrapper h-100 d-flex flex-column\"]")
+    public WebElement validateAlertsResultsForTheList;
 
     //click on List button on home page
     public void clickListsBtn() throws InterruptedException{
@@ -171,14 +179,15 @@ public class ListsPage extends CommonFunctions{
 
     //click create list to create new list
     public void clickCreateList()throws InterruptedException
-    {        Thread.sleep(3000);
+    {   Thread.sleep(3000);
         elementVisible(clickCreateBtn,driver);
         clickCreateBtn.click();
     }
 
     //click magnifying glass to search list
     public void searchIcon()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
+        elementVisible(searchIconBtn,driver);
         searchIconBtn.click();
     }
     //enter search list name in search list text area
@@ -301,17 +310,17 @@ public class ListsPage extends CommonFunctions{
     }
     //choose journalist from the list
     public void chooseJournalist() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementClickable(clickSelectAll,driver);
         clickSelectAll.click();
     }
 
     // remove journalist from the list
     public void removeJournalist()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         elementClickable(removeFromList,driver);
         removeFromList.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         confirmRemoveJournoFromList.click();
     }
 
@@ -333,12 +342,12 @@ public class ListsPage extends CommonFunctions{
     }
     //click on copy all to lists button in lists page
     public void setClickCopyAllToListsBtn()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickCopyAllToListsBtn.click();
     }
     //enter list name to copy lists
     public void setEnterListNameToCopy(String listNameToCopy)throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         enterListNameToCopy.sendKeys(listNameToCopy);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(2));
@@ -359,7 +368,7 @@ public class ListsPage extends CommonFunctions{
     }
     //validate list copied to another list
     public void setValidateListCopied()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         validateListCopied.isDisplayed();
     }
     //validate list deleted
@@ -369,52 +378,52 @@ public class ListsPage extends CommonFunctions{
     }
 //enter list name to select list
     public void enterListNameToChoose(String selectListName) throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         searchListName.sendKeys(selectListName);
 
     }
     //click ok to choose list
     public void setClickOkToChooseList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOkToChooseList.click();
     }
     //click clear search field in order to search list name
     public void setClickClearField()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickClearField.click();
     }
 
     public void validateJournoAddedToPinpointList() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickOnPinpointListToValidate.click();
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         clickSelectAll.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validatePinpointList.isDisplayed();
     }
 
     //validate journo added to streams list
     public void setValidateJournoAddedToStreamList()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickStreamListToValidate.click();
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         elementClickable(clickSelectAll,driver);
         clickSelectAll.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         validateJournoAddedToStreamList.isDisplayed();
     }
     //validate journo added to quick search list
     public void validateJournoAddedToQuickSearchList() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         clickQuickSearchListToValidate.click();
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         validateJournoAddedToListFromQuickSearch.isDisplayed();
     }
     //validate journo added to list from advanced search
     public void validateJournoAddedToListFromAdvancedSearch() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         clickSelectAll.click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         ValidateJournoAddedToListFromAdvancedSearch.isDisplayed();
     }
     //click list view button in lists page
@@ -429,7 +438,27 @@ public class ListsPage extends CommonFunctions{
     }
     // click on advanced search list to validate list of journos filtered from advanced search
     public void setClickOnAdvancedSearchListToValidate() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         setClickOnAdvancedSearchListToValidate.click();
+    }
+    //click activity ta in lists page
+    public void setClickActivityTabInList() throws InterruptedException{
+        Thread.sleep(6000);
+        clickActivityTabInList.click();
+    }
+    //validate activity for the chosen list in lists page
+    public void setValidateActivityResultsForTheList()throws InterruptedException {
+         Thread.sleep(6000);
+         validateActivityResultsForTheList.isDisplayed();
+    }
+    //click alert tab in list page for the chosen list
+    public void setClickAlertsTabInList() throws InterruptedException{
+          Thread.sleep(6000);
+          clickAlertsTabInList.click();
+    }
+    //validate alerts for the journo in the chosen list
+    public void setValidateAlertsResultsForTheList() throws InterruptedException{
+          Thread.sleep(6000);
+          validateAlertsResultsForTheList.isDisplayed();
     }
 }
