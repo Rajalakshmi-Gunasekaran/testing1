@@ -378,13 +378,12 @@ public class DistributionPage extends CommonFunctions{
     //enter from email to send campaign
     public void setEnterFromEmail() throws InterruptedException
     {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         elementVisible(enterFromEmail,driver);
         enterFromEmail.click();
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         elementVisible(getEnterFromEmail,driver);
         getEnterFromEmail.click();
-        //Thread.sleep(3000);
     }
     //select press release name to send
     public void selectPressReleaseNameToSend()throws InterruptedException

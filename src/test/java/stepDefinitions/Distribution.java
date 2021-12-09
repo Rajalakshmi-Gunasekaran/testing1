@@ -99,7 +99,7 @@ public class Distribution extends BaseStep {
     }
     @When("^I enter From email as$")
     public void i_enter_From_email_as() throws InterruptedException{
-        pauseFor(10);
+        pauseFor(5);
         distributionPage.setEnterFromEmail();
     }
     @When("^I select press release name to send campaign$")

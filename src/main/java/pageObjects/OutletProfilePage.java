@@ -33,7 +33,7 @@ public class OutletProfilePage extends CommonFunctions{
     public WebElement validateTwitterTab;
     @FindBy(xpath = "//a[contains(text(),\"Journalists\")]")
     public WebElement clickJournalistTab;
-    @FindBy(xpath = "//span[contains(text(),\"333\")]")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[2]/div")
     public WebElement validateJournalistTab;
     @FindBy(xpath = "//a[contains(text(),\" Headlines \")]")
     public WebElement clickHeadlinesTab;
