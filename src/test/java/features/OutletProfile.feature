@@ -17,7 +17,7 @@ Feature: OutletProfile
     And I choose Outlet from the list and Click on it
     Then I should see all the available desks for that particular outlet
 
-  @smoke1
+  @smoke
   Scenario:2Validate all the tabs are displayed in Outlets profile page
     When I should login into the home page and click on Quick search tab
     And I enter Outlet name as "evening standard"

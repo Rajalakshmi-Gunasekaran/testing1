@@ -110,7 +110,7 @@ public class StreamPage extends CommonFunctions{
     public WebElement enterKeywordInQuickFindByKeyword;
     @FindBy(xpath = "//h5[contains(text(),\"testing\")]")
     public WebElement validateKeywordSearchInActivityStream;
-    @FindBy(xpath = "//span[contains(text(),\"FunctionalTest\")]")
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[3]/a/div/strong")
     public WebElement clickFunctionalTest;
     @FindBy(xpath = "//button[contains(text(),\" On homepage \")]")
     public WebElement clickOnHomePageChkBox;

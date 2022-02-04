@@ -17,7 +17,7 @@ public class Pinpoint extends BaseStep {
         homePage = new HomePage(webDriver);
         pinpointPage = new PinpointPage(webDriver);
         listsPage = new ListsPage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(120);
         pinpointPage.clickPinpointTab();
     }

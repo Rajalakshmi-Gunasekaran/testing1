@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -32,7 +33,9 @@ public abstract class BaseStep {
         action.pause(Duration.ofSeconds(seconds));
         action.build().perform();
     }
-
+    public void maintenanceBanner(WebDriver driver){
+        webDriver.manage().addCookie(new Cookie("MAINTENANCE", "bypass"));
+    }
     public void refreshPage() {
         webDriver.navigate().refresh();
         wait(10);

@@ -14,7 +14,6 @@ Feature: Streams
     When I should be in the home page and click on Streams
     And I click on AllJournoMoves streams from the list
     Then I should able to see AllJournoMoves streams page
-
   @smoke
   Scenario:Validate stream set up, Edit streams and delete streams
     When I should be in the home page and click on Streams

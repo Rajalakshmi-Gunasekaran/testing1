@@ -169,7 +169,7 @@ public class JournoProfile extends BaseStep {
 
     @Then("^I delete the notes created for the journo$")
     public void i_delete_the_notes_created_for_the_journo() throws InterruptedException {
-        wait(60);
+        wait(120);
         journoProfilePage.setClickDeleteNotes();
     }
     @When("^I click on from date in calender$")

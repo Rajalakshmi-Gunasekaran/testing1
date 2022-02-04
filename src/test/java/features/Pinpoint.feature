@@ -62,7 +62,7 @@ Feature: Pinpoint
 
   @functional64
    Scenario: Validate graph results in pinpoint by choosing segment toggle button
-    When I should login into the home page and click on pinpoint.
+    When I should login into the home page and click on pinpoint
     And I enter search text as "Brexit"
     And I click segment toggle bar on outlet type
     And I disable the national outlet type

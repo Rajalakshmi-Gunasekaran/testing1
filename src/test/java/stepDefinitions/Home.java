@@ -13,7 +13,7 @@ public class Home extends BaseStep {
     @When("^I should login into the home page and click on PinpointTab$")
     public void i_should_login_into_the_home_page_and_click_on_PinpointTab() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(30);
         homePage.setPinpointTab();
     }
@@ -35,7 +35,7 @@ public class Home extends BaseStep {
     @When("^I should login into the home page and click on Webinars tab in sub menu$")
     public void i_should_login_into_the_home_page_and_click_on_Webinars_tab_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
         homePage.clickWebinar();
     }
@@ -55,7 +55,7 @@ public class Home extends BaseStep {
     @When("^I should login into the home page and see HeadlineAlerts in sub menu$")
     public void i_should_login_into_the_home_page_and_see_HeadlineAlerts_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
     }
 
@@ -73,7 +73,7 @@ public class Home extends BaseStep {
     @When("^I am on login page and I click help and feedback functionality$")
     public void i_am_on_login_page_and_I_click_help_and_feedback_functionality() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
         homePage.clickHelpAndFeedback();
     }
@@ -98,7 +98,7 @@ public class Home extends BaseStep {
     @When("^I should login into the home page and click on AllAlerts in sub menu$")
     public void i_should_login_into_the_home_page_and_click_on_AllAlerts_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
         homePage.setClickAllAlertsTab();
     }
@@ -118,7 +118,7 @@ public class Home extends BaseStep {
     @When("^I should login into the home page and click on New Editions in sub menu$")
     public void i_should_login_into_the_home_page_and_click_on_New_Editions_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
         homePage.setClickNewEditionsTab();
     }
@@ -178,7 +178,7 @@ public class Home extends BaseStep {
     @When("^I should login into the home page and click on webinars in sub menu$")
     public void i_should_login_into_the_home_page_and_click_on_webinars_in_sub_menu() throws Exception {
         homePage = new HomePage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
           homePage.setClickWebinarTab();
     }

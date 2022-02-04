@@ -77,7 +77,7 @@ public class DistributionPage extends CommonFunctions{
     public WebElement clickSave;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/nav/div[4]/button[2]")
     public WebElement sendButton;
-    @FindBy(xpath = "//span[contains(text(),\"This will be sent in 199 years.\")]")
+    @FindBy(xpath = "//span[contains(text(),\"This will be sent in 200 years.\")]")
     public WebElement validateCampaignSending;
     @FindBy(xpath = "//i[@class=\"icon-magnifying-glass clickable\"]")
     public WebElement clickSearchIcon;
@@ -201,7 +201,7 @@ public class DistributionPage extends CommonFunctions{
     public WebElement clickSaveBtnInCampaign;
     @FindBy(xpath = "//span[contains(text(),\" Delete \")]")
     public WebElement clickDelete;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[1]/div/nav/div[4]/span[1]/div/div[2]/div[1]")
+    @FindBy(xpath = "//div[@class=\"confirm-button-confirm px-2 d-flex align-items-center\"]")
     public WebElement clickConfirmDelete;
     @FindBy(xpath = "//div[@class=\"ml-auto mr-3 d-flex align-items-center action-buttons\"]/span[contains(text(),\" Delete \")]")
     public WebElement clickDeleteInPressReleasePage;

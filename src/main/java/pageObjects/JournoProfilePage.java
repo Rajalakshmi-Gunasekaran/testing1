@@ -111,9 +111,9 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement clickDeleteActivity;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div/div[2]/div/span/div/div[2]/div[1]/i")
     public WebElement clickConfirmDelete;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div[3]/div/span")
+    @FindBy(xpath = "//span[contains(text(),\" Delete \")]")
     public WebElement clickDeleteNotes;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div/ul/li[1]/div/div[1]/div[3]/div/span/div/div[2]/div[1]/i")
+    @FindBy(xpath = "//div[@class=\"confirm-button-confirm px-2 d-flex align-items-center\"]")
     public WebElement clickConfirmDeleteNotes;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/input")
     public WebElement clickCalender;

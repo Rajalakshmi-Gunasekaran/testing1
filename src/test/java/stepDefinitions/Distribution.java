@@ -10,7 +10,7 @@ public class Distribution extends BaseStep {
 
     @When("^I should be in the home page and click on Distribution tab$")
     public void i_should_be_in_the_home_page_and_click_on_Distribution_tab() throws Exception {
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(120);
         distributionPage.setClickDistributionTab();
     }

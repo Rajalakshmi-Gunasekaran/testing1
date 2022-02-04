@@ -18,7 +18,7 @@ public class Lists extends BaseStep{
     public void i_should_login_into_the_home_page_and_click_on_lists() throws Exception {
         listsPage = new ListsPage(webDriver);
         advancedSearch=new AdvancedSearchPage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(20);
         listsPage.clickListsBtn();
     }

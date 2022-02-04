@@ -15,7 +15,7 @@ public class AdvancedSearch extends BaseStep {
     public void i_should_login_into_the_home_page_and_click_on_search_tab() throws Exception {
         advancedSearchPage = new AdvancedSearchPage(webDriver);
         listsPage = new ListsPage(webDriver);
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(60);
         advancedSearchPage.clickAdvancedSearch();
     }

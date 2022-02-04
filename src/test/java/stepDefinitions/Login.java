@@ -15,7 +15,7 @@ public class Login extends BaseStep {
 
     @Given("^I navigate to application login url$")
     public void i_navigate_to_application_login_url() throws Exception {
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(10);
     }
 
@@ -36,6 +36,7 @@ public class Login extends BaseStep {
 
     @Then("^I should be able to login successfully$")
     public void i_should_be_able_to_login_successfully() {
+        maintenanceBanner(webDriver);
         String loginSuccessMsg = homePage.getLoginToastMsg();
         Assert.assertEquals(Constants.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
     }
@@ -59,7 +60,7 @@ public class Login extends BaseStep {
 
     @When("^I am on login page$")
     public void i_am_on_login_page() throws Exception {
-        webDriver.get(readPropertyFile1("url1"));
+        webDriver.get(readPropertyFile1("url2"));
         wait(10);
     }
 
