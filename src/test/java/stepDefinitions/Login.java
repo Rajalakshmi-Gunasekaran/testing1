@@ -36,7 +36,8 @@ public class Login extends BaseStep {
 
     @Then("^I should be able to login successfully$")
     public void i_should_be_able_to_login_successfully() {
-        maintenanceBanner(webDriver);
+        /*this is to handle maintenance banner */
+        //maintenanceBanner(webDriver);
         String loginSuccessMsg = homePage.getLoginToastMsg();
         Assert.assertEquals(Constants.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
     }

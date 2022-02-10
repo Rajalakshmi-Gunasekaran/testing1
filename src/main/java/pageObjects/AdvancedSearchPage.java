@@ -155,12 +155,12 @@ public class AdvancedSearchPage extends CommonFunctions{
 
     // click advanced search tab on headers
     public void clickAdvancedSearch()throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         AdvancedSearchTab.click();
     }
      // enter outlet type nam eto filter out journos
     public void enterOutletType(String outletTypeName) throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         outletType.sendKeys(outletTypeName);
         action = new Actions(driver);
         action.pause(Duration.ofSeconds(5));

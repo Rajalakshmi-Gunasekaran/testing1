@@ -58,7 +58,7 @@ public class StreamPage extends CommonFunctions{
     public WebElement clickTypeOfPublisher;
     @FindBy(id = "streamPublisherCriteriaJournalists")
     public WebElement chooseJournalist;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div/i")
+    @FindBy(xpath = "//div[contains(text(),\" Journalists \")]")
     public WebElement validateEditFunctionality;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li[2]/span[2]/span/span/span/span/span/a/div")
     public WebElement chooseTestStream;
