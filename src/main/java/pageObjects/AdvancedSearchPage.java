@@ -28,7 +28,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement outletType;
     @FindBy(xpath = "//span[contains(text(),\"BBC Two\")]")
     public WebElement clickChosenOutlet;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[3]/div[2]/div/div/input")
+    @FindBy(xpath = "//input[@placeholder=\"Choose outlets\"]")
     public WebElement enterOutletName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[1]/div/div[1]")
     public WebElement validateOutletSearch;

@@ -61,7 +61,7 @@ public class DistributionPage extends CommonFunctions{
     public WebElement clickCreateButton;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div/button[1]/i")
     public WebElement clickCopyFromListBtn;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
+    @FindBy(xpath = "//input[@placeholder=\"Enter list name to find or create a new list\"]")
     public WebElement enterListNameToCopy;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[3]/div[2]/form/div[3]/button/i")
     public WebElement clickOkButton;

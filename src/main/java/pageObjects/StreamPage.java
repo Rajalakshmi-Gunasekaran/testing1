@@ -42,9 +42,11 @@ public class StreamPage extends CommonFunctions{
     public WebElement clickCreateButtonStream;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[1]/div[1]/div[2]")
     public WebElement clickOnArticles;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[3]/div/div[5]/div")
+    @FindBy(xpath = "//span[contains(text(),\"Outlet types\")]")
     public WebElement clickOutletType;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[1]/div/div[2]/div/div/div/div[2]/div/div[1]/div[1]/div[3]/div/div/div/div/div/input")
+    @FindBy(xpath = "//input[@placeholder=\"Choose outlet types\"]")
+    public WebElement enterOutletType;
+    @FindBy(xpath = "//span[contains(text(),\"Outlet\")]")
     public WebElement clickOutlet;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[4]/button[4]/i")
     public WebElement clickSaveButton;
@@ -178,8 +180,8 @@ public class StreamPage extends CommonFunctions{
     /* choose outlet type*/
     public void chooseOutletType(String outlet) throws InterruptedException{
         Thread.sleep(3000);
-        elementVisible(clickOutlet,driver);
-        clickOutlet.sendKeys(outlet, Keys.ENTER);
+        elementVisible(enterOutletType,driver);
+        enterOutletType.sendKeys(outlet, Keys.ENTER);
     }
     /* click save button*/
     public void setClickSaveButton() throws InterruptedException{
