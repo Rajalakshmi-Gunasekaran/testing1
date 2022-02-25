@@ -4,9 +4,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import pageObjects.Contents;
+import pageObjects.Constants;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -16,19 +14,19 @@ public class Login extends BaseStep {
     public HomePage homePage = new HomePage(webDriver);
 
     @Given("^I navigate to application login url$")
-    public void i_navigate_to_application_login_url() {
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+    public void i_navigate_to_application_login_url() throws Exception {
+        webDriver.get(readPropertyFile1("url2"));
         wait(10);
     }
 
-    @When("^I enter Username as \"(.*?)\"$")
-    public void i_enter_Username_as(String UserName) {
-        loginPage.setUserName(UserName);
+    @When("^I enter Username$")
+    public void i_enter_Username() throws Exception {
+        loginPage.setUserName();
     }
 
-    @When("^I enter password as \"(.*?)\"$")
-    public void i_enter_password_as(String Password) {
-        loginPage.setPassword(Password);
+    @When("^I enter password$")
+    public void i_enter_password() throws Exception {
+        loginPage.setPassword();
     }
 
     @When("^I click on login button$")
@@ -38,8 +36,10 @@ public class Login extends BaseStep {
 
     @Then("^I should be able to login successfully$")
     public void i_should_be_able_to_login_successfully() {
+        /*this is to handle maintenance banner */
+        //maintenanceBanner(webDriver);
         String loginSuccessMsg = homePage.getLoginToastMsg();
-        Assert.assertEquals(Contents.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
+        Assert.assertEquals(Constants.LGN_SUCCESSFUL_MSG, loginSuccessMsg);
     }
 
     @When("^I click on userprofile$")
@@ -49,7 +49,7 @@ public class Login extends BaseStep {
     }
 
     @When("^I choose logout and click on it$")
-    public void i_choose_logout_and_click_on_it() {
+    public void i_choose_logout_and_click_on_it()throws InterruptedException {
         homePage.logOut();
         wait(10);
     }
@@ -60,8 +60,8 @@ public class Login extends BaseStep {
     }
 
     @When("^I am on login page$")
-    public void i_am_on_login_page() {
-        webDriver.get("https://app-alt.roxhillmedia.com/");
+    public void i_am_on_login_page() throws Exception {
+        webDriver.get(readPropertyFile1("url2"));
         wait(10);
     }
 
@@ -87,5 +87,27 @@ public class Login extends BaseStep {
     public void i_validate_with_the_forgotten_password_link_sent_message() {
         pauseFor(5);
         loginPage.setValidateForgotPassword();
+    }
+    @When("^I choose user settings and click on it$")
+    public void i_choose_user_settings_and_click_on_it()  {
+        wait(30);
+        loginPage.ClickUserSettings();
+    }
+
+    @When("^I navigate to the user settings page and choose preferred country as United Kingdom$")
+    public void i_navigate_to_the_user_settings_page_and_choose_preferred_country_as_United_Kingdom() {
+        wait(30);
+        loginPage.chooseCountry();
+    }
+
+    @When("^I click save changes button$")
+    public void i_click_save_changes_button()  {
+        wait(30);
+        loginPage.saveChanges();
+    }
+    @Then("^I should navigate to the home page$")
+    public void i_should_navigate_to_the_home_page() {
+        wait(30);
+        homePage.setValidateGoBackBtn();
     }
 }

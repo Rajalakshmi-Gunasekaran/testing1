@@ -1,10 +1,14 @@
 package stepDefinitions;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import pageObjects.FilePath;
 
+import java.io.FileInputStream;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public abstract class BaseStep {
@@ -29,11 +33,19 @@ public abstract class BaseStep {
         action.pause(Duration.ofSeconds(seconds));
         action.build().perform();
     }
-
+    public void maintenanceBanner(WebDriver driver){
+        webDriver.manage().addCookie(new Cookie("MAINTENANCE", "bypass"));
+    }
     public void refreshPage() {
         webDriver.navigate().refresh();
         wait(10);
 
+    }
+    public String readPropertyFile1(String key) throws Exception {
+        FileInputStream inputStream=new FileInputStream(FilePath1.configFilePath);
+        Properties properties=new Properties();
+        properties.load(inputStream);
+        return properties.getProperty(key);
     }
 
     public void javaScripter() {
