@@ -24,7 +24,7 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement AdvancedSearchTab;
     /*@FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div/div/i")
     public WebElement clickOutletDropdown;*/
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div/div/input")
+    @FindBy(xpath = "//input[@placeholder=\"Choose outlet types\"]")
     public WebElement outletType;
     @FindBy(xpath = "//span[contains(text(),\"BBC Two\")]")
     public WebElement clickChosenOutlet;
@@ -52,11 +52,11 @@ public class AdvancedSearchPage extends CommonFunctions{
     public WebElement clickActionsToClickCopyToList;
     @FindBy(xpath = "//span[contains(text(),\"Add 10 journalists to lists\")]")
     public WebElement clickCopyToList;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
+    @FindBy(xpath = "//input[@placeholder=\"Enter list name to find or create a new list\"]")
     public WebElement enterListName;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[3]/button")
     public WebElement clickOk;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]/div/div/div/div[3]/div[2]/form/div[2]/div/div/div/input")
+    @FindBy(xpath = "//input[@placeholder=\"Enter list name to find or create a new list\"]")
     public WebElement enterListNameFromAdvancedSearch;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div/nav[1]/div[4]/div[2]")
     public WebElement clickAddJournoToListBtn;
