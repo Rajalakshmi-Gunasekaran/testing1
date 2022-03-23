@@ -6,16 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = ".", dryRun = false,tags = "@smoke",
+        features = "src/test/java/features/App.feature", dryRun = false,tags = "@smoke4",
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr3.html"})
- public class TestRunner {
-      @AfterClass
+public class AdminTestRunner {
+    @AfterClass
     public static void generateReport()
     {
         String extentConfigXml = System.getenv("EXTENT_CONFIG_XML");
         Reporter.loadXMLConfig(extentConfigXml);
     }
 }
-
-
-
