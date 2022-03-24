@@ -49,9 +49,9 @@ Feature: Search
      And I should see the Journalist added to the list
      Then I delete the list and confirm deletion
 
-   @1
+   @Desk
    Scenario:3Validate chosen desk selected and all journo displayed for that particular desk
      When I should login into the home page and click on Quick search tab
-     And I enter Desk name as "Finance"
-     And I choose finance Desk for choice from the list and Click on it
+     And I enter Desk name as "BBC children"
+     And I choose Desk from the list and Click on it
      Then I should navigate to the Desk profile page and see the chosen desk is selected

@@ -329,7 +329,7 @@ public class Search extends BaseStep {
     @When("^I click on deselect in group button$")
     public void i_click_on_deselect_in_group_button() throws InterruptedException {
         wait(120);
-        outletProfilePage.setClickDesselectJourno();
+        outletProfilePage.setClickDeselectJourno();
     }
 
     @Then("^I should see journos are deselected in group$")
@@ -504,4 +504,10 @@ public class Search extends BaseStep {
         wait(120);
         outletProfilePage.validateSectionFilterSearchResult();
     }
+    @Then("^I should navigate to the Desk profile page and see the chosen desk is selected$")
+    public void i_should_navigate_to_the_Desk_profile_page_and_see_the_chosen_desk_is_selected() throws Throwable {
+        wait(30);
+        outletProfilePage.validateDeskProfileChosenDeskCheckBoxTicked();
+    }
+
 }

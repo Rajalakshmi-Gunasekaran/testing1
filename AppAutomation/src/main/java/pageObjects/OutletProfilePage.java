@@ -155,13 +155,15 @@ public class OutletProfilePage extends CommonFunctions{
     public WebElement clickPageNumber;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div[1]/div/div[1]")
     public WebElement validatePageNumberListingJourno;
+    @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div[2]/ul/li[4]/div/span/span/span/i")
+    public WebElement validateDeskProfileCheckBoxTicked;
 
 
     /*validate Desk display*/
     public void validateDeskDisplay() {
         Assert.assertTrue(validateDesk.isDisplayed());
     }
-/*validate journo display*/
+    /*validate journo display*/
     public void validateJournoDisplay() {
         Assert.assertTrue(validateContact.isDisplayed());
         Assert.assertTrue(validateRoxhillSays.isDisplayed());
@@ -261,12 +263,12 @@ public class OutletProfilePage extends CommonFunctions{
         Thread.sleep(3000);
         confirmDeleteActivity.click();
     }
-
+    //choose desk by clicking list of desks check box in left hand side pan in outlet profile
     public void chooseDeskForJournos()throws InterruptedException {
         Thread.sleep(3000);
         chooseDesk.click();
     }
-    // validate journo chosen for desk
+    // User should see the journo for the selected desk
     public void validateJournoForChosenDesk() throws InterruptedException{
         Thread.sleep(3000);
         validateJournoForChosenDesk.isDisplayed();
@@ -301,187 +303,194 @@ public class OutletProfilePage extends CommonFunctions{
         Thread.sleep(3000);
         validateUnHideJourno.isDisplayed();
     }
-
+    //click select all in group button on the right hand side button
     public void setClickSelectInGroup()throws InterruptedException {
         Thread.sleep(3000);
         clickSelectAllInGroupBtn.click();
     }
-
+    //validate the journo selected in group
     public void validateJournoSelectInGroup()throws InterruptedException {
         Thread.sleep(3000);
         validateJournoSelectedInGroup.isDisplayed();
     }
-
-    public void setClickDesselectJourno()throws InterruptedException {
+    //click de select all in group button to ungroup
+    public void setClickDeselectJourno()throws InterruptedException {
         Thread.sleep(3000);
         clickDeSelectAllInGroupBtn.click();
     }
-
+    //validate journo ungrouped after clicking de select all in group button
     public void validateJournoDeselect() throws InterruptedException{
         Thread.sleep(3000);
         validateJournoDeSelectedInGroup.isDisplayed();
     }
-
+    //click add to favourites button in the right hand side
     public void setClickAddToFavouritesBtn() throws InterruptedException{
         Thread.sleep(6000);
         clickAddToFavouriteBtn.click();
     }
-
+    //click home button to go back to home
     public void setClickHomeBtn() throws InterruptedException{
         Thread.sleep(3000);
         clickHomeBtn.click();
     }
-
+    //click favourites outlet tab in home page to see the recently added outlet
     public void setClickFavouritesOutletTab()throws InterruptedException {
         Thread.sleep(6000);
         clickOutletFavouritesTab.click();
     }
-
+    //validate the recently added outlet to favourites
     public void validateOutletAddedToFavourites() throws InterruptedException{
         Thread.sleep(6000);
         validateOutletFavourites.isDisplayed();
     }
-
+    //click sector button in journo tile inside info
     public void setClickOnSectorInJournoTile() throws InterruptedException{
         Thread.sleep(3000);
         clickSectorLink.click();
     }
-
+    //validate the sectors listed for that journo
     public void validateSectorResultsInJournoTile()throws InterruptedException {
         Thread.sleep(3000);
         validateSectorLinkResult.isDisplayed();
     }
-
+    //click coverage button inside journo tile
     public void setClickCoverage() throws InterruptedException{
         Thread.sleep(3000);
         clickCoverageLink.click();
     }
-
+    //validate the coverage tab opens in the right hand for this journo
     public void setValidateCoverageLinkResult() throws InterruptedException{
     Thread.sleep(3000);
     validateCoverageLinkResult.isDisplayed();
     }
-
+    //click tweet button inside journo tile
     public void setClickTweetInJournotile() throws InterruptedException{
         Thread.sleep(3000);
         clickTweetLink.click();
     }
-
+    //validate the listed no of tweets, follower, following info for that journo
     public void setValidateTweetLinkResult() throws InterruptedException{
     Thread.sleep(3000);
     validateTweetLinkResult.isDisplayed();
     }
-
+    //click instagram button inside journo tile
     public void setClickInstagramInJournoTile() throws InterruptedException{
         Thread.sleep(3000);
         clickInstagramLink.click();
     }
-
+    //validate the instagram posts, follower and following info for that journo
     public void setValidateInstagramResults() throws InterruptedException{
         Thread.sleep(3000);
         validateInstagramResult.isDisplayed();
     }
-
+    //click alerts tab to see the alerts for the outlet
     public void setClickAlertsTab() throws InterruptedException{
         Thread.sleep(3000);
         clickAlertsTabs.click();
     }
-
+    //enter quick find by keyword to search for the particular alert
     public void setEnterQuickFindByKeyword(String keyword) throws InterruptedException{
         Thread.sleep(3000);
         enterQuickFindByKeyword.sendKeys(keyword);
     }
-
+    //validate the result for the keyword search as per the result
     public void validateKeywordSearchResult() throws InterruptedException{
     Thread.sleep(3000);
     validateQuickFindByKeywordResult.isDisplayed();
     }
-
+    //enter journo name to search journo
     public void setEnterSearchByNameJournoSearch(String searchName) throws InterruptedException{
         Thread.sleep(3000);
         enterSearchByNameTextField.sendKeys(searchName);
     }
-
+    //validate the result for the searched name
     public void validateSearchByNameJournoResult()throws InterruptedException {
         Thread.sleep(3000);
         validateSearchByNameResults.isDisplayed();
     }
-
+     //click group by button to group the journo display
     public void setClickGroupByButton()throws InterruptedException {
         Thread.sleep(3000);
         clickGroupBy.click();
     }
-
+    //click un group option to ungroup the journo display
     public void setClickUnGroupOption() throws InterruptedException{
         Thread.sleep(3000);
         clickUnGroupOption.click();
     }
-
+    //validate the journos are un grouped
     public void validateUnGroupresults() throws InterruptedException{
         Thread.sleep(3000);
         validateGroupBy.isDisplayed();
     }
-
+    //click sort direction button arrow to sort the journo listed
     public void setClickSortDirection() throws InterruptedException{
         Thread.sleep(3000);
         clickSortOption.click();
     }
-
+     //validate journos are sorted by direction arrows
     public void validateJournoSortDirection() throws InterruptedException{
         Thread.sleep(3000);
         validateSortDirectionJourno.isDisplayed();
     }
-
+    //validate contact details are available for the journo
     public void validateContactDetails() throws InterruptedException{
         Thread.sleep(3000);
         validateContactDetailsInOutletPage.isDisplayed();
     }
-
+    //choose and click journo link
     public void chooseAndClickJournoLink()throws InterruptedException {
         Thread.sleep(3000);
         clickJournoLink.click();
     }
-
+    //validate journo link navigates to journo page
     public void validateJournoLinkRedirectsToJournoPage()throws InterruptedException {
         Thread.sleep(3000);
         validateJournoProfileFromOutletPage.isDisplayed();
     }
-
+     //click PR Opportunity tab
     public void setClickPROpportunityTab() throws InterruptedException{
         Thread.sleep(3000);
         clickPROpportunityTab.click();
     }
-
+    //click section home interest
     public void setClickSectionHomeInterest() throws InterruptedException{
         Thread.sleep(3000);
         clickHomeInterestSection.click();
     }
-
+    //validate section filter results
     public void validateSectionFilterSearchResult() throws InterruptedException{
         Thread.sleep(3000);
         validatePROpportunitySectionSearch.isDisplayed();
     }
-
+    //click list view button
     public void setClickListViewBtn() throws InterruptedException{
         Thread.sleep(3000);
         clickListViewBtn.click();
     }
-
+    //validate results in list view
     public void setValidateResultsInListView() throws InterruptedException{
         Thread.sleep(3000);
         validateResultsInListview.isDisplayed();
     }
+    //changing page numbers by right hand side arrows
     public void setClickRightSideArrowToChangePageNumber() throws InterruptedException{
         Thread.sleep(3000);
         clickRightArrowToSelectPageNumber.click();
     }
+    //clicking page numbers
     public void setClickPageNumber() throws InterruptedException{
         Thread.sleep(3000);
         clickPageNumber.click();
     }
-
+    //validate page numbers
     public void validateJournoByPageNumber() throws InterruptedException{
         Thread.sleep(3000);
         validatePageNumberListingJourno.isDisplayed();
+    }
+    //validating chosen desk by checking BBC children check box is selected
+    public void validateDeskProfileChosenDeskCheckBoxTicked() throws InterruptedException{
+        Thread.sleep(3000);
+        validateDeskProfileCheckBoxTicked.isDisplayed();
     }
 }
