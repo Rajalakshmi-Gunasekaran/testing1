@@ -23,19 +23,28 @@ jobs:
         architecture: x64
     # see https://app.nuclino.com/Roxhill/Development/-GitHub-self-hosted-runner-71beb322-4672-4ed8-8df0-fe373793e6ce
     # uses Maven
-    - name: Test Automation
+    - name: Test App Automation
       env:
         EXTENT_CONFIG_XML: ./AppAutomation/src/main/resources/reportConfig/extent-config.xml
       run: |
-        mvn -B test
+        cd AppAutomation && mvn -B test
+
+    - name: Test Admin Automation
+      env:
+        EXTENT_CONFIG_XML: ./AdminAutomation/src/main/resources/reportConfig/extent-config.xml
+      run: |
+        cd AdminAutomation && mvn -B test
 
     - name: Publish report
       if: always()
       env:
-        APP_REPORT_LOCATION: ./target/TSR/tsr3.html
+        APP_REPORT_LOCATION: ./AppAutomation/target/TSR/tsr3.html
         APP_WEB_LOCATION: /var/www/html/smoke-suite/index.html
+        ADMIN_REPORT_LOCATION: ./AdminAutomation/target/TSR/tsr3.html
+        ADMIN_WEB_LOCATION: /var/www/html/smoke-suite/admin_index.html
       run: |
-        cp ${APP_REPORT_LOCATION} ${APP_WEB_LOCATION}
+        cp ${APP_REPORT_LOCATION} ${APP_WEB_LOCATION} && \
+        cp ${ADMIN_REPORT_LOCATION} ${ADMIN_WEB_LOCATION}
 
     - name: Cleanup Maven
       if: always()
