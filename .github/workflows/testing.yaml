@@ -32,7 +32,7 @@ jobs:
     - name: Publish report
       if: always()
       env:
-        APP_REPORT_LOCATION: ./target/TSR/tsr3.html
+        APP_REPORT_LOCATION: ./AppAutomation/target/TSR/tsr3.html
         APP_WEB_LOCATION: /var/www/html/smoke-suite/index.html
       run: |
         cp ${APP_REPORT_LOCATION} ${APP_WEB_LOCATION}
