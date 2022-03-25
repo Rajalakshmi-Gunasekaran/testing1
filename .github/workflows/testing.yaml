@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  app-automation:
+  app:
     name: test and publish app automation
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,7 @@ jobs:
       run: |
         mvn -B clean
 
-  admin-automation:
+  admin:
     name: test and publish admin automation
     runs-on: ubuntu-latest
     steps:
