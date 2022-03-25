@@ -166,6 +166,7 @@ public class SearchPage extends CommonFunctions{
         Thread.sleep(3000);
         clickOkToCreateQuickSearchList.click();
     }
+    //close quick search using cross close button in the right hand side corner
     public void setCloseQuickSearchBar()throws InterruptedException {
         Thread.sleep(6000);
         clickCloseQuickSearchBar.click();

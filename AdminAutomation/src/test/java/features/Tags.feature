@@ -178,7 +178,7 @@ Feature: Tag
     And I click on saved search tags on the top bar to navigate to tags home page
     Then I click cross mark to delete the tag
 
-  @smoke
+  @smoke14
   Scenario: Validate adding, editing and deleting PR opportunity tags
     When I should login into the home page and click on tag tab
     And I click on story topics from the list
