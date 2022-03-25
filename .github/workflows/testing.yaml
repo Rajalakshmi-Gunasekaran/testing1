@@ -11,9 +11,9 @@ on:
       - master
 
 jobs:
-  test:
-    name: test and publish
-    runs-on: self-hosted
+  app:
+    name: test and publish app automation
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 15
@@ -21,33 +21,52 @@ jobs:
       with:
         java-version: 15
         architecture: x64
-    # see https://app.nuclino.com/Roxhill/Development/-GitHub-self-hosted-runner-71beb322-4672-4ed8-8df0-fe373793e6ce
-    # uses Maven
+
     - name: Test App Automation
       env:
         EXTENT_CONFIG_XML: ./AppAutomation/src/main/resources/reportConfig/extent-config.xml
       run: |
-        cd AppAutomation && mvn -B test
-
-    - name: Test Admin Automation
-      env:
-        EXTENT_CONFIG_XML: ./AdminAutomation/src/main/resources/reportConfig/extent-config.xml
-      run: |
-        cd AdminAutomation && mvn -B test
+        mvn -B test -Dtest=AppTestRunner -pl AppAutomation
 
     - name: Publish report
       if: always()
       env:
-        APP_REPORT_LOCATION: ./AppAutomation/target/TSR/tsr3.html
-        APP_WEB_LOCATION: /var/www/html/smoke-suite/index.html
-        ADMIN_REPORT_LOCATION: ./AdminAutomation/target/TSR/tsr3.html
-        ADMIN_WEB_LOCATION: /var/www/html/smoke-suite/admin_index.html
+        REPORT_LOCATION: ./AppAutomation/target/TSR/tsr3.html
+        WEB_LOCATION: /var/www/html/smoke-suite/index.html
       run: |
-        cp ${APP_REPORT_LOCATION} ${APP_WEB_LOCATION} && \
-        cp ${ADMIN_REPORT_LOCATION} ${ADMIN_WEB_LOCATION}
+        cp ${REPORT_LOCATION} ${WEB_LOCATION}
 
     - name: Cleanup Maven
       if: always()
       run: |
         mvn -B clean
-        
+
+  admin:
+    name: test and publish admin automation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 15
+        uses: actions/setup-java@v1
+        with:
+          java-version: 15
+          architecture: x64
+
+      - name: Test Admin Automation
+        env:
+          EXTENT_CONFIG_XML: ./AdminAutomation/src/main/resources/reportConfig/extent-config.xml
+        run: |
+          mvn -B test -Dtest=AdminTestRunner -pl AdminAutomation
+
+      - name: Publish report
+        if: always()
+        env:
+          REPORT_LOCATION: ./AdminAutomation/target/TSR/tsr3.html
+          WEB_LOCATION: /var/www/html/smoke-suite/admin_index.html
+        run: |
+          cp ${REPORT_LOCATION} ${WEB_LOCATION}
+
+      - name: Cleanup Maven
+        if: always()
+        run: |
+          mvn -B clean
