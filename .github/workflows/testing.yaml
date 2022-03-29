@@ -24,7 +24,7 @@ jobs:
 
     - name: Test App Automation
       env:
-        EXTENT_CONFIG_XML: ./AppAutomation/src/main/resources/reportConfig/extent-config.xml
+        EXTENT_CONFIG_XML: ./src/main/resources/reportConfig/extent-config.xml
       run: |
         mvn -B test -Dtest=AppTestRunner -pl AppAutomation
 
@@ -54,7 +54,7 @@ jobs:
 #
 #      - name: Test Admin Automation
 #        env:
-#          EXTENT_CONFIG_XML: ./AdminAutomation/src/main/resources/reportConfig/extent-config.xml
+#          EXTENT_CONFIG_XML: ./src/main/resources/reportConfig/extent-config.xml
 #        run: |
 #          mvn -B test -Dtest=AdminTestRunner -pl AdminAutomation
 #
