@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"."},
         dryRun = false,
-        tags = {"@smoke14"},
+        tags={"@smoke1"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr3.html"}
 )
 public class AdminTestRunner {

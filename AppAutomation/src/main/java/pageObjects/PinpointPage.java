@@ -45,7 +45,7 @@ public class PinpointPage extends CommonFunctions{
     public WebElement clickOutletSearchIcon;
     @FindBy(xpath = "//nav[@class=\"super-toolbar d-flex flex-row justify-content-start align-items-center py-0 branded\"]")
     public WebElement validateNavigateToAdvancedSearchOutletTab;
-    @FindBy(xpath = "//*[@id=\"searchJournalistButton\"]/i")
+    @FindBy(id = "searchJournalistButton")
     public WebElement clickJournoSearchIcon;
     @FindBy(xpath = "//nav[@class=\"super-toolbar d-flex flex-row justify-content-start align-items-center py-0 branded\"]")
     public WebElement validateNavigateToAdvancedSearchJournoTab;
