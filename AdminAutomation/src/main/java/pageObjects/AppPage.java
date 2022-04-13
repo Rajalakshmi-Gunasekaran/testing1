@@ -246,19 +246,19 @@ public class AppPage extends CommonFunctions{
         Thread.sleep(3000);
         enterNewStoryUserAlertName.sendKeys(editUserAlertName);
     }
-
+    //click add URL check author user alert
     public void setClkAddURLCheckAuthorUserAlert() throws InterruptedException{
         Thread.sleep(3000);
         clkAddNewBtnInAlerts.click();
         Thread.sleep(3000);
         getChooseAddAlertTypeAsURLCheckAuthor.click();
     }
-
+    //enter URL author user alert name
     public void setEnterURLAuthorUserAlertName(String urlAuthorUserAlertName) throws InterruptedException{
         Thread.sleep(3000);
         enterURLAuthorUserAlertName.sendKeys(urlAuthorUserAlertName);
     }
-
+    // choose author field in alert creation form and enter author name
     public void setChooseAndEnterAuthor(String author) throws InterruptedException{
         Thread.sleep(3000);
         clkAuthorFieldInAlertCreationForm.click();
@@ -267,29 +267,29 @@ public class AppPage extends CommonFunctions{
         Thread.sleep(6000);
         enterAuthor.sendKeys(Keys.ENTER);
     }
-
+    //choose type as URL author user alert
     public void setChooseTypeAsURLAuthorUserAlert() throws InterruptedException{
         Thread.sleep(3000);
         chooseTypeAsURLAuthorUserAlert.click();
     }
-
+    // click enabled drop down as "no" to filter the search
     public void setClickEnabledDropDownAsNo() throws InterruptedException{
         Thread.sleep(3000);
         clkEnableDropDown.click();
         Thread.sleep(3000);
         clickEnabledDropDownAsNo.click();
     }
-
+    //click page numbers to scroll through to the desired page
     public void setClickPageNumber() throws InterruptedException{
         Thread.sleep(3000);
         clickPageNumberLinks.click();
     }
-
+    //click automation URL check author to edit
     public void setClickAutomationUrlCheckAuthorToEdit() throws InterruptedException{
         Thread.sleep(3000);
         clkAutomationAlertURLAuthorToEdit.click();
     }
-
+    //edit author alert name
     public void setEditAuthorAlertName(String editAuthorName)throws InterruptedException {
         Thread.sleep(3000);
         enterURLAuthorUserAlertName.sendKeys(editAuthorName);

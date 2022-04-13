@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"."},
         dryRun = false,
-        tags={"@smoke1"},
+        tags={"@AddAndRemoveNewReadyMadeList"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr3.html"}
-)
+                 )
 public class AdminTestRunner {
     @AfterClass
     public static void generateReport()
