@@ -96,7 +96,55 @@ public class AppPage extends CommonFunctions{
     public WebElement clkAutomationAlertURLAuthorToEdit;
     @FindBy(xpath = "//b[contains(text(),\"Enabled\")]")
     public WebElement clkEnableDropDown;
-
+    @FindBy(xpath = "//a[@href=\"/admin/widgets\"]")
+    public WebElement clkWidgetsOptions;
+    @FindBy(xpath = "//a[contains(text(),\"Last\")]")
+    public WebElement clkLastPageNumberInWidget;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/table/tbody/tr[2]/td[7]/a[2]/span")
+    public WebElement clkEditBtnInWidgets;
+    @FindBy(xpath = "//a[contains(text(),\"Edit\")]")
+    public WebElement validateNavigateToChosenWidget;
+    @FindBy(xpath = "//a[contains(text(),\"Visibility\")]")
+    public WebElement clkVisibilityTab;
+    @FindBy(xpath = "//*[@id=\"main_content\"]")
+    public WebElement validateVisibilityTab;
+    @FindBy(xpath = "//a[contains(text(),\"People\")]")
+    public WebElement clkPeopleTab;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/table")
+    public WebElement validatePeopleTab;
+    @FindBy(xpath = "//a[contains(text(),\"Panorama\")]")
+    public WebElement clkPanoramaTab;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/table")
+    public WebElement validatePanoramaTab;
+    @FindBy(xpath = "//a[contains(text(),\"Story Topic Tags\")]")
+    public WebElement clkStoryTopicTab;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/ul[2]")
+    public WebElement validateStoryTopicTab;
+    @FindBy(name= "widget[title]")
+    public WebElement enterWidgetTitle;
+    @FindBy(name = "widget[description]")
+    public WebElement enterDescription;
+    @FindBy(xpath = "//a[@href=\"/admin/widgets?page=7\"]")
+    public WebElement clk7thPageInPageNumbers;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/table/tbody/tr[6]/td[7]/a[3]")
+    public WebElement clkCrossMarkToDeleteBtn;
+    @FindBy(xpath = "//a[@href=\"/admin/saved-search\"]")
+    public WebElement clkSavedSearchesOptions;
+    @FindBy(xpath = "//a[contains(text(),\"Tweet Story saved search\")]")
+    public WebElement clickSavedSearchTypeAsTweetStory;
+    @FindBy(name = "tweet_story_saved_search[name]")
+    public WebElement enterSavedSearchName;
+    @FindBy(name = "tweet_story_saved_search[articleType]")
+    public WebElement clkTypeDropDownToSelectSavedSearchType;
+    @FindBy(xpath = "//option[contains(text(),\"Outlets\")]")
+    public WebElement selectTypeAsOutlet;
+    @FindBy(xpath = "//input[@placeholder=\"Sector\"]")
+    public WebElement enterSectorAsFashion;
+    @FindBy(name= "keywords")
+    public WebElement clkAndEnterSavedSearchNameFld;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/div[9]/table/tbody/tr[1]/td[2]/a[2]/span")
+    public WebElement clkDeleteSavedSearchBtn;
+    
     //click app tab in admin page
     public void clickAppTab() throws InterruptedException{
       Thread.sleep(3000);
@@ -293,5 +341,129 @@ public class AppPage extends CommonFunctions{
     public void setEditAuthorAlertName(String editAuthorName)throws InterruptedException {
         Thread.sleep(3000);
         enterURLAuthorUserAlertName.sendKeys(editAuthorName);
+    }
+    //click widgets option from the app tab
+    public void setClickWidgetsOptions() throws InterruptedException{
+        Thread.sleep(3000);
+        clkWidgetsOptions.click();
+    }
+    //click last page numbers in widget
+    public void setClickLastPageInWidget() throws InterruptedException{
+        Thread.sleep(3000);
+        clkLastPageNumberInWidget.click();
+    }
+    //click edit button in widgets
+    public void setClickEditBtnInWidgets() throws InterruptedException{
+        Thread.sleep(3000);
+        clkEditBtnInWidgets.click();
+    }
+    //navigate to chosen widget
+    public void setNavigateToChosenWidget() throws InterruptedException{
+        Thread.sleep(3000);
+        validateNavigateToChosenWidget.isDisplayed();
+    }
+    //click visibility tab
+    public void setClickVisibilityTabs() throws InterruptedException{
+        Thread.sleep(3000);
+        clkVisibilityTab.click();
+    }
+    //validate visibility tab
+    public void setValidateVisibilityTab() throws InterruptedException{
+        Thread.sleep(3000);
+        validateVisibilityTab.isDisplayed();
+    }
+    //click people tab
+    public void setClickPeopleTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clkPeopleTab.click();
+    }
+    //validate people tab opens
+    public void setValidatePeopleTab() throws InterruptedException{
+        Thread.sleep(3000);
+        validatePeopleTab.isDisplayed();
+    }
+    //click panorama tab
+    public void setClickPanoramaTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clkPanoramaTab.click();
+    }
+    //validate panorama tab opens
+    public void setValidatePanoramaTab() throws InterruptedException{
+        Thread.sleep(3000);
+        validatePanoramaTab.isDisplayed();
+    }
+    //click story topic tab
+    public void setClickStoryTopicTab() throws InterruptedException{
+        Thread.sleep(3000);
+        clkStoryTopicTab.click();
+    }
+    //validate story topic tab opens
+    public void setValidateStoryTopicTab() throws InterruptedException{
+        Thread.sleep(3000);
+        validateStoryTopicTab.isDisplayed();
+    }
+    //enter widget title to create new widget
+    public void setEnterWidgetTitle(String widgetTitle) throws InterruptedException{
+        Thread.sleep(3000);
+        enterWidgetTitle.sendKeys(widgetTitle);
+    }
+    //enter widget description
+    public void setEnterDescription(String widgetDescription) throws InterruptedException{
+        Thread.sleep(3000);
+        enterDescription.sendKeys(widgetDescription);
+    }
+    //click seventh page to navigate to the recently created widget
+    public void setClickSeventhPage() throws InterruptedException{
+        Thread.sleep(3000);
+        clk7thPageInPageNumbers.click();
+    }
+    //click red cross to delete the chosen widget
+    public void setClickMarkDeleteChosenWidget() throws InterruptedException{
+        Thread.sleep(3000);
+        clkCrossMarkToDeleteBtn.click();
+        Thread.sleep(3000);
+        clkConfirmDeleteBtn.click();
+    }
+    //click saved search options under App tab
+    public void setClickSavedSearchOptions() throws InterruptedException{
+        Thread.sleep(3000);
+        clkSavedSearchesOptions.click();
+    }
+    //choose and click saved search type as tweet story from the options
+    public void setClickTypeAsTweetStory() throws InterruptedException{
+        Thread.sleep(3000);
+        clickSavedSearchTypeAsTweetStory.click();
+    }
+    //enter saved search name to create new saved search
+    public void setEnterSavedSearchName(String savedSearchName) throws InterruptedException{
+        Thread.sleep(3000);
+        enterSavedSearchName.sendKeys(savedSearchName);
+    }
+    //click saved search type as outlet
+    public void setClickSavedSearchTypeAsOutlet() throws InterruptedException{
+        Thread.sleep(3000);
+        clkTypeDropDownToSelectSavedSearchType.click();
+        Thread.sleep(3000);
+        selectTypeAsOutlet.click();
+    }
+    //enter sector as fashion in creating saved searches
+    public void setEnterSectorAsFashion(String sector)throws InterruptedException {
+        Thread.sleep(3000);
+        enterSectorAsFashion.sendKeys(sector);
+        Thread.sleep(3000);
+        enterSectorAsFashion.sendKeys(Keys.ENTER);
+    }
+    //enter saved search name in search field as testing
+    public void setEnterSavedSearchNameInSearchField(String savedSearchName) throws InterruptedException{
+        Thread.sleep(3000);
+        clkAndEnterSavedSearchNameFld.sendKeys(savedSearchName);
+        clkAndEnterSavedSearchNameFld.sendKeys(Keys.ENTER);
+    }
+    //delete recently added saved search
+    public void setDeleteSavedSearch()throws InterruptedException {
+        Thread.sleep(3000);
+        clkDeleteSavedSearchBtn.click();
+        Thread.sleep(3000);
+        clkConfirmDeleteBtn.click();
     }
 }

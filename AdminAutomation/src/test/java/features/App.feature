@@ -70,3 +70,44 @@ Feature: App
     And I edit the author user alert name as "Automation1"
     And I click on save button in user alert
     Then I click on delete button and click confirm delete button
+
+  @ValidateWidgetsTabs
+    Scenario:Validate tabs available in widgets page
+    When I should login into the home page and click on App tab
+    And I click on widgets from the list
+    And I click on last page in widgets scroll numbers
+    And I click on edit button in widgets
+    And I navigate to the chosen widget page
+    And I click on visibility tab and I should see visibility tabs opens
+    And I click on people tab and I should see the people tab opens
+    And I click on panorama tab and I should see the panorama tab opens
+    Then I click on story topic tab and I should see the story topic tab opens
+
+  @validateCreatingAndDeletingWidgets
+  Scenario: Validate creating and deleting widgets
+    When I should login into the home page and click on App tab
+    And I click on widgets from the list
+    And I click on add new button
+    And I enter widget title as "Testing"
+    And I enter description as "Testing purposes"
+    And I click on save button
+    And I click on app tab
+    And I click on widgets from the list
+    And I click on last page in widgets scroll numbers
+    And I click on seventh page
+    And I click x mark to delete chosen widget
+
+  @ValidateCreatingAndDeletingSavedSearches
+  Scenario: Validate creating and deleting saved searches
+    When I should login into the home page and click on App tab
+    And I click on saved searches from the list
+    And I click on add new button
+    And I choose and click saved search type as tweet story
+    And I enter saved search name as "Testing"
+    And I click saved search type as Outlet
+    And I enter sector as "Fashion"
+    And I click on save button
+    And I click on app tab
+    And I click on saved searches from the list
+    And I click and enter search saved searches by name as "Testing"
+    And I click delete button to delete the selected saved search
