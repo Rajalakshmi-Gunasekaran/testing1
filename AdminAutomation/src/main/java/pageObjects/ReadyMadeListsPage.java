@@ -50,6 +50,12 @@ public class ReadyMadeListsPage extends CommonFunctions{
     public WebElement clkDeleteListFromRML;
     @FindBy(xpath = "//*[@id=\"__layout\"]/div/div[2]/div[1]/section/div[2]/div[1]/span/div[3]/div/div[2]/span/div/div/div[2]/div/table/tbody[1]/tr/td[7]/div/i")
     public WebElement clkDeleteJournalistFromList;
+    @FindBy(xpath = "//span[contains(text(),\"Political Editors\")]")
+    public WebElement chooseAndClkRMLList;
+    @FindBy(xpath = "//a[contains(text(),\"Gareth Rose\")]")
+    public WebElement chooseAndClkJournoLink;
+    @FindBy(xpath = "//*[@id=\"main_content\"]/div[2]")
+    public WebElement validateJournalistProfilePage;
 
     //click ready made list options under tags tab in admin page
     public void setClickReadyMadeList() throws InterruptedException{
@@ -156,5 +162,20 @@ public class ReadyMadeListsPage extends CommonFunctions{
     public void setValidateRMLListDeleted() throws InterruptedException{
         Thread.sleep(3000);
         driver.switchTo().alert().accept();
+    }
+    //choose and click ready made list
+    public void setChooseAndClickList() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseAndClkRMLList.click();
+    }
+    //click journalist link to navigate
+    public void setClickJournoLinkToNavigate() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseAndClkJournoLink.click();
+    }
+    //validate journalist profile page
+    public void setValidateJournalistProfile() throws InterruptedException{
+        Thread.sleep(3000);
+        validateJournalistProfilePage.isDisplayed();
     }
 }

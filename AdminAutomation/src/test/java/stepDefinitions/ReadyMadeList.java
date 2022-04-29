@@ -126,4 +126,21 @@ public class ReadyMadeList extends BaseStep{
        wait(30);
        readyMadeListsPage.setValidateRMLListDeleted();
     }
+    @When("^I choose and click on list to see all the journalist$")
+    public void i_choose_and_click_on_list_to_see_all_the_journalist() throws InterruptedException {
+        wait(30);
+        readyMadeListsPage.setChooseAndClickList();
+    }
+
+    @When("^I click journalist from the list to navigate to profile page$")
+    public void i_click_journalist_from_the_list_to_navigate_to_profile_page() throws InterruptedException {
+         wait(30);
+         readyMadeListsPage.setClickJournoLinkToNavigate();
+    }
+
+    @Then("^I should validate journalist profile page$")
+    public void i_should_validate_journalist_profile_page() throws InterruptedException {
+         wait(30);
+         readyMadeListsPage.setValidateJournalistProfile();
+    }
 }

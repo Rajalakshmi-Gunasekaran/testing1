@@ -43,4 +43,10 @@ Feature: ReadyMadeList
     And I click delete button and click ok to confirm deletion of the list from the selected RML group
     Then I should see the list deleted from the RML group Test Matt
 
-
+  @validatingNavigatingToJournoProfile
+  Scenario: validating navigating to journo profile from ready made list
+    When I should login into the home page and click on tag tab
+    And I click on ready made lists options from the list
+    And I choose and click on list to see all the journalist
+    And I click journalist from the list to navigate to profile page
+    Then I should validate journalist profile page

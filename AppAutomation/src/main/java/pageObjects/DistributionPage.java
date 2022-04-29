@@ -221,6 +221,8 @@ public class DistributionPage extends CommonFunctions{
     public WebElement clickViewPressReleaseLink;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/div/div[1]/div/div/div[2]/div/div[1]/div/div/h5/span/span")
     public WebElement validatePressReleaseFromCampaignPage;
+    @FindBy(xpath = "//button[contains(text(),\" Cancel\")]")
+    public WebElement clkCancelBtnInCampaignSending;
 
     /* validate new press release functionality*/
     public void setClickDistributionTab()throws InterruptedException {
@@ -703,26 +705,31 @@ public class DistributionPage extends CommonFunctions{
         Thread.sleep(3000);
         clickStartCampaignBtn.click();
     }
-
+    //enter campaign name from press release page
     public void setEnterCampaignNameFromPressRelease(String pressRelease) throws InterruptedException{
         Thread.sleep(3000);
         enterCampaignNameFromPressRelease.sendKeys(pressRelease);
         Thread.sleep(3000);
         clickCreateBtnFromPressRelease.click();
     }
-
+    //choose and click campaign
     public void setChooseAndClickCampaign() throws InterruptedException{
         Thread.sleep(3000);
         chooseAndClickCampaign.click();
     }
-
+    //click view press release link to see the press release
     public void setClickViewPressReleaseLink() throws InterruptedException{
         Thread.sleep(3000);
         clickViewPressReleaseLink.click();
     }
-
+    //validate navigating to press release by clicking the press release link
     public void setValidatePressRelease() throws InterruptedException{
         Thread.sleep(3000);
         validatePressReleaseFromCampaignPage.isDisplayed();
+    }
+    //click cancel button to stop the campaign sending
+    public void setClkCancelBtn() throws InterruptedException{
+        Thread.sleep(3000);
+        clkCancelBtnInCampaignSending.click();
     }
 }

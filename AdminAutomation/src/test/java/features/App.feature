@@ -111,3 +111,4 @@ Feature: App
     And I click on saved searches from the list
     And I click and enter search saved searches by name as "Testing"
     And I click delete button to delete the selected saved search
+
