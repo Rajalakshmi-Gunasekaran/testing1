@@ -27,6 +27,7 @@ public abstract class CommonFunctions
             WebDriverWait wait = new WebDriverWait(driver, 120);
             wait.until(ExpectedConditions.visibilityOf(locator));
         }
+
         public String readPropertyFile(String key) throws Exception {
             FileInputStream inputStream=new FileInputStream(FilePath.configFilePath);
             Properties properties=new Properties();
