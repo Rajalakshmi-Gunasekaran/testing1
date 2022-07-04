@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = ".", dryRun = false,tags="@smoke",
+        features = "src/test/java/features/Distribution.feature", dryRun = false,tags="@smoke",
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr3.html"})
 public class AppTestRunner {
       @AfterClass
