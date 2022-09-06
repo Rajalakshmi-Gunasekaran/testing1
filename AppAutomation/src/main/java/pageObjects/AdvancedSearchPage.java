@@ -222,8 +222,7 @@ public class AdvancedSearchPage extends CommonFunctions{
 
     /* validate change info functionality in journalist advanced search by outlet filters*/
     public void clickChangeInfo()throws InterruptedException
-    {
-        Thread.sleep(3000);
+    {        Thread.sleep(3000);
         elementVisible(clickChangeInfoView,driver);
         clickChangeInfoView.click();
     }

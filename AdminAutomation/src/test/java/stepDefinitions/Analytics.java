@@ -235,4 +235,38 @@ public class Analytics extends BaseStep{
         analyticsPage.validateMostVisitedForFilteredTimePeriod();
     }
 
+    @When("^I hover over on journalists and outlets and I click on user interest per journalist options$")
+    public void i_hover_over_on_journalists_and_outlets_and_I_click_on_user_interest_per_journalist_options() throws InterruptedException {
+       wait(30);
+       analyticsPage.setClickUserInterestPerJournalist();
+    }
+
+    @When("^I click journalist text field and enter journalist name as \"([^\"]*)\"$")
+    public void i_click_journalist_text_field_and_enter_journalist_name_as(String JournoName) throws InterruptedException {
+        wait(30);
+        analyticsPage.setEnterJournoName(JournoName);
+    }
+
+    @Then("^I should see user interactions for that filtered journalist$")
+    public void i_should_see_user_interactions_for_that_filtered_journalist() throws InterruptedException {
+       wait(30);
+       analyticsPage.setValidateUserInterestResultsForFilteredJourno();
+    }
+    @When("^I hover over on journalists and outlets and I click on popular journalist per sector options$")
+    public void i_hover_over_on_journalists_and_outlets_and_I_click_on_popular_journalist_per_sector_options() throws InterruptedException {
+       wait(30);
+       analyticsPage.setClkPopularJournalistPerSector();
+    }
+
+    @When("^I click sector text field and enter sector name as \"([^\"]*)\"$")
+    public void i_click_sector_text_field_and_enter_sector_name_as(String sectorName) throws InterruptedException {
+        wait(30);
+        analyticsPage.setEnterSectorToFilter(sectorName);
+    }
+
+    @Then("^I should see popular journalist per sector for the filtered sector$")
+    public void i_should_see_popular_journalist_per_sector_for_the_filtered_sector() throws InterruptedException {
+        wait(30);
+        analyticsPage.setValidatePopularJournalistPerSector();
+    }
 }

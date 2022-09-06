@@ -83,3 +83,19 @@ Feature: Analytical Dashboard
     And I should navigate to the most visited page
     And I select date to filter using time range
     Then I should see the graph for the filtered period of time
+
+  @UserInterestPerJournalist
+  Scenario: Validate user interest per journalist page
+    When I should login into the home page and click on Analytics tab
+    And I click on analytics dashboard options from the list
+    And I hover over on journalists and outlets and I click on user interest per journalist options
+    And I click journalist text field and enter journalist name as "Simon English"
+    Then I should see user interactions for that filtered journalist
+
+  @PopularJournalistPerSector
+  Scenario: Validate popular journalist per sector page
+    When I should login into the home page and click on Analytics tab
+    And I click on analytics dashboard options from the list
+    And I hover over on journalists and outlets and I click on popular journalist per sector options
+    And I click sector text field and enter sector name as "Aesthetics"
+    Then I should see popular journalist per sector for the filtered sector

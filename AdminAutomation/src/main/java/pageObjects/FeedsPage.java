@@ -42,74 +42,93 @@ public class FeedsPage extends CommonFunctions{
     @FindBy(xpath = "//*[@id=\"main_content\"]/p")
     public WebElement validateUnDeleteJournoList;
 
+
+    //click feeds tab in admin page
     public void setClickFeedsTab() throws InterruptedException{
         Thread.sleep(3000);
         clkFeedTab.click();
     }
 
+    //click deleted journalist lists under feeds tab
     public void setClickDeletedJournalistLists() throws InterruptedException{
         Thread.sleep(3000);
         clkDeletedJournalistLists.click();
     }
 
+    //click list name link in deleted journalist list page
     public void setClickListNameLink() throws InterruptedException{
         Thread.sleep(3000);
         clkListNameLink.click();
     }
 
+    //click check box to select journo for removal
     public void setClickCheckBoxToSelectJournoForRemoval()throws InterruptedException {
         Thread.sleep(3000);
         clkCheckBoxToSelectJournoForRemoval.click();
     }
 
+    //click removal author from list button
     public void setClickRemoveAuthorFromListBtn() throws InterruptedException{
         Thread.sleep(3000);
         clkRemoveAuthorFromListBtn.click();
     }
 
+    //click un assign button
     public void setClickUnAssignBtn() throws InterruptedException{
         Thread.sleep(3000);
         clkUnAssignBtn.click();
     }
 
+    //validate journalist removal from the list
     public void setValidateJournalistRemoval() throws InterruptedException{
         Thread.sleep(3000);
         validateJournalistRemovalFromList.isDisplayed();
     }
 
+    //click journalist name link
     public void setClickJournalistNameLink() throws InterruptedException{
         Thread.sleep(3000);
         clickJournalistListName.click();
     }
 
+    //validate journo profile page
     public void setValidateJournoProfilePage() throws InterruptedException{
         Thread.sleep(3000);
         validateJournoProfilePage.isDisplayed();
     }
 
+    //click page numbers as last
     public void setClickPageNumberAsLast() throws InterruptedException{
         Thread.sleep(3000);
         clkPageNumberAsLast.click();
     }
 
+    //click user email
     public void setClickUserEmail() throws InterruptedException{
         Thread.sleep(3000);
         clkUserEmailLinkInDeletedList.click();
     }
 
+
+    //validate navigate to user profile page
     public void setNavigateToUserProfilePage()throws InterruptedException {
         Thread.sleep(3000);
         validateNavigateToUserProfilePage.isDisplayed();
     }
+
+    //click last page in scroll numbers
     public void setClickLastPageInScrollNumbers() throws InterruptedException{
         Thread.sleep(3000);
         clkLastPageInScrollNumbers.click();
     }
+
+    //click un delete button
     public void setClickUnDeleteBtn() throws InterruptedException{
         Thread.sleep(3000);
         clkUnDeleteBtn.click();
     }
 
+    //validate un delete journalist list
     public void setValidateUnDeleteJournalistList()throws InterruptedException {
         Thread.sleep(3000);
         validateUnDeleteJournoList.isDisplayed();

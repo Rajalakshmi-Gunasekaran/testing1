@@ -22,7 +22,7 @@ public class SearchPage extends CommonFunctions{
     public WebElement clkQuickSearch;
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/nav/div[2]/div/div/input")
     public WebElement quickSearch;
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/nav/form[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/div/div/div/ul/li[1]/div[2]/div[1]/div[1]/a")
+    @FindBy(xpath = "//a[@href=\"/journalist/1031\"]")
     public WebElement JournalistName;
     @FindBy(xpath = "//div[@class=\"journalist-main d-flex p-3\"]")
     public WebElement validateJournoProfile;

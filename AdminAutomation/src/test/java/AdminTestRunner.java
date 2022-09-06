@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"."},
         dryRun = false,
-        tags = "@MostVisited",
+        tags = "@PopularJournalistPerSector",
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/TSR/tsr3.html"}
                  )
 public class AdminTestRunner {
