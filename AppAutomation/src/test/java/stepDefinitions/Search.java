@@ -151,6 +151,11 @@ public class Search extends BaseStep {
         outletProfilePage.validatePROpportunityTabINOutlet();
     }
 
+    @When("^I choose ACL Journalist from the list and Click on it$")
+    public void i_choose_ACL_Journalist_from_the_list_and_Click_on_it() throws InterruptedException {
+       wait(30);
+       journoProfilePage.chooseACLJournoFromList();
+    }
     @Then("^I should see all the available information about the ACL journalist$")
     public void i_should_see_all_the_available_information_about_the_ACL_journalist() throws InterruptedException
     {

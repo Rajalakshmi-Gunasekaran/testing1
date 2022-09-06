@@ -47,6 +47,8 @@ public class JournoProfilePage extends CommonFunctions {
     public WebElement validateInterview;
     @FindBy(xpath = "//strong[contains(text(),\"Simon English\")]")
     public WebElement validateNotesAndActivity;
+    @FindBy(xpath = "//a[@href=\"/journalist/3460600\"]")
+    public WebElement chooseAndClkAclJourno;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div/h3")
     public WebElement validateACLJournalist;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div/div[1]/div/div/div/div/div[3]/div[2]/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/div")
@@ -404,5 +406,10 @@ public class JournoProfilePage extends CommonFunctions {
     public void validateCompanyCoverageResults() throws InterruptedException{
         Thread.sleep(3000);
         validateCompanyCoverageArticlesResults.isDisplayed();
+    }
+
+    public void chooseACLJournoFromList() throws InterruptedException{
+        Thread.sleep(3000);
+        chooseAndClkAclJourno.click();
     }
 }
