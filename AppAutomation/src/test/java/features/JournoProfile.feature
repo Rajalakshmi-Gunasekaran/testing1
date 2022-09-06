@@ -17,11 +17,11 @@ Feature: JournoProfile
     And I should see all the available information about the journalist
     Then I should see all the header tabs in journalist profile page
 
-  @smoke
+  @smoke1
   Scenario: validate ACL Journalist only visible to ACL customers
     When I should login into the home page and click on Quick search tab
-    And I enter Journalist name as "David Deane"
-    And I choose Journalist from the list and Click on it
+    And I enter Journalist name as "Automation Testing"
+    And I choose ACL Journalist from the list and Click on it
     Then I should see all the available information about the ACL journalist
 
   @functional21
