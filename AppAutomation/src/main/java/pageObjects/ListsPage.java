@@ -93,7 +93,7 @@ public class ListsPage extends CommonFunctions{
     public WebElement deleteListBtn;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[2]/div/div[1]/nav/div[4]/span/div/div[2]/div[1]/i")
     public WebElement confirmDeleteBtn;
-    @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/small")
+    @FindBy(xpath = "//small[contains(text(),\"Nothing in this folder\")]")
     public WebElement validateDeletedList;
     @FindBy(xpath = "//*[@id=\"main-view\"]/div[1]/div/div[1]/div/div/div[2]/div/div[2]/ul/li/a/i")
     public WebElement clickOkToChooseList;
